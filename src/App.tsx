@@ -1,20 +1,50 @@
-import { BrowserRouter, Routes, Route, Link, useLocation } from 'react-router-dom';
-import './App.css';
-import LocationsIndex from './pages/LocationsIndex';
-import StatePage from './pages/StatePage';
-import CityPage from './pages/CityPage';
-import NotFound from './pages/NotFound';
-import { useMetaTags } from './hooks/useMetaTags';
+import { useState } from 'react'
+import './App.css'
 
-function HomePage() {
-  useMetaTags({
-    title: 'Street Teams Co | Professional Brand Ambassadors & Street Marketing Nationwide',
-    description: 'Street Teams Co provides elite brand ambassadors delivering high-impact street-level marketing campaigns nationwide. Street activations, event staffing, and product sampling in 1,000+ cities.',
-    canonical: 'https://streetteamsco.com',
-  });
+function App() {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    company: '',
+    message: ''
+  })
+  const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle')
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    setStatus('submitting')
+    
+    try {
+      const response = await fetch('https://formspree.io/f/xwpkgjvn', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
+      })
+      
+      if (response.ok) {
+        setStatus('success')
+        setFormData({ name: '', email: '', phone: '', company: '', message: '' })
+      } else {
+        setStatus('error')
+      }
+    } catch {
+      setStatus('error')
+    }
+  }
 
   return (
-    <>
+    <div className="app">
+      <nav className="nav">
+        <div className="nav-container">
+          <div className="logo">STREET TEAMS CO</div>
+          <div className="nav-links">
+            <a href="#services">Services</a>
+            <a href="#contact">Contact</a>
+          </div>
+        </div>
+      </nav>
+
       <section className="hero">
         <div className="hero-content">
           <h1>Professional Street Marketing Teams</h1>
@@ -77,63 +107,132 @@ function HomePage() {
 
       <section id="contact" className="contact">
         <div className="container">
-          <h2>Ready to Launch Your Campaign?</h2>
-          <p>Let's discuss how Street Teams Co can amplify your brand</p>
-          <a href="mailto:hello@streetteamsco.com" className="btn btn-primary btn-lg">
-            Contact Us
-          </a>
-        </div>
-      </section>
-    </>
-  );
-}
-
-function Layout() {
-  const location = useLocation();
-  const isHome = location.pathname === '/';
-
-  return (
-    <div className="app">
-      <nav className="nav">
-        <div className="nav-container">
-          <Link to="/" className="logo">STREET TEAMS CO</Link>
-          <div className="nav-links">
-            {isHome ? (
-              <>
-                <a href="#services">Services</a>
-                <Link to="/locations">Locations</Link>
-                <a href="#contact">Contact</a>
-              </>
-            ) : (
-              <>
-                <Link to="/#services">Services</Link>
-                <Link to="/locations">Locations</Link>
-                <Link to="/#contact">Contact</Link>
-              </>
-            )}
+          <div className="contact-grid">
+            <div className="contact-info">
+              <h2>Ready to Launch Your Campaign?</h2>
+              <p>Let's discuss how Street Teams Co can amplify your brand with professional street marketing.</p>
+              <div className="contact-details">
+                <div className="contact-item">
+                  <span className="contact-icon">📧</span>
+                  <div>
+                    <strong>Email</strong>
+                    <a href="mailto:hello@streetteamsco.com">hello@streetteamsco.com</a>
+                  </div>
+                </div>
+                <div className="contact-item">
+                  <span className="contact-icon">📍</span>
+                  <div>
+                    <strong>Coverage</strong>
+                    <span>50+ cities nationwide</span>
+                  </div>
+                </div>
+                <div className="contact-item">
+                  <span className="contact-icon">⚡</span>
+                  <div>
+                    <strong>Response Time</strong>
+                    <span>Within 24 hours</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div className="contact-form-wrapper">
+              {status === 'success' ? (
+                <div className="form-success">
+                  <span className="success-icon">✓</span>
+                  <h3>Message Sent!</h3>
+                  <p>We'll get back to you within 24 hours.</p>
+                  <button onClick={() => setStatus('idle')} className="btn btn-secondary">
+                    Send Another Message
+                  </button>
+                </div>
+              ) : (
+                <form onSubmit={handleSubmit} className="contact-form">
+                  <h3>Get a Free Quote</h3>
+                  <div className="form-row">
+                    <div className="form-group">
+                      <label htmlFor="name">Your Name *</label>
+                      <input
+                        type="text"
+                        id="name"
+                        required
+                        placeholder="John Smith"
+                        value={formData.name}
+                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                      />
+                    </div>
+                    <div className="form-group">
+                      <label htmlFor="email">Email *</label>
+                      <input
+                        type="email"
+                        id="email"
+                        required
+                        placeholder="john@company.com"
+                        value={formData.email}
+                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                      />
+                    </div>
+                  </div>
+                  <div className="form-row">
+                    <div className="form-group">
+                      <label htmlFor="phone">Phone</label>
+                      <input
+                        type="tel"
+                        id="phone"
+                        placeholder="(555) 123-4567"
+                        value={formData.phone}
+                        onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                      />
+                    </div>
+                    <div className="form-group">
+                      <label htmlFor="company">Company</label>
+                      <input
+                        type="text"
+                        id="company"
+                        placeholder="Your Company"
+                        value={formData.company}
+                        onChange={(e) => setFormData({ ...formData, company: e.target.value })}
+                      />
+                    </div>
+                  </div>
+                  <div className="form-group">
+                    <label htmlFor="message">Tell us about your project *</label>
+                    <textarea
+                      id="message"
+                      required
+                      rows={4}
+                      placeholder="Describe your campaign goals, target cities, timeline..."
+                      value={formData.message}
+                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                    />
+                  </div>
+                  <button 
+                    type="submit" 
+                    className="btn btn-primary btn-lg"
+                    disabled={status === 'submitting'}
+                  >
+                    {status === 'submitting' ? 'Sending...' : 'Get My Free Quote'}
+                  </button>
+                  {status === 'error' && (
+                    <p className="form-error">Something went wrong. Please try again or email us directly.</p>
+                  )}
+                </form>
+              )}
+            </div>
           </div>
         </div>
-      </nav>
-
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/locations" element={<LocationsIndex />} />
-        <Route path="/locations/:state" element={<StatePage />} />
-        <Route path="/locations/:state/:city" element={<CityPage />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
+      </section>
 
       <footer className="footer">
         <div className="container">
           <div className="footer-content">
             <div className="footer-brand">
-              <Link to="/" className="logo">STREET TEAMS CO</Link>
+              <div className="logo">STREET TEAMS CO</div>
               <p>Professional street marketing nationwide</p>
             </div>
             <div className="footer-links">
-              <Link to="/#services">Services</Link>
-              <Link to="/locations">Locations</Link>
-              <Link to="/#contact">Contact</Link>
+              <a href="#services">Services</a>
+              <a href="#contact">Contact</a>
               <a href="mailto:hello@streetteamsco.com">hello@streetteamsco.com</a>
             </div>
           </div>
@@ -143,15 +242,7 @@ function Layout() {
         </div>
       </footer>
     </div>
-  );
+  )
 }
 
-function App() {
-  return (
-    <BrowserRouter>
-      <Layout />
-    </BrowserRouter>
-  );
-}
-
-export default App;
+export default App
