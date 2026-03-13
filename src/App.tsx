@@ -1,18 +1,20 @@
-import './App.css'
+import { BrowserRouter, Routes, Route, Link, useLocation } from 'react-router-dom';
+import './App.css';
+import LocationsIndex from './pages/LocationsIndex';
+import StatePage from './pages/StatePage';
+import CityPage from './pages/CityPage';
+import NotFound from './pages/NotFound';
+import { useMetaTags } from './hooks/useMetaTags';
 
-function App() {
+function HomePage() {
+  useMetaTags({
+    title: 'Street Teams Co | Professional Brand Ambassadors & Street Marketing Nationwide',
+    description: 'Street Teams Co provides elite brand ambassadors delivering high-impact street-level marketing campaigns nationwide. Street activations, event staffing, and product sampling in 1,000+ cities.',
+    canonical: 'https://streetteamsco.com',
+  });
+
   return (
-    <div className="app">
-      <nav className="nav">
-        <div className="nav-container">
-          <div className="logo">STREET TEAMS CO</div>
-          <div className="nav-links">
-            <a href="#services">Services</a>
-            <a href="#contact">Contact</a>
-          </div>
-        </div>
-      </nav>
-
+    <>
       <section className="hero">
         <div className="hero-content">
           <h1>Professional Street Marketing Teams</h1>
@@ -82,17 +84,56 @@ function App() {
           </a>
         </div>
       </section>
+    </>
+  );
+}
+
+function Layout() {
+  const location = useLocation();
+  const isHome = location.pathname === '/';
+
+  return (
+    <div className="app">
+      <nav className="nav">
+        <div className="nav-container">
+          <Link to="/" className="logo">STREET TEAMS CO</Link>
+          <div className="nav-links">
+            {isHome ? (
+              <>
+                <a href="#services">Services</a>
+                <Link to="/locations">Locations</Link>
+                <a href="#contact">Contact</a>
+              </>
+            ) : (
+              <>
+                <Link to="/#services">Services</Link>
+                <Link to="/locations">Locations</Link>
+                <Link to="/#contact">Contact</Link>
+              </>
+            )}
+          </div>
+        </div>
+      </nav>
+
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/locations" element={<LocationsIndex />} />
+        <Route path="/locations/:state" element={<StatePage />} />
+        <Route path="/locations/:state/:city" element={<CityPage />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
 
       <footer className="footer">
         <div className="container">
           <div className="footer-content">
             <div className="footer-brand">
-              <div className="logo">STREET TEAMS CO</div>
+              <Link to="/" className="logo">STREET TEAMS CO</Link>
               <p>Professional street marketing nationwide</p>
             </div>
             <div className="footer-links">
-              <a href="#services">Services</a>
-              <a href="#contact">Contact</a>
+              <Link to="/#services">Services</Link>
+              <Link to="/locations">Locations</Link>
+              <Link to="/#contact">Contact</Link>
               <a href="mailto:hello@streetteamsco.com">hello@streetteamsco.com</a>
             </div>
           </div>
@@ -102,7 +143,15 @@ function App() {
         </div>
       </footer>
     </div>
-  )
+  );
 }
 
-export default App
+function App() {
+  return (
+    <BrowserRouter>
+      <Layout />
+    </BrowserRouter>
+  );
+}
+
+export default App;

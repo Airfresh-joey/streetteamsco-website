@@ -39,6 +39,7 @@ body {
   font-weight: 800;
   color: #fff;
   letter-spacing: 2px;
+  text-decoration: none;
 }
 
 .nav-links {
@@ -275,22 +276,232 @@ body {
   opacity: 0.7;
 }
 
+/* Location Pages */
+.locations-page {
+  margin-top: 60px;
+}
+
+.locations-hero {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 80px 2rem 60px;
+  text-align: center;
+}
+
+.locations-hero h1 {
+  font-size: 2.8rem;
+  font-weight: 900;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.locations-hero-subtitle {
+  font-size: 1.2rem;
+  opacity: 0.95;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Breadcrumb */
+.breadcrumb {
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+  opacity: 0.9;
+}
+
+.breadcrumb a {
+  color: rgba(255,255,255,0.85);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.breadcrumb a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.breadcrumb-sep {
+  margin: 0 0.5rem;
+  opacity: 0.6;
+}
+
+/* Locations Content */
+.locations-content {
+  padding: 60px 2rem 80px;
+  background: #f9fafb;
+}
+
+.locations-intro {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.locations-intro h2 {
+  font-size: 2rem;
+  color: #1f2937;
+  margin-bottom: 1rem;
+}
+
+.locations-intro p {
+  color: #6b7280;
+  font-size: 1.1rem;
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+/* States Grid */
+.states-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.state-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  padding: 1.25rem 1.5rem;
+  border-radius: 10px;
+  text-decoration: none;
+  color: #1f2937;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.06);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.state-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+}
+
+.state-card h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.city-count {
+  font-size: 0.85rem;
+  color: #667eea;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+/* Cities Grid */
+.cities-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.city-card {
+  background: white;
+  padding: 1.25rem 1.5rem;
+  border-radius: 10px;
+  text-decoration: none;
+  color: #1f2937;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.06);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.city-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+}
+
+.city-card h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.city-population {
+  font-size: 0.8rem;
+  color: #9ca3af;
+}
+
+/* City Detail */
+.city-detail h2 {
+  font-size: 2rem;
+  color: #1f2937;
+  margin-bottom: 1rem;
+}
+
+.city-detail > p {
+  color: #6b7280;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 2.5rem;
+}
+
+.services-list {
+  margin-bottom: 3rem;
+}
+
+.services-list h3 {
+  font-size: 1.5rem;
+  color: #1f2937;
+  margin-bottom: 1.5rem;
+}
+
+.city-detail .service-card h4 {
+  font-size: 1.2rem;
+  color: #1f2937;
+  margin-bottom: 0.5rem;
+}
+
+.city-cta {
+  text-align: center;
+  background: white;
+  padding: 3rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.city-cta h3 {
+  font-size: 1.8rem;
+  color: #1f2937;
+  margin-bottom: 0.75rem;
+}
+
+.city-cta p {
+  color: #6b7280;
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+
+.city-cta .btn-primary {
+  background: #667eea;
+  color: #fff;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .hero h1 {
     font-size: 2.5rem;
   }
-  
+
   .hero-subtitle {
     font-size: 1.1rem;
   }
-  
+
   .hero-cta {
     flex-direction: column;
     align-items: center;
   }
-  
+
   .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .locations-hero h1 {
+    font-size: 2rem;
+  }
+
+  .states-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cities-grid {
     grid-template-columns: 1fr;
   }
 }
