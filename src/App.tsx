@@ -40,6 +40,7 @@ function App() {
           <div className="logo">STREET TEAMS CO</div>
           <div className="nav-links">
             <a href="#services">Services</a>
+            <a href="#case-studies">Case Studies</a>
             <a href="#contact">Contact</a>
           </div>
         </div>
@@ -100,6 +101,124 @@ function App() {
             <div className="stat">
               <div className="stat-number">10M+</div>
               <div className="stat-label">Impressions Generated</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Case Studies Section */}
+      <section id="case-studies" className="case-studies">
+        <div className="container">
+          <h2>Case Studies</h2>
+          <p className="section-subtitle">See how we've delivered results for our clients</p>
+          
+          <div className="case-studies-grid">
+            {/* Cannabis Dispensary Case Study */}
+            <div className="case-study-card">
+              <div className="case-study-image">
+                <div className="case-study-placeholder">
+                  <span>🌿</span>
+                </div>
+                <div className="case-study-badge">Grand Opening</div>
+              </div>
+              <div className="case-study-content">
+                <span className="case-study-category">Cannabis Retail</span>
+                <h3>Cannabis Dispensary Grand Opening Campaign</h3>
+                <p className="case-study-tagline">Driving foot traffic and community buzz for a new dispensary launch</p>
+                
+                <div className="case-study-section">
+                  <h4>The Challenge</h4>
+                  <p>A new cannabis dispensary was opening in a competitive market with several established competitors. They needed to build immediate awareness, drive opening week foot traffic, and establish themselves as a community-friendly, professional retail destination while navigating strict advertising regulations.</p>
+                </div>
+                
+                <div className="case-study-section">
+                  <h4>Our Solution</h4>
+                  <p>Street Teams Co deployed a team of 8 brand ambassadors for a 10-day grand opening campaign. Our team conducted compliant street-level outreach at high-traffic locations including shopping centers, entertainment districts, and community events. We distributed educational materials, promotional offers, and branded merchandise while engaging consumers in conversations about the dispensary's quality products and welcoming atmosphere.</p>
+                </div>
+                
+                <div className="case-study-results">
+                  <h4>Results</h4>
+                  <div className="results-grid">
+                    <div className="result-item">
+                      <span className="result-number">2,500+</span>
+                      <span className="result-label">First Week Customers</span>
+                    </div>
+                    <div className="result-item">
+                      <span className="result-number">15,000</span>
+                      <span className="result-label">Flyers Distributed</span>
+                    </div>
+                    <div className="result-item">
+                      <span className="result-number">340%</span>
+                      <span className="result-label">Above Sales Projections</span>
+                    </div>
+                    <div className="result-item">
+                      <span className="result-number">4.8⭐</span>
+                      <span className="result-label">Google Rating (First Month)</span>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="case-study-testimonial">
+                  <blockquote>
+                    "Street Teams Co exceeded our expectations. Their team was professional, knowledgeable about compliance requirements, and genuinely connected with our target customers. Our opening week numbers were triple what we projected."
+                  </blockquote>
+                  <cite>— Marketing Director, [Client Name Available Upon Request]</cite>
+                </div>
+              </div>
+            </div>
+            
+            {/* Tech Conference Case Study */}
+            <div className="case-study-card">
+              <div className="case-study-image">
+                <div className="case-study-placeholder">
+                  <span>💻</span>
+                </div>
+                <div className="case-study-badge">Event Staffing</div>
+              </div>
+              <div className="case-study-content">
+                <span className="case-study-category">Technology</span>
+                <h3>Tech Conference Booth Staffing</h3>
+                <p className="case-study-tagline">Professional booth staff driving leads at a major technology conference</p>
+                
+                <div className="case-study-section">
+                  <h4>The Challenge</h4>
+                  <p>A B2B SaaS company was exhibiting at a major technology conference with over 15,000 attendees. They needed engaging booth staff who could articulate complex product benefits, qualify leads effectively, and represent their brand professionally to enterprise decision-makers—all while competing for attention among 200+ exhibitors.</p>
+                </div>
+                
+                <div className="case-study-section">
+                  <h4>Our Solution</h4>
+                  <p>Street Teams Co provided a team of 6 tech-savvy brand ambassadors for the 3-day conference. Our team underwent comprehensive product training, including hands-on demos and competitive positioning. We implemented a strategic lead qualification process, engaging attendees with targeted questions to identify high-value prospects. Our staff managed booth flow, conducted live product demonstrations, and captured detailed lead information for the sales team.</p>
+                </div>
+                
+                <div className="case-study-results">
+                  <h4>Results</h4>
+                  <div className="results-grid">
+                    <div className="result-item">
+                      <span className="result-number">847</span>
+                      <span className="result-label">Qualified Leads Captured</span>
+                    </div>
+                    <div className="result-item">
+                      <span className="result-number">156</span>
+                      <span className="result-label">Demo Requests</span>
+                    </div>
+                    <div className="result-item">
+                      <span className="result-number">23</span>
+                      <span className="result-label">Deals Closed (90 Days)</span>
+                    </div>
+                    <div className="result-item">
+                      <span className="result-number">12x</span>
+                      <span className="result-label">ROI on Staffing Cost</span>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="case-study-testimonial">
+                  <blockquote>
+                    "The Street Teams Co staff were indistinguishable from our own employees. They learned our product inside and out and represented our brand better than we could have hoped. The quality of leads they generated was exceptional."
+                  </blockquote>
+                  <cite>— VP of Marketing, [Client Name Available Upon Request]</cite>
+                </div>
+              </div>
             </div>
           </div>
         </div>
