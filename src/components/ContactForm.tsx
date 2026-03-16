@@ -21,6 +21,7 @@ export default function ContactForm() {
         headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
         body: JSON.stringify({
           ...formData,
+          _source: 'StreetTeamsCo',
           _subject: `[Street Teams Co] New inquiry from ${formData.name}`,
         }),
       });
