@@ -63,6 +63,36 @@ const states = [
   { name: 'Wyoming', slug: 'wyoming', abbr: 'WY' },
 ];
 
+// Services
+const services = [
+  { name: 'Street Team Marketing', slug: 'street-team-marketing' },
+  { name: 'Brand Ambassadors', slug: 'brand-ambassadors' },
+  { name: 'Event Staffing', slug: 'event-staffing' },
+  { name: 'Product Sampling', slug: 'product-sampling' },
+  { name: 'Flyer Distribution', slug: 'flyer-distribution' },
+  { name: 'Guerrilla Marketing', slug: 'guerrilla-marketing' },
+  { name: 'Experiential Marketing', slug: 'experiential-marketing' },
+  { name: 'Promotional Staffing', slug: 'promotional-staffing' },
+];
+
+// Industries
+const industries = [
+  { name: 'Cannabis & CBD', slug: 'cannabis' },
+  { name: 'Technology & SaaS', slug: 'technology' },
+  { name: 'Food & Beverage', slug: 'food-beverage' },
+  { name: 'Fitness & Wellness', slug: 'fitness-wellness' },
+  { name: 'Real Estate', slug: 'real-estate' },
+  { name: 'Retail', slug: 'retail' },
+  { name: 'Entertainment', slug: 'entertainment' },
+  { name: 'Automotive', slug: 'automotive' },
+  { name: 'Healthcare', slug: 'healthcare' },
+  { name: 'Financial Services', slug: 'financial-services' },
+  { name: 'Hospitality', slug: 'hospitality' },
+  { name: 'Education', slug: 'education' },
+  { name: 'Sports & Athletics', slug: 'sports' },
+  { name: 'Beauty & Cosmetics', slug: 'beauty-cosmetics' },
+];
+
 function generateHtml(title, description, canonical) {
   return indexHtml
     .replace(
@@ -89,6 +119,8 @@ function ensureDir(dir) {
   }
 }
 
+let count = 0;
+
 // Generate /locations/index.html
 const locationsDir = path.join(distDir, 'locations');
 ensureDir(locationsDir);
@@ -100,13 +132,13 @@ fs.writeFileSync(
     'https://streetteamsco.com/locations'
   )
 );
-console.log('Generated: /locations/index.html');
+count++;
 
 // Generate state pages
 for (const state of states) {
   const stateDir = path.join(locationsDir, state.slug);
   ensureDir(stateDir);
-  
+
   fs.writeFileSync(
     path.join(stateDir, 'index.html'),
     generateHtml(
@@ -115,7 +147,65 @@ for (const state of states) {
       `https://streetteamsco.com/locations/${state.slug}`
     )
   );
-  console.log(`Generated: /locations/${state.slug}/index.html`);
+  count++;
 }
 
-console.log(`\n✅ Generated ${states.length + 1} static pages with unique titles and meta tags!`);
+// Generate /services/index.html
+const servicesDir = path.join(distDir, 'services');
+ensureDir(servicesDir);
+fs.writeFileSync(
+  path.join(servicesDir, 'index.html'),
+  generateHtml(
+    'Street Marketing Services | Brand Ambassadors, Event Staffing & More | Street Teams Co',
+    'Explore our full range of street marketing services: street teams, brand ambassadors, event staffing, product sampling, flyer distribution, guerrilla and experiential marketing nationwide.',
+    'https://streetteamsco.com/services'
+  )
+);
+count++;
+
+// Generate individual service pages
+for (const service of services) {
+  const serviceDir = path.join(servicesDir, service.slug);
+  ensureDir(serviceDir);
+
+  fs.writeFileSync(
+    path.join(serviceDir, 'index.html'),
+    generateHtml(
+      `${service.name} Services | Street Teams Co`,
+      `Professional ${service.name.toLowerCase()} services nationwide. Street Teams Co delivers high-impact ${service.name.toLowerCase()} campaigns in 1,000+ cities.`,
+      `https://streetteamsco.com/services/${service.slug}`
+    )
+  );
+  count++;
+}
+
+// Generate /industries/index.html
+const industriesDir = path.join(distDir, 'industries');
+ensureDir(industriesDir);
+fs.writeFileSync(
+  path.join(industriesDir, 'index.html'),
+  generateHtml(
+    'Industries We Serve | Street Team Marketing by Vertical | Street Teams Co',
+    'Street Teams Co provides specialized street marketing, brand ambassadors, and event staffing for cannabis, tech, food, fitness, real estate, retail, entertainment, and more.',
+    'https://streetteamsco.com/industries'
+  )
+);
+count++;
+
+// Generate individual industry pages
+for (const industry of industries) {
+  const industryDir = path.join(industriesDir, industry.slug);
+  ensureDir(industryDir);
+
+  fs.writeFileSync(
+    path.join(industryDir, 'index.html'),
+    generateHtml(
+      `${industry.name} Street Marketing | Brand Ambassadors & Event Staffing | Street Teams Co`,
+      `Specialized street marketing solutions for the ${industry.name.toLowerCase()} industry. Brand ambassadors, event staffing, and activations tailored to ${industry.name.toLowerCase()}.`,
+      `https://streetteamsco.com/industries/${industry.slug}`
+    )
+  );
+  count++;
+}
+
+console.log(`\n✅ Generated ${count} static pages with unique titles and meta tags!`);
