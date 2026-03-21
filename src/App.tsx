@@ -3,6 +3,10 @@ import './App.css';
 import LocationsIndex from './pages/LocationsIndex';
 import StatePage from './pages/StatePage';
 import CityPage from './pages/CityPage';
+import ServicesIndex from './pages/ServicesIndex';
+import ServicePage from './pages/ServicePage';
+import IndustriesIndex from './pages/IndustriesIndex';
+import IndustryPage from './pages/IndustryPage';
 import NotFound from './pages/NotFound';
 import { useMetaTags } from './hooks/useMetaTags';
 import ContactForm from './components/ContactForm';
@@ -14,18 +18,137 @@ function HomePage() {
     canonical: 'https://streetteamsco.com',
   });
 
+  const scrollToContact = () => {
+    const el = document.getElementById('contact');
+    if (el) window.scrollTo({ top: el.offsetTop - 80, behavior: 'smooth' });
+  };
+
   return (
     <>
       <section className="hero">
-        <div className="hero-content">
-          <h1>Professional Street Marketing Teams</h1>
-          <p className="hero-subtitle">
-            Elite brand ambassadors delivering high-impact street-level marketing campaigns nationwide
-          </p>
-          <div className="hero-cta">
-            <a href="#contact" className="btn btn-primary">Get Started</a>
-            <a href="#services" className="btn btn-secondary">Our Services</a>
+        {/* Blue gradient overlay */}
+        <div className="hero-overlay"></div>
+
+        {/* Animated particles */}
+        <div className="hero-particles">
+          {[...Array(6)].map((_, i) => (
+            <div
+              key={i}
+              className="hero-particle"
+              style={{
+                width: `${(i * 2.3 + 2)}rem`,
+                height: `${(i * 2.3 + 2)}rem`,
+                top: `${(i * 17) % 100}%`,
+                left: `${(i * 23 + 5) % 100}%`,
+                animationDuration: `${i * 1.5 + 4}s`,
+                opacity: 0.15 + (i * 0.05),
+              }}
+            ></div>
+          ))}
+        </div>
+
+        <div className="hero-inner">
+          <div className="hero-grid">
+            {/* Left column */}
+            <div className="hero-left">
+              <div className="hero-badge">
+                <span className="hero-badge-pill">&#127942; #1 HUMAN ENGAGEMENT AGENCY</span>
+              </div>
+
+              <h1 className="hero-heading">
+                <span className="hero-heading-white">STREET TEAMS</span>
+                <span className="hero-heading-gradient">HUMAN TO HUMAN</span>
+                <span className="hero-heading-blue">CONNECTIONS</span>
+              </h1>
+
+              <p className="hero-subtitle">
+                We connect your brand to real humans through authentic
+                <span className="text-yellow"> human experiences</span> that create genuine connections and drive
+                <span className="text-orange"> 40% higher engagement</span>
+              </p>
+
+              <div className="hero-tags">
+                <span className="hero-tag hero-tag-yellow">Human Engagement</span>
+                <span className="hero-tag hero-tag-orange">Authentic Connections</span>
+                <span className="hero-tag hero-tag-blue">Real Experiences</span>
+              </div>
+
+              <div className="hero-stats-grid">
+                <div className="hero-stat-box">
+                  <div className="hero-stat-number text-yellow">100+</div>
+                  <div className="hero-stat-label">CITIES</div>
+                </div>
+                <div className="hero-stat-box">
+                  <div className="hero-stat-number text-orange">40%</div>
+                  <div className="hero-stat-label">HIGHER ROI</div>
+                </div>
+                <div className="hero-stat-box">
+                  <div className="hero-stat-number text-red">24/7</div>
+                  <div className="hero-stat-label">SUPPORT</div>
+                </div>
+              </div>
+
+              <div className="hero-cta">
+                <a href="#contact" className="btn-hero-primary" onClick={(e) => { e.preventDefault(); scrollToContact(); }}>
+                  GET INSTANT QUOTE
+                </a>
+                <button className="btn-hero-secondary" onClick={scrollToContact}>
+                  BOOK STRATEGY CALL &rarr;
+                </button>
+              </div>
+
+              <div className="hero-trust-badges">
+                <div className="trust-badge">
+                  <span className="trust-badge-number">87%</span>
+                  <span className="trust-badge-label">Brand Recall Increase</span>
+                </div>
+                <div className="trust-badge">
+                  <span className="trust-badge-number">3.8x</span>
+                  <span className="trust-badge-label">ROI Multiple</span>
+                </div>
+                <div className="trust-badge">
+                  <span className="trust-badge-number">94%</span>
+                  <span className="trust-badge-label">Client Retention</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Right column - hero image */}
+            <div className="hero-right">
+              <div className="hero-image-wrapper">
+                <img
+                  src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=2000&auto=format&fit=crop"
+                  alt="Professional Street Team Brand Ambassadors Creating Human Connections"
+                  className="hero-image"
+                />
+                <div className="hero-image-gradient"></div>
+                <div className="hero-image-card">
+                  <div className="hero-image-card-inner">
+                    <div className="hero-image-card-title">HUMAN TO HUMAN</div>
+                    <div className="hero-image-card-subtitle">Authentic Brand Connections</div>
+                    <div className="hero-image-card-avatars">
+                      <div className="avatar-dots">
+                        <div className="avatar-dot avatar-dot-yellow"></div>
+                        <div className="avatar-dot avatar-dot-orange"></div>
+                        <div className="avatar-dot avatar-dot-blue"></div>
+                      </div>
+                      <span className="avatar-text">Real People, Real Results</span>
+                    </div>
+                  </div>
+                </div>
+                <div className="hero-image-floating-badge">HUMAN FOCUSED</div>
+              </div>
+            </div>
           </div>
+        </div>
+
+        {/* Scroll indicator */}
+        <div className="hero-scroll-indicator">
+          <a href="#services" onClick={(e) => {
+            e.preventDefault();
+            const el = document.getElementById('services');
+            if (el) window.scrollTo({ top: el.offsetTop - 80, behavior: 'smooth' });
+          }}>&#x25BC;</a>
         </div>
       </section>
 
@@ -99,14 +222,18 @@ function Layout() {
           <div className="nav-links">
             {isHome ? (
               <>
-                <a href="#services">Services</a>
+                <Link to="/services">Services</Link>
+                <Link to="/industries">Industries</Link>
                 <Link to="/locations">Locations</Link>
+                <a href="/blog/">Blog</a>
                 <a href="#contact">Contact</a>
               </>
             ) : (
               <>
-                <Link to="/#services">Services</Link>
+                <Link to="/services">Services</Link>
+                <Link to="/industries">Industries</Link>
                 <Link to="/locations">Locations</Link>
+                <a href="/blog/">Blog</a>
                 <Link to="/#contact">Contact</Link>
               </>
             )}
@@ -116,6 +243,10 @@ function Layout() {
 
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="/services" element={<ServicesIndex />} />
+        <Route path="/services/:service" element={<ServicePage />} />
+        <Route path="/industries" element={<IndustriesIndex />} />
+        <Route path="/industries/:industry" element={<IndustryPage />} />
         <Route path="/locations" element={<LocationsIndex />} />
         <Route path="/locations/:state" element={<StatePage />} />
         <Route path="/locations/:state/:city" element={<CityPage />} />
@@ -130,8 +261,10 @@ function Layout() {
               <p>Professional street marketing nationwide</p>
             </div>
             <div className="footer-links">
-              <Link to="/#services">Services</Link>
+              <Link to="/services">Services</Link>
+              <Link to="/industries">Industries</Link>
               <Link to="/locations">Locations</Link>
+              <a href="/blog/">Blog</a>
               <Link to="/#contact">Contact</Link>
               <a href="mailto:hello@streetteamsco.com">hello@streetteamsco.com</a>
             </div>
