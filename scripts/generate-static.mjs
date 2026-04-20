@@ -208,4 +208,23 @@ for (const industry of industries) {
   count++;
 }
 
+// Generate standalone pages
+const standalonePages = [
+  { slug: 'pricing', title: 'Street Team Marketing Pricing | Brand Ambassador Rates | Street Teams Co', description: 'Street team marketing costs from $25/hr per brand ambassador. Event staffing, product sampling, and guerrilla marketing pricing. Get a custom quote.' },
+  { slug: 'privacy', title: 'Privacy Policy | Street Teams Co', description: 'Street Teams Co privacy policy. Learn how we collect, use, and protect your personal information.' },
+  { slug: 'terms', title: 'Terms of Service | Street Teams Co', description: 'Street Teams Co terms of service. Read our terms and conditions for using our website and engaging our street marketing services.' },
+  { slug: 'our-team', title: 'Our Team | Street Teams Co Leadership & Values', description: 'Meet the experienced team behind Street Teams Co. Learn about our leadership, values, and commitment to delivering exceptional street marketing results.' },
+  { slug: 'testimonials', title: 'Client Success Stories | Street Teams Co', description: 'See how brands achieve measurable results with Street Teams Co. Read testimonials and case studies from our street marketing and brand ambassador campaigns.' },
+];
+
+for (const page of standalonePages) {
+  const pageDir = path.join(distDir, page.slug);
+  ensureDir(pageDir);
+  fs.writeFileSync(
+    path.join(pageDir, 'index.html'),
+    generateHtml(page.title, page.description, `https://streetteamsco.com/${page.slug}`)
+  );
+  count++;
+}
+
 console.log(`\n✅ Generated ${count} static pages with unique titles and meta tags!`);

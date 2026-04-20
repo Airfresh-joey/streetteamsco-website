@@ -10,6 +10,8 @@ import IndustryPage from './pages/IndustryPage';
 import Pricing from './pages/Pricing';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsOfService from './pages/TermsOfService';
+import OurTeam from './pages/OurTeam';
+import Testimonials from './pages/Testimonials';
 import NotFound from './pages/NotFound';
 import { useMetaTags } from './hooks/useMetaTags';
 import ContactForm from './components/ContactForm';
@@ -254,6 +256,8 @@ function AppLayout() {
         <Route path="/pricing" element={<Pricing />} />
         <Route path="/privacy" element={<PrivacyPolicy />} />
         <Route path="/terms" element={<TermsOfService />} />
+        <Route path="/our-team" element={<OurTeam />} />
+        <Route path="/testimonials" element={<Testimonials />} />
         <Route path="/locations" element={<LocationsIndex />} />
         <Route path="/locations/:state" element={<StatePage />} />
         <Route path="/locations/:state/:city" element={<CityPage />} />
@@ -278,6 +282,8 @@ function AppLayout() {
             <div className="footer-section">
               <h4>Company</h4>
               <Link to="/pricing">Pricing</Link>
+              <Link to="/testimonials">Testimonials</Link>
+              <Link to="/our-team">Our Team</Link>
               <Link to="/industries">Industries</Link>
               <Link to="/locations">Locations</Link>
               <a href="/blog/">Blog</a>
