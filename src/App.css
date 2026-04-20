@@ -1472,6 +1472,37 @@ body {
   }
 }
 
+/* Related Posts */
+.related-posts-list {
+  list-style: none;
+  padding: 0;
+}
+
+.related-posts-list li {
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.related-posts-list a {
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.related-posts-list a:hover {
+  text-decoration: underline;
+}
+
+.team-faq {
+  padding: 4rem 0;
+  background: #f8f9fa;
+}
+
+.team-faq h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
 /* Legal Pages */
 .legal-page {
   min-height: 80vh;

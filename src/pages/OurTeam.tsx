@@ -67,6 +67,36 @@ export default function OurTeam() {
     title: 'Our Team | Street Teams Co Leadership & Values',
     description: 'Meet the experienced team behind Street Teams Co. Learn about our leadership, values, and commitment to delivering exceptional street marketing results.',
     canonical: 'https://streetteamsco.com/our-team',
+    schema: {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      'mainEntity': [
+        {
+          '@type': 'Question',
+          'name': 'How many brand ambassadors does Street Teams Co have?',
+          'acceptedAnswer': {
+            '@type': 'Answer',
+            'text': 'Street Teams Co has a network of over 10,000 trained brand ambassadors across 50+ markets nationwide. Each ambassador is background-checked, product-trained, and rated on a reliability scoring system.',
+          },
+        },
+        {
+          '@type': 'Question',
+          'name': 'What is Street Teams Co\'s show-up rate?',
+          'acceptedAnswer': {
+            '@type': 'Answer',
+            'text': 'Street Teams Co maintains a 98% show-up rate across all campaigns, backed by our reliability scoring system and backup staffing protocols. Our client satisfaction rating is 4.9 out of 5.',
+          },
+        },
+        {
+          '@type': 'Question',
+          'name': 'How does Street Teams Co train brand ambassadors?',
+          'acceptedAnswer': {
+            '@type': 'Answer',
+            'text': 'Every brand ambassador goes through brand-specific training that includes product knowledge, talking points, appearance standards, and campaign objectives. We also provide on-site field management to ensure quality execution.',
+          },
+        },
+      ],
+    },
   });
 
   return (
@@ -102,7 +132,7 @@ export default function OurTeam() {
           <div className="leadership-grid">
             {leadership.map((member) => (
               <div key={member.name} className="team-member">
-                <img src={member.image} alt={member.name} className="member-image" />
+                <img src={member.image} alt={member.name} className="member-image" loading="lazy" width={400} height={400} />
                 <h3 className="member-name">{member.name}</h3>
                 <div className="member-title">{member.title}</div>
                 <p className="member-bio">{member.bio}</p>
@@ -163,6 +193,26 @@ export default function OurTeam() {
                 <span className="ambassador-stat-label">Avg Response Time</span>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="team-faq">
+        <div className="container">
+          <h2>Frequently Asked Questions</h2>
+          <div className="faq-list">
+            <details>
+              <summary>How many brand ambassadors does Street Teams Co have?</summary>
+              <p>Street Teams Co has a network of over 10,000 trained brand ambassadors across 50+ markets nationwide. Each ambassador is background-checked, product-trained, and rated on a reliability scoring system.</p>
+            </details>
+            <details>
+              <summary>What is Street Teams Co's show-up rate?</summary>
+              <p>Street Teams Co maintains a 98% show-up rate across all campaigns, backed by our reliability scoring system and backup staffing protocols. Our client satisfaction rating is 4.9 out of 5.</p>
+            </details>
+            <details>
+              <summary>How does Street Teams Co train brand ambassadors?</summary>
+              <p>Every brand ambassador goes through brand-specific training that includes product knowledge, talking points, appearance standards, and campaign objectives. We also provide on-site field management to ensure quality execution.</p>
+            </details>
           </div>
         </div>
       </section>

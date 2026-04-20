@@ -126,6 +126,9 @@ function HomePage() {
                   src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=2000&auto=format&fit=crop"
                   alt="Professional Street Team Brand Ambassadors Creating Human Connections"
                   className="hero-image"
+                  width={2000}
+                  height={1333}
+                  fetchPriority="high"
                 />
                 <div className="hero-image-gradient"></div>
                 <div className="hero-image-card">

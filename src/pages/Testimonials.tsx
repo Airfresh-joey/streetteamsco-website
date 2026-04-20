@@ -76,6 +76,36 @@ export default function Testimonials() {
     title: 'Client Success Stories | Street Teams Co',
     description: 'See how brands achieve measurable results with Street Teams Co. Read testimonials and case studies from our successful street marketing and brand ambassador campaigns.',
     canonical: 'https://streetteamsco.com/testimonials',
+    schema: {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      'mainEntity': [
+        {
+          '@type': 'Question',
+          'name': 'What results can I expect from a street team campaign?',
+          'acceptedAnswer': {
+            '@type': 'Answer',
+            'text': 'Results vary by campaign type. Our clients typically see 25-40% brand awareness increases, 3-5x ROI multiples, and significant social media engagement. Product sampling campaigns often drive 15-25% sales lifts during activation periods.',
+          },
+        },
+        {
+          '@type': 'Question',
+          'name': 'How do you measure street team campaign success?',
+          'acceptedAnswer': {
+            '@type': 'Answer',
+            'text': 'We track multiple KPIs including impressions generated, samples distributed, leads captured, social media engagement, and direct sales impact. Every campaign includes GPS tracking, daily photo reports, and a comprehensive post-campaign ROI analysis.',
+          },
+        },
+        {
+          '@type': 'Question',
+          'name': 'Do you have experience in my industry?',
+          'acceptedAnswer': {
+            '@type': 'Answer',
+            'text': 'Street Teams Co has executed 500+ campaigns across 14+ industries including food & beverage, technology, fitness, cannabis, real estate, entertainment, automotive, healthcare, and more. We tailor our approach to each industry\'s unique needs.',
+          },
+        },
+      ],
+    },
   });
 
   return (
@@ -120,7 +150,7 @@ export default function Testimonials() {
                   </ul>
                 </div>
                 <div className="testimonial-author">
-                  <img src={testimonial.image} alt={testimonial.name} className="author-image" />
+                  <img src={testimonial.image} alt={testimonial.name} className="author-image" loading="lazy" width={200} height={200} />
                   <div className="author-info">
                     <div className="author-name">{testimonial.name}</div>
                     <div className="author-title">{testimonial.title}</div>
@@ -132,6 +162,26 @@ export default function Testimonials() {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="testimonials-content">
+        <div className="container">
+          <h2>Frequently Asked Questions</h2>
+          <div className="faq-list">
+            <details>
+              <summary>What results can I expect from a street team campaign?</summary>
+              <p>Results vary by campaign type. Our clients typically see 25-40% brand awareness increases, 3-5x ROI multiples, and significant social media engagement. Product sampling campaigns often drive 15-25% sales lifts during activation periods.</p>
+            </details>
+            <details>
+              <summary>How do you measure street team campaign success?</summary>
+              <p>We track multiple KPIs including impressions generated, samples distributed, leads captured, social media engagement, and direct sales impact. Every campaign includes GPS tracking, daily photo reports, and a comprehensive post-campaign ROI analysis.</p>
+            </details>
+            <details>
+              <summary>Do you have experience in my industry?</summary>
+              <p>Street Teams Co has executed 500+ campaigns across 14+ industries including food & beverage, technology, fitness, cannabis, real estate, entertainment, automotive, healthcare, and more. We tailor our approach to each industry's unique needs.</p>
+            </details>
           </div>
         </div>
       </section>
