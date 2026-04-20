@@ -5,7 +5,7 @@ interface MetaTagsOptions {
   description: string;
   canonical?: string;
   ogImage?: string;
-  schema?: Record<string, unknown>;
+  schema?: Record<string, unknown> | Record<string, unknown>[];
 }
 
 function setMetaTag(attr: string, key: string, content: string) {
@@ -55,19 +55,25 @@ export function useMetaTags({ title, description, canonical, ogImage, schema }: 
       linkCanonical.remove();
     }
 
-    // JSON-LD Schema
+    // JSON-LD Schema (supports single object or array)
     if (schema) {
-      const existingScript = document.querySelector('script[data-page-schema]');
-      if (existingScript) existingScript.remove();
+      // Remove existing page schemas
+      document.querySelectorAll('script[data-page-schema]').forEach(el => el.remove());
 
-      const script = document.createElement('script');
-      script.type = 'application/ld+json';
-      script.setAttribute('data-page-schema', 'true');
-      script.textContent = JSON.stringify(schema);
-      document.head.appendChild(script);
+      const schemas = Array.isArray(schema) ? schema : [schema];
+      const scripts: HTMLScriptElement[] = [];
+
+      schemas.forEach(s => {
+        const script = document.createElement('script');
+        script.type = 'application/ld+json';
+        script.setAttribute('data-page-schema', 'true');
+        script.textContent = JSON.stringify(s);
+        document.head.appendChild(script);
+        scripts.push(script);
+      });
 
       return () => {
-        script.remove();
+        scripts.forEach(s => s.remove());
       };
     }
   }, [title, description, canonical, ogImage, schema]);

@@ -20,33 +20,45 @@ export default function CityPage() {
       : 'Location not found.',
     canonical: canonicalUrl,
     ogImage: 'https://streetteamsco.com/images/og-image.jpg',
-    schema: result ? {
-      '@context': 'https://schema.org',
-      '@type': 'LocalBusiness',
-      'name': `Street Teams Co - ${result.city.name}`,
-      'description': `Professional street team marketing and brand ambassador services in ${result.city.name}, ${result.state.name}.`,
-      'url': canonicalUrl,
-      'areaServed': {
-        '@type': 'City',
-        'name': result.city.name,
-        'containedInPlace': {
-          '@type': 'State',
-          'name': result.state.name,
+    schema: result ? [
+      {
+        '@context': 'https://schema.org',
+        '@type': 'LocalBusiness',
+        'name': `Street Teams Co - ${result.city.name}`,
+        'description': `Professional street team marketing and brand ambassador services in ${result.city.name}, ${result.state.name}.`,
+        'url': canonicalUrl,
+        'areaServed': {
+          '@type': 'City',
+          'name': result.city.name,
+          'containedInPlace': {
+            '@type': 'State',
+            'name': result.state.name,
+          },
         },
+        'parentOrganization': {
+          '@type': 'Organization',
+          'name': 'Street Teams Co',
+          'url': 'https://streetteamsco.com',
+        },
+        'serviceType': [
+          'Street Team Marketing',
+          'Brand Ambassador Services',
+          'Event Staffing',
+          'Product Sampling',
+          'Guerrilla Marketing',
+        ],
       },
-      'parentOrganization': {
-        '@type': 'Organization',
-        'name': 'Street Teams Co',
-        'url': 'https://streetteamsco.com',
+      {
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        'itemListElement': [
+          { '@type': 'ListItem', 'position': 1, 'name': 'Home', 'item': 'https://streetteamsco.com' },
+          { '@type': 'ListItem', 'position': 2, 'name': 'Locations', 'item': 'https://streetteamsco.com/locations' },
+          { '@type': 'ListItem', 'position': 3, 'name': result.state.name, 'item': `https://streetteamsco.com/locations/${result.state.slug}` },
+          { '@type': 'ListItem', 'position': 4, 'name': result.city.name, 'item': canonicalUrl },
+        ],
       },
-      'serviceType': [
-        'Street Team Marketing',
-        'Brand Ambassador Services',
-        'Event Staffing',
-        'Product Sampling',
-        'Guerrilla Marketing',
-      ],
-    } : undefined,
+    ] : undefined,
   });
 
   if (!result) return <NotFound />;

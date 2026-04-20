@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route, Link, useLocation } from 'react-router-dom';
 import './App.css';
 import LocationsIndex from './pages/LocationsIndex';
@@ -226,13 +227,29 @@ function HomePage() {
 function AppLayout() {
   const location = useLocation();
   const isHome = location.pathname === '/';
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  // Close menu on route change
+  useEffect(() => {
+    setMenuOpen(false);
+  }, [location.pathname]);
 
   return (
     <div className="app">
       <nav className="nav">
         <div className="nav-container">
           <Link to="/" className="logo">STREET TEAMS CO</Link>
-          <div className="nav-links">
+          <button
+            className={`nav-hamburger ${menuOpen ? 'open' : ''}`}
+            onClick={() => setMenuOpen(!menuOpen)}
+            aria-label="Toggle navigation menu"
+            aria-expanded={menuOpen}
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+          <div className={`nav-links ${menuOpen ? 'nav-open' : ''}`}>
             <Link to="/services">Services</Link>
             <Link to="/pricing">Pricing</Link>
             <Link to="/industries">Industries</Link>

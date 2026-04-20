@@ -17,6 +17,15 @@ export default function IndustryPage() {
     canonical: industry
       ? `https://streetteamsco.com/industries/${industry.slug}`
       : undefined,
+    schema: industry ? {
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      'itemListElement': [
+        { '@type': 'ListItem', 'position': 1, 'name': 'Home', 'item': 'https://streetteamsco.com' },
+        { '@type': 'ListItem', 'position': 2, 'name': 'Industries', 'item': 'https://streetteamsco.com/industries' },
+        { '@type': 'ListItem', 'position': 3, 'name': industry.name, 'item': `https://streetteamsco.com/industries/${industry.slug}` },
+      ],
+    } : undefined,
   });
 
   if (!industry) return <NotFound />;

@@ -17,6 +17,26 @@ export default function ServicePage() {
     canonical: service
       ? `https://streetteamsco.com/services/${service.slug}`
       : undefined,
+    schema: service ? [
+      {
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        'itemListElement': [
+          { '@type': 'ListItem', 'position': 1, 'name': 'Home', 'item': 'https://streetteamsco.com' },
+          { '@type': 'ListItem', 'position': 2, 'name': 'Services', 'item': 'https://streetteamsco.com/services' },
+          { '@type': 'ListItem', 'position': 3, 'name': service.name, 'item': `https://streetteamsco.com/services/${service.slug}` },
+        ],
+      },
+      {
+        '@context': 'https://schema.org',
+        '@type': 'Service',
+        'name': service.name,
+        'provider': { '@type': 'Organization', 'name': 'Street Teams Co', 'url': 'https://streetteamsco.com' },
+        'description': service.description,
+        'areaServed': 'United States',
+        'url': `https://streetteamsco.com/services/${service.slug}`,
+      },
+    ] : undefined,
   });
 
   if (!service) return <NotFound />;

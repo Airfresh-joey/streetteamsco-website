@@ -50,6 +50,21 @@
       "sameAs": []
     }
     </script>
+
+    <!-- Schema.org WebSite for sitelinks search -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Street Teams Co",
+      "url": "https://streetteamsco.com",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://streetteamsco.com/locations?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
   </head>
   <body>
     <div id="root"></div>
