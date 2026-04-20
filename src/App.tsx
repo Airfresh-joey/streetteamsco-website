@@ -8,6 +8,8 @@ import ServicePage from './pages/ServicePage';
 import IndustriesIndex from './pages/IndustriesIndex';
 import IndustryPage from './pages/IndustryPage';
 import Pricing from './pages/Pricing';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import TermsOfService from './pages/TermsOfService';
 import NotFound from './pages/NotFound';
 import { useMetaTags } from './hooks/useMetaTags';
 import ContactForm from './components/ContactForm';
@@ -250,6 +252,8 @@ function AppLayout() {
         <Route path="/industries" element={<IndustriesIndex />} />
         <Route path="/industries/:industry" element={<IndustryPage />} />
         <Route path="/pricing" element={<Pricing />} />
+        <Route path="/privacy" element={<PrivacyPolicy />} />
+        <Route path="/terms" element={<TermsOfService />} />
         <Route path="/locations" element={<LocationsIndex />} />
         <Route path="/locations/:state" element={<StatePage />} />
         <Route path="/locations/:state/:city" element={<CityPage />} />
@@ -287,6 +291,10 @@ function AppLayout() {
           </div>
           <div className="footer-bottom">
             <p>&copy; 2026 Street Teams Co. All rights reserved.</p>
+            <div className="footer-legal">
+              <Link to="/privacy">Privacy Policy</Link>
+              <Link to="/terms">Terms of Service</Link>
+            </div>
           </div>
         </div>
       </footer>
