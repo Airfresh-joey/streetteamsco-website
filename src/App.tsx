@@ -29,6 +29,15 @@ function HomePage() {
     if (el) window.scrollTo({ top: el.offsetTop - 80, behavior: 'smooth' });
   };
 
+  const openCalendly = () => {
+    const calendlyUrl = import.meta.env.VITE_CALENDLY_URL;
+    if (calendlyUrl && window.Calendly) {
+      window.Calendly.initPopupWidget({ url: calendlyUrl });
+    } else {
+      scrollToContact();
+    }
+  };
+
   return (
     <>
       <section className="hero">
@@ -98,7 +107,7 @@ function HomePage() {
                 <a href="#contact" className="btn-hero-primary" onClick={(e) => { e.preventDefault(); scrollToContact(); }}>
                   GET INSTANT QUOTE
                 </a>
-                <button className="btn-hero-secondary" onClick={scrollToContact}>
+                <button className="btn-hero-secondary" onClick={openCalendly}>
                   BOOK STRATEGY CALL &rarr;
                 </button>
               </div>
