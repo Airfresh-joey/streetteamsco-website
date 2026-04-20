@@ -1234,3 +1234,176 @@ body {
 .contact-form-success p {
   color: rgba(255,255,255,0.8);
 }
+
+/* Pricing Table */
+.pricing-table-wrapper {
+  overflow-x: auto;
+  margin: 1.5rem 0 2.5rem;
+}
+
+.pricing-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.pricing-table th {
+  background: #1a1a2e;
+  color: white;
+  padding: 1rem;
+  text-align: left;
+  font-weight: 600;
+}
+
+.pricing-table td {
+  padding: 0.85rem 1rem;
+  border-bottom: 1px solid #eee;
+}
+
+.pricing-table tr:hover td {
+  background: #f8f9fa;
+}
+
+.pricing-card {
+  text-align: center;
+}
+
+.pricing-range {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #2563eb;
+  margin: 0.5rem 0 1rem;
+}
+
+.pricing-card ul {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+  margin: 1rem 0;
+}
+
+.pricing-card ul li {
+  padding: 0.4rem 0;
+  padding-left: 1.2rem;
+  position: relative;
+}
+
+.pricing-card ul li::before {
+  content: "\2713";
+  position: absolute;
+  left: 0;
+  color: #22c55e;
+  font-weight: bold;
+}
+
+.pricing-note {
+  font-size: 0.85rem;
+  color: #666;
+  font-style: italic;
+  margin-top: 0.5rem;
+}
+
+/* Footer Sections */
+.footer-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.footer-section h4 {
+  color: #fff;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+}
+
+.footer-section a {
+  color: rgba(255,255,255,0.7);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.2s;
+}
+
+.footer-section a:hover {
+  color: #fff;
+}
+
+.footer-section p {
+  color: rgba(255,255,255,0.6);
+  font-size: 0.85rem;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 3rem;
+}
+
+/* Nav CTA button */
+.nav-cta {
+  background: #2563eb;
+  color: white !important;
+  padding: 0.5rem 1.25rem;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+
+.nav-cta:hover {
+  background: #1d4ed8;
+}
+
+/* Service list for service pages */
+.service-list {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 2rem;
+}
+
+.service-list li {
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #eee;
+  line-height: 1.6;
+}
+
+/* City page FAQ */
+.city-faq {
+  margin: 2rem 0;
+}
+
+.city-faq details {
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  margin-bottom: 0.75rem;
+  overflow: hidden;
+}
+
+.city-faq summary {
+  padding: 1rem 1.25rem;
+  cursor: pointer;
+  font-weight: 600;
+  color: #1a1a2e;
+  background: #f8f9fa;
+}
+
+.city-faq details p {
+  padding: 1rem 1.25rem;
+  line-height: 1.7;
+  color: #555;
+}
+
+@media (max-width: 768px) {
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .pricing-table {
+    font-size: 0.85rem;
+  }
+
+  .pricing-range {
+    font-size: 1.4rem;
+  }
+}

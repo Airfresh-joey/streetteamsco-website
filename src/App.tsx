@@ -7,6 +7,7 @@ import ServicesIndex from './pages/ServicesIndex';
 import ServicePage from './pages/ServicePage';
 import IndustriesIndex from './pages/IndustriesIndex';
 import IndustryPage from './pages/IndustryPage';
+import Pricing from './pages/Pricing';
 import NotFound from './pages/NotFound';
 import { useMetaTags } from './hooks/useMetaTags';
 import ContactForm from './components/ContactForm';
@@ -14,7 +15,7 @@ import ContactForm from './components/ContactForm';
 function HomePage() {
   useMetaTags({
     title: 'Street Teams Co | Professional Brand Ambassadors & Street Marketing Nationwide',
-    description: 'Street Teams Co provides elite brand ambassadors delivering high-impact street-level marketing campaigns nationwide. Street activations, event staffing, and product sampling in 1,000+ cities.',
+    description: 'Street Teams Co provides elite brand ambassadors and street marketing campaigns in 1,000+ US cities. Event staffing, product sampling, and guerrilla marketing.',
     canonical: 'https://streetteamsco.com',
   });
 
@@ -75,7 +76,7 @@ function HomePage() {
 
               <div className="hero-stats-grid">
                 <div className="hero-stat-box">
-                  <div className="hero-stat-number text-yellow">100+</div>
+                  <div className="hero-stat-number text-yellow">1,000+</div>
                   <div className="hero-stat-label">CITIES</div>
                 </div>
                 <div className="hero-stat-box">
@@ -156,26 +157,30 @@ function HomePage() {
         <div className="container">
           <h2>What We Do</h2>
           <div className="services-grid">
-            <div className="service-card">
-              <div className="service-icon">📍</div>
+            <Link to="/services/street-teams" className="service-card">
               <h3>Street Activations</h3>
               <p>High-traffic guerrilla marketing campaigns that generate buzz and drive brand awareness</p>
-            </div>
-            <div className="service-card">
-              <div className="service-icon">🎯</div>
+            </Link>
+            <Link to="/services/brand-ambassadors" className="service-card">
               <h3>Brand Ambassadors</h3>
               <p>Professional teams trained to represent your brand with enthusiasm and expertise</p>
-            </div>
-            <div className="service-card">
-              <div className="service-icon">📊</div>
+            </Link>
+            <Link to="/services/event-staffing" className="service-card">
               <h3>Event Staffing</h3>
               <p>Experienced staff for trade shows, festivals, conferences, and special events</p>
-            </div>
-            <div className="service-card">
-              <div className="service-icon">🚀</div>
+            </Link>
+            <Link to="/services/product-sampling" className="service-card">
               <h3>Product Sampling</h3>
               <p>Direct-to-consumer product distribution and sampling campaigns</p>
-            </div>
+            </Link>
+            <Link to="/services/guerrilla-marketing" className="service-card">
+              <h3>Guerrilla Marketing</h3>
+              <p>LED trucks, wild posting, pop-up experiences, and unconventional campaigns</p>
+            </Link>
+            <Link to="/pricing" className="service-card">
+              <h3>View Pricing</h3>
+              <p>Transparent pricing for all services. Brand ambassadors from $25/hr.</p>
+            </Link>
           </div>
         </div>
       </section>
@@ -188,12 +193,16 @@ function HomePage() {
               <div className="stat-label">Campaigns Executed</div>
             </div>
             <div className="stat">
-              <div className="stat-number">50+</div>
+              <div className="stat-number">1,000+</div>
               <div className="stat-label">Cities Nationwide</div>
             </div>
             <div className="stat">
               <div className="stat-number">10M+</div>
               <div className="stat-label">Impressions Generated</div>
+            </div>
+            <div className="stat">
+              <div className="stat-number">94%</div>
+              <div className="stat-label">Client Retention Rate</div>
             </div>
           </div>
         </div>
@@ -210,7 +219,7 @@ function HomePage() {
   );
 }
 
-function Layout() {
+function AppLayout() {
   const location = useLocation();
   const isHome = location.pathname === '/';
 
@@ -220,22 +229,15 @@ function Layout() {
         <div className="nav-container">
           <Link to="/" className="logo">STREET TEAMS CO</Link>
           <div className="nav-links">
+            <Link to="/services">Services</Link>
+            <Link to="/pricing">Pricing</Link>
+            <Link to="/industries">Industries</Link>
+            <Link to="/locations">Locations</Link>
+            <a href="/blog/">Blog</a>
             {isHome ? (
-              <>
-                <Link to="/services">Services</Link>
-                <Link to="/industries">Industries</Link>
-                <Link to="/locations">Locations</Link>
-                <a href="/blog/">Blog</a>
-                <a href="#contact">Contact</a>
-              </>
+              <a href="#contact" className="nav-cta">Get Quote</a>
             ) : (
-              <>
-                <Link to="/services">Services</Link>
-                <Link to="/industries">Industries</Link>
-                <Link to="/locations">Locations</Link>
-                <a href="/blog/">Blog</a>
-                <Link to="/#contact">Contact</Link>
-              </>
+              <Link to="/#contact" className="nav-cta">Get Quote</Link>
             )}
           </div>
         </div>
@@ -247,6 +249,7 @@ function Layout() {
         <Route path="/services/:service" element={<ServicePage />} />
         <Route path="/industries" element={<IndustriesIndex />} />
         <Route path="/industries/:industry" element={<IndustryPage />} />
+        <Route path="/pricing" element={<Pricing />} />
         <Route path="/locations" element={<LocationsIndex />} />
         <Route path="/locations/:state" element={<StatePage />} />
         <Route path="/locations/:state/:city" element={<CityPage />} />
@@ -258,15 +261,28 @@ function Layout() {
           <div className="footer-content">
             <div className="footer-brand">
               <Link to="/" className="logo">STREET TEAMS CO</Link>
-              <p>Professional street marketing nationwide</p>
+              <p>Professional street marketing and brand ambassador services nationwide. Over 500 campaigns in 1,000+ US cities.</p>
             </div>
-            <div className="footer-links">
-              <Link to="/services">Services</Link>
+            <div className="footer-section">
+              <h4>Services</h4>
+              <Link to="/services/street-teams">Street Teams</Link>
+              <Link to="/services/brand-ambassadors">Brand Ambassadors</Link>
+              <Link to="/services/guerrilla-marketing">Guerrilla Marketing</Link>
+              <Link to="/services/event-staffing">Event Staffing</Link>
+              <Link to="/services/product-sampling">Product Sampling</Link>
+            </div>
+            <div className="footer-section">
+              <h4>Company</h4>
+              <Link to="/pricing">Pricing</Link>
               <Link to="/industries">Industries</Link>
               <Link to="/locations">Locations</Link>
               <a href="/blog/">Blog</a>
-              <Link to="/#contact">Contact</Link>
+            </div>
+            <div className="footer-section">
+              <h4>Contact</h4>
               <a href="mailto:hello@streetteamsco.com">hello@streetteamsco.com</a>
+              <p>50+ states &middot; 1,000+ cities</p>
+              <p>Response within 24 hours</p>
             </div>
           </div>
           <div className="footer-bottom">
@@ -281,7 +297,7 @@ function Layout() {
 function App() {
   return (
     <BrowserRouter>
-      <Layout />
+      <AppLayout />
     </BrowserRouter>
   );
 }
