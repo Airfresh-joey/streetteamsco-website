@@ -1977,3 +1977,194 @@ body {
     gap: 1.5rem;
   }
 }
+
+/* Client Logos Section */
+.client-logos {
+  padding: 3rem 2rem;
+  background: #fff;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.client-logos-label {
+  text-align: center;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #9ca3af;
+  margin-bottom: 1.5rem;
+}
+
+.client-logos-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem 3rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.client-logo {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #9ca3af;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  white-space: nowrap;
+  transition: color 0.3s;
+  user-select: none;
+}
+
+.client-logo:hover {
+  color: #4b5563;
+}
+
+@media (max-width: 768px) {
+  .client-logos-grid {
+    gap: 1.25rem 2rem;
+  }
+  .client-logo {
+    font-size: 0.95rem;
+  }
+}
+
+/* The Street Teams Co Promise */
+.promise {
+  padding: 80px 2rem;
+  background: #f9fafb;
+}
+
+.promise h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #1f2937;
+  margin-bottom: 3rem;
+}
+
+.promise-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.promise-card {
+  background: #fff;
+  padding: 2.5rem 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+  text-align: center;
+  border-top: 4px solid #2563eb;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.promise-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
+
+.promise-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.promise-card h3 {
+  font-size: 1.35rem;
+  color: #1f2937;
+  margin-bottom: 0.75rem;
+}
+
+.promise-card p {
+  color: #6b7280;
+  line-height: 1.7;
+  font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+  .promise-grid {
+    grid-template-columns: 1fr;
+  }
+  .promise h2 {
+    font-size: 2rem;
+  }
+}
+
+/* Homepage Testimonials */
+.home-testimonials {
+  padding: 80px 2rem;
+  background: #fff;
+}
+
+.home-testimonials h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #1f2937;
+  margin-bottom: 3rem;
+}
+
+.home-testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.home-testimonial-card {
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1.5rem;
+  transition: box-shadow 0.3s;
+}
+
+.home-testimonial-card:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.home-testimonial-quote {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #374151;
+}
+
+.home-testimonial-quote .quote-mark {
+  font-size: 2.5rem;
+  color: #2563eb;
+  font-weight: 800;
+  line-height: 0;
+  position: relative;
+  top: 0.35rem;
+  margin-right: 0.15rem;
+}
+
+.home-testimonial-author {
+  border-top: 1px solid #e5e7eb;
+  padding-top: 1rem;
+}
+
+.home-testimonial-name {
+  font-weight: 700;
+  color: #1f2937;
+  font-size: 1rem;
+}
+
+.home-testimonial-title {
+  font-size: 0.9rem;
+  color: #6b7280;
+}
+
+@media (max-width: 768px) {
+  .home-testimonials-grid {
+    grid-template-columns: 1fr;
+  }
+  .home-testimonials h2 {
+    font-size: 2rem;
+  }
+}

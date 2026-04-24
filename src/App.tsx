@@ -206,6 +206,25 @@ function HomePage() {
         </div>
       </section>
 
+      {/* Client Logos */}
+      <section className="client-logos">
+        <div className="container">
+          <p className="client-logos-label">Trusted by Leading Brands</p>
+          <div className="client-logos-grid">
+            <span className="client-logo">Netflix</span>
+            <span className="client-logo">Microsoft</span>
+            <span className="client-logo">Apple</span>
+            <span className="client-logo">Starbucks</span>
+            <span className="client-logo">Lyft</span>
+            <span className="client-logo">Nissan</span>
+            <span className="client-logo">Cirque du Soleil</span>
+            <span className="client-logo">1800 Tequila</span>
+            <span className="client-logo">Williams Racing</span>
+            <span className="client-logo">TED</span>
+          </div>
+        </div>
+      </section>
+
       <section id="services" className="services">
         <div className="container">
           <h2>Street Marketing Services We Offer</h2>
@@ -242,20 +261,93 @@ function HomePage() {
         <div className="container">
           <div className="stats-grid">
             <div className="stat">
-              <div className="stat-number">500+</div>
-              <div className="stat-label">Campaigns Executed</div>
+              <div className="stat-number">10,000+</div>
+              <div className="stat-label">Staff Nationwide</div>
             </div>
             <div className="stat">
               <div className="stat-number">1,000+</div>
-              <div className="stat-label">Cities Nationwide</div>
+              <div className="stat-label">Cities</div>
             </div>
             <div className="stat">
-              <div className="stat-number">10M+</div>
-              <div className="stat-label">Impressions Generated</div>
+              <div className="stat-number">500+</div>
+              <div className="stat-label">Campaigns</div>
             </div>
             <div className="stat">
               <div className="stat-number">94%</div>
-              <div className="stat-label">Client Retention Rate</div>
+              <div className="stat-label">Client Retention</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* The Street Teams Co Promise */}
+      <section className="promise">
+        <div className="container">
+          <h2>The Street Teams Co Promise</h2>
+          <div className="promise-grid">
+            <div className="promise-card">
+              <div className="promise-icon">&#9989;</div>
+              <h3>Show-Up Guarantee</h3>
+              <p>If any team member doesn't show, we replace them immediately or credit your account. No excuses, no exceptions.</p>
+            </div>
+            <div className="promise-card">
+              <div className="promise-icon">&#127891;</div>
+              <h3>Trained &amp; Briefed</h3>
+              <p>Every street team member completes your brand training before deployment. They represent your brand like it's their own.</p>
+            </div>
+            <div className="promise-card">
+              <div className="promise-icon">&#128205;</div>
+              <h3>Real-Time Reporting</h3>
+              <p>Live GPS tracking, photo uploads, and engagement metrics on every campaign. Full visibility from start to finish.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials with Results */}
+      <section className="home-testimonials">
+        <div className="container">
+          <h2>What Our Clients Say</h2>
+          <div className="home-testimonials-grid">
+            <div className="home-testimonial-card">
+              <div className="home-testimonial-quote">
+                <span className="quote-mark">&ldquo;</span>
+                Street Teams Co deployed 40 brand ambassadors across 6 cities in one week. Our client's product sampling campaign generated a 28% trial-to-purchase rate.
+              </div>
+              <div className="home-testimonial-author">
+                <div className="home-testimonial-name">Amanda R.</div>
+                <div className="home-testimonial-title">Agency Director</div>
+              </div>
+            </div>
+            <div className="home-testimonial-card">
+              <div className="home-testimonial-quote">
+                <span className="quote-mark">&ldquo;</span>
+                We switched from ATN to Street Teams Co last year. Better staff quality, faster response times, and 20% lower costs.
+              </div>
+              <div className="home-testimonial-author">
+                <div className="home-testimonial-name">Kevin S.</div>
+                <div className="home-testimonial-title">Marketing VP</div>
+              </div>
+            </div>
+            <div className="home-testimonial-card">
+              <div className="home-testimonial-quote">
+                <span className="quote-mark">&ldquo;</span>
+                Their guerrilla marketing team turned heads in Times Square. We got 50,000+ impressions in a single day and the photos went viral on social.
+              </div>
+              <div className="home-testimonial-author">
+                <div className="home-testimonial-name">Nicole P.</div>
+                <div className="home-testimonial-title">Brand Manager</div>
+              </div>
+            </div>
+            <div className="home-testimonial-card">
+              <div className="home-testimonial-quote">
+                <span className="quote-mark">&ldquo;</span>
+                Used them for 3 trade shows this year. Always professional, always on time. My go-to for event staffing nationwide.
+              </div>
+              <div className="home-testimonial-author">
+                <div className="home-testimonial-name">Jason M.</div>
+                <div className="home-testimonial-title">Event Director</div>
+              </div>
             </div>
           </div>
         </div>
