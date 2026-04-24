@@ -141,9 +141,19 @@ if (fs.existsSync(compareDir)) {
 // Blog index
 addUrl('/blog/', 0.8, 'daily');
 
-// Blog posts
+// Blog posts (World Cup posts get higher priority)
+const worldCupBlogSlugs = [
+  'world-cup-2026-staffing-timeline',
+  'world-cup-2026-experiential-marketing-guide',
+  'world-cup-2026-event-staffing-cost',
+  'bilingual-multilingual-staff-world-cup-2026',
+  'world-cup-2026-fan-zone-staffing-guide',
+  'world-cup-2026-staffing-agency-comparison',
+  'how-to-activate-world-cup-2026-without-fifa-sponsorship',
+];
 blogFiles.forEach(slug => {
-  addUrl(`/blog/${slug}.html`, 0.6, 'monthly');
+  const isWorldCup = worldCupBlogSlugs.includes(slug);
+  addUrl(`/blog/${slug}.html`, isWorldCup ? 0.8 : 0.6, isWorldCup ? 'weekly' : 'monthly');
 });
 
 // Build XML
