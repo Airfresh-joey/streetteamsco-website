@@ -7,6 +7,10 @@
     { "source": "/fifa-world-cup-2026-staffing", "destination": "/fifa-world-cup-2026-staffing.html" },
     { "source": "/fifa-world-cup-2026-staffing/:city", "destination": "/fifa-world-cup-2026-staffing/:city.html" },
     { "source": "/locations/:state/:city/:service", "destination": "/locations/:state/:city/:service.html" },
+    { "source": "/case-studies/", "destination": "/case-studies/index.html" },
+    { "source": "/case-studies/beverage-brand-sampling", "destination": "/case-studies/beverage-brand-sampling.html" },
+    { "source": "/case-studies/tech-company-trade-show", "destination": "/case-studies/tech-company-trade-show.html" },
+    { "source": "/case-studies/guerrilla-marketing-nyc", "destination": "/case-studies/guerrilla-marketing-nyc.html" },
     { "source": "/(.*)", "destination": "/index.html" }
   ],
   "headers": [
