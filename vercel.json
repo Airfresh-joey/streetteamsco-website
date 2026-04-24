@@ -4,6 +4,8 @@
     { "source": "/brand-ambassador-agency", "destination": "/brand-ambassador-agency.html" },
     { "source": "/guerrilla-marketing-agency", "destination": "/guerrilla-marketing-agency.html" },
     { "source": "/product-sampling-agency", "destination": "/product-sampling-agency.html" },
+    { "source": "/fifa-world-cup-2026-staffing", "destination": "/fifa-world-cup-2026-staffing.html" },
+    { "source": "/locations/:state/:city/:service", "destination": "/locations/:state/:city/:service.html" },
     { "source": "/(.*)", "destination": "/index.html" }
   ],
   "headers": [

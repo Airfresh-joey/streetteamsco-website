@@ -79,6 +79,31 @@ states.forEach(state => {
   });
 });
 
+// City + Service pages (generated static HTML in /public/locations/[state]/[city]/[service].html)
+const cityServiceDir = './public/locations';
+const coreServices = ['brand-ambassadors', 'event-staffing', 'street-teams', 'product-sampling', 'guerrilla-marketing'];
+if (fs.existsSync(cityServiceDir)) {
+  const stateDirs = fs.readdirSync(cityServiceDir).filter(f => {
+    const full = path.join(cityServiceDir, f);
+    return fs.statSync(full).isDirectory();
+  });
+  stateDirs.forEach(stateDir => {
+    const statePath = path.join(cityServiceDir, stateDir);
+    const cityDirs = fs.readdirSync(statePath).filter(f => {
+      const full = path.join(statePath, f);
+      return fs.statSync(full).isDirectory();
+    });
+    cityDirs.forEach(cityDir => {
+      const cityPath = path.join(statePath, cityDir);
+      const serviceFiles = fs.readdirSync(cityPath).filter(f => f.endsWith('.html'));
+      serviceFiles.forEach(serviceFile => {
+        const serviceSlug = serviceFile.replace('.html', '');
+        addUrl(`/locations/${stateDir}/${cityDir}/${serviceSlug}`, 0.7, 'monthly');
+      });
+    });
+  });
+}
+
 // Pillar pages (static HTML in /public/)
 const pillarPages = [
   'street-team-marketing-agency',
@@ -87,6 +112,9 @@ const pillarPages = [
   'product-sampling-agency',
 ];
 pillarPages.forEach(p => addUrl(`/${p}`, 0.95, 'weekly'));
+
+// Event / time-sensitive landing pages
+addUrl('/fifa-world-cup-2026-staffing', 0.95, 'weekly');
 
 // Comparison pages (static HTML in /public/compare/)
 const compareDir = './public/compare';
