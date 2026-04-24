@@ -116,6 +116,17 @@ pillarPages.forEach(p => addUrl(`/${p}`, 0.95, 'weekly'));
 // Event / time-sensitive landing pages
 addUrl('/fifa-world-cup-2026-staffing', 0.95, 'weekly');
 
+// FIFA World Cup city sub-pages (static HTML in /public/fifa-world-cup-2026-staffing/)
+const fifaCityDir = './public/fifa-world-cup-2026-staffing';
+if (fs.existsSync(fifaCityDir)) {
+  const fifaCityFiles = fs.readdirSync(fifaCityDir)
+    .filter(f => f.endsWith('.html'))
+    .map(f => f.replace('.html', ''));
+  fifaCityFiles.forEach(slug => {
+    addUrl(`/fifa-world-cup-2026-staffing/${slug}`, 0.9, 'weekly');
+  });
+}
+
 // Comparison pages (static HTML in /public/compare/)
 const compareDir = './public/compare';
 if (fs.existsSync(compareDir)) {
