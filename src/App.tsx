@@ -396,6 +396,18 @@ function HomePage() {
                 <li><a href="/blog/">Street Marketing Blog</a></li>
               </ul>
             </div>
+            <div className="home-links-col">
+              <h3>World Cup 2026</h3>
+              <ul>
+                <li><a href="/fifa-world-cup-2026-staffing">World Cup Staffing Overview</a></li>
+                <li><a href="/fifa-world-cup-2026-staffing/new-york-new-jersey">NYC/NJ Staffing</a></li>
+                <li><a href="/fifa-world-cup-2026-staffing/los-angeles">LA Staffing</a></li>
+                <li><a href="/fifa-world-cup-2026-staffing/miami">Miami Staffing</a></li>
+                <li><a href="/fifa-world-cup-2026-staffing/dallas">Dallas Staffing</a></li>
+                <li><a href="/fifa-world-cup-2026-staffing/houston">Houston Staffing</a></li>
+                <li><a href="/fifa-world-cup-2026-staffing">View All 11 Host Cities</a></li>
+              </ul>
+            </div>
           </div>
         </div>
       </section>
@@ -441,6 +453,7 @@ function AppLayout() {
             <Link to="/pricing">Pricing</Link>
             <Link to="/industries">Industries</Link>
             <Link to="/locations">Locations</Link>
+            <a href="/fifa-world-cup-2026-staffing" style={{color: '#f59e0b', fontWeight: 700}}>World Cup 2026</a>
             <a href="/blog/">Blog</a>
             {isHome ? (
               <a href="#contact" className="nav-cta">Get Quote</a>
@@ -499,6 +512,7 @@ function AppLayout() {
               <a href="/product-sampling-agency">Product Sampling Agency</a>
               <a href="/compare/atn-event-staffing.html">vs ATN Event Staffing</a>
               <a href="/compare/alt-terrain.html">vs Alt Terrain</a>
+              <a href="/fifa-world-cup-2026-staffing" style={{color: '#f59e0b', fontWeight: 600}}>World Cup 2026 Staffing</a>
             </div>
             <div className="footer-section">
               <h4>Contact</h4>
