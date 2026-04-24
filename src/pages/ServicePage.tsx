@@ -4,7 +4,7 @@ import { useMetaTags } from '../hooks/useMetaTags';
 import NotFound from './NotFound';
 
 const relatedBlogPosts: Record<string, { title: string; url: string }[]> = {
-  'street-team-marketing': [
+  'street-teams': [
     { title: 'The Ultimate Guide to Street Team Marketing in 2026', url: '/blog/ultimate-guide-street-team-marketing.html' },
     { title: 'Street Team Marketing ROI: Boots on the Ground', url: '/blog/street-team-marketing-roi-boots-on-the-ground.html' },
     { title: 'How to Choose a Street Team Marketing Agency', url: '/blog/street-team-marketing-services-how-to-choose-agency.html' },
@@ -52,10 +52,10 @@ export default function ServicePage() {
 
   useMetaTags({
     title: service
-      ? `${service.name} Services | Street Teams Co`
+      ? `${service.name} Services | Nationwide Coverage from $25/hr | Street Teams Co`
       : 'Service Not Found | Street Teams Co',
     description: service
-      ? `${service.description.slice(0, 155)}...`
+      ? `${service.name} services in 1,000+ US cities. ${service.description.slice(0, 120)} Get a free quote today.`
       : 'Service not found.',
     canonical: service
       ? `https://streetteamsco.com/services/${service.slug}`
@@ -78,6 +78,18 @@ export default function ServicePage() {
         'description': service.description,
         'areaServed': 'United States',
         'url': `https://streetteamsco.com/services/${service.slug}`,
+      },
+      {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        'mainEntity': service.faq.map(item => ({
+          '@type': 'Question',
+          'name': item.q,
+          'acceptedAnswer': {
+            '@type': 'Answer',
+            'text': item.a,
+          },
+        })),
       },
     ] : undefined,
   });

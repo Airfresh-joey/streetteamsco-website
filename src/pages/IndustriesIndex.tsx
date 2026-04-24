@@ -4,16 +4,24 @@ import { useMetaTags } from '../hooks/useMetaTags';
 
 export default function IndustriesIndex() {
   useMetaTags({
-    title: 'Industries We Serve | Street Team Marketing by Vertical | Street Teams Co',
-    description: 'Street Teams Co provides specialized street marketing, brand ambassadors, and event staffing for cannabis, tech, food & beverage, fitness, real estate, retail, entertainment, automotive, healthcare, financial services, hospitality, education, sports, and beauty industries.',
+    title: 'Street Team Marketing by Industry | 14 Verticals | Street Teams Co',
+    description: 'Street team marketing for cannabis, tech, food & beverage, fitness, real estate, retail & more. Industry-specific brand ambassadors in 1,000+ cities. Get a free quote.',
     canonical: 'https://streetteamsco.com/industries',
+    schema: {
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      'itemListElement': [
+        { '@type': 'ListItem', 'position': 1, 'name': 'Home', 'item': 'https://streetteamsco.com' },
+        { '@type': 'ListItem', 'position': 2, 'name': 'Industries', 'item': 'https://streetteamsco.com/industries' },
+      ],
+    },
   });
 
   return (
     <div className="locations-page">
       <section className="locations-hero">
         <div className="container">
-          <h1>Industries We Serve</h1>
+          <h1>Street Team Marketing by Industry</h1>
           <p className="locations-hero-subtitle">
             Specialized street marketing solutions tailored to your industry's unique challenges
           </p>

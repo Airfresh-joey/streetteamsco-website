@@ -65,7 +65,7 @@ const states = [
 
 // Services
 const services = [
-  { name: 'Street Team Marketing', slug: 'street-team-marketing' },
+  { name: 'Street Team Marketing', slug: 'street-teams' },
   { name: 'Brand Ambassadors', slug: 'brand-ambassadors' },
   { name: 'Event Staffing', slug: 'event-staffing' },
   { name: 'Product Sampling', slug: 'product-sampling' },
@@ -100,16 +100,36 @@ function generateHtml(title, description, canonical) {
       `<title>${title}</title>`
     )
     .replace(
-      /<meta name="description" content=".*?">/,
-      `<meta name="description" content="${description}">`
+      /<meta name="description" content=".*?"\s*\/?>/,
+      `<meta name="description" content="${description}" />`
     )
     .replace(
-      /<link rel="canonical".*?>/g,
+      /<meta property="og:title" content=".*?"\s*\/?>/,
+      `<meta property="og:title" content="${title}" />`
+    )
+    .replace(
+      /<meta property="og:description" content=".*?"\s*\/?>/,
+      `<meta property="og:description" content="${description}" />`
+    )
+    .replace(
+      /<meta property="og:url" content=".*?"\s*\/?>/,
+      `<meta property="og:url" content="${canonical}" />`
+    )
+    .replace(
+      /<meta name="twitter:title" content=".*?"\s*\/?>/,
+      `<meta name="twitter:title" content="${title}" />`
+    )
+    .replace(
+      /<meta name="twitter:description" content=".*?"\s*\/?>/,
+      `<meta name="twitter:description" content="${description}" />`
+    )
+    .replace(
+      /<link rel="canonical".*?\/?>/g,
       ''
     )
     .replace(
       '</head>',
-      `<link rel="canonical" href="${canonical}">\n</head>`
+      `<link rel="canonical" href="${canonical}" />\n</head>`
     );
 }
 
@@ -127,8 +147,8 @@ ensureDir(locationsDir);
 fs.writeFileSync(
   path.join(locationsDir, 'index.html'),
   generateHtml(
-    'Street Team Locations Nationwide | Street Teams Co',
-    'Find professional brand ambassadors and street marketing teams in all 50 states. Street Teams Co provides event staffing and promotional teams in 1,000+ cities.',
+    'Street Team Locations | Brand Ambassadors in 1,000+ Cities | Street Teams Co',
+    'Street team marketing in all 50 states and 1,000+ cities. Brand ambassadors from $25/hr. 94% client retention. Find local street teams near you and get a free quote.',
     'https://streetteamsco.com/locations'
   )
 );
@@ -142,12 +162,43 @@ for (const state of states) {
   fs.writeFileSync(
     path.join(stateDir, 'index.html'),
     generateHtml(
-      `Street Teams in ${state.name} | Brand Ambassadors & Event Staffing | Street Teams Co`,
-      `Hire professional brand ambassadors and street marketing teams in ${state.name}. Street Teams Co provides event staffing and promotional teams across ${state.abbr}.`,
+      `Street Teams in ${state.name} | Brand Ambassadors from $25/hr | Street Teams Co`,
+      `Street team marketing across ${state.abbr}. Brand ambassadors, event staffing & product sampling from $25/hr. 94% client retention. Get a free quote today.`,
       `https://streetteamsco.com/locations/${state.slug}`
     )
   );
   count++;
+}
+
+// Generate city pages by parsing locations.ts
+const locationsTs = fs.readFileSync(path.join(__dirname, '..', 'src', 'data', 'locations.ts'), 'utf8');
+const stateBlockRegex = /name:\s*'([^']+)',\s*slug:\s*'([^']+)',\s*abbreviation:\s*'([^']+)',\s*cities:\s*\[([\s\S]*?)\]\s*,?\s*\}/g;
+const cityNameRegex = /city\('([^']+)'/g;
+
+let stateMatch;
+while ((stateMatch = stateBlockRegex.exec(locationsTs)) !== null) {
+  const stateName = stateMatch[1];
+  const stateSlug = stateMatch[2];
+  const stateAbbr = stateMatch[3];
+  const citiesBlock = stateMatch[4];
+
+  let cityMatch;
+  while ((cityMatch = cityNameRegex.exec(citiesBlock)) !== null) {
+    const cityName = cityMatch[1];
+    const citySlug = cityName.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+    const cityDir = path.join(locationsDir, stateSlug, citySlug);
+    ensureDir(cityDir);
+
+    fs.writeFileSync(
+      path.join(cityDir, 'index.html'),
+      generateHtml(
+        `Street Teams ${cityName}, ${stateAbbr} | Brand Ambassadors from $25/hr | Free Quote`,
+        `Street team marketing in ${cityName}, ${stateAbbr}. Brand ambassadors, event staffing & product sampling from $25/hr. 94% client retention, 500+ campaigns. Get a free quote today.`,
+        `https://streetteamsco.com/locations/${stateSlug}/${citySlug}`
+      )
+    );
+    count++;
+  }
 }
 
 // Generate /services/index.html
@@ -156,8 +207,8 @@ ensureDir(servicesDir);
 fs.writeFileSync(
   path.join(servicesDir, 'index.html'),
   generateHtml(
-    'Street Marketing Services | Brand Ambassadors, Event Staffing & More | Street Teams Co',
-    'Explore our full range of street marketing services: street teams, brand ambassadors, event staffing, product sampling, flyer distribution, guerrilla and experiential marketing nationwide.',
+    'Street Team Marketing Services | Brand Ambassadors & Event Staffing | Street Teams Co',
+    'Street team marketing services in 1,000+ cities. Brand ambassadors from $25/hr, event staffing, product sampling, guerrilla marketing. 94% client retention. Get a free quote today.',
     'https://streetteamsco.com/services'
   )
 );
@@ -171,8 +222,8 @@ for (const service of services) {
   fs.writeFileSync(
     path.join(serviceDir, 'index.html'),
     generateHtml(
-      `${service.name} Services | Street Teams Co`,
-      `Professional ${service.name.toLowerCase()} services nationwide. Street Teams Co delivers high-impact ${service.name.toLowerCase()} campaigns in 1,000+ cities.`,
+      `${service.name} Services | Nationwide from $25/hr | Street Teams Co`,
+      `${service.name} services in 1,000+ US cities. 500+ campaigns, 94% client retention. Get a free quote for your ${service.name.toLowerCase()} campaign today.`,
       `https://streetteamsco.com/services/${service.slug}`
     )
   );
@@ -185,8 +236,8 @@ ensureDir(industriesDir);
 fs.writeFileSync(
   path.join(industriesDir, 'index.html'),
   generateHtml(
-    'Industries We Serve | Street Team Marketing by Vertical | Street Teams Co',
-    'Street Teams Co provides specialized street marketing, brand ambassadors, and event staffing for cannabis, tech, food, fitness, real estate, retail, entertainment, and more.',
+    'Street Team Marketing by Industry | 14 Verticals | Street Teams Co',
+    'Street team marketing for cannabis, tech, food & beverage, fitness, real estate, retail & more. Industry-specific brand ambassadors in 1,000+ cities. Get a free quote.',
     'https://streetteamsco.com/industries'
   )
 );
@@ -200,8 +251,8 @@ for (const industry of industries) {
   fs.writeFileSync(
     path.join(industryDir, 'index.html'),
     generateHtml(
-      `${industry.name} Street Marketing | Brand Ambassadors & Event Staffing | Street Teams Co`,
-      `Specialized street marketing solutions for the ${industry.name.toLowerCase()} industry. Brand ambassadors, event staffing, and activations tailored to ${industry.name.toLowerCase()}.`,
+      `${industry.name} Street Team Marketing | Brand Ambassadors & Activations | Street Teams Co`,
+      `${industry.name} street team marketing in 1,000+ cities. Industry-specific brand ambassadors, event staffing & activations. Get a free quote.`,
       `https://streetteamsco.com/industries/${industry.slug}`
     )
   );
@@ -210,11 +261,11 @@ for (const industry of industries) {
 
 // Generate standalone pages
 const standalonePages = [
-  { slug: 'pricing', title: 'Street Team Marketing Pricing | Brand Ambassador Rates | Street Teams Co', description: 'Street team marketing costs from $25/hr per brand ambassador. Event staffing, product sampling, and guerrilla marketing pricing. Get a custom quote.' },
+  { slug: 'pricing', title: 'Street Team Pricing 2026 | Brand Ambassadors from $25/hr | Street Teams Co', description: 'Street team marketing pricing: brand ambassadors from $25/hr, event staffing from $30/hr. No long-term contracts. 500+ campaigns. Get a free custom quote.' },
   { slug: 'privacy', title: 'Privacy Policy | Street Teams Co', description: 'Street Teams Co privacy policy. Learn how we collect, use, and protect your personal information.' },
   { slug: 'terms', title: 'Terms of Service | Street Teams Co', description: 'Street Teams Co terms of service. Read our terms and conditions for using our website and engaging our street marketing services.' },
-  { slug: 'our-team', title: 'Our Team | Street Teams Co Leadership & Values', description: 'Meet the experienced team behind Street Teams Co. Learn about our leadership, values, and commitment to delivering exceptional street marketing results.' },
-  { slug: 'testimonials', title: 'Client Success Stories | Street Teams Co', description: 'See how brands achieve measurable results with Street Teams Co. Read testimonials and case studies from our street marketing and brand ambassador campaigns.' },
+  { slug: 'our-team', title: 'Street Teams Co Leadership | 10,000+ Brand Ambassadors Nationwide', description: 'Street Teams Co leadership team with 15+ years of experiential marketing experience. 10,000+ vetted brand ambassadors, 98% show-up rate, 4.9/5 client rating.' },
+  { slug: 'testimonials', title: 'Street Team Marketing Reviews & Results | 500+ Campaigns | Street Teams Co', description: 'Street team marketing success stories from 500+ campaigns. 94% client retention, 4.9/5 rating. See real ROI results from brand ambassador campaigns.' },
 ];
 
 for (const page of standalonePages) {

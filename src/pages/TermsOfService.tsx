@@ -5,6 +5,7 @@ export default function TermsOfService() {
     title: 'Terms of Service | Street Teams Co',
     description: 'Street Teams Co terms of service. Read our terms and conditions for using our website and engaging our street marketing services.',
     canonical: 'https://streetteamsco.com/terms',
+    noindex: true,
   });
 
   return (

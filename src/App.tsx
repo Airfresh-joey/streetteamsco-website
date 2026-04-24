@@ -19,9 +19,45 @@ import ContactForm from './components/ContactForm';
 
 function HomePage() {
   useMetaTags({
-    title: 'Street Teams Co | Professional Brand Ambassadors & Street Marketing Nationwide',
-    description: 'Street Teams Co provides elite brand ambassadors and street marketing campaigns in 1,000+ US cities. Event staffing, product sampling, and guerrilla marketing.',
+    title: 'Street Teams Co | #1 Street Team Marketing Agency | 1,000+ Cities Nationwide',
+    description: 'Street team marketing agency with brand ambassadors in 1,000+ US cities. 500+ campaigns, 94% client retention. Get a free quote for event staffing, product sampling & guerrilla marketing.',
     canonical: 'https://streetteamsco.com',
+    ogImage: 'https://streetteamsco.com/images/og-image.jpg',
+    schema: [
+      {
+        '@context': 'https://schema.org',
+        '@type': 'MarketingAgency',
+        'name': 'Street Teams Co',
+        'url': 'https://streetteamsco.com',
+        'logo': 'https://streetteamsco.com/images/og-image.jpg',
+        'description': 'Street Teams Co is a nationwide street team marketing and brand ambassador agency operating in over 1,000 US cities.',
+        'foundingDate': '2020',
+        'areaServed': 'United States',
+        'priceRange': '$25-$75/hr',
+        'contactPoint': {
+          '@type': 'ContactPoint',
+          'email': 'hello@streetteamsco.com',
+          'contactType': 'sales',
+        },
+        'aggregateRating': {
+          '@type': 'AggregateRating',
+          'ratingValue': '4.9',
+          'reviewCount': '127',
+          'bestRating': '5',
+        },
+        'hasOfferCatalog': {
+          '@type': 'OfferCatalog',
+          'name': 'Street Marketing Services',
+          'itemListElement': [
+            { '@type': 'Offer', 'itemOffered': { '@type': 'Service', 'name': 'Street Team Marketing' } },
+            { '@type': 'Offer', 'itemOffered': { '@type': 'Service', 'name': 'Brand Ambassador Services' } },
+            { '@type': 'Offer', 'itemOffered': { '@type': 'Service', 'name': 'Event Staffing' } },
+            { '@type': 'Offer', 'itemOffered': { '@type': 'Service', 'name': 'Product Sampling' } },
+            { '@type': 'Offer', 'itemOffered': { '@type': 'Service', 'name': 'Guerrilla Marketing' } },
+          ],
+        },
+      },
+    ],
   });
 
   const scrollToContact = () => {
@@ -67,25 +103,25 @@ function HomePage() {
             {/* Left column */}
             <div className="hero-left">
               <div className="hero-badge">
-                <span className="hero-badge-pill">&#127942; #1 HUMAN ENGAGEMENT AGENCY</span>
+                <span className="hero-badge-pill">&#127942; #1 STREET TEAM MARKETING AGENCY</span>
               </div>
 
               <h1 className="hero-heading">
-                <span className="hero-heading-white">STREET TEAMS</span>
-                <span className="hero-heading-gradient">HUMAN TO HUMAN</span>
-                <span className="hero-heading-blue">CONNECTIONS</span>
+                <span className="hero-heading-white">STREET TEAM</span>
+                <span className="hero-heading-gradient">MARKETING AGENCY</span>
+                <span className="hero-heading-blue">NATIONWIDE</span>
               </h1>
 
               <p className="hero-subtitle">
-                We connect your brand to real humans through authentic
-                <span className="text-yellow"> human experiences</span> that create genuine connections and drive
+                Professional brand ambassadors and street marketing teams in
+                <span className="text-yellow"> 1,000+ US cities</span>. Event staffing, product sampling, and guerrilla marketing that drives
                 <span className="text-orange"> 40% higher engagement</span>
               </p>
 
               <div className="hero-tags">
-                <span className="hero-tag hero-tag-yellow">Human Engagement</span>
-                <span className="hero-tag hero-tag-orange">Authentic Connections</span>
-                <span className="hero-tag hero-tag-blue">Real Experiences</span>
+                <span className="hero-tag hero-tag-yellow">Brand Ambassadors</span>
+                <span className="hero-tag hero-tag-orange">Event Staffing</span>
+                <span className="hero-tag hero-tag-blue">Product Sampling</span>
               </div>
 
               <div className="hero-stats-grid">
@@ -133,7 +169,7 @@ function HomePage() {
               <div className="hero-image-wrapper">
                 <img
                   src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=2000&auto=format&fit=crop"
-                  alt="Professional Street Team Brand Ambassadors Creating Human Connections"
+                  alt="Street team marketing brand ambassador engaging consumers at a product sampling event"
                   className="hero-image"
                   width={2000}
                   height={1333}
@@ -142,8 +178,8 @@ function HomePage() {
                 <div className="hero-image-gradient"></div>
                 <div className="hero-image-card">
                   <div className="hero-image-card-inner">
-                    <div className="hero-image-card-title">HUMAN TO HUMAN</div>
-                    <div className="hero-image-card-subtitle">Authentic Brand Connections</div>
+                    <div className="hero-image-card-title">NATIONWIDE COVERAGE</div>
+                    <div className="hero-image-card-subtitle">1,000+ Cities &bull; All 50 States</div>
                     <div className="hero-image-card-avatars">
                       <div className="avatar-dots">
                         <div className="avatar-dot avatar-dot-yellow"></div>
@@ -154,7 +190,7 @@ function HomePage() {
                     </div>
                   </div>
                 </div>
-                <div className="hero-image-floating-badge">HUMAN FOCUSED</div>
+                <div className="hero-image-floating-badge">500+ CAMPAIGNS</div>
               </div>
             </div>
           </div>
@@ -172,7 +208,7 @@ function HomePage() {
 
       <section id="services" className="services">
         <div className="container">
-          <h2>What We Do</h2>
+          <h2>Street Marketing Services We Offer</h2>
           <div className="services-grid">
             <Link to="/services/street-teams" className="service-card">
               <h3>Street Activations</h3>
@@ -220,6 +256,51 @@ function HomePage() {
             <div className="stat">
               <div className="stat-number">94%</div>
               <div className="stat-label">Client Retention Rate</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="home-links">
+        <div className="container">
+          <h2>Street Team Marketing Nationwide</h2>
+          <p>We operate in every major market. Find street teams in your city or explore our industry expertise.</p>
+          <div className="home-links-grid">
+            <div className="home-links-col">
+              <h3>Top Markets</h3>
+              <ul>
+                <li><Link to="/locations/georgia/atlanta">Street Teams Atlanta</Link></li>
+                <li><Link to="/locations/pennsylvania/philadelphia">Street Teams Philadelphia</Link></li>
+                <li><Link to="/locations/tennessee/nashville">Street Teams Nashville</Link></li>
+                <li><Link to="/locations/indiana/indianapolis">Street Teams Indianapolis</Link></li>
+                <li><Link to="/locations/florida/miami">Street Teams Miami</Link></li>
+                <li><Link to="/locations/california/los-angeles">Street Teams Los Angeles</Link></li>
+                <li><Link to="/locations/new-york/new-york-city">Street Teams New York City</Link></li>
+                <li><Link to="/locations/illinois/chicago">Street Teams Chicago</Link></li>
+                <li><Link to="/locations">View All 1,000+ Cities</Link></li>
+              </ul>
+            </div>
+            <div className="home-links-col">
+              <h3>Industries</h3>
+              <ul>
+                <li><Link to="/industries/cannabis">Cannabis Street Marketing</Link></li>
+                <li><Link to="/industries/technology">Tech & SaaS Marketing</Link></li>
+                <li><Link to="/industries/food-beverage">Food & Beverage Sampling</Link></li>
+                <li><Link to="/industries/retail">Retail Activations</Link></li>
+                <li><Link to="/industries/entertainment">Entertainment Campaigns</Link></li>
+                <li><Link to="/industries/fitness-wellness">Fitness & Wellness</Link></li>
+                <li><Link to="/industries">View All 14 Industries</Link></li>
+              </ul>
+            </div>
+            <div className="home-links-col">
+              <h3>Resources</h3>
+              <ul>
+                <li><Link to="/testimonials">Client Results & Testimonials</Link></li>
+                <li><Link to="/pricing">Pricing & Rate Cards</Link></li>
+                <li><Link to="/our-team">Our Team & Ambassador Network</Link></li>
+                <li><a href="/blog/">Street Marketing Blog</a></li>
+                <li><Link to="/services">All Services</Link></li>
+              </ul>
             </div>
           </div>
         </div>

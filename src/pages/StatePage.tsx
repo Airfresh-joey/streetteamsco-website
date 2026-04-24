@@ -9,12 +9,21 @@ export default function StatePage() {
 
   useMetaTags({
     title: state
-      ? `Street Teams in ${state.name} | Brand Ambassadors & Event Staffing | Street Teams Co`
+      ? `Street Teams in ${state.name} | ${state.cities.length} Cities | Brand Ambassadors from $25/hr`
       : 'Location Not Found | Street Teams Co',
     description: state
-      ? `Hire professional brand ambassadors and street marketing teams in ${state.name}. Street Teams Co serves ${state.cities.length} cities across ${state.abbreviation} including ${state.cities.slice(0, 3).map(c => c.name).join(', ')}, and more.`
+      ? `Street team marketing in ${state.cities.length} ${state.abbreviation} cities including ${state.cities.slice(0, 3).map(c => c.name).join(', ')}. Brand ambassadors, event staffing & product sampling. 94% client retention. Get a free quote.`
       : 'Location not found.',
     canonical: state ? `https://streetteamsco.com/locations/${state.slug}` : undefined,
+    schema: state ? {
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      'itemListElement': [
+        { '@type': 'ListItem', 'position': 1, 'name': 'Home', 'item': 'https://streetteamsco.com' },
+        { '@type': 'ListItem', 'position': 2, 'name': 'Locations', 'item': 'https://streetteamsco.com/locations' },
+        { '@type': 'ListItem', 'position': 3, 'name': state.name, 'item': `https://streetteamsco.com/locations/${state.slug}` },
+      ],
+    } : undefined,
   });
 
   if (!state) return <NotFound />;

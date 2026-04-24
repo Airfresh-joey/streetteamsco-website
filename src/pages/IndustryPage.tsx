@@ -9,23 +9,34 @@ export default function IndustryPage() {
 
   useMetaTags({
     title: industry
-      ? `${industry.name} Street Marketing | ${industry.name} Brand Ambassadors & Event Staffing | Street Teams Co`
+      ? `${industry.name} Street Team Marketing | Brand Ambassadors & Activations | Street Teams Co`
       : 'Industry Not Found | Street Teams Co',
     description: industry
-      ? `${industry.description.slice(0, 155)}...`
+      ? `${industry.name} street team marketing in 1,000+ cities. ${industry.description.slice(0, 100)} Get a free quote.`
       : 'Industry not found.',
     canonical: industry
       ? `https://streetteamsco.com/industries/${industry.slug}`
       : undefined,
-    schema: industry ? {
-      '@context': 'https://schema.org',
-      '@type': 'BreadcrumbList',
-      'itemListElement': [
-        { '@type': 'ListItem', 'position': 1, 'name': 'Home', 'item': 'https://streetteamsco.com' },
-        { '@type': 'ListItem', 'position': 2, 'name': 'Industries', 'item': 'https://streetteamsco.com/industries' },
-        { '@type': 'ListItem', 'position': 3, 'name': industry.name, 'item': `https://streetteamsco.com/industries/${industry.slug}` },
-      ],
-    } : undefined,
+    schema: industry ? [
+      {
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        'itemListElement': [
+          { '@type': 'ListItem', 'position': 1, 'name': 'Home', 'item': 'https://streetteamsco.com' },
+          { '@type': 'ListItem', 'position': 2, 'name': 'Industries', 'item': 'https://streetteamsco.com/industries' },
+          { '@type': 'ListItem', 'position': 3, 'name': industry.name, 'item': `https://streetteamsco.com/industries/${industry.slug}` },
+        ],
+      },
+      {
+        '@context': 'https://schema.org',
+        '@type': 'Service',
+        'name': `${industry.name} Street Team Marketing`,
+        'provider': { '@type': 'Organization', 'name': 'Street Teams Co', 'url': 'https://streetteamsco.com' },
+        'description': industry.description,
+        'areaServed': 'United States',
+        'url': `https://streetteamsco.com/industries/${industry.slug}`,
+      },
+    ] : undefined,
   });
 
   if (!industry) return <NotFound />;

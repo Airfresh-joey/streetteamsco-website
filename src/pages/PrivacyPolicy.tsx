@@ -5,6 +5,7 @@ export default function PrivacyPolicy() {
     title: 'Privacy Policy | Street Teams Co',
     description: 'Street Teams Co privacy policy. Learn how we collect, use, and protect your personal information.',
     canonical: 'https://streetteamsco.com/privacy',
+    noindex: true,
   });
 
   return (

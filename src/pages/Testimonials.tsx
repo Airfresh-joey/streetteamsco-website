@@ -73,46 +73,56 @@ const stats = [
 
 export default function Testimonials() {
   useMetaTags({
-    title: 'Client Success Stories | Street Teams Co',
-    description: 'See how brands achieve measurable results with Street Teams Co. Read testimonials and case studies from our successful street marketing and brand ambassador campaigns.',
+    title: 'Street Team Marketing Reviews & Results | 500+ Campaigns | Street Teams Co',
+    description: 'Street team marketing success stories from 500+ campaigns. 94% client retention, 4.9/5 rating. See real ROI results from brand ambassador & event staffing campaigns.',
     canonical: 'https://streetteamsco.com/testimonials',
-    schema: {
-      '@context': 'https://schema.org',
-      '@type': 'FAQPage',
-      'mainEntity': [
-        {
-          '@type': 'Question',
-          'name': 'What results can I expect from a street team campaign?',
-          'acceptedAnswer': {
-            '@type': 'Answer',
-            'text': 'Results vary by campaign type. Our clients typically see 25-40% brand awareness increases, 3-5x ROI multiples, and significant social media engagement. Product sampling campaigns often drive 15-25% sales lifts during activation periods.',
+    schema: [
+      {
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        'itemListElement': [
+          { '@type': 'ListItem', 'position': 1, 'name': 'Home', 'item': 'https://streetteamsco.com' },
+          { '@type': 'ListItem', 'position': 2, 'name': 'Testimonials', 'item': 'https://streetteamsco.com/testimonials' },
+        ],
+      },
+      {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        'mainEntity': [
+          {
+            '@type': 'Question',
+            'name': 'What results can I expect from a street team campaign?',
+            'acceptedAnswer': {
+              '@type': 'Answer',
+              'text': 'Results vary by campaign type. Our clients typically see 25-40% brand awareness increases, 3-5x ROI multiples, and significant social media engagement. Product sampling campaigns often drive 15-25% sales lifts during activation periods.',
+            },
           },
-        },
-        {
-          '@type': 'Question',
-          'name': 'How do you measure street team campaign success?',
-          'acceptedAnswer': {
-            '@type': 'Answer',
-            'text': 'We track multiple KPIs including impressions generated, samples distributed, leads captured, social media engagement, and direct sales impact. Every campaign includes GPS tracking, daily photo reports, and a comprehensive post-campaign ROI analysis.',
+          {
+            '@type': 'Question',
+            'name': 'How do you measure street team campaign success?',
+            'acceptedAnswer': {
+              '@type': 'Answer',
+              'text': 'We track multiple KPIs including impressions generated, samples distributed, leads captured, social media engagement, and direct sales impact. Every campaign includes GPS tracking, daily photo reports, and a comprehensive post-campaign ROI analysis.',
+            },
           },
-        },
-        {
-          '@type': 'Question',
-          'name': 'Do you have experience in my industry?',
-          'acceptedAnswer': {
-            '@type': 'Answer',
-            'text': 'Street Teams Co has executed 500+ campaigns across 14+ industries including food & beverage, technology, fitness, cannabis, real estate, entertainment, automotive, healthcare, and more. We tailor our approach to each industry\'s unique needs.',
+          {
+            '@type': 'Question',
+            'name': 'Do you have experience in my industry?',
+            'acceptedAnswer': {
+              '@type': 'Answer',
+              'text': 'Street Teams Co has executed 500+ campaigns across 14+ industries including food & beverage, technology, fitness, cannabis, real estate, entertainment, automotive, healthcare, and more. We tailor our approach to each industry\'s unique needs.',
+            },
           },
-        },
-      ],
-    },
+        ],
+      },
+    ],
   });
 
   return (
     <div className="testimonials-page">
       <section className="testimonials-hero">
         <div className="container">
-          <h1>Client Success Stories</h1>
+          <h1>Street Team Marketing Results & Testimonials</h1>
           <p className="testimonials-hero-subtitle">
             Real results from real campaigns. See why leading brands trust Street Teams Co.
           </p>

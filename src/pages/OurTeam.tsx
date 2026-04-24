@@ -64,46 +64,56 @@ const stats = [
 
 export default function OurTeam() {
   useMetaTags({
-    title: 'Our Team | Street Teams Co Leadership & Values',
-    description: 'Meet the experienced team behind Street Teams Co. Learn about our leadership, values, and commitment to delivering exceptional street marketing results.',
+    title: 'Street Teams Co Leadership | 10,000+ Brand Ambassadors Nationwide',
+    description: 'Street Teams Co leadership team with 15+ years of experiential marketing experience. 10,000+ vetted brand ambassadors, 98% show-up rate, 4.9/5 client rating.',
     canonical: 'https://streetteamsco.com/our-team',
-    schema: {
-      '@context': 'https://schema.org',
-      '@type': 'FAQPage',
-      'mainEntity': [
-        {
-          '@type': 'Question',
-          'name': 'How many brand ambassadors does Street Teams Co have?',
-          'acceptedAnswer': {
-            '@type': 'Answer',
-            'text': 'Street Teams Co has a network of over 10,000 trained brand ambassadors across 50+ markets nationwide. Each ambassador is background-checked, product-trained, and rated on a reliability scoring system.',
+    schema: [
+      {
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        'itemListElement': [
+          { '@type': 'ListItem', 'position': 1, 'name': 'Home', 'item': 'https://streetteamsco.com' },
+          { '@type': 'ListItem', 'position': 2, 'name': 'Our Team', 'item': 'https://streetteamsco.com/our-team' },
+        ],
+      },
+      {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        'mainEntity': [
+          {
+            '@type': 'Question',
+            'name': 'How many brand ambassadors does Street Teams Co have?',
+            'acceptedAnswer': {
+              '@type': 'Answer',
+              'text': 'Street Teams Co has a network of over 10,000 trained brand ambassadors across 50+ markets nationwide. Each ambassador is background-checked, product-trained, and rated on a reliability scoring system.',
+            },
           },
-        },
-        {
-          '@type': 'Question',
-          'name': 'What is Street Teams Co\'s show-up rate?',
-          'acceptedAnswer': {
-            '@type': 'Answer',
-            'text': 'Street Teams Co maintains a 98% show-up rate across all campaigns, backed by our reliability scoring system and backup staffing protocols. Our client satisfaction rating is 4.9 out of 5.',
+          {
+            '@type': 'Question',
+            'name': 'What is Street Teams Co\'s show-up rate?',
+            'acceptedAnswer': {
+              '@type': 'Answer',
+              'text': 'Street Teams Co maintains a 98% show-up rate across all campaigns, backed by our reliability scoring system and backup staffing protocols. Our client satisfaction rating is 4.9 out of 5.',
+            },
           },
-        },
-        {
-          '@type': 'Question',
-          'name': 'How does Street Teams Co train brand ambassadors?',
-          'acceptedAnswer': {
-            '@type': 'Answer',
-            'text': 'Every brand ambassador goes through brand-specific training that includes product knowledge, talking points, appearance standards, and campaign objectives. We also provide on-site field management to ensure quality execution.',
+          {
+            '@type': 'Question',
+            'name': 'How does Street Teams Co train brand ambassadors?',
+            'acceptedAnswer': {
+              '@type': 'Answer',
+              'text': 'Every brand ambassador goes through brand-specific training that includes product knowledge, talking points, appearance standards, and campaign objectives. We also provide on-site field management to ensure quality execution.',
+            },
           },
-        },
-      ],
-    },
+        ],
+      },
+    ],
   });
 
   return (
     <div className="our-team-page">
       <section className="team-hero">
         <div className="container">
-          <h1>Our Team</h1>
+          <h1>Street Teams Co Leadership & Brand Ambassador Network</h1>
           <p className="team-hero-subtitle">
             Passionate professionals dedicated to making your brand unforgettable on the streets.
           </p>

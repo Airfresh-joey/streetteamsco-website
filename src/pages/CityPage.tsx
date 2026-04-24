@@ -13,10 +13,10 @@ export default function CityPage() {
 
   useMetaTags({
     title: result
-      ? `Street Teams in ${result.city.name}, ${result.state.abbreviation} | Brand Ambassadors & Event Staff | Street Teams Co`
+      ? `Street Teams ${result.city.name}, ${result.state.abbreviation} | Brand Ambassadors from $25/hr | Free Quote`
       : 'Location Not Found | Street Teams Co',
     description: result
-      ? `Hire professional street teams and brand ambassadors in ${result.city.name}, ${result.state.abbreviation}. Event staffing, product sampling, and guerrilla marketing campaigns. Get a free quote.`
+      ? `Street team marketing in ${result.city.name}, ${result.state.abbreviation}. Brand ambassadors, event staffing & product sampling from $25/hr. 94% client retention, 500+ campaigns. Get a free quote today.`
       : 'Location not found.',
     canonical: canonicalUrl,
     ogImage: 'https://streetteamsco.com/images/og-image.jpg',
@@ -56,6 +56,36 @@ export default function CityPage() {
           { '@type': 'ListItem', 'position': 2, 'name': 'Locations', 'item': 'https://streetteamsco.com/locations' },
           { '@type': 'ListItem', 'position': 3, 'name': result.state.name, 'item': `https://streetteamsco.com/locations/${result.state.slug}` },
           { '@type': 'ListItem', 'position': 4, 'name': result.city.name, 'item': canonicalUrl },
+        ],
+      },
+      {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        'mainEntity': [
+          {
+            '@type': 'Question',
+            'name': `How much does a street team cost in ${result.city.name}?`,
+            'acceptedAnswer': {
+              '@type': 'Answer',
+              'text': `Street team costs in ${result.city.name} typically range from $25-$75 per hour per brand ambassador, depending on campaign requirements and team size. Contact us for a custom quote for your ${result.city.name} campaign.`,
+            },
+          },
+          {
+            '@type': 'Question',
+            'name': `How quickly can you deploy a street team in ${result.city.name}?`,
+            'acceptedAnswer': {
+              '@type': 'Answer',
+              'text': `We can typically deploy a professional street team in ${result.city.name} within 5-7 business days. For rush campaigns, we offer expedited timelines in ${result.city.name}, ${result.state.abbreviation}.`,
+            },
+          },
+          {
+            '@type': 'Question',
+            'name': `What types of campaigns do you run in ${result.city.name}?`,
+            'acceptedAnswer': {
+              '@type': 'Answer',
+              'text': `In ${result.city.name}, we run brand activations, product sampling, event staffing, guerrilla marketing, flyering campaigns, LED truck advertising, and promotional events.`,
+            },
+          },
         ],
       },
     ] : undefined,

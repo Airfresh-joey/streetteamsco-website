@@ -55,7 +55,7 @@ addUrl('/terms', 0.3, 'yearly');
 
 // Service pages
 const services = [
-  'street-team-marketing', 'brand-ambassadors', 'event-staffing',
+  'street-teams', 'brand-ambassadors', 'event-staffing',
   'product-sampling', 'flyer-distribution', 'guerrilla-marketing',
   'experiential-marketing', 'promotional-staffing',
 ];

@@ -5,6 +5,7 @@ interface MetaTagsOptions {
   description: string;
   canonical?: string;
   ogImage?: string;
+  noindex?: boolean;
   schema?: Record<string, unknown> | Record<string, unknown>[];
 }
 
@@ -18,12 +19,20 @@ function setMetaTag(attr: string, key: string, content: string) {
   el.setAttribute('content', content);
 }
 
-export function useMetaTags({ title, description, canonical, ogImage, schema }: MetaTagsOptions) {
+export function useMetaTags({ title, description, canonical, ogImage, noindex, schema }: MetaTagsOptions) {
   useEffect(() => {
     document.title = title;
 
     // Meta description
     setMetaTag('name', 'description', description);
+
+    // Robots noindex
+    if (noindex) {
+      setMetaTag('name', 'robots', 'noindex, nofollow');
+    } else {
+      const robotsMeta = document.querySelector('meta[name="robots"]');
+      if (robotsMeta) robotsMeta.remove();
+    }
 
     // Open Graph
     setMetaTag('property', 'og:title', title);

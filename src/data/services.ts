@@ -12,7 +12,7 @@ export interface Service {
 export const services: Service[] = [
   {
     name: 'Street Team Marketing',
-    slug: 'street-team-marketing',
+    slug: 'street-teams',
     tagline: 'Boots-on-the-ground campaigns that put your brand directly in front of consumers',
     description: 'Street team marketing is the backbone of grassroots brand promotion. Our trained street teams deploy to high-traffic locations across the country, engaging consumers face-to-face with your product or message. From handing out samples to creating interactive brand moments, our teams drive real awareness and measurable conversions in the neighborhoods that matter most to your business.',
     features: [

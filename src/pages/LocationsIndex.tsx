@@ -4,16 +4,24 @@ import { useMetaTags } from '../hooks/useMetaTags';
 
 export default function LocationsIndex() {
   useMetaTags({
-    title: 'Street Teams Co Locations | Brand Ambassadors & Street Marketing Nationwide',
-    description: `Street Teams Co provides professional brand ambassadors and street marketing teams in ${locations.length} states and ${getTotalCityCount()}+ cities across the United States. Find street marketing services near you.`,
+    title: `Street Team Locations | Brand Ambassadors in ${getTotalCityCount()}+ Cities | Street Teams Co`,
+    description: `Street team marketing in all 50 states and ${getTotalCityCount()}+ cities. Hire brand ambassadors from $25/hr with 94% client retention. Find local street teams near you and get a free quote.`,
     canonical: 'https://streetteamsco.com/locations',
+    schema: {
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      'itemListElement': [
+        { '@type': 'ListItem', 'position': 1, 'name': 'Home', 'item': 'https://streetteamsco.com' },
+        { '@type': 'ListItem', 'position': 2, 'name': 'Locations', 'item': 'https://streetteamsco.com/locations' },
+      ],
+    },
   });
 
   return (
     <div className="locations-page">
       <section className="locations-hero">
         <div className="container">
-          <h1>Street Marketing Teams Nationwide</h1>
+          <h1>Street Team Marketing Locations Nationwide</h1>
           <p className="locations-hero-subtitle">
             Professional brand ambassadors and street teams in {getTotalCityCount()}+ cities across all 50 states
           </p>
