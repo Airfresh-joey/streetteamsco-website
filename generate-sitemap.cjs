@@ -79,6 +79,26 @@ states.forEach(state => {
   });
 });
 
+// Pillar pages (static HTML in /public/)
+const pillarPages = [
+  'street-team-marketing-agency',
+  'brand-ambassador-agency',
+  'guerrilla-marketing-agency',
+  'product-sampling-agency',
+];
+pillarPages.forEach(p => addUrl(`/${p}`, 0.95, 'weekly'));
+
+// Comparison pages (static HTML in /public/compare/)
+const compareDir = './public/compare';
+if (fs.existsSync(compareDir)) {
+  const compareFiles = fs.readdirSync(compareDir)
+    .filter(f => f.endsWith('.html'))
+    .map(f => f.replace('.html', ''));
+  compareFiles.forEach(slug => {
+    addUrl(`/compare/${slug}.html`, 0.7, 'monthly');
+  });
+}
+
 // Blog index
 addUrl('/blog/', 0.8, 'daily');
 

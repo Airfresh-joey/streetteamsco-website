@@ -50,9 +50,20 @@ export default function ServicePage() {
   const { service: serviceSlug } = useParams<{ service: string }>();
   const service = serviceSlug ? getServiceBySlug(serviceSlug) : undefined;
 
+  const serviceTitles: Record<string, string> = {
+    'street-teams': 'Street Team Marketing Agency | Professional Street Teams Nationwide',
+    'brand-ambassadors': 'Brand Ambassador Agency | Hire Nationwide Brand Ambassadors',
+    'event-staffing': 'Event Staffing Agency | Professional Event Staff Nationwide',
+    'product-sampling': 'Product Sampling Agency | Consumer Sampling Campaigns',
+    'guerrilla-marketing': 'Guerrilla Marketing Agency | Creative Street Activations',
+    'flyer-distribution': 'Flyer Distribution Services | Professional Flyering Nationwide',
+    'experiential-marketing': 'Experiential Marketing Agency | Immersive Brand Experiences',
+    'promotional-staffing': 'Promotional Staffing Agency | On-Demand Promo Talent',
+  };
+
   useMetaTags({
     title: service
-      ? `${service.name} Services | Nationwide Coverage from $25/hr | Street Teams Co`
+      ? (serviceTitles[service.slug] || `${service.name} Services | Street Teams Co`)
       : 'Service Not Found | Street Teams Co',
     description: service
       ? `${service.name} services in 1,000+ US cities. ${service.description.slice(0, 120)} Get a free quote today.`

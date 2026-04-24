@@ -19,8 +19,8 @@ import ContactForm from './components/ContactForm';
 
 function HomePage() {
   useMetaTags({
-    title: 'Street Teams Co | #1 Street Team Marketing Agency | 1,000+ Cities Nationwide',
-    description: 'Street team marketing agency with brand ambassadors in 1,000+ US cities. 500+ campaigns, 94% client retention. Get a free quote for event staffing, product sampling & guerrilla marketing.',
+    title: 'Street Team Marketing Agency | 1,000+ Cities Nationwide | Street Teams Co',
+    description: 'Street team marketing agency with professional brand ambassadors in 1,000+ US cities. 500+ campaigns executed, 94% client retention. Event staffing, product sampling & guerrilla marketing from $25/hr.',
     canonical: 'https://streetteamsco.com',
     ogImage: 'https://streetteamsco.com/images/og-image.jpg',
     schema: [
@@ -109,7 +109,7 @@ function HomePage() {
               <h1 className="hero-heading">
                 <span className="hero-heading-white">STREET TEAM</span>
                 <span className="hero-heading-gradient">MARKETING AGENCY</span>
-                <span className="hero-heading-blue">NATIONWIDE</span>
+                <span className="hero-heading-blue">1,000+ CITIES NATIONWIDE</span>
               </h1>
 
               <p className="hero-subtitle">
@@ -295,11 +295,13 @@ function HomePage() {
             <div className="home-links-col">
               <h3>Resources</h3>
               <ul>
+                <li><a href="/street-team-marketing-agency">Street Team Marketing Agency</a></li>
+                <li><a href="/brand-ambassador-agency">Brand Ambassador Agency</a></li>
+                <li><a href="/guerrilla-marketing-agency">Guerrilla Marketing Agency</a></li>
+                <li><a href="/product-sampling-agency">Product Sampling Agency</a></li>
                 <li><Link to="/testimonials">Client Results & Testimonials</Link></li>
                 <li><Link to="/pricing">Pricing & Rate Cards</Link></li>
-                <li><Link to="/our-team">Our Team & Ambassador Network</Link></li>
                 <li><a href="/blog/">Street Marketing Blog</a></li>
-                <li><Link to="/services">All Services</Link></li>
               </ul>
             </div>
           </div>
@@ -393,10 +395,18 @@ function AppLayout() {
               <h4>Company</h4>
               <Link to="/pricing">Pricing</Link>
               <Link to="/testimonials">Testimonials</Link>
-              <Link to="/our-team">Our Team</Link>
               <Link to="/industries">Industries</Link>
               <Link to="/locations">Locations</Link>
               <a href="/blog/">Blog</a>
+            </div>
+            <div className="footer-section">
+              <h4>Resources</h4>
+              <a href="/street-team-marketing-agency">Street Team Marketing Agency</a>
+              <a href="/brand-ambassador-agency">Brand Ambassador Agency</a>
+              <a href="/guerrilla-marketing-agency">Guerrilla Marketing Agency</a>
+              <a href="/product-sampling-agency">Product Sampling Agency</a>
+              <a href="/compare/atn-event-staffing.html">vs ATN Event Staffing</a>
+              <a href="/compare/alt-terrain.html">vs Alt Terrain</a>
             </div>
             <div className="footer-section">
               <h4>Contact</h4>

@@ -1,5 +1,9 @@
 {
   "rewrites": [
+    { "source": "/street-team-marketing-agency", "destination": "/street-team-marketing-agency.html" },
+    { "source": "/brand-ambassador-agency", "destination": "/brand-ambassador-agency.html" },
+    { "source": "/guerrilla-marketing-agency", "destination": "/guerrilla-marketing-agency.html" },
+    { "source": "/product-sampling-agency", "destination": "/product-sampling-agency.html" },
     { "source": "/(.*)", "destination": "/index.html" }
   ],
   "headers": [
