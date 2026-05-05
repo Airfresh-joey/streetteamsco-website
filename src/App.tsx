@@ -130,6 +130,21 @@ function AppLayout() {
           </div>
         </div>
       </footer>
+
+      {/* Sticky CTA Bar */}
+      <div className="sticky-cta-bar">
+        <p>Ready to launch your campaign? Get a free quote in 24 hours.</p>
+        {isHome ? (
+          <a href="#contact" className="sticky-cta-btn" onClick={(e) => {
+            e.preventDefault();
+            const el = document.getElementById('contact');
+            if (el) window.scrollTo({ top: el.offsetTop - 80, behavior: 'smooth' });
+          }}>Get Free Quote</a>
+        ) : (
+          <Link to="/#contact" className="sticky-cta-btn">Get Free Quote</Link>
+        )}
+        <a href="mailto:hello@streetteamsco.com" className="sticky-cta-email">Email Us</a>
+      </div>
     </div>
   );
 }

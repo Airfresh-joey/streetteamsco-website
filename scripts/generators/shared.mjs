@@ -158,9 +158,13 @@ export const INLINE_CSS = `    * { margin: 0; padding: 0; box-sizing: border-box
     .city-card:hover { border-color: #2563eb; box-shadow: 0 2px 8px rgba(37,99,235,0.1); text-decoration: none; }
     .city-card h4 { font-size: 1rem; margin-bottom: 0.25rem; }
     .city-card .pop { font-size: 0.85rem; color: #666; }
-    footer { background: #1a1a2e; color: rgba(255,255,255,0.7); padding: 2rem; text-align: center; font-size: 0.85rem; }
+    footer { background: #1a1a2e; color: rgba(255,255,255,0.7); padding: 2rem 2rem 5rem; text-align: center; font-size: 0.85rem; }
     footer a { color: rgba(255,255,255,0.9); text-decoration: none; }
-    @media (max-width: 768px) { .page-hero h1 { font-size: 1.8rem; } .content { padding: 2rem 1.5rem; } .nav-links { display: none; } .stats-bar { grid-template-columns: repeat(2, 1fr); } }`;
+    .sticky-cta { position: fixed; bottom: 0; left: 0; right: 0; background: #1a1a2e; border-top: 2px solid #f59e0b; padding: 0.75rem 1rem; display: flex; justify-content: center; align-items: center; gap: 1rem; z-index: 200; }
+    .sticky-cta p { color: #fff; font-size: 0.9rem; margin: 0; }
+    .sticky-cta a { display: inline-block; background: #f59e0b; color: #1a1a2e; padding: 0.6rem 1.5rem; border-radius: 6px; text-decoration: none; font-weight: 700; font-size: 0.9rem; white-space: nowrap; }
+    .sticky-cta a:hover { background: #d97706; }
+    @media (max-width: 768px) { .page-hero h1 { font-size: 1.8rem; } .content { padding: 2rem 1.5rem; } .nav-links { display: none; } .stats-bar { grid-template-columns: repeat(2, 1fr); } .sticky-cta p { display: none; } }`;
 
 // ---------------------------------------------------------------------------
 // HTML building blocks
@@ -187,7 +191,12 @@ export function footer() {
   <p>&copy; 2026 <a href="/">Street Teams Co</a>. All rights reserved. | <a href="mailto:hello@streetteamsco.com">hello@streetteamsco.com</a> | <a href="/privacy">Privacy</a> | <a href="/terms">Terms</a></p>
   <p style="margin-top: 0.5rem;"><a href="/services">Services</a> | <a href="/pricing">Pricing</a> | <a href="/how-it-works">How It Works</a> | <a href="/case-studies/">Case Studies</a> | <a href="/locations">Locations</a> | <a href="/blog/">Blog</a></p>
   <p style="margin-top: 0.5rem;"><a href="/street-team-marketing-agency">Street Team Marketing</a> | <a href="/brand-ambassador-agency">Brand Ambassadors</a> | <a href="/experiential-marketing-agency">Experiential Marketing</a> | <a href="/trade-show-staffing-agency">Trade Show Staffing</a> | <a href="/what-is-street-team-marketing">Guide</a></p>
-</footer>`;
+</footer>
+<div class="sticky-cta">
+  <p>Ready to launch your campaign? Get a free quote in 24 hours.</p>
+  <a href="/#contact">Get Free Quote</a>
+  <a href="mailto:hello@streetteamsco.com" style="background:transparent;border:1px solid #f59e0b;color:#f59e0b;">Email Us</a>
+</div>`;
 }
 
 export function escHtml(str) {
