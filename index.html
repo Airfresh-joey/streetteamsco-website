@@ -23,8 +23,10 @@
     <meta name="twitter:description" content="Street team marketing agency with professional brand ambassadors in 1,000+ US cities. 500+ campaigns executed. From $25/hr." />
     <meta name="twitter:image" content="https://streetteamsco.com/images/og-image.jpg" />
 
-    <!-- Google Analytics - initialized via Vite env var -->
+    <!-- Preconnect to third-party origins -->
     <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+    <link rel="preconnect" href="https://assets.calendly.com" crossorigin>
+    <link rel="preconnect" href="https://js.hs-scripts.com" crossorigin>
 
     <!-- Schema.org Organization -->
     <script type="application/ld+json">
@@ -76,11 +78,11 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
-    <!-- Calendly popup widget -->
-    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+    <!-- Calendly popup widget (CSS preloaded in head, JS async) -->
+    <link rel="preload" href="https://assets.calendly.com/assets/external/widget.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet"></noscript>
     <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
-    <!-- Start of HubSpot Embed Code -->
-    <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/7013238.js"></script>
-    <!-- End of HubSpot Embed Code -->
+    <!-- HubSpot Embed Code -->
+    <script type="text/javascript" id="hs-script-loader" async defer src="https://js.hs-scripts.com/7013238.js"></script>
   </body>
 </html>

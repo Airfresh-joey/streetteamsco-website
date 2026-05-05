@@ -134,7 +134,7 @@ if (fs.existsSync(compareDir)) {
     .filter(f => f.endsWith('.html'))
     .map(f => f.replace('.html', ''));
   compareFiles.forEach(slug => {
-    addUrl(`/compare/${slug}.html`, 0.7, 'monthly');
+    addUrl(`/compare/${slug}`, 0.7, 'monthly');
   });
 }
 
