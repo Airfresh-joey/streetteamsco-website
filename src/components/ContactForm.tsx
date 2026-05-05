@@ -1,4 +1,5 @@
-import { useState, type FormEvent } from 'react';
+import { useState, useRef, useEffect, type FormEvent } from 'react';
+import { trackFormSubmit, trackFormAbandonment } from '../analytics';
 
 export default function ContactForm() {
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
@@ -8,8 +9,29 @@ export default function ContactForm() {
     phone: '',
     company: '',
     campaign_type: '',
+    budget_range: '',
+    timeline: '',
     message: '',
   });
+
+  // Track the last focused field for abandonment detection
+  const lastFocusedField = useRef<string>('');
+  const formTouched = useRef(false);
+
+  const handleFieldFocus = (fieldName: string) => {
+    lastFocusedField.current = fieldName;
+    formTouched.current = true;
+  };
+
+  // Detect form abandonment on unmount
+  useEffect(() => {
+    return () => {
+      if (formTouched.current && status !== 'success') {
+        trackFormAbandonment('contact_form', lastFocusedField.current);
+      }
+    };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [status]);
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
@@ -28,7 +50,8 @@ export default function ContactForm() {
 
       if (response.ok) {
         setStatus('success');
-        setFormData({ name: '', email: '', phone: '', company: '', campaign_type: '', message: '' });
+        trackFormSubmit('contact_form');
+        setFormData({ name: '', email: '', phone: '', company: '', campaign_type: '', budget_range: '', timeline: '', message: '' });
       } else {
         throw new Error('Form submission failed');
       }
@@ -59,6 +82,7 @@ export default function ContactForm() {
             required
             placeholder="John Smith"
             value={formData.name}
+            onFocus={() => handleFieldFocus('name')}
             onChange={(e) => setFormData({ ...formData, name: e.target.value })}
           />
         </div>
@@ -71,6 +95,7 @@ export default function ContactForm() {
             required
             placeholder="john@company.com"
             value={formData.email}
+            onFocus={() => handleFieldFocus('email')}
             onChange={(e) => setFormData({ ...formData, email: e.target.value })}
           />
         </div>
@@ -85,6 +110,7 @@ export default function ContactForm() {
             name="phone"
             placeholder="(555) 123-4567"
             value={formData.phone}
+            onFocus={() => handleFieldFocus('phone')}
             onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
           />
         </div>
@@ -96,6 +122,7 @@ export default function ContactForm() {
             name="company"
             placeholder="Your Company"
             value={formData.company}
+            onFocus={() => handleFieldFocus('company')}
             onChange={(e) => setFormData({ ...formData, company: e.target.value })}
           />
         </div>
@@ -107,6 +134,7 @@ export default function ContactForm() {
           id="campaign_type"
           name="campaign_type"
           value={formData.campaign_type}
+          onFocus={() => handleFieldFocus('campaign_type')}
           onChange={(e) => setFormData({ ...formData, campaign_type: e.target.value })}
         >
           <option value="">Select a campaign type...</option>
@@ -115,8 +143,47 @@ export default function ContactForm() {
           <option value="event_staffing">Event Staffing</option>
           <option value="product_sampling">Product Sampling</option>
           <option value="flyering">Flyer Distribution</option>
+          <option value="multi_city">Multi-City Campaign</option>
+          <option value="long_term">Long-Term Program</option>
           <option value="other">Other</option>
         </select>
+      </div>
+
+      <div className="form-row">
+        <div className="form-group">
+          <label htmlFor="budget_range">Budget Range</label>
+          <select
+            id="budget_range"
+            name="budget_range"
+            value={formData.budget_range}
+            onFocus={() => handleFieldFocus('budget_range')}
+            onChange={(e) => setFormData({ ...formData, budget_range: e.target.value })}
+          >
+            <option value="">Select budget range...</option>
+            <option value="under_5k">Under $5K</option>
+            <option value="5k_10k">$5K-$10K</option>
+            <option value="10k_25k">$10K-$25K</option>
+            <option value="25k_50k">$25K-$50K</option>
+            <option value="50k_plus">$50K+</option>
+          </select>
+        </div>
+        <div className="form-group">
+          <label htmlFor="timeline">Timeline</label>
+          <select
+            id="timeline"
+            name="timeline"
+            value={formData.timeline}
+            onFocus={() => handleFieldFocus('timeline')}
+            onChange={(e) => setFormData({ ...formData, timeline: e.target.value })}
+          >
+            <option value="">Select timeline...</option>
+            <option value="this_week">This week</option>
+            <option value="within_2_weeks">Within 2 weeks</option>
+            <option value="within_a_month">Within a month</option>
+            <option value="1_3_months">1-3 months</option>
+            <option value="just_exploring">Just exploring</option>
+          </select>
+        </div>
       </div>
 
       <div className="form-group">
@@ -126,8 +193,9 @@ export default function ContactForm() {
           name="message"
           required
           rows={4}
-          placeholder="Campaign goals, timeline, locations, budget range..."
+          placeholder="Campaign goals, locations, number of staff needed..."
           value={formData.message}
+          onFocus={() => handleFieldFocus('message')}
           onChange={(e) => setFormData({ ...formData, message: e.target.value })}
         />
       </div>

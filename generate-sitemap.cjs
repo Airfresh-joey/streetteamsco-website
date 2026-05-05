@@ -127,6 +127,18 @@ if (fs.existsSync(fifaCityDir)) {
   });
 }
 
+// Case studies (static HTML in /public/case-studies/)
+addUrl('/case-studies/', 0.8, 'monthly');
+const caseStudyDir = './public/case-studies';
+if (fs.existsSync(caseStudyDir)) {
+  const caseStudyFiles = fs.readdirSync(caseStudyDir)
+    .filter(f => f.endsWith('.html') && f !== 'index.html')
+    .map(f => f.replace('.html', ''));
+  caseStudyFiles.forEach(slug => {
+    addUrl(`/case-studies/${slug}`, 0.8, 'monthly');
+  });
+}
+
 // Comparison pages (static HTML in /public/compare/)
 const compareDir = './public/compare';
 if (fs.existsSync(compareDir)) {

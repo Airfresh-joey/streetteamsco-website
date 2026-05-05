@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useMetaTags } from '../hooks/useMetaTags';
 import ContactForm from '../components/ContactForm';
+import { trackCTAClick, trackCalendlyOpen, trackEmailClick } from '../analytics';
 
 export default function HomePage() {
   useMetaTags({
@@ -53,6 +54,7 @@ export default function HomePage() {
   const openCalendly = () => {
     const calendlyUrl = import.meta.env.VITE_CALENDLY_URL;
     if (calendlyUrl && window.Calendly) {
+      trackCalendlyOpen('homepage');
       window.Calendly.initPopupWidget({ url: calendlyUrl });
     } else {
       scrollToContact();
@@ -125,10 +127,10 @@ export default function HomePage() {
               </div>
 
               <div className="hero-cta">
-                <a href="#contact" className="btn-hero-primary" onClick={(e) => { e.preventDefault(); scrollToContact(); }}>
+                <a href="#contact" className="btn-hero-primary" onClick={(e) => { e.preventDefault(); trackCTAClick('GET INSTANT QUOTE', 'homepage'); scrollToContact(); }}>
                   GET INSTANT QUOTE
                 </a>
-                <button className="btn-hero-secondary" onClick={openCalendly}>
+                <button className="btn-hero-secondary" onClick={() => { trackCTAClick('BOOK STRATEGY CALL', 'homepage'); openCalendly(); }}>
                   BOOK STRATEGY CALL &rarr;
                 </button>
               </div>
@@ -153,7 +155,7 @@ export default function HomePage() {
             <div className="hero-right">
               <div className="hero-image-wrapper">
                 <img
-                  src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=2000&auto=format&fit=crop"
+                  src="/images/hero-image.jpg"
                   alt="Street team marketing brand ambassador engaging consumers at a product sampling event"
                   className="hero-image"
                   width={2000}
@@ -400,7 +402,9 @@ export default function HomePage() {
       <section id="contact" className="contact">
         <div className="container">
           <h2>Ready to Launch Your Campaign?</h2>
-          <p>Let's discuss how Street Teams Co can amplify your brand</p>
+          <p>Let's discuss how Street Teams Co can amplify your brand, or email us at{' '}
+            <a href="mailto:hello@streetteamsco.com" onClick={() => trackEmailClick()}>hello@streetteamsco.com</a>
+          </p>
           <ContactForm />
         </div>
       </section>
