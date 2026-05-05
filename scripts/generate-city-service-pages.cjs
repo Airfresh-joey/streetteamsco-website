@@ -128,6 +128,46 @@ const services = [
 ];
 
 // ---------------------------------------------------------------------------
+// FAQ generators for each service+city combo
+// ---------------------------------------------------------------------------
+function generateFaqs(city, service) {
+  const c = city.city;
+  const abbr = city.abbr;
+  const sn = service.name;
+  const snl = sn.toLowerCase();
+
+  const faqSets = {
+    'brand-ambassadors': [
+      { q: `How much do brand ambassadors cost in ${c}, ${abbr}?`, a: `Brand ambassador rates in ${c} range from $25-$45 per hour depending on experience level and campaign requirements. Senior brand ambassadors with specialized skills run $35-$55/hr. Most campaigns have a 4-hour minimum per ambassador per shift. Contact us for a custom quote for your ${c} brand ambassador campaign.` },
+      { q: `How quickly can you deploy brand ambassadors in ${c}?`, a: `We can deploy professional brand ambassadors in ${c} within 5-7 business days for standard campaigns. Rush deployment is available in as little as 48 hours for urgent ${c} activations. For major events and trade shows, we recommend booking 2-4 weeks in advance for optimal ambassador selection.` },
+      { q: `What training do your ${c} brand ambassadors receive?`, a: `Every brand ambassador deployed in ${c} completes custom training specific to your brand, including product knowledge, messaging guidelines, target audience profiles, and engagement techniques. Training includes written materials, video content, and knowledge assessments before deployment. On-site team leads provide real-time coaching during campaigns.` },
+    ],
+    'event-staffing': [
+      { q: `How much does event staffing cost in ${c}, ${abbr}?`, a: `Event staffing rates in ${c} range from $25-$55 per hour depending on the role and experience level. Standard event staff start at $25-$40/hr, senior event coordinators run $40-$55/hr, and team leads command $50-$75/hr. All pricing includes staff sourcing, vetting, and basic campaign management.` },
+      { q: `What types of events do you staff in ${c}?`, a: `We staff all event types in ${c} including corporate conferences, trade shows, festivals, concerts, sporting events, product launches, grand openings, galas, private parties, and pop-up activations. Our ${c} event staff are experienced in registration management, guest services, crowd control, VIP hosting, and brand activations.` },
+      { q: `How far in advance should I book event staff in ${c}?`, a: `For optimal staffing in ${c}, book 2-3 weeks before your event. Rush staffing is available with 48-72 hours notice for most event types. Major ${c} events, holiday seasons, and convention periods should be booked 4-6 weeks in advance due to high demand across the ${c} metro area.` },
+    ],
+    'street-teams': [
+      { q: `How much does a street team cost in ${c}, ${abbr}?`, a: `Street team costs in ${c} range from $25-$50 per hour per team member depending on campaign requirements and team size. Standard street team members start at $25-$38/hr, and team leads run $50-$70/hr. Most campaigns achieve 500-1,500 face-to-face interactions per team per day in ${c}.` },
+      { q: `Where do your street teams deploy in ${c}?`, a: `Our ${c} street teams deploy to high-traffic locations including ${city.neighborhoods[0]}, ${city.neighborhoods[1]}, ${city.neighborhoods[2]}, and areas around ${city.landmarks[0]} and ${city.landmarks[1]}. We scout locations based on your target demographic and campaign objectives to maximize engagement rates.` },
+      { q: `Do you handle permits for street team campaigns in ${c}?`, a: `Yes. Our ${c} operations team handles all permitting requirements for street team activations including public space usage permits, distribution permits, and any venue-specific requirements. Permit costs are itemized separately in your campaign quote so there are no surprises.` },
+    ],
+    'product-sampling': [
+      { q: `How much does product sampling cost in ${c}, ${abbr}?`, a: `Product sampling staff in ${c} cost $25-$45 per hour depending on experience and campaign complexity. This includes trained sampling staff, GPS tracking, and reporting. Additional costs may include cold-chain logistics, permits, and materials management. We achieve a 35% average trial-to-purchase conversion rate in ${c}.` },
+      { q: `What types of product sampling do you do in ${c}?`, a: `We run product sampling campaigns in ${c} at grocery stores, big-box retailers, gyms, office buildings, transit hubs, festivals, farmers markets, and outdoor events. Our ${c} sampling teams handle food and beverage sampling, beauty product demos, supplement sampling, and technology product trials.` },
+      { q: `Do you handle food safety compliance for sampling in ${c}?`, a: `Yes. Our ${c} sampling teams are trained on food safety protocols, health code compliance, and proper handling procedures. We coordinate with local health departments for required permits, maintain cold-chain logistics for temperature-sensitive products, and ensure all ${c} sampling campaigns meet regulatory requirements.` },
+    ],
+    'guerrilla-marketing': [
+      { q: `How much does guerrilla marketing cost in ${c}, ${abbr}?`, a: `Guerrilla marketing campaigns in ${c} typically range from $2,000 for a wild posting campaign to $50,000+ for multi-day immersive experiences. Street installations run $3,000-$8,000, flash mobs cost $5,000-$15,000, and projection mapping starts at $5,000. All campaigns include creative development, permitting, and documentation.` },
+      { q: `What guerrilla marketing tactics work best in ${c}?`, a: `The most effective guerrilla marketing tactics in ${c} include street installations near ${city.landmarks[0]}, wild posting in ${city.neighborhoods[0]} and ${city.neighborhoods[1]}, flash mobs in high-traffic pedestrian zones, and pop-up experiences near ${city.landmarks[1]}. Our creative team designs campaigns specifically for the ${c} market.` },
+      { q: `Do you handle permits for guerrilla marketing in ${c}?`, a: `Yes. Proper permitting is essential for guerrilla marketing campaigns in ${c}. Our operations team secures all required permits for public space usage, installations, projections, and street activations. We also carry liability insurance and coordinate with local authorities to ensure compliance with ${c} regulations.` },
+    ],
+  };
+
+  return faqSets[service.slug] || [];
+}
+
+// ---------------------------------------------------------------------------
 // Content generators - unique for each service+city combo
 // ---------------------------------------------------------------------------
 
@@ -258,6 +298,7 @@ function generatePage(city, service) {
   const intro = generateIntro(city, service);
   const useCases = generateUseCases(city, service);
   const pricingHtml = generatePricingSection(city, service);
+  const faqs = generateFaqs(city, service);
 
   const useCasesList = useCases.map(uc => `      <li>${uc}</li>`).join('\n');
   const includedList = service.included.map(item => `      <li>${item}</li>`).join('\n');
@@ -367,6 +408,16 @@ function generatePage(city, service) {
   }
   </script>
 
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+${faqs.map(f => `      {"@type": "Question", "name": "${f.q.replace(/"/g, '\\"')}", "acceptedAnswer": {"@type": "Answer", "text": "${f.a.replace(/"/g, '\\"')}"}}`).join(',\n')}
+    ]
+  }
+  </script>
+
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif; line-height: 1.7; color: #1a1a2e; background: #fafafa; }
@@ -412,14 +463,23 @@ function generatePage(city, service) {
     .included-item { background: #fff; border: 1px solid #e5e7eb; border-radius: 10px; padding: 1.25rem; display: flex; align-items: flex-start; gap: 0.75rem; }
     .included-item .check { color: #f59e0b; font-weight: 700; font-size: 1.25rem; flex-shrink: 0; line-height: 1.4; }
     .included-item p { margin: 0; font-size: 0.95rem; color: #333; }
-    footer { background: #0f172a; color: rgba(255,255,255,0.7); padding: 2rem; text-align: center; font-size: 0.85rem; }
+    .faq-section { margin: 2.5rem 0; }
+    .faq-item { border-bottom: 1px solid #e5e7eb; padding: 1.25rem 0; }
+    .faq-item h4 { font-size: 1.1rem; color: #0f172a; margin-bottom: 0.5rem; }
+    .faq-item p { color: #555; margin: 0; font-size: 1rem; }
+    footer { background: #0f172a; color: rgba(255,255,255,0.7); padding: 2rem 2rem 5rem; text-align: center; font-size: 0.85rem; }
     footer a { color: rgba(255,255,255,0.9); text-decoration: none; }
+    .sticky-cta { position: fixed; bottom: 0; left: 0; right: 0; background: #0f172a; border-top: 2px solid #f59e0b; padding: 0.75rem 1rem; display: flex; justify-content: center; align-items: center; gap: 1rem; z-index: 200; }
+    .sticky-cta p { color: #fff; font-size: 0.9rem; margin: 0; }
+    .sticky-cta a { display: inline-block; background: #f59e0b; color: #0f172a; padding: 0.6rem 1.5rem; border-radius: 6px; text-decoration: none; font-weight: 700; font-size: 0.9rem; white-space: nowrap; }
+    .sticky-cta a:hover { background: #d97706; }
     @media (max-width: 768px) {
       .page-hero h1 { font-size: 1.8rem; }
       .page-hero { padding: 3rem 1.5rem 2.5rem; }
       .content { padding: 2rem 1.5rem; }
       .stats-bar { grid-template-columns: repeat(2, 1fr); }
       .nav-links { display: none; }
+      .sticky-cta p { display: none; }
     }
   </style>
 </head>
@@ -431,7 +491,7 @@ function generatePage(city, service) {
     <div class="nav-links">
       <a href="/services">Services</a>
       <a href="/pricing">Pricing</a>
-      <a href="/industries">Industries</a>
+      <a href="/case-studies/">Case Studies</a>
       <a href="/locations">Locations</a>
       <a href="/blog/">Blog</a>
       <a href="/#contact">Get Quote</a>
@@ -494,6 +554,11 @@ ${pricingHtml}
     <li><strong>Proven results</strong> - 4.9/5 client rating with 127+ verified reviews</li>
   </ul>
 
+  <h2>Frequently Asked Questions About ${sn} in ${c}</h2>
+  <div class="faq-section">
+${faqs.map(f => `    <div class="faq-item">\n      <h4>${f.q}</h4>\n      <p>${f.a}</p>\n    </div>`).join('\n')}
+  </div>
+
   <div class="cta-section">
     <h2>Ready to Launch ${sn} in ${c}?</h2>
     <p>Tell us about your campaign goals and we will build a custom ${sn.toLowerCase()} plan for the ${c} market. Free quotes with no obligation.</p>
@@ -532,8 +597,14 @@ ${otherCityLinks}
 
 <footer>
   <p>&copy; 2026 <a href="/">Street Teams Co</a>. All rights reserved. | <a href="mailto:hello@streetteamsco.com">hello@streetteamsco.com</a> | <a href="/privacy">Privacy</a> | <a href="/terms">Terms</a></p>
-  <p style="margin-top: 0.5rem;"><a href="/locations">Locations</a> | <a href="/services">Services</a> | <a href="/pricing">Pricing</a> | <a href="/industries">Industries</a> | <a href="/blog/">Blog</a></p>
+  <p style="margin-top: 0.5rem;"><a href="/services">Services</a> | <a href="/pricing">Pricing</a> | <a href="/how-it-works">How It Works</a> | <a href="/case-studies/">Case Studies</a> | <a href="/locations">Locations</a> | <a href="/blog/">Blog</a></p>
+  <p style="margin-top: 0.5rem;"><a href="/street-team-marketing-agency">Street Team Marketing</a> | <a href="/brand-ambassador-agency">Brand Ambassadors</a> | <a href="/experiential-marketing-agency">Experiential Marketing</a> | <a href="/trade-show-staffing-agency">Trade Show Staffing</a> | <a href="/what-is-street-team-marketing">Guide</a></p>
 </footer>
+<div class="sticky-cta">
+  <p>Ready to launch your campaign? Get a free quote in 24 hours.</p>
+  <a href="/#contact">Get Free Quote</a>
+  <a href="mailto:hello@streetteamsco.com" style="background:transparent;border:1px solid #f59e0b;color:#f59e0b;">Email Us</a>
+</div>
 
 </body>
 </html>`;
