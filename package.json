@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build && node scripts/generate-static.mjs && node generate-sitemap.cjs",
+    "build": "node scripts/generate-city-service-pages.cjs && tsc -b && vite build && node scripts/generate-static.mjs && node generate-sitemap.cjs",
     "lint": "eslint .",
     "preview": "vite preview"
   },

@@ -123,6 +123,24 @@ const pillarPages = [
 ];
 pillarPages.forEach(p => addUrl(`/${p}`, 0.95, 'weekly'));
 
+// Niche service pages (static HTML in /public/)
+const nicheServices = [
+  'wild-posting-services',
+  'human-billboard-advertising',
+  'flash-mob-marketing',
+  'tailgate-marketing',
+  'alcohol-brand-promotions',
+  'campus-marketing-agency',
+  'auto-show-event-staffing',
+  'pop-up-shop-staffing',
+  'cannabis-marketing-agency',
+  'tech-event-staffing',
+  'food-beverage-sampling-agency',
+  'sports-marketing-agency',
+  'entertainment-marketing-agency',
+];
+nicheServices.forEach(p => addUrl(`/${p}`, 0.9, 'weekly'));
+
 // Standalone pages (static HTML in /public/)
 addUrl('/how-it-works', 0.8, 'monthly');
 addUrl('/about-street-teams-co', 0.8, 'monthly');
