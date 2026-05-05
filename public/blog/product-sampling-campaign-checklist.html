@@ -37,7 +37,7 @@
     .cta-section { background: linear-gradient(135deg, #1a1a2e, #16213e); color: #fff; padding: 3rem; border-radius: 16px; text-align: center; margin: 3rem 0; }
     .cta-section h2 { color: #fff; margin-bottom: 1rem; } .cta-section p { color: rgba(255,255,255,0.9); margin-bottom: 1.5rem; }
     .cta-btn { display: inline-block; background: #f59e0b; color: #1a1a2e; padding: 0.85rem 2rem; border-radius: 8px; text-decoration: none; font-weight: 700; }
-    footer { background: #1a1a2e; color: rgba(255,255,255,0.7); padding: 2rem; text-align: center; font-size: 0.85rem; } footer a { color: rgba(255,255,255,0.9); text-decoration: none; }
+    footer {padding: 2rem 2rem 5rem; text-align: center; font-size: 0.85rem; } footer a { color: rgba(255,255,255,0.9); text-decoration: none; }
     @media (max-width: 768px) { .article-hero h1 { font-size: 1.7rem; } .nav-links { display: none; } }
   </style>
 <script type="application/ld+json">
@@ -161,5 +161,11 @@
     <a href="/testimonials" style="color:#2563eb;">Client Testimonials</a>
   </div>
 </div>
-</body>
+
+<div style="position:fixed;bottom:0;left:0;right:0;background:#1a1a2e;border-top:2px solid #f59e0b;padding:.75rem 1rem;display:flex;justify-content:center;align-items:center;gap:1rem;z-index:200">
+  <p style="color:#fff;font-size:.9rem;margin:0" class="sticky-msg">Ready to launch your campaign? Get a free quote in 24 hours.</p>
+  <a href="/#contact" style="display:inline-block;background:#f59e0b;color:#1a1a2e;padding:.6rem 1.5rem;border-radius:6px;text-decoration:none;font-weight:700;font-size:.9rem;white-space:nowrap">Get Free Quote</a>
+  <a href="mailto:hello@streetteamsco.com" style="display:inline-block;background:transparent;border:1px solid #f59e0b;color:#f59e0b;padding:.6rem 1.5rem;border-radius:6px;text-decoration:none;font-weight:700;font-size:.9rem;white-space:nowrap">Email Us</a>
+</div>
+<style>.sticky-msg{display:block}@media(max-width:768px){.sticky-msg{display:none!important}}</style></body>
 </html>
