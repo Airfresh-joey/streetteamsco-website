@@ -76,7 +76,93 @@
     </script>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <!-- Pre-rendered content for SEO crawlers. React replaces this on hydration. -->
+      <nav style="background:#1a1a2e;padding:1rem 2rem;display:flex;justify-content:space-between;align-items:center">
+        <a href="/" style="color:#fff;font-weight:800;font-size:1.2rem;text-decoration:none;letter-spacing:1px">STREET TEAMS CO</a>
+        <div><a href="/services" style="color:rgba(255,255,255,.8);text-decoration:none;margin-left:1.5rem;font-size:.9rem">Services</a><a href="/pricing" style="color:rgba(255,255,255,.8);text-decoration:none;margin-left:1.5rem;font-size:.9rem">Pricing</a><a href="/case-studies/" style="color:rgba(255,255,255,.8);text-decoration:none;margin-left:1.5rem;font-size:.9rem">Case Studies</a><a href="/locations" style="color:rgba(255,255,255,.8);text-decoration:none;margin-left:1.5rem;font-size:.9rem">Locations</a><a href="/blog/" style="color:rgba(255,255,255,.8);text-decoration:none;margin-left:1.5rem;font-size:.9rem">Blog</a><a href="/#contact" style="color:rgba(255,255,255,.8);text-decoration:none;margin-left:1.5rem;font-size:.9rem">Get Quote</a></div>
+      </nav>
+      <section style="background:linear-gradient(135deg,#1a1a2e,#16213e);padding:5rem 2rem;color:#fff;text-align:center">
+        <h1 style="font-size:2.5rem;font-weight:800;margin-bottom:1rem">Street Team Marketing Agency | 1,000+ Cities Nationwide</h1>
+        <p style="font-size:1.15rem;max-width:700px;margin:0 auto 2rem;opacity:.9">Professional brand ambassadors and street marketing teams in 1,000+ US cities. Event staffing, product sampling, and guerrilla marketing that drives 40% higher engagement than digital-only campaigns.</p>
+        <p><strong style="color:#f59e0b">1,000+ Cities</strong> &bull; <strong style="color:#f59e0b">500+ Campaigns</strong> &bull; <strong style="color:#f59e0b">94% Client Retention</strong> &bull; <strong style="color:#f59e0b">4.9/5 Rating</strong></p>
+        <p style="margin-top:1.5rem"><a href="/#contact" style="background:#f59e0b;color:#1a1a2e;padding:.85rem 2rem;border-radius:8px;text-decoration:none;font-weight:700;display:inline-block">GET INSTANT QUOTE</a></p>
+      </section>
+      <section style="background:#f8f9fa;padding:2rem;text-align:center">
+        <p style="font-size:.9rem;color:#666;margin-bottom:1rem">Trusted by Leading Brands</p>
+        <p style="color:#333">Netflix &bull; Microsoft &bull; Apple &bull; Starbucks &bull; Lyft &bull; Nissan &bull; Cirque du Soleil &bull; 1800 Tequila &bull; Williams Racing &bull; TED</p>
+      </section>
+      <section style="max-width:1100px;margin:0 auto;padding:3rem 2rem">
+        <h2 style="font-size:1.75rem;text-align:center;margin-bottom:2rem">Street Marketing Services We Offer</h2>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem">
+          <div style="background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:1.5rem"><h3><a href="/services/street-teams" style="color:#1a1a2e;text-decoration:none">Street Activations</a></h3><p style="color:#555">High-traffic guerrilla marketing campaigns that generate buzz and drive brand awareness.</p></div>
+          <div style="background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:1.5rem"><h3><a href="/services/brand-ambassadors" style="color:#1a1a2e;text-decoration:none">Brand Ambassadors</a></h3><p style="color:#555">Professional teams trained to represent your brand with enthusiasm and expertise.</p></div>
+          <div style="background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:1.5rem"><h3><a href="/services/event-staffing" style="color:#1a1a2e;text-decoration:none">Event Staffing</a></h3><p style="color:#555">Experienced staff for trade shows, festivals, conferences, and special events.</p></div>
+          <div style="background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:1.5rem"><h3><a href="/services/product-sampling" style="color:#1a1a2e;text-decoration:none">Product Sampling</a></h3><p style="color:#555">Direct-to-consumer product distribution and sampling campaigns.</p></div>
+          <div style="background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:1.5rem"><h3><a href="/services/guerrilla-marketing" style="color:#1a1a2e;text-decoration:none">Guerrilla Marketing</a></h3><p style="color:#555">LED trucks, wild posting, pop-up experiences, and unconventional campaigns.</p></div>
+          <div style="background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:1.5rem"><h3><a href="/pricing" style="color:#1a1a2e;text-decoration:none">View Pricing</a></h3><p style="color:#555">Transparent pricing for all services. Brand ambassadors from $25/hr.</p></div>
+        </div>
+      </section>
+      <section style="background:#1a1a2e;color:#fff;padding:2.5rem 2rem;text-align:center">
+        <div style="display:flex;justify-content:center;gap:3rem;flex-wrap:wrap">
+          <div><div style="font-size:2rem;font-weight:800;color:#f59e0b">10,000+</div><div style="font-size:.85rem;opacity:.8">Staff Nationwide</div></div>
+          <div><div style="font-size:2rem;font-weight:800;color:#f59e0b">1,000+</div><div style="font-size:.85rem;opacity:.8">Cities</div></div>
+          <div><div style="font-size:2rem;font-weight:800;color:#f59e0b">500+</div><div style="font-size:.85rem;opacity:.8">Campaigns</div></div>
+          <div><div style="font-size:2rem;font-weight:800;color:#f59e0b">94%</div><div style="font-size:.85rem;opacity:.8">Client Retention</div></div>
+        </div>
+      </section>
+      <section style="max-width:1100px;margin:0 auto;padding:3rem 2rem">
+        <h2 style="font-size:1.75rem;text-align:center;margin-bottom:1rem">The Street Teams Co Promise</h2>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;margin-top:1.5rem">
+          <div style="background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:1.5rem"><h3>Show-Up Guarantee</h3><p style="color:#555">If any team member doesn't show, we replace them immediately or credit your account.</p></div>
+          <div style="background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:1.5rem"><h3>Trained &amp; Briefed</h3><p style="color:#555">Every street team member completes your brand training before deployment.</p></div>
+          <div style="background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:1.5rem"><h3>Real-Time Reporting</h3><p style="color:#555">Live GPS tracking, photo uploads, and engagement metrics on every campaign.</p></div>
+        </div>
+      </section>
+      <section style="background:#f8f9fa;padding:3rem 2rem">
+        <div style="max-width:1100px;margin:0 auto">
+          <h2 style="font-size:1.75rem;text-align:center;margin-bottom:1rem">What Our Clients Say</h2>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;margin-top:1.5rem">
+            <blockquote style="background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:1.5rem;margin:0"><p>&ldquo;Street Teams Co deployed 40 brand ambassadors across 6 cities in one week. Our client's product sampling campaign generated a 28% trial-to-purchase rate.&rdquo;</p><footer style="margin-top:.75rem;font-size:.9rem;color:#666">&mdash; Amanda R., Agency Director</footer></blockquote>
+            <blockquote style="background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:1.5rem;margin:0"><p>&ldquo;We switched from ATN to Street Teams Co last year. Better staff quality, faster response times, and 20% lower costs.&rdquo;</p><footer style="margin-top:.75rem;font-size:.9rem;color:#666">&mdash; Kevin S., Marketing VP</footer></blockquote>
+            <blockquote style="background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:1.5rem;margin:0"><p>&ldquo;Their guerrilla marketing team turned heads in Times Square. 50,000+ impressions in a single day and the photos went viral on social.&rdquo;</p><footer style="margin-top:.75rem;font-size:.9rem;color:#666">&mdash; Nicole P., Brand Manager</footer></blockquote>
+            <blockquote style="background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:1.5rem;margin:0"><p>&ldquo;Used them for 3 trade shows this year. Always professional, always on time. My go-to for event staffing nationwide.&rdquo;</p><footer style="margin-top:.75rem;font-size:.9rem;color:#666">&mdash; Jason M., Event Director</footer></blockquote>
+          </div>
+        </div>
+      </section>
+      <section style="max-width:1100px;margin:0 auto;padding:3rem 2rem">
+        <h2 style="font-size:1.75rem;margin-bottom:1rem">Street Team Marketing Nationwide</h2>
+        <p>We operate in every major market. Find street teams in your city or explore our industry expertise.</p>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:2rem;margin-top:1.5rem">
+          <div>
+            <h3>Top Markets</h3>
+            <ul style="list-style:none;padding:0"><li><a href="/locations/georgia/atlanta">Street Teams Atlanta</a></li><li><a href="/locations/pennsylvania/philadelphia">Street Teams Philadelphia</a></li><li><a href="/locations/tennessee/nashville">Street Teams Nashville</a></li><li><a href="/locations/florida/miami">Street Teams Miami</a></li><li><a href="/locations/california/los-angeles">Street Teams Los Angeles</a></li><li><a href="/locations/new-york/new-york-city">Street Teams New York City</a></li><li><a href="/locations/illinois/chicago">Street Teams Chicago</a></li><li><a href="/locations">View All 1,000+ Cities</a></li></ul>
+          </div>
+          <div>
+            <h3>Industries</h3>
+            <ul style="list-style:none;padding:0"><li><a href="/industries/cannabis">Cannabis Street Marketing</a></li><li><a href="/industries/technology">Tech &amp; SaaS Marketing</a></li><li><a href="/industries/food-beverage">Food &amp; Beverage Sampling</a></li><li><a href="/industries/retail">Retail Activations</a></li><li><a href="/industries/entertainment">Entertainment Campaigns</a></li><li><a href="/industries">View All 14 Industries</a></li></ul>
+          </div>
+          <div>
+            <h3>Resources</h3>
+            <ul style="list-style:none;padding:0"><li><a href="/what-is-street-team-marketing">What Is Street Team Marketing?</a></li><li><a href="/street-team-marketing-agency">Street Team Marketing Agency</a></li><li><a href="/brand-ambassador-agency">Brand Ambassador Agency</a></li><li><a href="/experiential-marketing-agency">Experiential Marketing Agency</a></li><li><a href="/trade-show-staffing-agency">Trade Show Staffing Agency</a></li><li><a href="/how-it-works">How It Works</a></li><li><a href="/case-studies/">Case Studies &amp; Results</a></li><li><a href="/pricing">Pricing &amp; Rate Cards</a></li><li><a href="/blog/">Street Marketing Blog</a></li></ul>
+          </div>
+          <div>
+            <h3>World Cup 2026</h3>
+            <ul style="list-style:none;padding:0"><li><a href="/fifa-world-cup-2026-staffing">World Cup Staffing Overview</a></li><li><a href="/fifa-world-cup-2026-staffing/new-york-new-jersey">NYC/NJ Staffing</a></li><li><a href="/fifa-world-cup-2026-staffing/los-angeles">LA Staffing</a></li><li><a href="/fifa-world-cup-2026-staffing/miami">Miami Staffing</a></li><li><a href="/fifa-world-cup-2026-staffing/dallas">Dallas Staffing</a></li><li><a href="/fifa-world-cup-2026-staffing">View All 11 Host Cities</a></li></ul>
+          </div>
+        </div>
+      </section>
+      <section style="background:linear-gradient(135deg,#1a1a2e,#16213e);color:#fff;padding:3rem 2rem;text-align:center">
+        <h2 style="color:#fff;margin-bottom:1rem">Ready to Launch Your Campaign?</h2>
+        <p style="opacity:.9;margin-bottom:1.5rem">Contact us to discuss how Street Teams Co can amplify your brand.</p>
+        <p><a href="mailto:hello@streetteamsco.com" style="color:#f59e0b;font-weight:700">hello@streetteamsco.com</a></p>
+        <p style="margin-top:1rem"><a href="/#contact" style="background:#f59e0b;color:#1a1a2e;padding:.85rem 2rem;border-radius:8px;text-decoration:none;font-weight:700;display:inline-block">GET A FREE QUOTE</a></p>
+      </section>
+      <footer style="background:#1a1a2e;color:rgba(255,255,255,.7);padding:2rem;text-align:center;font-size:.85rem">
+        <p>&copy; 2026 <a href="/" style="color:rgba(255,255,255,.9);text-decoration:none">Street Teams Co</a>. All rights reserved. | <a href="mailto:hello@streetteamsco.com" style="color:rgba(255,255,255,.9);text-decoration:none">hello@streetteamsco.com</a> | <a href="/privacy" style="color:rgba(255,255,255,.9);text-decoration:none">Privacy</a> | <a href="/terms" style="color:rgba(255,255,255,.9);text-decoration:none">Terms</a></p>
+        <p style="margin-top:.5rem"><a href="/services" style="color:rgba(255,255,255,.7);text-decoration:none">Services</a> | <a href="/pricing" style="color:rgba(255,255,255,.7);text-decoration:none">Pricing</a> | <a href="/how-it-works" style="color:rgba(255,255,255,.7);text-decoration:none">How It Works</a> | <a href="/case-studies/" style="color:rgba(255,255,255,.7);text-decoration:none">Case Studies</a> | <a href="/locations" style="color:rgba(255,255,255,.7);text-decoration:none">Locations</a> | <a href="/blog/" style="color:rgba(255,255,255,.7);text-decoration:none">Blog</a></p>
+      </footer>
+    </div>
     <script type="module" src="/src/main.tsx"></script>
     <!-- Calendly popup widget (CSS preloaded in head, JS async) -->
     <link rel="preload" href="https://assets.calendly.com/assets/external/widget.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
