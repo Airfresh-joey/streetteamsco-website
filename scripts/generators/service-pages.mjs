@@ -4,7 +4,7 @@
 import path from 'path';
 import {
   parseServices, wrapPage, writePage, breadcrumbSchema, faqSchema, serviceSchema,
-  statsBar, faqHtml, ctaSection, internalLinksBlock, escHtml, BASE_URL,
+  statsBar, faqHtml, ctaSection, internalLinksBlock, escHtml, truncate, BASE_URL,
 } from './shared.mjs';
 
 const RELATED_BLOG_POSTS = {
@@ -151,7 +151,7 @@ ${internalLinksBlock('Helpful Links', [
 
   return wrapPage({
     title: `${service.name} Services | Nationwide from ${priceRange} | Street Teams Co`,
-    description: `${service.name} services in 1,000+ US cities. ${service.description.slice(0, 120)}. 500+ campaigns, 94% client retention. Get a free quote.`,
+    description: `${service.name} services in 1,000+ US cities. ${truncate(service.description, 120).replace(/\.$/, '')}. 500+ campaigns, 94% client retention. Get a free quote.`,
     canonical,
     keywords: `${service.name.toLowerCase()}, ${service.name.toLowerCase()} services, ${service.name.toLowerCase()} agency, hire ${service.name.toLowerCase()}, ${service.name.toLowerCase()} near me`,
     schemas,

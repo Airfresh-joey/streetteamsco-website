@@ -198,6 +198,18 @@ export function escJsonLd(str) {
   return str.replace(/\\/g, '\\\\').replace(/"/g, '\\"').replace(/\n/g, '\\n');
 }
 
+/** Truncate a string at sentence boundary (preferred) or word boundary, max `len` characters. */
+export function truncate(str, len = 120) {
+  if (str.length <= len) return str;
+  const cut = str.slice(0, len);
+  // Prefer sentence boundary
+  const lastPeriod = cut.lastIndexOf('. ');
+  if (lastPeriod > len * 0.4) return cut.slice(0, lastPeriod + 1);
+  // Fall back to word boundary
+  const lastSpace = cut.lastIndexOf(' ');
+  return lastSpace > 0 ? cut.slice(0, lastSpace) : cut;
+}
+
 // ---------------------------------------------------------------------------
 // Full page wrapper
 // ---------------------------------------------------------------------------
