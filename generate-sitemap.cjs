@@ -110,8 +110,22 @@ const pillarPages = [
   'brand-ambassador-agency',
   'guerrilla-marketing-agency',
   'product-sampling-agency',
+  'experiential-marketing-agency',
+  'field-marketing-agency',
+  'trade-show-staffing-agency',
+  'promotional-staffing-agency',
+  'event-marketing-agency',
+  'mobile-marketing-tours',
+  'brand-activation-agency',
+  'corporate-event-staffing',
+  'college-marketing-agency',
+  'festival-staffing-agency',
 ];
 pillarPages.forEach(p => addUrl(`/${p}`, 0.95, 'weekly'));
+
+// Standalone pages (static HTML in /public/)
+addUrl('/how-it-works', 0.8, 'monthly');
+addUrl('/about-street-teams-co', 0.8, 'monthly');
 
 // Event / time-sensitive landing pages
 addUrl('/fifa-world-cup-2026-staffing', 0.95, 'weekly');

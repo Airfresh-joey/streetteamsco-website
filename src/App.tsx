@@ -46,7 +46,7 @@ function AppLayout() {
           <div className={`nav-links ${menuOpen ? 'nav-open' : ''}`}>
             <Link to="/services">Services</Link>
             <Link to="/pricing">Pricing</Link>
-            <Link to="/industries">Industries</Link>
+            <a href="/case-studies/">Case Studies</a>
             <Link to="/locations">Locations</Link>
             <a href="/fifa-world-cup-2026-staffing" style={{color: '#f59e0b', fontWeight: 700}}>World Cup 2026</a>
             <a href="/blog/">Blog</a>
@@ -96,7 +96,10 @@ function AppLayout() {
             <div className="footer-section">
               <h4>Company</h4>
               <Link to="/pricing">Pricing</Link>
+              <a href="/how-it-works">How It Works</a>
+              <a href="/about-street-teams-co">About Us</a>
               <Link to="/testimonials">Testimonials</Link>
+              <a href="/case-studies/">Case Studies</a>
               <Link to="/industries">Industries</Link>
               <Link to="/locations">Locations</Link>
               <a href="/blog/">Blog</a>
@@ -105,10 +108,10 @@ function AppLayout() {
               <h4>Resources</h4>
               <a href="/street-team-marketing-agency">Street Team Marketing Agency</a>
               <a href="/brand-ambassador-agency">Brand Ambassador Agency</a>
-              <a href="/guerrilla-marketing-agency">Guerrilla Marketing Agency</a>
-              <a href="/product-sampling-agency">Product Sampling Agency</a>
-              <a href="/compare/atn-event-staffing">vs ATN Event Staffing</a>
-              <a href="/compare/alt-terrain">vs Alt Terrain</a>
+              <a href="/experiential-marketing-agency">Experiential Marketing Agency</a>
+              <a href="/trade-show-staffing-agency">Trade Show Staffing Agency</a>
+              <a href="/what-is-street-team-marketing">What Is Street Team Marketing?</a>
+              <a href="/compare/atn-event-staffing">Agency Comparisons</a>
               <a href="/fifa-world-cup-2026-staffing" style={{color: '#f59e0b', fontWeight: 600}}>World Cup 2026 Staffing</a>
             </div>
             <div className="footer-section">

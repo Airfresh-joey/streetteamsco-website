@@ -374,11 +374,13 @@ export default function HomePage() {
             <div className="home-links-col">
               <h3>Resources</h3>
               <ul>
+                <li><a href="/what-is-street-team-marketing">What Is Street Team Marketing?</a></li>
                 <li><a href="/street-team-marketing-agency">Street Team Marketing Agency</a></li>
                 <li><a href="/brand-ambassador-agency">Brand Ambassador Agency</a></li>
-                <li><a href="/guerrilla-marketing-agency">Guerrilla Marketing Agency</a></li>
-                <li><a href="/product-sampling-agency">Product Sampling Agency</a></li>
-                <li><Link to="/testimonials">Client Results & Testimonials</Link></li>
+                <li><a href="/experiential-marketing-agency">Experiential Marketing Agency</a></li>
+                <li><a href="/trade-show-staffing-agency">Trade Show Staffing Agency</a></li>
+                <li><a href="/how-it-works">How It Works</a></li>
+                <li><a href="/case-studies/">Case Studies & Results</a></li>
                 <li><Link to="/pricing">Pricing & Rate Cards</Link></li>
                 <li><a href="/blog/">Street Marketing Blog</a></li>
               </ul>
