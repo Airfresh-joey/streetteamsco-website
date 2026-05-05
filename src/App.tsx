@@ -110,8 +110,9 @@ function AppLayout() {
               <a href="/brand-ambassador-agency">Brand Ambassador Agency</a>
               <a href="/experiential-marketing-agency">Experiential Marketing Agency</a>
               <a href="/trade-show-staffing-agency">Trade Show Staffing Agency</a>
-              <a href="/wild-posting-services">Wild Posting Services</a>
-              <a href="/campus-marketing-agency">Campus Marketing</a>
+              <a href="/conference-staffing-agency">Conference Staffing</a>
+              <a href="/in-store-demo-staffing">In-Store Demo Staffing</a>
+              <a href="/promotional-models">Promotional Models</a>
               <a href="/what-is-street-team-marketing">What Is Street Team Marketing?</a>
               <a href="/compare/event-staffing-companies">Agency Comparisons</a>
               <a href="/fifa-world-cup-2026-staffing" style={{color: '#f59e0b', fontWeight: 600}}>World Cup 2026 Staffing</a>

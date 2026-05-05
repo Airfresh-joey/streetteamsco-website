@@ -138,6 +138,10 @@ const nicheServices = [
   'food-beverage-sampling-agency',
   'sports-marketing-agency',
   'entertainment-marketing-agency',
+  'conference-staffing-agency',
+  'in-store-demo-staffing',
+  'promotional-models',
+  'b2b-experiential-marketing',
 ];
 nicheServices.forEach(p => addUrl(`/${p}`, 0.9, 'weekly'));
 
