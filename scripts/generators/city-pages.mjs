@@ -48,16 +48,20 @@ function getCityTier(city) {
 function generateCityFaqs(city, state) {
   return [
     {
+      q: `How much does event staffing cost in ${city.name}?`,
+      a: `Event staffing in ${city.name} ranges from $25-$75 per hour depending on the role. Brand ambassadors start at $25-$45/hr, promotional models at $35-$65/hr, and event coordinators at $45-$75/hr. Contact us for a custom ${city.name} event staffing quote.`,
+    },
+    {
+      q: `How quickly can you deploy event staff in ${city.name}?`,
+      a: `We can deploy professional event staff in ${city.name} within 5-7 business days. Rush staffing in ${city.name}, ${state.abbreviation} is available with as little as 48 hours notice for urgent events.`,
+    },
+    {
+      q: `What types of events do you staff in ${city.name}?`,
+      a: `In ${city.name}, we staff trade shows, conferences, product launches, brand activations, product sampling events, corporate events, festivals, and promotional campaigns. Our ${city.name} team is experienced across all event types.`,
+    },
+    {
       q: `How much does a street team cost in ${city.name}?`,
       a: `Street team costs in ${city.name} typically range from $25-$75 per hour per brand ambassador, depending on campaign requirements and team size. Contact us for a custom quote for your ${city.name} campaign.`,
-    },
-    {
-      q: `How quickly can you deploy a street team in ${city.name}?`,
-      a: `We can typically deploy a professional street team in ${city.name} within 5-7 business days. For rush campaigns, we offer expedited timelines in ${city.name}, ${state.abbreviation} with as little as 48 hours notice.`,
-    },
-    {
-      q: `What types of campaigns do you run in ${city.name}?`,
-      a: `In ${city.name}, we run brand activations, product sampling, event staffing, guerrilla marketing, flyer distribution, and promotional events. Our ${city.name} team is experienced across all campaign types.`,
     },
   ];
 }
@@ -183,7 +187,7 @@ function generateCityPage(city, state, allStates) {
   const schemas = [
     localBusinessSchema({
       name: `Street Teams Co - ${city.name}`,
-      description: `Professional street team marketing and brand ambassador services in ${city.name}, ${state.name}.`,
+      description: `Professional event staffing, street team marketing, and brand ambassador services in ${city.name}, ${state.name}.`,
       url: canonical,
       city: city.name,
       stateAbbr: state.abbreviation,
@@ -213,8 +217,8 @@ function generateCityPage(city, state, allStates) {
   const body = `<section class="page-hero">
   <div class="page-hero-inner">
     <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> / <a href="/locations">Locations</a> / <a href="/locations/${state.slug}">${escHtml(state.name)}</a> / <span>${escHtml(city.name)}</span></nav>
-    <h1>Street Teams in ${escHtml(city.name)}, ${state.abbreviation} | Brand Ambassadors from $25/hr</h1>
-    <p>Professional street team marketing and brand ambassador services in ${city.name}, ${state.abbreviation}.${city.population ? ' Population: ' + city.population + '.' : ''} Event staffing, product sampling, and guerrilla marketing from $25/hr.</p>
+    <h1>Event Staffing &amp; Street Teams in ${escHtml(city.name)}, ${state.abbreviation}</h1>
+    <p>Event staffing, street team marketing, and brand ambassador services in ${city.name}, ${state.abbreviation}.${city.population ? ' Population: ' + city.population + '.' : ''} Professional event staff, product sampling, and guerrilla marketing from $25/hr.</p>
   </div>
 </section>
 
@@ -229,7 +233,7 @@ ${statsBar([
 
 ${contentBody}
 
-  <h2>Frequently Asked Questions About Street Teams in ${escHtml(city.name)}</h2>
+  <h2>Frequently Asked Questions About Event Staffing &amp; Street Teams in ${escHtml(city.name)}</h2>
 ${faqHtml(faqs)}
 
 ${ctaSection(
@@ -244,16 +248,18 @@ ${internalLinksBlock('Helpful Links', [
     { label: `All ${state.name} Cities`, url: `/locations/${state.slug}` },
     { label: 'All Locations', url: '/locations' },
     { label: 'All Services', url: '/services' },
-    { label: 'Pricing & Rate Cards', url: '/pricing' },
-    { label: 'Client Testimonials', url: '/testimonials' },
+    { label: 'Nationwide Event Staffing', url: '/nationwide-event-staffing' },
+    { label: 'Hire Event Staff', url: '/hire-event-staff' },
     { label: 'Brand Ambassador Agency', url: '/brand-ambassador-agency' },
+    { label: 'Pricing & Rate Cards', url: '/pricing' },
+    { label: 'Convention Staffing', url: '/convention-staffing-agency' },
   ])}
 
 </div>`;
 
   return wrapPage({
-    title: `Street Teams ${city.name}, ${state.abbreviation} | Brand Ambassadors from $25/hr | Free Quote`,
-    description: `Street team marketing in ${city.name}, ${state.abbreviation}. Brand ambassadors, event staffing & product sampling from $25/hr. 94% client retention, 500+ campaigns. Get a free quote today.`,
+    title: `Street Teams & Event Staffing ${city.name}, ${state.abbreviation} | Brand Ambassadors from $25/hr`,
+    description: `Event staffing & street team marketing in ${city.name}, ${state.abbreviation}. Brand ambassadors, event staff & product sampling from $25/hr. 94% client retention, 500+ campaigns. Free quote.`,
     canonical,
     keywords: `street teams ${city.name}, brand ambassadors ${city.name}, event staffing ${city.name} ${state.abbreviation}, street team marketing ${city.name}`,
     schemas,

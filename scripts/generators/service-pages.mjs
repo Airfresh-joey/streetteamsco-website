@@ -162,11 +162,34 @@ ${internalLinksBlock('Helpful Links', [
 function generateServicesIndex(services) {
   const canonical = `${BASE_URL}/services`;
 
+  const indexFaq = [
+    { q: 'How much does street team marketing cost?', a: 'Street team marketing services start at $25/hr for basic distribution staff and go up to $75/hr for specialized promotional talent. Campaign packages start at $1,500 for a single-day activation. Multi-city tours and experiential campaigns are custom-quoted based on scope.' },
+    { q: 'What is the difference between a brand ambassador and a street team member?', a: 'Brand ambassadors undergo extended product training and represent your brand over longer campaigns with deeper consumer engagement. Street team members are deployed for high-volume outreach like flyer distribution, sampling, and event perimeter marketing. Both roles are professional and vetted.' },
+    { q: 'How quickly can you staff a campaign?', a: 'We can deploy teams in as few as 48 hours in major metro areas. For multi-city campaigns, we recommend 2-4 weeks lead time to ensure optimal talent matching and custom training. Rush staffing is available at standard rates in most top-20 markets.' },
+    { q: 'Do you operate nationwide?', a: 'Yes. Street Teams Co operates in all 50 US states with established teams in over 1,000 cities. Our strongest markets include New York, Los Angeles, Chicago, Miami, Dallas, Atlanta, and Denver, but we staff campaigns in cities of all sizes.' },
+    { q: 'What industries do you work with?', a: 'We serve all major industries including food and beverage, technology, cannabis, fitness, healthcare, automotive, entertainment, retail, real estate, and financial services. Each campaign is customized to your industry requirements and compliance standards.' },
+    { q: 'What reporting do I get after a campaign?', a: 'Every campaign includes a comprehensive post-campaign report with GPS-verified coverage maps, timestamped photos, engagement metrics, consumer survey data (if applicable), and ROI analysis. Reports are delivered within 48 hours of campaign completion.' },
+  ];
+
   const schemas = [
     breadcrumbSchema([
       { name: 'Home', url: BASE_URL },
       { name: 'Services', url: canonical },
     ]),
+    faqSchema(indexFaq),
+    {
+      '@context': 'https://schema.org',
+      '@type': 'ItemList',
+      'name': 'Street Teams Co Marketing Services',
+      'description': 'Full-service street team marketing, brand ambassador, and event staffing services available in 1,000+ US cities.',
+      'numberOfItems': services.length,
+      'itemListElement': services.map((s, i) => ({
+        '@type': 'ListItem',
+        'position': i + 1,
+        'name': s.name,
+        'url': `${BASE_URL}/services/${s.slug}`,
+      })),
+    },
   ];
 
   const serviceCardsHtml = services.map(s => `    <a href="/services/${s.slug}" class="city-card" style="text-decoration:none;">
@@ -185,33 +208,79 @@ function generateServicesIndex(services) {
 <div class="content">
 
 ${statsBar([
-    { number: '8', label: 'Service Lines' },
-    { number: '1,000+', label: 'Cities' },
-    { number: '500+', label: 'Campaigns' },
+    { number: '8', label: 'Core Services' },
+    { number: '1,000+', label: 'Cities Covered' },
+    { number: '500+', label: 'Campaigns Executed' },
     { number: '94%', label: 'Client Retention' },
   ])}
 
-  <h2>Our Services</h2>
-  <p>Street Teams Co offers a full suite of street-level marketing services designed to put your brand directly in front of consumers. Select a service to learn more about pricing, features, and use cases.</p>
+  <h2>Street Team Marketing Services Overview</h2>
+  <p>Street Teams Co offers a full suite of street-level marketing services designed to put your brand directly in front of consumers. Our nationwide network of 10,000+ vetted promotional staff delivers boots-on-the-ground marketing that drives measurable results — from product sampling and event staffing to guerrilla marketing and experiential activations.</p>
+  <p>Every service includes dedicated account management, custom brand training, GPS-verified activity tracking, and comprehensive post-campaign reporting. Select a service below to learn more about pricing, features, and use cases.</p>
 
   <div class="cities-grid">
 ${serviceCardsHtml}
   </div>
 
-  <h2>Why Street Teams Co?</h2>
+  <h2>Service Pricing at a Glance</h2>
+  <p>All pricing includes staff management, training, branded uniforms, GPS tracking, photo documentation, and post-campaign reporting. No hidden fees.</p>
+  <table class="pricing-table">
+    <thead><tr><th>Service</th><th>Starting Rate</th><th>Best For</th></tr></thead>
+    <tbody>
+      <tr><td><a href="/services/street-teams">Street Team Marketing</a></td><td>$25-$50/hr</td><td>Flyer distribution, brand awareness, event perimeters</td></tr>
+      <tr><td><a href="/services/brand-ambassadors">Brand Ambassadors</a></td><td>$25-$45/hr</td><td>Trade shows, retail demos, product launches</td></tr>
+      <tr><td><a href="/services/event-staffing">Event Staffing</a></td><td>$25-$55/hr</td><td>Festivals, conferences, corporate events</td></tr>
+      <tr><td><a href="/services/product-sampling">Product Sampling</a></td><td>$25-$45/hr</td><td>In-store demos, event sampling, direct-to-consumer</td></tr>
+      <tr><td><a href="/services/flyer-distribution">Flyer Distribution</a></td><td>$25-$35/hr</td><td>Local promotion, door-to-door, hand-to-hand</td></tr>
+      <tr><td><a href="/services/guerrilla-marketing">Guerrilla Marketing</a></td><td>$2,000/day</td><td>Viral activations, installations, flash mobs</td></tr>
+      <tr><td><a href="/services/experiential-marketing">Experiential Marketing</a></td><td>$5,000/activation</td><td>Pop-ups, mobile tours, immersive experiences</td></tr>
+      <tr><td><a href="/services/promotional-staffing">Promotional Staffing</a></td><td>$25-$65/hr</td><td>Models, demo specialists, field marketers</td></tr>
+    </tbody>
+  </table>
+  <p><a href="/pricing">View full pricing details and campaign packages &rarr;</a></p>
+
+  <h2>Specialized Services</h2>
+  <p>Beyond our core services, we offer specialized staffing and marketing solutions for specific industries, events, and campaign types:</p>
+  <div class="service-grid">
+    <div class="service-box"><h4><a href="/conference-staffing-agency">Conference Staffing</a></h4><p>Registration staff, badge scanners, session moderators for conferences of all sizes.</p></div>
+    <div class="service-box"><h4><a href="/in-store-demo-staffing">In-Store Demo Staffing</a></h4><p>Trained product demonstrators for Costco, Walmart, Target, and retail stores.</p></div>
+    <div class="service-box"><h4><a href="/promotional-models">Promotional Models</a></h4><p>Professional promotional models for trade shows, launches, and brand activations.</p></div>
+    <div class="service-box"><h4><a href="/b2b-experiential-marketing">B2B Experiential Marketing</a></h4><p>Immersive B2B brand experiences for corporate events and trade shows.</p></div>
+    <div class="service-box"><h4><a href="/trade-show-staffing-agency">Trade Show Staffing</a></h4><p>Booth staff, product demonstrators, and lead generators for trade shows.</p></div>
+    <div class="service-box"><h4><a href="/corporate-event-staffing">Corporate Event Staffing</a></h4><p>Professional staff for corporate events, retreats, and team-building activations.</p></div>
+  </div>
+
+  <h2>Why Choose Street Teams Co?</h2>
   <p>We combine a nationwide network of 10,000+ vetted promotional staff with real-time GPS tracking, custom brand training, and comprehensive campaign reporting. Whether you need a 2-person sampling team for a single afternoon or a 200-person activation across 10 cities, we deliver professional, measurable results.</p>
 
-  <ul>
-    <li><strong>Nationwide coverage</strong> in all 50 states and 1,000+ cities</li>
-    <li><strong>Vetted, trained staff</strong> with background checks and performance ratings</li>
-    <li><strong>Real-time tracking</strong> with GPS, timestamped photos, and live dashboards</li>
-    <li><strong>Transparent pricing</strong> starting at $25/hr with no hidden fees</li>
-    <li><strong>48-hour rush deployment</strong> available in major markets</li>
-  </ul>
+  <div class="included-grid">
+    <div class="included-item"><span class="check">&#10003;</span><p><strong>Nationwide coverage</strong> in all 50 states and 1,000+ cities</p></div>
+    <div class="included-item"><span class="check">&#10003;</span><p><strong>Vetted, trained staff</strong> with background checks and performance ratings</p></div>
+    <div class="included-item"><span class="check">&#10003;</span><p><strong>Real-time tracking</strong> with GPS, timestamped photos, and live dashboards</p></div>
+    <div class="included-item"><span class="check">&#10003;</span><p><strong>Transparent pricing</strong> starting at $25/hr with no hidden fees</p></div>
+    <div class="included-item"><span class="check">&#10003;</span><p><strong>48-hour rush deployment</strong> available in major markets</p></div>
+    <div class="included-item"><span class="check">&#10003;</span><p><strong>Dedicated account managers</strong> assigned to every campaign</p></div>
+    <div class="included-item"><span class="check">&#10003;</span><p><strong>Post-campaign analytics</strong> with ROI tracking and engagement data</p></div>
+    <div class="included-item"><span class="check">&#10003;</span><p><strong>Custom training programs</strong> tailored to your brand voice and messaging</p></div>
+  </div>
+
+  <h2>How It Works</h2>
+  <p>Getting started with Street Teams Co is simple. Our streamlined process gets your campaign from concept to execution in as little as one week:</p>
+  <ol>
+    <li><strong>Request a Quote</strong> — Tell us about your campaign goals, target locations, dates, and budget. We respond within 24 hours.</li>
+    <li><strong>Campaign Strategy</strong> — Our team builds a custom proposal with staff recommendations, deployment plans, and pricing.</li>
+    <li><strong>Staff Training &amp; Deployment</strong> — We recruit, vet, and train your team on brand messaging before deploying to your target locations.</li>
+    <li><strong>Real-Time Monitoring</strong> — Track your campaign in real time with GPS, photos, and engagement metrics via our client dashboard.</li>
+    <li><strong>Reporting &amp; Optimization</strong> — Receive a comprehensive post-campaign report with ROI analysis and recommendations for future campaigns.</li>
+  </ol>
+  <p><a href="/how-it-works">Learn more about our process &rarr;</a></p>
+
+  <h2>Frequently Asked Questions</h2>
+${faqHtml(indexFaq)}
 
 ${ctaSection(
     'Ready to Launch a Campaign?',
-    'Tell us about your goals and we will build a custom proposal with pricing, timelines, and staff recommendations.',
+    'Tell us about your goals and we will build a custom proposal with pricing, timelines, and staff recommendations. Free quotes within 24 hours.',
     'Get a Free Quote',
   )}
 
@@ -222,6 +291,10 @@ ${internalLinksBlock('Explore More', [
     { label: 'All Industries', url: '/industries' },
     { label: 'Brand Ambassador Agency', url: '/brand-ambassador-agency' },
     { label: 'Street Team Marketing Agency', url: '/street-team-marketing-agency' },
+    { label: 'Experiential Marketing Agency', url: '/experiential-marketing-agency' },
+    { label: 'Case Studies', url: '/case-studies/' },
+    { label: 'Compare Agencies', url: '/compare/event-staffing-companies' },
+    { label: 'World Cup 2026 Staffing', url: '/fifa-world-cup-2026-staffing' },
   ])}
 
 </div>`;
