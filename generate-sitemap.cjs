@@ -148,6 +148,11 @@ const nicheServices = [
   'nationwide-event-staffing',
   'vip-event-staffing',
   'what-is-street-team-marketing',
+  'app-launch-street-teams',
+  'cpg-brand-ambassadors',
+  'dispensary-marketing-agency',
+  'beauty-brand-sampling',
+  'college-nil-marketing',
 ];
 nicheServices.forEach(p => addUrl(`/${p}`, 0.9, 'weekly'));
 

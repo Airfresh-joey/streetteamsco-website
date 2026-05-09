@@ -120,7 +120,20 @@ function AppLayout() {
               <a href="/fifa-world-cup-2026-staffing" style={{color: '#f59e0b', fontWeight: 600}}>World Cup 2026 Staffing</a>
             </div>
             <div className="footer-section">
+              <h3>Industries</h3>
+              <a href="/cpg-brand-ambassadors">CPG Brand Ambassadors</a>
+              <a href="/beauty-brand-sampling">Beauty &amp; Cosmetics Sampling</a>
+              <a href="/app-launch-street-teams">App Launch Street Teams</a>
+              <a href="/dispensary-marketing-agency">Dispensary Marketing</a>
+              <a href="/college-nil-marketing">College NIL Marketing</a>
+              <a href="/cannabis-marketing-agency">Cannabis Brand Marketing</a>
+              <a href="/alcohol-brand-promotions">Alcohol Brand Promotions</a>
+              <a href="/college-marketing-agency">College Marketing</a>
+              <Link to="/industries">View All Industries</Link>
+            </div>
+            <div className="footer-section">
               <h3>Contact</h3>
+              <Link to="/contact">Get a Quote</Link>
               <a href="mailto:hello@streetteamsco.com">hello@streetteamsco.com</a>
               <p>50+ states &middot; 1,000+ cities</p>
               <p>Response within 24 hours</p>
