@@ -40,6 +40,12 @@
     { "source": "/in-store-demo-staffing", "destination": "/in-store-demo-staffing.html" },
     { "source": "/promotional-models", "destination": "/promotional-models.html" },
     { "source": "/b2b-experiential-marketing", "destination": "/b2b-experiential-marketing.html" },
+    { "source": "/hire-event-staff", "destination": "/hire-event-staff.html" },
+    { "source": "/vip-event-staffing", "destination": "/vip-event-staffing.html" },
+    { "source": "/convention-staffing-agency", "destination": "/convention-staffing-agency.html" },
+    { "source": "/nationwide-event-staffing", "destination": "/nationwide-event-staffing.html" },
+    { "source": "/blog/", "destination": "/blog/index.html" },
+    { "source": "/blog/:slug", "destination": "/blog/:slug.html" },
     { "source": "/(.*)", "destination": "/index.html" }
   ],
   "headers": [
