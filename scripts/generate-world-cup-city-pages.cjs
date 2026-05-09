@@ -809,7 +809,7 @@ ${faqSchemaEntries}
 <body>
 
 <div class="urgency-banner">
-  FIFA World Cup 2026 kicks off June 11. ${c} staff availability is limited. <a href="/#contact">Book your ${cs} World Cup team now</a>.
+  FIFA World Cup 2026 kicks off June 11. ${c} staff availability is limited. <a href="/contact">Book your ${cs} World Cup team now</a>.
 </div>
 
 <header>
@@ -821,7 +821,7 @@ ${faqSchemaEntries}
       <a href="/industries">Industries</a>
       <a href="/locations">Locations</a>
       <a href="/blog/">Blog</a>
-      <a href="/#contact">Get Quote</a>
+      <a href="/contact">Get Quote</a>
     </div>
   </div>
 </header>
@@ -836,7 +836,7 @@ ${faqSchemaEntries}
     <h1>World Cup 2026 Event Staffing in ${c} | ${venue}</h1>
     <p class="hero-sub">Street Teams Co provides professional brand ambassadors, event staff, street teams, and bilingual promotional talent for FIFA World Cup 2026 activations at ${venue} and the ${city.fanFestival} fan festival. From $${city.baseRate}/hr with 48-hour rush deployment.</p>
     <div class="hero-cta-row">
-      <a href="/#contact" class="cta-btn">Get Your ${cs} World Cup Quote</a>
+      <a href="/contact" class="cta-btn">Get Your ${cs} World Cup Quote</a>
       <a href="/pricing" class="cta-secondary">View Pricing</a>
     </div>
   </div>
@@ -865,7 +865,7 @@ ${faqSchemaEntries}
   <div class="cta-section">
     <h2>Get Your ${cs} World Cup Quote</h2>
     <p>Staff availability in ${c} is limited for the World Cup period. Tell us about your activation goals and we will build a custom staffing plan for ${venue} and surrounding areas.</p>
-    <a href="/#contact" class="cta-btn">Request a Free Quote</a>
+    <a href="/contact" class="cta-btn">Request a Free Quote</a>
     <a href="/pricing" class="cta-secondary">View Rate Cards</a>
   </div>
 
@@ -988,12 +988,12 @@ ${roles.map(r => `      <tr><td>${r.role}</td><td>${r.rate}</td><td>${r.fullDay}
 
   <p><strong>Additional costs:</strong> Management fees (15-25%), branded uniforms and materials ($500-$3,000), local permits ($200-$1,000), travel/lodging for supplemental staff, and product logistics for sampling campaigns. Rush bookings within 2 weeks incur a 15-25% surcharge.</p>
 
-  <p>For a custom quote, <a href="/#contact">request a proposal</a> or visit our <a href="/pricing">pricing page</a> for standard rate cards across all markets.</p>
+  <p>For a custom quote, <a href="/contact">request a proposal</a> or visit our <a href="/pricing">pricing page</a> for standard rate cards across all markets.</p>
 
   <div class="cta-section">
     <h2>Ready to Staff the World Cup in ${c}?</h2>
     <p>The best bilingual brand ambassadors and experienced event staff in ${c} are booking now. Do not wait until June to secure your team. Start the conversation today.</p>
-    <a href="/#contact" class="cta-btn">Get Your ${cs} World Cup Quote</a>
+    <a href="/contact" class="cta-btn">Get Your ${cs} World Cup Quote</a>
     <a href="/pricing" class="cta-secondary">View Pricing</a>
   </div>
 
@@ -1035,7 +1035,7 @@ ${linkedCityObjects.map(lc => `    <div class="city-link-card">
       <a href="/services/guerrilla-marketing">Guerrilla Marketing</a>
       <a href="/services/product-sampling">Product Sampling</a>
       <a href="/pricing">Pricing & Rate Cards</a>
-      <a href="/#contact">Contact Us</a>
+      <a href="/contact">Contact Us</a>
     </div>
   </div>
 
@@ -1067,7 +1067,7 @@ ${cities.map(ct => `      <a href="/fifa-world-cup-2026-staffing/${ct.citySlug}"
     <a href="/industries">Industries</a>
     <a href="/locations">Locations</a>
     <a href="/blog/">Blog</a>
-    <a href="/#contact">Contact</a>
+    <a href="/contact">Contact</a>
     <a href="/fifa-world-cup-2026-staffing">World Cup 2026</a>
   </div>
 </footer>

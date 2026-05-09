@@ -181,7 +181,7 @@ export function header() {
       <a href="/case-studies/">Case Studies</a>
       <a href="/locations">Locations</a>
       <a href="/blog/">Blog</a>
-      <a href="/#contact">Get Quote</a>
+      <a href="/contact">Get Quote</a>
     </div>
   </div>
 </header>`;
@@ -195,7 +195,7 @@ export function footer() {
 </footer>
 <div class="sticky-cta">
   <p>Ready to launch your campaign? Get a free quote in 24 hours.</p>
-  <a href="/#contact">Get Free Quote</a>
+  <a href="/contact">Get Free Quote</a>
   <a href="mailto:hello@streetteamsco.com" style="background:transparent;border:1px solid #f59e0b;color:#f59e0b;">Email Us</a>
 </div>`;
 }
@@ -372,7 +372,7 @@ export function ctaSection(heading, text, buttonText, buttonHref) {
   return `  <div class="cta-section">
     <h2>${heading}</h2>
     <p>${text}</p>
-    <a href="${buttonHref || '/#contact'}" class="cta-btn">${buttonText || 'Get a Free Quote'}</a>
+    <a href="${buttonHref || '/contact'}" class="cta-btn">${buttonText || 'Get a Free Quote'}</a>
   </div>`;
 }
 

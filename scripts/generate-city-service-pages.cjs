@@ -258,7 +258,7 @@ function generatePricingSection(city, service) {
       <tr><td>Multi-Day Immersive Experience</td><td>$10,000 - $50,000+</td><td>Full production, staffing, marketing</td></tr>
     </tbody>
   </table>
-  <p>All guerrilla marketing campaigns include creative concept development, permit coordination, professional documentation, and post-campaign reporting. <a href="/pricing">View our full pricing page</a> or <a href="/#contact">request a custom quote</a> for your ${c} campaign.</p>`;
+  <p>All guerrilla marketing campaigns include creative concept development, permit coordination, professional documentation, and post-campaign reporting. <a href="/pricing">View our full pricing page</a> or <a href="/contact">request a custom quote</a> for your ${c} campaign.</p>`;
   }
 
   return `
@@ -272,7 +272,7 @@ function generatePricingSection(city, service) {
       <tr><td>Team Lead / Manager</td><td>$${parseInt(service.priceHigh)} - $${parseInt(service.priceHigh) + 20}/hr</td><td>$${parseInt(service.priceHigh) * 8} - $${(parseInt(service.priceHigh) + 20) * 8}</td></tr>
     </tbody>
   </table>
-  <p>Pricing includes staff sourcing, vetting, training, and basic campaign reporting. Management fees (15-20%) and material costs are quoted separately. <a href="/pricing">View our full pricing page</a> or <a href="/#contact">request a custom quote</a> for your ${c} campaign.</p>`;
+  <p>Pricing includes staff sourcing, vetting, training, and basic campaign reporting. Management fees (15-20%) and material costs are quoted separately. <a href="/pricing">View our full pricing page</a> or <a href="/contact">request a custom quote</a> for your ${c} campaign.</p>`;
 }
 
 // ---------------------------------------------------------------------------
@@ -494,7 +494,7 @@ ${faqs.map(f => `      {"@type": "Question", "name": "${f.q.replace(/"/g, '\\"')
       <a href="/case-studies/">Case Studies</a>
       <a href="/locations">Locations</a>
       <a href="/blog/">Blog</a>
-      <a href="/#contact">Get Quote</a>
+      <a href="/contact">Get Quote</a>
     </div>
   </div>
 </header>
@@ -562,7 +562,7 @@ ${faqs.map(f => `    <div class="faq-item">\n      <h4>${f.q}</h4>\n      <p>${f
   <div class="cta-section">
     <h2>Ready to Launch ${sn} in ${c}?</h2>
     <p>Tell us about your campaign goals and we will build a custom ${sn.toLowerCase()} plan for the ${c} market. Free quotes with no obligation.</p>
-    <a href="/#contact" class="cta-btn">Get a Free ${c} Quote</a>
+    <a href="/contact" class="cta-btn">Get a Free ${c} Quote</a>
   </div>
 
   <div class="internal-links">
@@ -585,7 +585,7 @@ ${otherCityLinks}
     <h3>Helpful Links</h3>
     <div class="link-grid">
       <a href="/pricing">Pricing & Rate Cards</a>
-      <a href="/#contact">Contact Us</a>
+      <a href="/contact">Contact Us</a>
       <a href="/services">All Services</a>
       <a href="/locations">All Locations</a>
       <a href="/street-team-marketing-agency">About Our Agency</a>
@@ -602,7 +602,7 @@ ${otherCityLinks}
 </footer>
 <div class="sticky-cta">
   <p>Ready to launch your campaign? Get a free quote in 24 hours.</p>
-  <a href="/#contact">Get Free Quote</a>
+  <a href="/contact">Get Free Quote</a>
   <a href="mailto:hello@streetteamsco.com" style="background:transparent;border:1px solid #f59e0b;color:#f59e0b;">Email Us</a>
 </div>
 
