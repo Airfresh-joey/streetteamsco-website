@@ -46,7 +46,18 @@
     { "source": "/nationwide-event-staffing", "destination": "/nationwide-event-staffing.html" },
     { "source": "/blog/", "destination": "/blog/index.html" },
     { "source": "/blog/:slug", "destination": "/blog/:slug.html" },
-    { "source": "/(.*)", "destination": "/index.html" }
+    { "source": "/services", "destination": "/index.html" },
+    { "source": "/services/:service", "destination": "/index.html" },
+    { "source": "/industries", "destination": "/index.html" },
+    { "source": "/industries/:industry", "destination": "/index.html" },
+    { "source": "/pricing", "destination": "/index.html" },
+    { "source": "/privacy", "destination": "/index.html" },
+    { "source": "/terms", "destination": "/index.html" },
+    { "source": "/our-team", "destination": "/index.html" },
+    { "source": "/testimonials", "destination": "/index.html" },
+    { "source": "/locations", "destination": "/index.html" },
+    { "source": "/locations/:state", "destination": "/index.html" },
+    { "source": "/locations/:state/:city", "destination": "/index.html" }
   ],
   "headers": [
     {

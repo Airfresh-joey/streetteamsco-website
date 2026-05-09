@@ -86,7 +86,7 @@ function AppLayout() {
               <p>Professional street marketing and brand ambassador services nationwide. Over 500 campaigns in 1,000+ US cities.</p>
             </div>
             <div className="footer-section">
-              <h4>Services</h4>
+              <h3>Services</h3>
               <Link to="/services/street-teams">Street Teams</Link>
               <Link to="/services/brand-ambassadors">Brand Ambassadors</Link>
               <Link to="/services/guerrilla-marketing">Guerrilla Marketing</Link>
@@ -94,7 +94,7 @@ function AppLayout() {
               <Link to="/services/product-sampling">Product Sampling</Link>
             </div>
             <div className="footer-section">
-              <h4>Company</h4>
+              <h3>Company</h3>
               <Link to="/pricing">Pricing</Link>
               <a href="/how-it-works">How It Works</a>
               <a href="/about-street-teams-co">About Us</a>
@@ -105,7 +105,7 @@ function AppLayout() {
               <a href="/blog/">Blog</a>
             </div>
             <div className="footer-section">
-              <h4>Resources</h4>
+              <h3>Resources</h3>
               <a href="/street-team-marketing-agency">Street Team Marketing Agency</a>
               <a href="/brand-ambassador-agency">Brand Ambassador Agency</a>
               <a href="/experiential-marketing-agency">Experiential Marketing Agency</a>
@@ -118,7 +118,7 @@ function AppLayout() {
               <a href="/fifa-world-cup-2026-staffing" style={{color: '#f59e0b', fontWeight: 600}}>World Cup 2026 Staffing</a>
             </div>
             <div className="footer-section">
-              <h4>Contact</h4>
+              <h3>Contact</h3>
               <a href="mailto:hello@streetteamsco.com">hello@streetteamsco.com</a>
               <p>50+ states &middot; 1,000+ cities</p>
               <p>Response within 24 hours</p>

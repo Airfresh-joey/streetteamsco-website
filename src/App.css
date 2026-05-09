@@ -1374,7 +1374,7 @@ body {
   gap: 0.5rem;
 }
 
-.footer-section h4 {
+.footer-section h3 {
   color: #fff;
   font-size: 0.9rem;
   text-transform: uppercase;
@@ -1991,7 +1991,7 @@ body {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 2px;
-  color: #9ca3af;
+  color: #6b7280;
   margin-bottom: 1.5rem;
 }
 
@@ -2008,7 +2008,7 @@ body {
 .client-logo {
   font-size: 1.15rem;
   font-weight: 800;
-  color: #9ca3af;
+  color: #6b7280;
   letter-spacing: 1px;
   text-transform: uppercase;
   white-space: nowrap;
