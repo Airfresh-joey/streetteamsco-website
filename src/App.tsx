@@ -16,6 +16,7 @@ const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy'));
 const TermsOfService = lazy(() => import('./pages/TermsOfService'));
 const OurTeam = lazy(() => import('./pages/OurTeam'));
 const Testimonials = lazy(() => import('./pages/Testimonials'));
+const Contact = lazy(() => import('./pages/Contact'));
 const NotFound = lazy(() => import('./pages/NotFound'));
 
 function AppLayout() {
@@ -53,7 +54,7 @@ function AppLayout() {
             {isHome ? (
               <a href="#contact" className="nav-cta">Get Quote</a>
             ) : (
-              <Link to="/#contact" className="nav-cta">Get Quote</Link>
+              <Link to="/contact" className="nav-cta">Get Quote</Link>
             )}
           </div>
         </div>
@@ -71,6 +72,7 @@ function AppLayout() {
           <Route path="/terms" element={<TermsOfService />} />
           <Route path="/our-team" element={<OurTeam />} />
           <Route path="/testimonials" element={<Testimonials />} />
+          <Route path="/contact" element={<Contact />} />
           <Route path="/locations" element={<LocationsIndex />} />
           <Route path="/locations/:state" element={<StatePage />} />
           <Route path="/locations/:state/:city" element={<CityPage />} />
@@ -144,7 +146,7 @@ function AppLayout() {
             if (el) window.scrollTo({ top: el.offsetTop - 80, behavior: 'smooth' });
           }}>Get Free Quote</a>
         ) : (
-          <Link to="/#contact" className="sticky-cta-btn">Get Free Quote</Link>
+          <Link to="/contact" className="sticky-cta-btn">Get Free Quote</Link>
         )}
         <a href="mailto:hello@streetteamsco.com" className="sticky-cta-email">Email Us</a>
       </div>

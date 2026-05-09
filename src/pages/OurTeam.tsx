@@ -232,7 +232,7 @@ export default function OurTeam() {
           <h2>Work With Us</h2>
           <p>Ready to launch your next campaign with a team that delivers?</p>
           <div className="cta-buttons">
-            <Link to="/#contact" className="btn btn-primary">Start a Campaign</Link>
+            <Link to="/contact" className="btn btn-primary">Start a Campaign</Link>
             <Link to="/locations" className="btn btn-secondary">Find Your Market</Link>
           </div>
         </div>

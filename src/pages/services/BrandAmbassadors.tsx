@@ -36,7 +36,7 @@ export default function BrandAmbassadorsService() {
           </p>
           <div className="hero-cta">
             <Link to="/pricing" className="btn btn-secondary">View Pricing</Link>
-            <a href="mailto:hello@streetteamsco.com" className="btn btn-primary">Get Free Quote</a>
+            <Link to="/contact" className="btn btn-primary">Get Free Quote</Link>
           </div>
         </div>
       </section>
@@ -115,7 +115,7 @@ export default function BrandAmbassadorsService() {
             <h3>Hire Brand Ambassadors for Your Next Campaign</h3>
             <p>Tell us about your campaign and we'll build a custom team proposal within 24 hours.</p>
             <Link to="/pricing" className="btn btn-secondary" style={{ marginRight: '1rem' }}>View Pricing</Link>
-            <a href="mailto:hello@streetteamsco.com" className="btn btn-primary btn-lg">Get Free Quote</a>
+            <Link to="/contact" className="btn btn-primary btn-lg">Get Free Quote</Link>
           </div>
         </div>
       </section>

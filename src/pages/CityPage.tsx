@@ -171,9 +171,9 @@ export default function CityPage() {
               <Link to="/pricing" className="btn btn-secondary" style={{ marginRight: '1rem' }}>
                 View Pricing
               </Link>
-              <a href="mailto:hello@streetteamsco.com" className="btn btn-primary btn-lg">
+              <Link to="/contact" className="btn btn-primary btn-lg">
                 Get a Quote for {city.name}
-              </a>
+              </Link>
             </div>
           </div>
         </div>

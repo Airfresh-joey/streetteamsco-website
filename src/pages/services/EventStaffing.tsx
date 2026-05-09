@@ -36,7 +36,7 @@ export default function EventStaffingService() {
           </p>
           <div className="hero-cta">
             <Link to="/pricing" className="btn btn-secondary">View Pricing</Link>
-            <a href="mailto:hello@streetteamsco.com" className="btn btn-primary">Get Free Quote</a>
+            <Link to="/contact" className="btn btn-primary">Get Free Quote</Link>
           </div>
         </div>
       </section>
@@ -105,7 +105,7 @@ export default function EventStaffingService() {
             <h3>Staff Your Next Event</h3>
             <p>Tell us about your event and we'll provide a staffing plan and quote within 24 hours.</p>
             <Link to="/pricing" className="btn btn-secondary" style={{ marginRight: '1rem' }}>View Pricing</Link>
-            <a href="mailto:hello@streetteamsco.com" className="btn btn-primary btn-lg">Get Free Quote</a>
+            <Link to="/contact" className="btn btn-primary btn-lg">Get Free Quote</Link>
           </div>
         </div>
       </section>

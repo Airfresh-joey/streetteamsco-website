@@ -1,7 +1,7 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useMetaTags } from '../hooks/useMetaTags';
 import ContactForm from '../components/ContactForm';
-import { trackCTAClick, trackCalendlyOpen, trackEmailClick } from '../analytics';
+import { trackCTAClick, trackEmailClick } from '../analytics';
 
 export default function HomePage() {
   useMetaTags({
@@ -46,19 +46,11 @@ export default function HomePage() {
     ],
   });
 
+  const navigate = useNavigate();
+
   const scrollToContact = () => {
     const el = document.getElementById('contact');
     if (el) window.scrollTo({ top: el.offsetTop - 80, behavior: 'smooth' });
-  };
-
-  const openCalendly = () => {
-    const calendlyUrl = import.meta.env.VITE_CALENDLY_URL;
-    if (calendlyUrl && window.Calendly) {
-      trackCalendlyOpen('homepage');
-      window.Calendly.initPopupWidget({ url: calendlyUrl });
-    } else {
-      scrollToContact();
-    }
   };
 
   return (
@@ -130,8 +122,8 @@ export default function HomePage() {
                 <a href="#contact" className="btn-hero-primary" onClick={(e) => { e.preventDefault(); trackCTAClick('GET INSTANT QUOTE', 'homepage'); scrollToContact(); }}>
                   GET INSTANT QUOTE
                 </a>
-                <button className="btn-hero-secondary" onClick={() => { trackCTAClick('BOOK STRATEGY CALL', 'homepage'); openCalendly(); }}>
-                  BOOK STRATEGY CALL &rarr;
+                <button className="btn-hero-secondary" onClick={() => { trackCTAClick('VIEW PRICING', 'homepage'); navigate('/pricing'); }}>
+                  VIEW PRICING &rarr;
                 </button>
               </div>
 

@@ -7,7 +7,7 @@ const locationsFile = fs.readFileSync('./src/data/locations.ts', 'utf8');
 
 // Extract state slugs and city slugs
 const stateBlockRegex = /name:\s*'([^']+)',\s*slug:\s*'([^']+)',\s*abbreviation:\s*'[^']+',\s*cities:\s*\[([\s\S]*?)\]\s*,?\s*\}/g;
-const cityNameRegex = /city\('([^']+)'/g;
+const cityNameRegex = /city\('((?:\\.|[^'\\])+)'/g;
 
 const states = [];
 let stateMatch;
@@ -19,7 +19,7 @@ while ((stateMatch = stateBlockRegex.exec(locationsFile)) !== null) {
   const cities = [];
   let cityMatch;
   while ((cityMatch = cityNameRegex.exec(citiesBlock)) !== null) {
-    const cityName = cityMatch[1];
+    const cityName = cityMatch[1].replace(/\\(.)/g, '$1');
     const citySlug = cityName.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
     cities.push({ name: cityName, slug: citySlug });
   }
@@ -50,6 +50,7 @@ addUrl('/locations', 0.9, 'weekly');
 addUrl('/industries', 0.8, 'weekly');
 addUrl('/testimonials', 0.8, 'monthly');
 addUrl('/our-team', 0.7, 'monthly');
+addUrl('/contact', 0.95, 'monthly');
 addUrl('/privacy', 0.3, 'yearly');
 addUrl('/terms', 0.3, 'yearly');
 
@@ -142,6 +143,11 @@ const nicheServices = [
   'in-store-demo-staffing',
   'promotional-models',
   'b2b-experiential-marketing',
+  'convention-staffing-agency',
+  'hire-event-staff',
+  'nationwide-event-staffing',
+  'vip-event-staffing',
+  'what-is-street-team-marketing',
 ];
 nicheServices.forEach(p => addUrl(`/${p}`, 0.9, 'weekly'));
 
@@ -175,11 +181,14 @@ if (fs.existsSync(caseStudyDir)) {
   });
 }
 
+// Comparison hub page
+addUrl('/compare', 0.8, 'monthly');
+
 // Comparison pages (static HTML in /public/compare/)
 const compareDir = './public/compare';
 if (fs.existsSync(compareDir)) {
   const compareFiles = fs.readdirSync(compareDir)
-    .filter(f => f.endsWith('.html'))
+    .filter(f => f.endsWith('.html') && f !== 'index.html')
     .map(f => f.replace('.html', ''));
   compareFiles.forEach(slug => {
     addUrl(`/compare/${slug}`, 0.7, 'monthly');

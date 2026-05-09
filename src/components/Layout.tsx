@@ -15,7 +15,7 @@ export default function Layout({ children }: LayoutProps) {
             <Link to="/pricing">Pricing</Link>
             <Link to="/testimonials">Testimonials</Link>
             <Link to="/locations">Locations</Link>
-            <a href="mailto:hello@streetteamsco.com" className="nav-cta">Get Quote</a>
+            <Link to="/contact" className="nav-cta">Get Quote</Link>
           </div>
         </div>
       </nav>

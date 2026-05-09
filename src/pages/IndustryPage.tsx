@@ -101,9 +101,9 @@ export default function IndustryPage() {
             <div className="city-cta">
               <h3>Ready to Launch a {industry.name} Marketing Campaign?</h3>
               <p>Street Teams Co has the industry expertise and nationwide reach to deliver results for {industry.name.toLowerCase()} brands.</p>
-              <a href="mailto:hello@streetteamsco.com" className="btn btn-primary btn-lg">
+              <Link to="/contact" className="btn btn-primary btn-lg">
                 Get a Free Quote
-              </a>
+              </Link>
             </div>
           </div>
         </div>

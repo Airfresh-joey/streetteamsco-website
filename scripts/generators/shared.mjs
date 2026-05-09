@@ -11,7 +11,7 @@ import path from 'path';
 export function parseLocations(srcDir) {
   const raw = fs.readFileSync(path.join(srcDir, 'data', 'locations.ts'), 'utf8');
   const stateBlockRegex = /name:\s*'([^']+)',\s*slug:\s*'([^']+)',\s*abbreviation:\s*'([^']+)',\s*cities:\s*\[([\s\S]*?)\]\s*,?\s*\}/g;
-  const cityRegex = /city\('([^']+)'(?:,\s*'([^']*)')?\)/g;
+  const cityRegex = /city\('((?:\\.|[^'\\])+)'(?:,\s*'((?:\\.|[^'\\])*)')?\)/g;
 
   const states = [];
   let m;
@@ -19,9 +19,10 @@ export function parseLocations(srcDir) {
     const cities = [];
     let cm;
     while ((cm = cityRegex.exec(m[4])) !== null) {
-      const name = cm[1];
+      const name = cm[1].replace(/\\(.)/g, '$1');
       const slug = name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
-      cities.push({ name, slug, population: cm[2] || '' });
+      const population = (cm[2] || '').replace(/\\(.)/g, '$1');
+      cities.push({ name, slug, population });
     }
     states.push({ name: m[1], slug: m[2], abbreviation: m[3], cities });
   }

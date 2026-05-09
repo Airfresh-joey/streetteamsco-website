@@ -200,7 +200,7 @@ export default function Testimonials() {
         <div className="container">
           <h2>Ready to Create Your Success Story?</h2>
           <p>Join the brands that trust Street Teams Co to deliver results.</p>
-          <Link to="/#contact" className="btn btn-primary">Get Started Today</Link>
+          <Link to="/contact" className="btn btn-primary">Get Started Today</Link>
         </div>
       </section>
     </div>
