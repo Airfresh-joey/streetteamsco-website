@@ -190,16 +190,16 @@ export default function HomePage() {
         <div className="container">
           <p className="client-logos-label">Trusted by Leading Brands</p>
           <div className="client-logos-grid">
-            <span className="client-logo">Netflix</span>
-            <span className="client-logo">Microsoft</span>
-            <span className="client-logo">Apple</span>
-            <span className="client-logo">Starbucks</span>
-            <span className="client-logo">Lyft</span>
-            <span className="client-logo">Nissan</span>
-            <span className="client-logo">Cirque du Soleil</span>
-            <span className="client-logo">1800 Tequila</span>
-            <span className="client-logo">Williams Racing</span>
-            <span className="client-logo">TED</span>
+            <img src="/images/logos/netflix.svg" alt="Netflix" className="client-logo" loading="lazy" width="100" height="40" />
+            <img src="/images/logos/microsoft.svg" alt="Microsoft" className="client-logo" loading="lazy" width="120" height="40" />
+            <img src="/images/logos/apple.svg" alt="Apple" className="client-logo" loading="lazy" width="40" height="48" />
+            <img src="/images/logos/starbucks.svg" alt="Starbucks" className="client-logo" loading="lazy" width="48" height="48" />
+            <img src="/images/logos/lyft.svg" alt="Lyft" className="client-logo" loading="lazy" width="80" height="40" />
+            <img src="/images/logos/nissan.svg" alt="Nissan" className="client-logo" loading="lazy" width="100" height="40" />
+            <img src="/images/logos/cirque-du-soleil.svg" alt="Cirque du Soleil" className="client-logo client-logo-wide" loading="lazy" width="140" height="40" />
+            <img src="/images/logos/1800-tequila.svg" alt="1800 Tequila" className="client-logo" loading="lazy" width="100" height="40" />
+            <img src="/images/logos/williams-racing.svg" alt="Williams Racing" className="client-logo" loading="lazy" width="120" height="40" />
+            <img src="/images/logos/ted.svg" alt="TED" className="client-logo" loading="lazy" width="60" height="40" />
           </div>
         </div>
       </section>

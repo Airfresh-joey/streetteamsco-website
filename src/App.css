@@ -2006,18 +2006,23 @@ body {
 }
 
 .client-logo {
-  font-size: 1.15rem;
-  font-weight: 800;
-  color: #6b7280;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  white-space: nowrap;
-  transition: color 0.3s;
+  height: 40px;
+  width: auto;
+  max-width: 140px;
+  object-fit: contain;
+  filter: grayscale(100%);
+  opacity: 0.65;
+  transition: opacity 0.3s, filter 0.3s;
   user-select: none;
 }
 
+.client-logo-wide {
+  max-width: 160px;
+}
+
 .client-logo:hover {
-  color: #4b5563;
+  filter: grayscale(0%);
+  opacity: 1;
 }
 
 @media (max-width: 768px) {
@@ -2025,7 +2030,7 @@ body {
     gap: 1.25rem 2rem;
   }
   .client-logo {
-    font-size: 0.95rem;
+    height: 32px;
   }
 }
 
