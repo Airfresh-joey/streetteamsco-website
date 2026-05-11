@@ -67,6 +67,18 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://streetteamsco.com/partners</loc>
+    <lastmod>2026-05-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://streetteamsco.com/partners/agencies</loc>
+    <lastmod>2026-05-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://streetteamsco.com/privacy</loc>
     <lastmod>2026-05-11</lastmod>
     <changefreq>yearly</changefreq>
@@ -7975,6 +7987,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://streetteamsco.com/case-studies/beauty-sephora-launch</loc>
+    <lastmod>2026-05-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://streetteamsco.com/case-studies/beverage-brand-sampling</loc>
     <lastmod>2026-05-11</lastmod>
     <changefreq>monthly</changefreq>
@@ -7993,6 +8011,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://streetteamsco.com/case-studies/dispensary-grand-opening</loc>
+    <lastmod>2026-05-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://streetteamsco.com/case-studies/guerrilla-marketing-nyc</loc>
     <lastmod>2026-05-11</lastmod>
     <changefreq>monthly</changefreq>
@@ -8006,6 +8030,12 @@
   </url>
   <url>
     <loc>https://streetteamsco.com/case-studies/music-festival-activation</loc>
+    <lastmod>2026-05-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://streetteamsco.com/case-studies/nil-game-day-activation</loc>
     <lastmod>2026-05-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -8033,6 +8063,12 @@
     <lastmod>2026-05-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://streetteamsco.com/compare/advantage-solutions-retail-sampling</loc>
+    <lastmod>2026-05-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://streetteamsco.com/compare/advantage-solutions</loc>
@@ -8101,6 +8137,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://streetteamsco.com/compare/gmr-marketing-experiential</loc>
+    <lastmod>2026-05-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://streetteamsco.com/compare/gpj-experiential</loc>
     <lastmod>2026-05-11</lastmod>
     <changefreq>monthly</changefreq>
@@ -8114,6 +8156,12 @@
   </url>
   <url>
     <loc>https://streetteamsco.com/compare/hype-agency</loc>
+    <lastmod>2026-05-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://streetteamsco.com/compare/inspira-brand-activation</loc>
     <lastmod>2026-05-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -8183,6 +8231,12 @@
     <lastmod>2026-05-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://streetteamsco.com/blog/app-launch-street-team-guide.html</loc>
+    <lastmod>2026-05-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://streetteamsco.com/blog/automotive-marketing-test-drive-events.html</loc>
@@ -8276,6 +8330,12 @@
   </url>
   <url>
     <loc>https://streetteamsco.com/blog/brand-ambassador-job-description-template.html</loc>
+    <lastmod>2026-05-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://streetteamsco.com/blog/brand-ambassador-pricing-explained.html</loc>
     <lastmod>2026-05-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -8546,6 +8606,12 @@
   </url>
   <url>
     <loc>https://streetteamsco.com/blog/how-to-create-a-street-marketing-budget.html</loc>
+    <lastmod>2026-05-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://streetteamsco.com/blog/how-to-hire-brand-ambassador-agency.html</loc>
     <lastmod>2026-05-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -9014,6 +9080,12 @@
   </url>
   <url>
     <loc>https://streetteamsco.com/blog/what-is-experiential-marketing.html</loc>
+    <lastmod>2026-05-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://streetteamsco.com/blog/what-is-field-marketing.html</loc>
     <lastmod>2026-05-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>

@@ -54,6 +54,8 @@ addUrl('/contact', 0.95, 'monthly');
 addUrl('/playbook', 0.9, 'monthly');
 addUrl('/resources', 0.85, 'monthly');
 addUrl('/faq', 0.7, 'monthly');
+addUrl('/partners', 0.7, 'monthly');
+addUrl('/partners/agencies', 0.8, 'monthly');
 addUrl('/privacy', 0.3, 'yearly');
 addUrl('/terms', 0.3, 'yearly');
 
