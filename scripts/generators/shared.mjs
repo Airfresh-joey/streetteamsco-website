@@ -193,6 +193,7 @@ export function footer() {
   <p style="margin-top: 0.5rem;"><a href="/services">Services</a> | <a href="/pricing">Pricing</a> | <a href="/how-it-works">How It Works</a> | <a href="/case-studies/">Case Studies</a> | <a href="/locations">Locations</a> | <a href="/blog/">Blog</a></p>
   <p style="margin-top: 0.5rem;"><a href="/street-team-marketing-agency">Street Team Marketing</a> | <a href="/brand-ambassador-agency">Brand Ambassadors</a> | <a href="/experiential-marketing-agency">Experiential Marketing</a> | <a href="/trade-show-staffing-agency">Trade Show Staffing</a> | <a href="/what-is-street-team-marketing">Guide</a></p>
   <p style="margin-top: 0.5rem;"><strong style="color:#f59e0b;">Industries:</strong> <a href="/cpg-brand-ambassadors">CPG</a> | <a href="/beauty-brand-sampling">Beauty</a> | <a href="/app-launch-street-teams">App Launches</a> | <a href="/dispensary-marketing-agency">Dispensaries</a> | <a href="/college-nil-marketing">College NIL</a> | <a href="/cannabis-marketing-agency">Cannabis Brands</a> | <a href="/alcohol-brand-promotions">Alcohol</a></p>
+  <p style="margin-top: 0.5rem;"><strong style="color:#f59e0b;">Free:</strong> <a href="/playbook" style="color:#f59e0b;font-weight:600;">Download the Street Team Activation Playbook (PDF)</a></p>
 </footer>
 <div class="sticky-cta">
   <p>Ready to launch your campaign? Get a free quote in 24 hours.</p>

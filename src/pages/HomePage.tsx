@@ -393,6 +393,15 @@ export default function HomePage() {
         </div>
       </section>
 
+      <section style={{background: 'linear-gradient(135deg, #f59e0b 0%, #d97706 100%)', padding: '3rem 2rem', textAlign: 'center', color: '#1a1a2e'}}>
+        <div className="container" style={{maxWidth: '900px', margin: '0 auto'}}>
+          <p style={{fontSize: '0.85rem', fontWeight: 700, letterSpacing: '2px', textTransform: 'uppercase', opacity: 0.7, marginBottom: '0.75rem'}}>Free Resource · 12 Pages · No Phone Calls</p>
+          <h2 style={{fontSize: '2rem', fontWeight: 800, marginBottom: '0.75rem', lineHeight: 1.2}}>The Street Team Activation Playbook</h2>
+          <p style={{fontSize: '1.1rem', marginBottom: '1.5rem', maxWidth: '650px', margin: '0 auto 1.5rem'}}>The exact framework — brief template, staffing math, vendor scorecard — we built from 500+ campaigns. Built for brand managers planning a measurable street team campaign in 14 days.</p>
+          <a href="/playbook" style={{display: 'inline-block', background: '#1a1a2e', color: '#f59e0b', padding: '1rem 2.5rem', borderRadius: '8px', textDecoration: 'none', fontWeight: 800, fontSize: '1.05rem', letterSpacing: '0.5px'}}>Download the Playbook (Free)</a>
+        </div>
+      </section>
+
       <section id="contact" className="contact">
         <div className="container">
           <h2>Ready to Launch Your Campaign?</h2>

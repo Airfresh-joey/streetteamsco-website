@@ -51,6 +51,7 @@ addUrl('/industries', 0.8, 'weekly');
 addUrl('/testimonials', 0.8, 'monthly');
 addUrl('/our-team', 0.7, 'monthly');
 addUrl('/contact', 0.95, 'monthly');
+addUrl('/playbook', 0.9, 'monthly');
 addUrl('/privacy', 0.3, 'yearly');
 addUrl('/terms', 0.3, 'yearly');
 
