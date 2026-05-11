@@ -54,6 +54,7 @@
     { "source": "/faq", "destination": "/faq.html" },
     { "source": "/partners", "destination": "/partners/index.html" },
     { "source": "/partners/agencies", "destination": "/partners/agencies.html" },
+    { "source": "/tools", "destination": "/tools/index.html" },
     { "source": "/tools/staffing-calculator", "destination": "/tools/staffing-calculator.html" },
     { "source": "/blog/", "destination": "/blog/index.html" },
     { "source": "/blog/:slug", "destination": "/blog/:slug.html" },
