@@ -47,9 +47,9 @@ function AppLayout() {
           <div className={`nav-links ${menuOpen ? 'nav-open' : ''}`}>
             <Link to="/services">Services</Link>
             <Link to="/pricing">Pricing</Link>
+            <a href="/playbook" style={{color: '#f59e0b', fontWeight: 600}}>Free Playbook</a>
             <a href="/case-studies/">Case Studies</a>
             <Link to="/locations">Locations</Link>
-            <a href="/fifa-world-cup-2026-staffing" style={{color: '#f59e0b', fontWeight: 700}}>World Cup 2026</a>
             <a href="/blog/">Blog</a>
             {isHome ? (
               <a href="#contact" className="nav-cta">Get Quote</a>

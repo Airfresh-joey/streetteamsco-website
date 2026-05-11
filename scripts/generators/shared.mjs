@@ -178,6 +178,7 @@ export function header() {
     <div class="nav-links">
       <a href="/services">Services</a>
       <a href="/pricing">Pricing</a>
+      <a href="/playbook" style="color:#f59e0b;font-weight:600;">Free Playbook</a>
       <a href="/case-studies/">Case Studies</a>
       <a href="/locations">Locations</a>
       <a href="/blog/">Blog</a>
