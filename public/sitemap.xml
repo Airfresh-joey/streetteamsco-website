@@ -55,6 +55,18 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://streetteamsco.com/resources</loc>
+    <lastmod>2026-05-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://streetteamsco.com/faq</loc>
+    <lastmod>2026-05-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://streetteamsco.com/privacy</loc>
     <lastmod>2026-05-11</lastmod>
     <changefreq>yearly</changefreq>
@@ -7957,6 +7969,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://streetteamsco.com/case-studies/app-launch-multi-city-tour</loc>
+    <lastmod>2026-05-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://streetteamsco.com/case-studies/beverage-brand-sampling</loc>
     <lastmod>2026-05-11</lastmod>
     <changefreq>monthly</changefreq>
@@ -7964,6 +7982,12 @@
   </url>
   <url>
     <loc>https://streetteamsco.com/case-studies/cannabis-product-sampling</loc>
+    <lastmod>2026-05-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://streetteamsco.com/case-studies/cpg-distribution-gain</loc>
     <lastmod>2026-05-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -8018,6 +8042,12 @@
   </url>
   <url>
     <loc>https://streetteamsco.com/compare/alt-terrain</loc>
+    <lastmod>2026-05-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://streetteamsco.com/compare/atn-event-staffing-app-launches</loc>
     <lastmod>2026-05-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -8096,6 +8126,12 @@
   </url>
   <url>
     <loc>https://streetteamsco.com/compare/kinetic-events</loc>
+    <lastmod>2026-05-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://streetteamsco.com/compare/mosaic-cpg-sampling</loc>
     <lastmod>2026-05-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -8762,6 +8798,12 @@
   </url>
   <url>
     <loc>https://streetteamsco.com/blog/street-team-marketing-cost-2026-pricing-guide.html</loc>
+    <lastmod>2026-05-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://streetteamsco.com/blog/street-team-marketing-cost-2026.html</loc>
     <lastmod>2026-05-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>

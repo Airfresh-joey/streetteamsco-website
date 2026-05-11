@@ -118,6 +118,8 @@ function AppLayout() {
               <a href="/what-is-street-team-marketing">What Is Street Team Marketing?</a>
               <a href="/compare/event-staffing-companies">Agency Comparisons</a>
               <a href="/playbook" style={{color: '#f59e0b', fontWeight: 600}}>Free Playbook (PDF)</a>
+              <a href="/resources">All Resources</a>
+              <a href="/faq">FAQ</a>
               <a href="/fifa-world-cup-2026-staffing" style={{color: '#f59e0b', fontWeight: 600}}>World Cup 2026 Staffing</a>
             </div>
             <div className="footer-section">

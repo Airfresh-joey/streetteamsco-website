@@ -50,6 +50,8 @@
     { "source": "/beauty-brand-sampling", "destination": "/beauty-brand-sampling.html" },
     { "source": "/college-nil-marketing", "destination": "/college-nil-marketing.html" },
     { "source": "/playbook", "destination": "/playbook.html" },
+    { "source": "/resources", "destination": "/resources.html" },
+    { "source": "/faq", "destination": "/faq.html" },
     { "source": "/blog/", "destination": "/blog/index.html" },
     { "source": "/blog/:slug", "destination": "/blog/:slug.html" },
     { "source": "/services", "destination": "/index.html" },
