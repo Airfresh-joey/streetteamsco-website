@@ -1,4 +1,4 @@
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useMetaTags } from '../hooks/useMetaTags';
 import ContactForm from '../components/ContactForm';
 import { trackCTAClick, trackEmailClick } from '../analytics';
@@ -46,8 +46,6 @@ export default function HomePage() {
     ],
   });
 
-  const navigate = useNavigate();
-
   const scrollToContact = () => {
     const el = document.getElementById('contact');
     if (el) window.scrollTo({ top: el.offsetTop - 80, behavior: 'smooth' });
@@ -82,30 +80,30 @@ export default function HomePage() {
             {/* Left column */}
             <div className="hero-left">
               <div className="hero-badge">
-                <span className="hero-badge-pill">&#127942; #1 STREET TEAM MARKETING AGENCY</span>
+                <span className="hero-badge-pill">&#127942; #1 HUMAN ENGAGEMENT AGENCY</span>
               </div>
 
               <h1 className="hero-heading">
-                <span className="hero-heading-white">STREET TEAM</span>
-                <span className="hero-heading-gradient">MARKETING AGENCY</span>
-                <span className="hero-heading-blue">1,000+ CITIES NATIONWIDE</span>
+                <span className="hero-heading-white">STREET TEAMS</span>
+                <span className="hero-heading-gradient">HUMAN TO HUMAN</span>
+                <span className="hero-heading-blue">CONNECTIONS</span>
               </h1>
 
               <p className="hero-subtitle">
-                Professional brand ambassadors and street marketing teams in
-                <span className="text-yellow"> 1,000+ US cities</span>. Event staffing, product sampling, and guerrilla marketing that drives
+                We connect your brand to real humans through authentic
+                <span className="text-yellow"> human experiences</span> that create genuine connections and drive
                 <span className="text-orange"> 40% higher engagement</span>
               </p>
 
               <div className="hero-tags">
-                <span className="hero-tag hero-tag-yellow">Brand Ambassadors</span>
-                <span className="hero-tag hero-tag-orange">Event Staffing</span>
-                <span className="hero-tag hero-tag-blue">Product Sampling</span>
+                <span className="hero-tag hero-tag-yellow">Human Engagement</span>
+                <span className="hero-tag hero-tag-orange">Authentic Connections</span>
+                <span className="hero-tag hero-tag-blue">Real Experiences</span>
               </div>
 
               <div className="hero-stats-grid">
                 <div className="hero-stat-box">
-                  <div className="hero-stat-number text-yellow">1,000+</div>
+                  <div className="hero-stat-number text-yellow">100+</div>
                   <div className="hero-stat-label">CITIES</div>
                 </div>
                 <div className="hero-stat-box">
@@ -122,8 +120,8 @@ export default function HomePage() {
                 <a href="#contact" className="btn-hero-primary" onClick={(e) => { e.preventDefault(); trackCTAClick('GET INSTANT QUOTE', 'homepage'); scrollToContact(); }}>
                   GET INSTANT QUOTE
                 </a>
-                <button className="btn-hero-secondary" onClick={() => { trackCTAClick('VIEW PRICING', 'homepage'); navigate('/pricing'); }}>
-                  VIEW PRICING &rarr;
+                <button className="btn-hero-secondary" onClick={scrollToContact}>
+                  BOOK STRATEGY CALL &rarr;
                 </button>
               </div>
 
@@ -147,18 +145,15 @@ export default function HomePage() {
             <div className="hero-right">
               <div className="hero-image-wrapper">
                 <img
-                  src="/images/hero-image.jpg"
-                  alt="Street team marketing brand ambassador engaging consumers at a product sampling event"
+                  src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=2000&auto=format&fit=crop"
+                  alt="Professional Street Team Brand Ambassadors Creating Human Connections"
                   className="hero-image"
-                  width={2000}
-                  height={1333}
-                  fetchPriority="high"
                 />
                 <div className="hero-image-gradient"></div>
                 <div className="hero-image-card">
                   <div className="hero-image-card-inner">
-                    <div className="hero-image-card-title">NATIONWIDE COVERAGE</div>
-                    <div className="hero-image-card-subtitle">1,000+ Cities &bull; All 50 States</div>
+                    <div className="hero-image-card-title">HUMAN TO HUMAN</div>
+                    <div className="hero-image-card-subtitle">Authentic Brand Connections</div>
                     <div className="hero-image-card-avatars">
                       <div className="avatar-dots">
                         <div className="avatar-dot avatar-dot-yellow"></div>
@@ -169,7 +164,7 @@ export default function HomePage() {
                     </div>
                   </div>
                 </div>
-                <div className="hero-image-floating-badge">500+ CAMPAIGNS</div>
+                <div className="hero-image-floating-badge">HUMAN FOCUSED</div>
               </div>
             </div>
           </div>
