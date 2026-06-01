@@ -54,17 +54,12 @@
 
     .cases-grid { max-width: 1100px; margin: 0 auto; padding: 3rem 2rem 4rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; }
     .case-card { background: #fff; border-radius: 16px; overflow: hidden; border: 1px solid #eee; transition: transform 0.3s, box-shadow 0.3s; text-decoration: none; color: inherit; display: flex; flex-direction: column; }
-    .case-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.1); }
-    .case-card-header { padding: 1.5rem; color: #fff; }
-    .case-card-header.orange { background: linear-gradient(135deg, #f59e0b, #ef4444); }
-    .case-card-header.blue { background: linear-gradient(135deg, #3b82f6, #6366f1); }
-    .case-card-header.purple { background: linear-gradient(135deg, #8b5cf6, #ec4899); }
-    .case-card-header.green { background: linear-gradient(135deg, #059669, #10b981); }
-    .case-card-header.indigo { background: linear-gradient(135deg, #2563eb, #7c3aed); }
-    .case-card-header.red { background: linear-gradient(135deg, #dc2626, #f97316); }
-    .case-card-header.amber { background: linear-gradient(135deg, #d97706, #ea580c); }
-    .case-card-header.cyan { background: linear-gradient(135deg, #0891b2, #6366f1); }
-    .case-card-header span { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; opacity: 0.8; }
+    .case-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.12); }
+    .case-card-img { position: relative; height: 200px; overflow: hidden; }
+    .case-card-img img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.5s ease; }
+    .case-card:hover .case-card-img img { transform: scale(1.06); }
+    .case-card-img-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.45) 100%); }
+    .case-card-img-tag { position: absolute; top: 1rem; left: 1rem; font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: #fff; background: rgba(0,0,0,0.45); padding: 0.3rem 0.75rem; border-radius: 50px; backdrop-filter: blur(4px); }
     .case-card-body { padding: 1.5rem; flex: 1; display: flex; flex-direction: column; }
     .case-card-body h2 { font-size: 1.25rem; font-weight: 700; margin-bottom: 0.75rem; line-height: 1.3; }
     .case-card-body p { font-size: 0.95rem; color: #555; flex: 1; margin-bottom: 1.25rem; }
@@ -127,8 +122,10 @@
   <div class="cases-grid">
     <!-- Case Study 1: Beverage Sampling -->
     <a href="/case-studies/beverage-brand-sampling" class="case-card">
-      <div class="case-card-header orange">
-        <span>Product Sampling</span>
+      <div class="case-card-img">
+        <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=800&auto=format&fit=crop" alt="Brand ambassadors sampling beverages at a grocery store event" loading="eager" />
+        <div class="case-card-img-overlay"></div>
+        <span class="case-card-img-tag">Product Sampling</span>
       </div>
       <div class="case-card-body">
         <h2>National Beverage Sampling Campaign: 500,000 Samples in 30 Days</h2>
@@ -146,8 +143,10 @@
 
     <!-- Case Study 2: Trade Show Staffing -->
     <a href="/case-studies/tech-company-trade-show" class="case-card">
-      <div class="case-card-header blue">
-        <span>Trade Show Staffing</span>
+      <div class="case-card-img">
+        <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?q=80&w=800&auto=format&fit=crop" alt="Professional event staff at a tech trade show booth" loading="lazy" />
+        <div class="case-card-img-overlay"></div>
+        <span class="case-card-img-tag">Trade Show Staffing</span>
       </div>
       <div class="case-card-body">
         <h2>Tech Company Staffs 8 Trade Shows Across 6 Cities in One Quarter</h2>
@@ -165,8 +164,10 @@
 
     <!-- Case Study 3: Guerrilla Marketing NYC -->
     <a href="/case-studies/guerrilla-marketing-nyc" class="case-card">
-      <div class="case-card-header purple">
-        <span>Guerrilla Marketing</span>
+      <div class="case-card-img">
+        <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=800&auto=format&fit=crop" alt="Street team guerrilla marketing activation in New York City" loading="lazy" />
+        <div class="case-card-img-overlay"></div>
+        <span class="case-card-img-tag">Guerrilla Marketing</span>
       </div>
       <div class="case-card-body">
         <h2>NYC Guerrilla Marketing Campaign Generates 3M Impressions in 5 Days</h2>
@@ -184,8 +185,10 @@
 
     <!-- Case Study 4: Cannabis Sampling -->
     <a href="/case-studies/cannabis-product-sampling" class="case-card">
-      <div class="case-card-header green">
-        <span>Cannabis Marketing</span>
+      <div class="case-card-img">
+        <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=800&auto=format&fit=crop" alt="Brand ambassadors running a cannabis product sampling campaign" loading="lazy" />
+        <div class="case-card-img-overlay"></div>
+        <span class="case-card-img-tag">Cannabis Marketing</span>
       </div>
       <div class="case-card-body">
         <h2>Cannabis Product Sampling Campaign: 300% ROI in 6 Markets</h2>
@@ -203,8 +206,10 @@
 
     <!-- Case Study 5: Multi-City Product Launch -->
     <a href="/case-studies/multi-city-product-launch" class="case-card">
-      <div class="case-card-header indigo">
-        <span>Product Launch</span>
+      <div class="case-card-img">
+        <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=800&auto=format&fit=crop" alt="Brand ambassadors coordinating a multi-city product launch event" loading="lazy" />
+        <div class="case-card-img-overlay"></div>
+        <span class="case-card-img-tag">Product Launch</span>
       </div>
       <div class="case-card-body">
         <h2>Multi-City Product Launch: 25 Cities in 30 Days</h2>
@@ -222,8 +227,10 @@
 
     <!-- Case Study 6: Music Festival Activation -->
     <a href="/case-studies/music-festival-activation" class="case-card">
-      <div class="case-card-header red">
-        <span>Festival Marketing</span>
+      <div class="case-card-img">
+        <img src="https://images.unsplash.com/photo-1475721027785-f74eccf877e2?q=80&w=800&auto=format&fit=crop" alt="Street team activation at a major music festival" loading="lazy" />
+        <div class="case-card-img-overlay"></div>
+        <span class="case-card-img-tag">Festival Marketing</span>
       </div>
       <div class="case-card-body">
         <h2>Music Festival Brand Activation: Coachella &amp; Beyond</h2>
@@ -241,8 +248,10 @@
 
     <!-- Case Study 7: Retail Grand Opening -->
     <a href="/case-studies/retail-grand-opening" class="case-card">
-      <div class="case-card-header amber">
-        <span>Retail Marketing</span>
+      <div class="case-card-img">
+        <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=800&auto=format&fit=crop" alt="Street team driving customers to a retail grand opening" loading="lazy" />
+        <div class="case-card-img-overlay"></div>
+        <span class="case-card-img-tag">Retail Marketing</span>
       </div>
       <div class="case-card-body">
         <h2>Retail Grand Opening: 10,000 Visitors in One Weekend</h2>
@@ -260,8 +269,10 @@
 
     <!-- Case Study 8: Trade Show Lead Generation -->
     <a href="/case-studies/trade-show-lead-generation" class="case-card">
-      <div class="case-card-header cyan">
-        <span>Trade Show Lead Gen</span>
+      <div class="case-card-img">
+        <img src="https://images.unsplash.com/photo-1560439514-4e9645039924?q=80&w=800&auto=format&fit=crop" alt="Brand ambassadors generating leads at CES trade show booth" loading="lazy" />
+        <div class="case-card-img-overlay"></div>
+        <span class="case-card-img-tag">Trade Show Lead Gen</span>
       </div>
       <div class="case-card-body">
         <h2>Trade Show Lead Generation: 2,000+ Qualified Leads at CES</h2>
@@ -279,8 +290,10 @@
 
     <!-- Case Study 9: App Launch Multi-City Tour -->
     <a href="/case-studies/app-launch-multi-city-tour" class="case-card">
-      <div class="case-card-header blue">
-        <span>App Launch</span>
+      <div class="case-card-img">
+        <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=80&w=800&auto=format&fit=crop" alt="Street team running a multi-city app launch tour" loading="lazy" />
+        <div class="case-card-img-overlay"></div>
+        <span class="case-card-img-tag">App Launch</span>
       </div>
       <div class="case-card-body">
         <h2>Series B Dating App: 12-City Launch Tour, 18K Installs at $14 CAC</h2>
@@ -298,8 +311,10 @@
 
     <!-- Case Study 10: CPG Distribution Gain -->
     <a href="/case-studies/cpg-distribution-gain" class="case-card">
-      <div class="case-card-header orange">
-        <span>CPG Sampling</span>
+      <div class="case-card-img">
+        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=800&auto=format&fit=crop" alt="Brand ambassador running in-store CPG sampling at Whole Foods" loading="lazy" />
+        <div class="case-card-img-overlay"></div>
+        <span class="case-card-img-tag">CPG Sampling</span>
       </div>
       <div class="case-card-body">
         <h2>Top-25 CPG Brand: 600 Whole Foods Stores, 34x ROAS</h2>
@@ -317,8 +332,10 @@
 
     <!-- Case Study 11: Dispensary Grand Opening -->
     <a href="/case-studies/dispensary-grand-opening" class="case-card">
-      <div class="case-card-header green">
-        <span>Dispensary Marketing</span>
+      <div class="case-card-img">
+        <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?q=80&w=800&auto=format&fit=crop" alt="Street team running a cannabis dispensary grand opening campaign" loading="lazy" />
+        <div class="case-card-img-overlay"></div>
+        <span class="case-card-img-tag">Dispensary Marketing</span>
       </div>
       <div class="case-card-body">
         <h2>Multi-State Cannabis Operator: 4,800 Opening-Weekend Customers</h2>
@@ -336,8 +353,10 @@
 
     <!-- Case Study 12: Beauty Brand Sephora Launch -->
     <a href="/case-studies/beauty-sephora-launch" class="case-card">
-      <div class="case-card-header purple">
-        <span>Beauty Sampling</span>
+      <div class="case-card-img">
+        <img src="https://images.unsplash.com/photo-1515187029135-18ee286d815b?q=80&w=800&auto=format&fit=crop" alt="Licensed MUA brand ambassadors at a Sephora beauty launch event" loading="lazy" />
+        <div class="case-card-img-overlay"></div>
+        <span class="case-card-img-tag">Beauty Sampling</span>
       </div>
       <div class="case-card-body">
         <h2>Fortune 100 Beauty Brand: 200 Sephora Doors, 31% Trial-to-Purchase</h2>
