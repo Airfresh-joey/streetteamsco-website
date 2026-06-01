@@ -50,6 +50,61 @@ const RELATED_BLOG_POSTS = {
   ],
 };
 
+const SERVICE_PHOTOS = {
+  'brand-ambassadors': [
+    { src: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=900&auto=format&fit=crop', alt: 'Brand ambassador engaging consumers at a live event' },
+    { src: 'https://images.unsplash.com/photo-1515187029135-18ee286d815b?q=80&w=900&auto=format&fit=crop', alt: 'Brand ambassadors at a product pop-up activation' },
+    { src: 'https://images.unsplash.com/photo-1556761175-b413da4baf72?q=80&w=900&auto=format&fit=crop', alt: 'Professional brand ambassador team briefing before deployment' },
+  ],
+  'street-teams': [
+    { src: 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=80&w=900&auto=format&fit=crop', alt: 'Street team engaging pedestrians in a high-traffic urban area' },
+    { src: 'https://images.unsplash.com/photo-1461180011046-0d3f86e2892f?q=80&w=900&auto=format&fit=crop', alt: 'Street marketing team distributing branded materials downtown' },
+    { src: 'https://images.unsplash.com/photo-1521737711867-e3b97375f902?q=80&w=900&auto=format&fit=crop', alt: 'Street team coordinator managing campaign logistics in the field' },
+  ],
+  'event-staffing': [
+    { src: 'https://images.unsplash.com/photo-1511578314322-379afb476865?q=80&w=900&auto=format&fit=crop', alt: 'Professional event staff managing registration at a conference' },
+    { src: 'https://images.unsplash.com/photo-1540575861501-7cf05a4b125a?q=80&w=900&auto=format&fit=crop', alt: 'Event staffing team at a large brand activation' },
+    { src: 'https://images.unsplash.com/photo-1560439514-4e9645039924?q=80&w=900&auto=format&fit=crop', alt: 'Experienced event professionals at a seamless product launch' },
+  ],
+  'product-sampling': [
+    { src: 'https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=900&auto=format&fit=crop', alt: 'Product sampling staff at a busy market event' },
+    { src: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=900&auto=format&fit=crop', alt: 'Consumer sampling campaign at a high-foot-traffic location' },
+    { src: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=900&auto=format&fit=crop', alt: 'Brand ambassador running a product trial and sampling program' },
+  ],
+  'guerrilla-marketing': [
+    { src: 'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=900&auto=format&fit=crop', alt: 'Guerrilla marketing activation drawing a crowd in an urban setting' },
+    { src: 'https://images.unsplash.com/photo-1527192491265-7e15c55b1ed2?q=80&w=900&auto=format&fit=crop', alt: 'Street-level guerrilla marketing campaign creating brand buzz' },
+    { src: 'https://images.unsplash.com/photo-1475721027785-f74eccf877e2?q=80&w=900&auto=format&fit=crop', alt: 'Brand activation event generating consumer engagement' },
+  ],
+  'flyer-distribution': [
+    { src: 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=80&w=900&auto=format&fit=crop', alt: 'Street team distributing flyers in a high-traffic pedestrian zone' },
+    { src: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=900&auto=format&fit=crop', alt: 'Campaign coordinator tracking flyer distribution routes' },
+    { src: 'https://images.unsplash.com/photo-1461180011046-0d3f86e2892f?q=80&w=900&auto=format&fit=crop', alt: 'Professional flyering team covering city blocks for a brand launch' },
+  ],
+  'experiential-marketing': [
+    { src: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=900&auto=format&fit=crop', alt: 'Experiential marketing activation with immersive brand experience' },
+    { src: 'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=900&auto=format&fit=crop', alt: 'Live brand experience drawing crowds and creating social moments' },
+    { src: 'https://images.unsplash.com/photo-1511578314322-379afb476865?q=80&w=900&auto=format&fit=crop', alt: 'Experiential event staff delivering an on-brand consumer activation' },
+  ],
+  'promotional-staffing': [
+    { src: 'https://images.unsplash.com/photo-1515187029135-18ee286d815b?q=80&w=900&auto=format&fit=crop', alt: 'Promotional staffing team representing a brand at an activation' },
+    { src: 'https://images.unsplash.com/photo-1556761175-b413da4baf72?q=80&w=900&auto=format&fit=crop', alt: 'On-demand promo staff briefed and ready for a brand event' },
+    { src: 'https://images.unsplash.com/photo-1560439514-4e9645039924?q=80&w=900&auto=format&fit=crop', alt: 'Promotional models and brand ambassadors at a trade show booth' },
+  ],
+};
+
+function photoGridHtml(slug) {
+  const photos = SERVICE_PHOTOS[slug] || SERVICE_PHOTOS['brand-ambassadors'];
+  const items = photos.map((p, i) =>
+    `<div style="aspect-ratio:4/3;overflow:hidden;background:#1e293b;border-radius:8px;">` +
+    `<img src="${p.src}" alt="${p.alt}" loading="${i === 0 ? 'eager' : 'lazy'}" ` +
+    `style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.4s;" /></div>`
+  ).join('\n');
+  return `<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:2rem 0 2.5rem;border-radius:12px;overflow:hidden;">
+${items}
+</div>`;
+}
+
 function generateServicePage(service, allServices) {
   const canonical = `${BASE_URL}/services/${service.slug}`;
   const isGuerrilla = service.slug === 'guerrilla-marketing';
@@ -109,6 +164,8 @@ ${statsBar([
 
   <h2>About ${escHtml(service.name)}</h2>
   <p>${escHtml(service.description)}</p>
+
+${photoGridHtml(service.slug)}
 
   <h2>What's Included</h2>
   <p>Every ${service.name.toLowerCase()} campaign includes the following as standard:</p>
