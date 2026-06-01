@@ -3,6 +3,50 @@ import { getServiceBySlug } from '../data/services';
 import { useMetaTags } from '../hooks/useMetaTags';
 import NotFound from './NotFound';
 
+// Curated Unsplash photos per service — real campaign/field work vibes
+const servicePhotos: Record<string, { src: string; alt: string }[]> = {
+  'brand-ambassadors': [
+    { src: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=900&auto=format&fit=crop', alt: 'Brand ambassador engaging consumers at a live event' },
+    { src: 'https://images.unsplash.com/photo-1515187029135-18ee286d815b?q=80&w=900&auto=format&fit=crop', alt: 'Brand ambassadors representing a product at a pop-up activation' },
+    { src: 'https://images.unsplash.com/photo-1556761175-b413da4baf72?q=80&w=900&auto=format&fit=crop', alt: 'Professional brand ambassador team briefing before campaign deployment' },
+  ],
+  'street-teams': [
+    { src: 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=80&w=900&auto=format&fit=crop', alt: 'Street team engaging pedestrians in a high-traffic urban area' },
+    { src: 'https://images.unsplash.com/photo-1461180011046-0d3f86e2892f?q=80&w=900&auto=format&fit=crop', alt: 'Street marketing team distributing branded materials downtown' },
+    { src: 'https://images.unsplash.com/photo-1521737711867-e3b97375f902?q=80&w=900&auto=format&fit=crop', alt: 'Street team coordinator managing campaign logistics in the field' },
+  ],
+  'event-staffing': [
+    { src: 'https://images.unsplash.com/photo-1511578314322-379afb476865?q=80&w=900&auto=format&fit=crop', alt: 'Professional event staff managing registration at a corporate conference' },
+    { src: 'https://images.unsplash.com/photo-1540575861501-7cf05a4b125a?q=80&w=900&auto=format&fit=crop', alt: 'Event staffing team at a large brand activation' },
+    { src: 'https://images.unsplash.com/photo-1560439514-4e9645039924?q=80&w=900&auto=format&fit=crop', alt: 'Experienced event professionals running a seamless product launch' },
+  ],
+  'product-sampling': [
+    { src: 'https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=900&auto=format&fit=crop', alt: 'Product sampling staff handing out samples at a busy market event' },
+    { src: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=900&auto=format&fit=crop', alt: 'Consumer sampling campaign in action at a high-foot-traffic location' },
+    { src: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=900&auto=format&fit=crop', alt: 'Brand ambassador running a product trial and sampling program' },
+  ],
+  'guerrilla-marketing': [
+    { src: 'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=900&auto=format&fit=crop', alt: 'Guerrilla marketing activation drawing a crowd in an urban setting' },
+    { src: 'https://images.unsplash.com/photo-1527192491265-7e15c55b1ed2?q=80&w=900&auto=format&fit=crop', alt: 'Street-level guerrilla marketing campaign creating brand buzz' },
+    { src: 'https://images.unsplash.com/photo-1475721027785-f74eccf877e2?q=80&w=900&auto=format&fit=crop', alt: 'Brand activation guerrilla event generating consumer engagement' },
+  ],
+  'flyer-distribution': [
+    { src: 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=80&w=900&auto=format&fit=crop', alt: 'Street team distributing flyers in a high-traffic pedestrian zone' },
+    { src: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=900&auto=format&fit=crop', alt: 'Campaign coordinator tracking flyer distribution routes' },
+    { src: 'https://images.unsplash.com/photo-1461180011046-0d3f86e2892f?q=80&w=900&auto=format&fit=crop', alt: 'Professional flyering team covering city blocks for a brand launch' },
+  ],
+  'experiential-marketing': [
+    { src: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=900&auto=format&fit=crop', alt: 'Experiential marketing activation with immersive brand experience' },
+    { src: 'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=900&auto=format&fit=crop', alt: 'Live brand experience drawing crowds and creating social moments' },
+    { src: 'https://images.unsplash.com/photo-1511578314322-379afb476865?q=80&w=900&auto=format&fit=crop', alt: 'Experiential event staff delivering an on-brand consumer activation' },
+  ],
+  'promotional-staffing': [
+    { src: 'https://images.unsplash.com/photo-1515187029135-18ee286d815b?q=80&w=900&auto=format&fit=crop', alt: 'Promotional staffing team representing a brand at an activation' },
+    { src: 'https://images.unsplash.com/photo-1556761175-b413da4baf72?q=80&w=900&auto=format&fit=crop', alt: 'On-demand promo staff briefed and ready for a brand event' },
+    { src: 'https://images.unsplash.com/photo-1560439514-4e9645039924?q=80&w=900&auto=format&fit=crop', alt: 'Promotional models and brand ambassadors at a trade show booth' },
+  ],
+};
+
 const relatedBlogPosts: Record<string, { title: string; url: string }[]> = {
   'street-teams': [
     { title: 'The Ultimate Guide to Street Team Marketing in 2026', url: '/blog/ultimate-guide-street-team-marketing.html' },
@@ -107,6 +151,8 @@ export default function ServicePage() {
 
   if (!service) return <NotFound />;
 
+  const photos = servicePhotos[service.slug] || servicePhotos['brand-ambassadors'];
+
   return (
     <div className="locations-page">
       <section className="locations-hero">
@@ -121,12 +167,52 @@ export default function ServicePage() {
         </div>
       </section>
 
+      {/* Trust bar */}
+      <div className="service-trust-bar">
+        <div className="container">
+          <div className="service-trust-items">
+            <div className="service-trust-item">
+              <span className="service-trust-num">10,000+</span>
+              <span className="service-trust-label">Staff Nationwide</span>
+            </div>
+            <div className="service-trust-divider" />
+            <div className="service-trust-item">
+              <span className="service-trust-num">1,000+</span>
+              <span className="service-trust-label">Cities Covered</span>
+            </div>
+            <div className="service-trust-divider" />
+            <div className="service-trust-item">
+              <span className="service-trust-num">500+</span>
+              <span className="service-trust-label">Campaigns Executed</span>
+            </div>
+            <div className="service-trust-divider" />
+            <div className="service-trust-item">
+              <span className="service-trust-num">94%</span>
+              <span className="service-trust-label">Client Retention</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <section className="locations-content">
         <div className="container">
           <div className="service-detail">
             <div className="service-detail-intro">
               <h2>About {service.name}</h2>
               <p>{service.description}</p>
+            </div>
+
+            {/* Photo grid — real campaign work */}
+            <div className="service-photo-grid">
+              {photos.map((photo, i) => (
+                <div key={i} className="service-photo-item">
+                  <img
+                    src={photo.src}
+                    alt={photo.alt}
+                    loading={i === 0 ? 'eager' : 'lazy'}
+                  />
+                </div>
+              ))}
             </div>
 
             <div className="service-detail-section">
