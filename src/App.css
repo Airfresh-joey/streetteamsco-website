@@ -3394,3 +3394,136 @@ body {
     grid-column: span 1;
   }
 }
+
+/* ===========================
+   PORTFOLIO PAGE
+   =========================== */
+.portfolio-page { background: #fff; min-height: 100vh; }
+
+.portfolio-hero {
+  background: linear-gradient(135deg, #0f1e3d 0%, #1a3a6b 60%, #0f3057 100%);
+  padding: 100px 0 60px;
+  text-align: center;
+  color: #fff;
+}
+.portfolio-hero-badge {
+  display: inline-block;
+  background: rgba(255,165,0,0.15);
+  color: #ffa500;
+  border: 1px solid rgba(255,165,0,0.4);
+  padding: 6px 18px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  margin-bottom: 20px;
+}
+.portfolio-hero h1 {
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
+  font-weight: 900;
+  line-height: 1.15;
+  margin-bottom: 18px;
+  color: #fff;
+}
+.portfolio-hero p {
+  font-size: 1.1rem;
+  color: rgba(255,255,255,0.75);
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.portfolio-filters { padding: 30px 0 10px; background: #f8f9fa; border-bottom: 1px solid #e5e7eb; }
+.filter-tabs { display: flex; flex-wrap: wrap; gap: 10px; }
+.filter-tab {
+  padding: 8px 20px;
+  border-radius: 999px;
+  border: 1px solid #d1d5db;
+  background: #fff;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #4b5563;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.filter-tab:hover { border-color: #0f3057; color: #0f3057; }
+.filter-tab.active { background: #0f3057; color: #fff; border-color: #0f3057; }
+
+.portfolio-grid-section { padding: 50px 0 80px; }
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 28px;
+}
+
+.portfolio-card {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  border: 1px solid #e5e7eb;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.portfolio-card:hover { transform: translateY(-4px); box-shadow: 0 8px 30px rgba(0,0,0,0.13); }
+
+.portfolio-card-image { position: relative; height: 220px; overflow: hidden; }
+.portfolio-card-image img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s; }
+.portfolio-card:hover .portfolio-card-image img { transform: scale(1.04); }
+.portfolio-card-category {
+  position: absolute; top: 12px; left: 12px;
+  background: rgba(15,48,87,0.85);
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  padding: 4px 12px;
+  border-radius: 999px;
+  backdrop-filter: blur(4px);
+}
+
+.portfolio-card-body { padding: 20px; }
+.portfolio-card-body h3 { font-size: 1rem; font-weight: 800; color: #0f1e3d; margin-bottom: 6px; line-height: 1.3; }
+.portfolio-card-tagline { font-size: 0.88rem; color: #6b7280; margin-bottom: 8px; }
+.portfolio-card-markets { font-size: 0.8rem; color: #6b7280; margin-bottom: 14px; }
+
+.portfolio-card-stats { display: flex; gap: 12px; margin-bottom: 16px; }
+.portfolio-stat { flex: 1; text-align: center; background: #f8f9fa; border-radius: 8px; padding: 8px 4px; }
+.portfolio-stat-value { font-size: 0.9rem; font-weight: 800; color: #0f3057; }
+.portfolio-stat-label { font-size: 0.68rem; color: #9ca3af; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; margin-top: 2px; }
+
+.portfolio-card-link {
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #0f3057;
+  text-decoration: none;
+  border-bottom: 2px solid #ffa500;
+  padding-bottom: 1px;
+  transition: color 0.2s;
+}
+.portfolio-card-link:hover { color: #ffa500; }
+
+.portfolio-cta {
+  background: linear-gradient(135deg, #0f1e3d, #1a3a6b);
+  color: #fff;
+  text-align: center;
+  padding: 80px 20px;
+}
+.portfolio-cta h2 { font-size: 2rem; font-weight: 900; margin-bottom: 12px; }
+.portfolio-cta p { color: rgba(255,255,255,0.75); margin-bottom: 28px; font-size: 1.1rem; }
+.portfolio-cta .btn-primary {
+  display: inline-block;
+  background: #ffa500;
+  color: #0f1e3d;
+  font-weight: 800;
+  padding: 14px 36px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: background 0.2s;
+}
+.portfolio-cta .btn-primary:hover { background: #ff8c00; }
+
+@media (max-width: 768px) {
+  .portfolio-grid { grid-template-columns: 1fr; }
+  .filter-tabs { gap: 8px; }
+}

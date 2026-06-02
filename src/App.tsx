@@ -4,6 +4,7 @@ import './App.css';
 
 // Lazy-loaded page components for code splitting
 const HomePage = lazy(() => import('./pages/HomePage'));
+const PortfolioPage = lazy(() => import('./pages/PortfolioPage'));
 const LocationsIndex = lazy(() => import('./pages/LocationsIndex'));
 const StatePage = lazy(() => import('./pages/StatePage'));
 const CityPage = lazy(() => import('./pages/CityPage'));
@@ -48,6 +49,7 @@ function AppLayout() {
             <Link to="/services">Services</Link>
             <Link to="/pricing">Pricing</Link>
             <a href="/playbook" style={{color: '#f59e0b', fontWeight: 600}}>Free Playbook</a>
+            <a href="/portfolio">Portfolio</a>
             <a href="/case-studies/">Case Studies</a>
             <Link to="/locations">Locations</Link>
             <a href="/blog/">Blog</a>
@@ -72,6 +74,7 @@ function AppLayout() {
           <Route path="/terms" element={<TermsOfService />} />
           <Route path="/our-team" element={<OurTeam />} />
           <Route path="/testimonials" element={<Testimonials />} />
+          <Route path="/portfolio" element={<PortfolioPage />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/locations" element={<LocationsIndex />} />
           <Route path="/locations/:state" element={<StatePage />} />
