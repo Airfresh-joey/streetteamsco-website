@@ -1277,6 +1277,18 @@ body {
   margin: 2rem auto 0;
 }
 
+/* On dark bg (homepage #contact section) */
+.contact .contact-form-success {
+  background: rgba(255,255,255,0.1);
+}
+
+/* On light bg (/contact page, .service-content, .contact-grid) */
+.service-content .contact-form-success,
+.contact-grid .contact-form-success {
+  background: #f0fdf4;
+  border: 2px solid #22c55e;
+}
+
 .contact-form-success .success-icon {
   width: 60px;
   height: 60px;
@@ -1293,6 +1305,17 @@ body {
 .contact-form-success h3 {
   color: #fff;
   margin-bottom: 0.5rem;
+}
+
+/* Dark text on light bg */
+.service-content .contact-form-success h3,
+.contact-grid .contact-form-success h3 {
+  color: #1f2937;
+}
+
+.service-content .contact-form-success p,
+.contact-grid .contact-form-success p {
+  color: #374151;
 }
 
 .contact-form-success p {
