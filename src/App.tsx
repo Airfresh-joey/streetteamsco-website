@@ -18,6 +18,7 @@ const TermsOfService = lazy(() => import('./pages/TermsOfService'));
 const OurTeam = lazy(() => import('./pages/OurTeam'));
 const Testimonials = lazy(() => import('./pages/Testimonials'));
 const Contact = lazy(() => import('./pages/Contact'));
+const BookPage = lazy(() => import('./pages/BookPage'));
 const NotFound = lazy(() => import('./pages/NotFound'));
 
 function AppLayout() {
@@ -76,6 +77,8 @@ function AppLayout() {
           <Route path="/testimonials" element={<Testimonials />} />
           <Route path="/portfolio" element={<PortfolioPage />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/book" element={<BookPage />} />
+          <Route path="/book-call" element={<BookPage />} />
           <Route path="/locations" element={<LocationsIndex />} />
           <Route path="/locations/:state" element={<StatePage />} />
           <Route path="/locations/:state/:city" element={<CityPage />} />

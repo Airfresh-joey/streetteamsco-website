@@ -1,106 +1,357 @@
 {
   "rewrites": [
-    { "source": "/street-team-marketing-agency", "destination": "/street-team-marketing-agency.html" },
-    { "source": "/brand-ambassador-agency", "destination": "/brand-ambassador-agency.html" },
-    { "source": "/guerrilla-marketing-agency", "destination": "/guerrilla-marketing-agency.html" },
-    { "source": "/product-sampling-agency", "destination": "/product-sampling-agency.html" },
-    { "source": "/experiential-marketing-agency", "destination": "/experiential-marketing-agency.html" },
-    { "source": "/field-marketing-agency", "destination": "/field-marketing-agency.html" },
-    { "source": "/trade-show-staffing-agency", "destination": "/trade-show-staffing-agency.html" },
-    { "source": "/promotional-staffing-agency", "destination": "/promotional-staffing-agency.html" },
-    { "source": "/event-marketing-agency", "destination": "/event-marketing-agency.html" },
-    { "source": "/mobile-marketing-tours", "destination": "/mobile-marketing-tours.html" },
-    { "source": "/brand-activation-agency", "destination": "/brand-activation-agency.html" },
-    { "source": "/corporate-event-staffing", "destination": "/corporate-event-staffing.html" },
-    { "source": "/college-marketing-agency", "destination": "/college-marketing-agency.html" },
-    { "source": "/festival-staffing-agency", "destination": "/festival-staffing-agency.html" },
-    { "source": "/fifa-world-cup-2026-staffing", "destination": "/fifa-world-cup-2026-staffing.html" },
-    { "source": "/fifa-world-cup-2026-staffing/:city", "destination": "/fifa-world-cup-2026-staffing/:city.html" },
-    { "source": "/locations/:state/:city/:service", "destination": "/locations/:state/:city/:service.html" },
-    { "source": "/case-studies/", "destination": "/case-studies/index.html" },
-    { "source": "/case-studies/:slug", "destination": "/case-studies/:slug.html" },
-    { "source": "/compare/:slug", "destination": "/compare/:slug.html" },
-    { "source": "/what-is-street-team-marketing", "destination": "/what-is-street-team-marketing.html" },
-    { "source": "/how-it-works", "destination": "/how-it-works.html" },
-    { "source": "/about-street-teams-co", "destination": "/about-street-teams-co.html" },
-    { "source": "/wild-posting-services", "destination": "/wild-posting-services.html" },
-    { "source": "/human-billboard-advertising", "destination": "/human-billboard-advertising.html" },
-    { "source": "/flash-mob-marketing", "destination": "/flash-mob-marketing.html" },
-    { "source": "/tailgate-marketing", "destination": "/tailgate-marketing.html" },
-    { "source": "/alcohol-brand-promotions", "destination": "/alcohol-brand-promotions.html" },
-    { "source": "/campus-marketing-agency", "destination": "/campus-marketing-agency.html" },
-    { "source": "/auto-show-event-staffing", "destination": "/auto-show-event-staffing.html" },
-    { "source": "/pop-up-shop-staffing", "destination": "/pop-up-shop-staffing.html" },
-    { "source": "/cannabis-marketing-agency", "destination": "/cannabis-marketing-agency.html" },
-    { "source": "/tech-event-staffing", "destination": "/tech-event-staffing.html" },
-    { "source": "/food-beverage-sampling-agency", "destination": "/food-beverage-sampling-agency.html" },
-    { "source": "/sports-marketing-agency", "destination": "/sports-marketing-agency.html" },
-    { "source": "/entertainment-marketing-agency", "destination": "/entertainment-marketing-agency.html" },
-    { "source": "/conference-staffing-agency", "destination": "/conference-staffing-agency.html" },
-    { "source": "/in-store-demo-staffing", "destination": "/in-store-demo-staffing.html" },
-    { "source": "/promotional-models", "destination": "/promotional-models.html" },
-    { "source": "/b2b-experiential-marketing", "destination": "/b2b-experiential-marketing.html" },
-    { "source": "/hire-event-staff", "destination": "/hire-event-staff.html" },
-    { "source": "/vip-event-staffing", "destination": "/vip-event-staffing.html" },
-    { "source": "/convention-staffing-agency", "destination": "/convention-staffing-agency.html" },
-    { "source": "/nationwide-event-staffing", "destination": "/nationwide-event-staffing.html" },
-    { "source": "/app-launch-street-teams", "destination": "/app-launch-street-teams.html" },
-    { "source": "/cpg-brand-ambassadors", "destination": "/cpg-brand-ambassadors.html" },
-    { "source": "/dispensary-marketing-agency", "destination": "/dispensary-marketing-agency.html" },
-    { "source": "/beauty-brand-sampling", "destination": "/beauty-brand-sampling.html" },
-    { "source": "/college-nil-marketing", "destination": "/college-nil-marketing.html" },
-    { "source": "/playbook", "destination": "/playbook.html" },
-    { "source": "/resources", "destination": "/resources.html" },
-    { "source": "/faq", "destination": "/faq.html" },
-    { "source": "/partners", "destination": "/partners/index.html" },
-    { "source": "/partners/agencies", "destination": "/partners/agencies.html" },
-    { "source": "/tools", "destination": "/tools/index.html" },
-    { "source": "/tools/staffing-calculator", "destination": "/tools/staffing-calculator.html" },
-    { "source": "/blog/", "destination": "/blog/index.html" },
-    { "source": "/blog/:slug", "destination": "/blog/:slug.html" },
-    { "source": "/services", "destination": "/index.html" },
-    { "source": "/services/:service", "destination": "/index.html" },
-    { "source": "/industries", "destination": "/index.html" },
-    { "source": "/industries/:industry", "destination": "/index.html" },
-    { "source": "/pricing", "destination": "/index.html" },
-    { "source": "/privacy", "destination": "/index.html" },
-    { "source": "/terms", "destination": "/index.html" },
-    { "source": "/our-team", "destination": "/index.html" },
-    { "source": "/testimonials", "destination": "/index.html" },
-    { "source": "/portfolio", "destination": "/index.html" },
-    { "source": "/contact", "destination": "/index.html" },
-    { "source": "/locations", "destination": "/index.html" },
-    { "source": "/locations/:state", "destination": "/index.html" },
-    { "source": "/locations/:state/:city", "destination": "/index.html" }
+    {
+      "source": "/book-call",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/book",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/street-team-marketing-agency",
+      "destination": "/street-team-marketing-agency.html"
+    },
+    {
+      "source": "/brand-ambassador-agency",
+      "destination": "/brand-ambassador-agency.html"
+    },
+    {
+      "source": "/guerrilla-marketing-agency",
+      "destination": "/guerrilla-marketing-agency.html"
+    },
+    {
+      "source": "/product-sampling-agency",
+      "destination": "/product-sampling-agency.html"
+    },
+    {
+      "source": "/experiential-marketing-agency",
+      "destination": "/experiential-marketing-agency.html"
+    },
+    {
+      "source": "/field-marketing-agency",
+      "destination": "/field-marketing-agency.html"
+    },
+    {
+      "source": "/trade-show-staffing-agency",
+      "destination": "/trade-show-staffing-agency.html"
+    },
+    {
+      "source": "/promotional-staffing-agency",
+      "destination": "/promotional-staffing-agency.html"
+    },
+    {
+      "source": "/event-marketing-agency",
+      "destination": "/event-marketing-agency.html"
+    },
+    {
+      "source": "/mobile-marketing-tours",
+      "destination": "/mobile-marketing-tours.html"
+    },
+    {
+      "source": "/brand-activation-agency",
+      "destination": "/brand-activation-agency.html"
+    },
+    {
+      "source": "/corporate-event-staffing",
+      "destination": "/corporate-event-staffing.html"
+    },
+    {
+      "source": "/college-marketing-agency",
+      "destination": "/college-marketing-agency.html"
+    },
+    {
+      "source": "/festival-staffing-agency",
+      "destination": "/festival-staffing-agency.html"
+    },
+    {
+      "source": "/fifa-world-cup-2026-staffing",
+      "destination": "/fifa-world-cup-2026-staffing.html"
+    },
+    {
+      "source": "/fifa-world-cup-2026-staffing/:city",
+      "destination": "/fifa-world-cup-2026-staffing/:city.html"
+    },
+    {
+      "source": "/locations/:state/:city/:service",
+      "destination": "/locations/:state/:city/:service.html"
+    },
+    {
+      "source": "/case-studies/",
+      "destination": "/case-studies/index.html"
+    },
+    {
+      "source": "/case-studies/:slug",
+      "destination": "/case-studies/:slug.html"
+    },
+    {
+      "source": "/compare/:slug",
+      "destination": "/compare/:slug.html"
+    },
+    {
+      "source": "/what-is-street-team-marketing",
+      "destination": "/what-is-street-team-marketing.html"
+    },
+    {
+      "source": "/how-it-works",
+      "destination": "/how-it-works.html"
+    },
+    {
+      "source": "/about-street-teams-co",
+      "destination": "/about-street-teams-co.html"
+    },
+    {
+      "source": "/wild-posting-services",
+      "destination": "/wild-posting-services.html"
+    },
+    {
+      "source": "/human-billboard-advertising",
+      "destination": "/human-billboard-advertising.html"
+    },
+    {
+      "source": "/flash-mob-marketing",
+      "destination": "/flash-mob-marketing.html"
+    },
+    {
+      "source": "/tailgate-marketing",
+      "destination": "/tailgate-marketing.html"
+    },
+    {
+      "source": "/alcohol-brand-promotions",
+      "destination": "/alcohol-brand-promotions.html"
+    },
+    {
+      "source": "/campus-marketing-agency",
+      "destination": "/campus-marketing-agency.html"
+    },
+    {
+      "source": "/auto-show-event-staffing",
+      "destination": "/auto-show-event-staffing.html"
+    },
+    {
+      "source": "/pop-up-shop-staffing",
+      "destination": "/pop-up-shop-staffing.html"
+    },
+    {
+      "source": "/cannabis-marketing-agency",
+      "destination": "/cannabis-marketing-agency.html"
+    },
+    {
+      "source": "/tech-event-staffing",
+      "destination": "/tech-event-staffing.html"
+    },
+    {
+      "source": "/food-beverage-sampling-agency",
+      "destination": "/food-beverage-sampling-agency.html"
+    },
+    {
+      "source": "/sports-marketing-agency",
+      "destination": "/sports-marketing-agency.html"
+    },
+    {
+      "source": "/entertainment-marketing-agency",
+      "destination": "/entertainment-marketing-agency.html"
+    },
+    {
+      "source": "/conference-staffing-agency",
+      "destination": "/conference-staffing-agency.html"
+    },
+    {
+      "source": "/in-store-demo-staffing",
+      "destination": "/in-store-demo-staffing.html"
+    },
+    {
+      "source": "/promotional-models",
+      "destination": "/promotional-models.html"
+    },
+    {
+      "source": "/b2b-experiential-marketing",
+      "destination": "/b2b-experiential-marketing.html"
+    },
+    {
+      "source": "/hire-event-staff",
+      "destination": "/hire-event-staff.html"
+    },
+    {
+      "source": "/vip-event-staffing",
+      "destination": "/vip-event-staffing.html"
+    },
+    {
+      "source": "/convention-staffing-agency",
+      "destination": "/convention-staffing-agency.html"
+    },
+    {
+      "source": "/nationwide-event-staffing",
+      "destination": "/nationwide-event-staffing.html"
+    },
+    {
+      "source": "/app-launch-street-teams",
+      "destination": "/app-launch-street-teams.html"
+    },
+    {
+      "source": "/cpg-brand-ambassadors",
+      "destination": "/cpg-brand-ambassadors.html"
+    },
+    {
+      "source": "/dispensary-marketing-agency",
+      "destination": "/dispensary-marketing-agency.html"
+    },
+    {
+      "source": "/beauty-brand-sampling",
+      "destination": "/beauty-brand-sampling.html"
+    },
+    {
+      "source": "/college-nil-marketing",
+      "destination": "/college-nil-marketing.html"
+    },
+    {
+      "source": "/playbook",
+      "destination": "/playbook.html"
+    },
+    {
+      "source": "/resources",
+      "destination": "/resources.html"
+    },
+    {
+      "source": "/faq",
+      "destination": "/faq.html"
+    },
+    {
+      "source": "/partners",
+      "destination": "/partners/index.html"
+    },
+    {
+      "source": "/partners/agencies",
+      "destination": "/partners/agencies.html"
+    },
+    {
+      "source": "/tools",
+      "destination": "/tools/index.html"
+    },
+    {
+      "source": "/tools/staffing-calculator",
+      "destination": "/tools/staffing-calculator.html"
+    },
+    {
+      "source": "/blog/",
+      "destination": "/blog/index.html"
+    },
+    {
+      "source": "/blog/:slug",
+      "destination": "/blog/:slug.html"
+    },
+    {
+      "source": "/services",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/services/:service",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/industries",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/industries/:industry",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/pricing",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/privacy",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/terms",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/our-team",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/testimonials",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/portfolio",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/contact",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/locations",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/locations/:state",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/locations/:state/:city",
+      "destination": "/index.html"
+    }
   ],
   "headers": [
     {
       "source": "/assets/(.*)",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
       ]
     },
     {
       "source": "/images/(.*)",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=2592000, stale-while-revalidate=86400" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=2592000, stale-while-revalidate=86400"
+        }
       ]
     },
     {
       "source": "/(.*).html",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=3600, stale-while-revalidate=86400" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600, stale-while-revalidate=86400"
+        }
       ]
     },
     {
       "source": "/(.*)",
       "headers": [
-        { "key": "X-Content-Type-Options", "value": "nosniff" },
-        { "key": "X-Frame-Options", "value": "DENY" },
-        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
-        { "key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=()" },
-        { "key": "Strict-Transport-Security", "value": "max-age=63072000; includeSubDomains; preload" },
-        { "key": "X-XSS-Protection", "value": "1; mode=block" }
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "Permissions-Policy",
+          "value": "camera=(), microphone=(), geolocation=()"
+        },
+        {
+          "key": "Strict-Transport-Security",
+          "value": "max-age=63072000; includeSubDomains; preload"
+        },
+        {
+          "key": "X-XSS-Protection",
+          "value": "1; mode=block"
+        }
       ]
     }
   ]
