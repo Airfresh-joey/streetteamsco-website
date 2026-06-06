@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { useMetaTags } from '../hooks/useMetaTags';
 
 const AFM_LOGO = (
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 453.27 124.49" style={{ height: '28px', width: 'auto' }} aria-label="Air Fresh Marketing">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 453.27 124.49" style={{ height: '24px', width: 'auto' }} aria-label="Air Fresh Marketing">
     <path fill="white" d="M170.35,32.1h14L206.74,85H191.13l-3.82-9.38H167.05L163.3,85H148Zm12.76,32.19-5.85-14.93-5.93,14.93Z"/>
     <path fill="white" d="M208.1,30.23H223v10.5H208.1Zm.29,14.18h14.26V85H208.39Z"/>
     <path fill="white" d="M227.75,44.41H242v8.18c2.33-5.55,6.08-9.16,12.83-8.86v15h-1.2C246.2,58.74,242,63,242,72.4V85H227.75Z"/>
@@ -35,51 +35,32 @@ export default function BookPage() {
     };
   }, []);
 
-  const openCalendly = () => {
-    // @ts-ignore
-    if (window.Calendly) {
-      // @ts-ignore
-      window.Calendly.initPopupWidget({ url: 'https://calendly.com/joeykercher/street-teams-co-discovery-call' });
-    }
-  };
-
   return (
     <div style={{ minHeight: '100vh', background: '#0f172a', color: '#fff' }}>
 
       {/* Hero */}
-      <div style={{ padding: '120px 24px 80px', textAlign: 'center' }}>
+      <div style={{ padding: '120px 24px 60px', textAlign: 'center' }}>
         <p style={{ fontSize: '12px', fontWeight: 600, letterSpacing: '3px', textTransform: 'uppercase', color: '#ff6b35', marginBottom: '16px' }}>
           Discovery Call
         </p>
         <h1 style={{ fontSize: 'clamp(2rem, 5vw, 3.25rem)', fontWeight: 800, color: '#fff', marginBottom: '20px', lineHeight: 1.2 }}>
           Schedule Your Discovery Call
         </h1>
-        <p style={{ fontSize: '1.15rem', color: 'rgba(255,255,255,0.65)', maxWidth: '560px', margin: '0 auto 48px' }}>
+        <p style={{ fontSize: '1.15rem', color: 'rgba(255,255,255,0.65)', maxWidth: '560px', margin: '0 auto' }}>
           Tell us about your brand activation goals and we'll put together a custom plan for you.
         </p>
+      </div>
 
-        {/* Book button */}
-        <button
-          onClick={openCalendly}
-          style={{
-            display: 'inline-block',
-            background: '#ff6b35',
-            color: '#fff',
-            padding: '18px 48px',
-            borderRadius: '10px',
-            fontWeight: 700,
-            fontSize: '1.1rem',
-            border: 'none',
-            cursor: 'pointer',
-            letterSpacing: '0.5px',
-            marginBottom: '28px',
-          }}
-        >
-          Pick a Time →
-        </button>
+      {/* Calendly inline widget */}
+      <div style={{ maxWidth: '900px', margin: '0 auto', padding: '0 24px' }}>
+        <div
+          className="calendly-inline-widget"
+          data-url="https://calendly.com/joeykercher/street-teams-co-discovery-call"
+          style={{ minWidth: '320px', height: '700px', width: '100%' }}
+        />
 
-        {/* Powered by AFM — right here, visible before and after clicking */}
-        <div style={{ marginTop: '4px' }}>
+        {/* Powered by AFM — directly below widget */}
+        <div style={{ textAlign: 'center', marginTop: '16px', marginBottom: '40px' }}>
           <a
             href="https://airfreshmarketing.com"
             target="_blank"
@@ -91,23 +72,6 @@ export default function BookPage() {
             </span>
             {AFM_LOGO}
           </a>
-        </div>
-      </div>
-
-      {/* Trust bar */}
-      <div style={{ borderTop: '1px solid rgba(255,255,255,0.07)', borderBottom: '1px solid rgba(255,255,255,0.07)', background: 'rgba(255,255,255,0.02)', padding: '32px 24px' }}>
-        <div style={{ maxWidth: '800px', margin: '0 auto', display: 'flex', justifyContent: 'center', gap: '48px', flexWrap: 'wrap', textAlign: 'center' }}>
-          {[
-            { num: '500+', label: 'Campaigns' },
-            { num: '1,000+', label: 'Cities' },
-            { num: '24hr', label: 'Response' },
-            { num: '94%', label: 'Retention' },
-          ].map(({ num, label }) => (
-            <div key={label}>
-              <div style={{ fontSize: '1.75rem', fontWeight: 800, color: '#ff6b35' }}>{num}</div>
-              <div style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.45)', letterSpacing: '1px', textTransform: 'uppercase' }}>{label}</div>
-            </div>
-          ))}
         </div>
       </div>
 
