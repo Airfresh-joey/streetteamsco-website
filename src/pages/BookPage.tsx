@@ -40,7 +40,7 @@ export default function BookPage() {
           className="calendly-inline-widget"
           data-url="https://calendly.com/joeykercher/street-teams-co-discovery-call"
           data-auto-height="true"
-          style={{ minWidth: '320px', height: '700px', width: '100%' }}
+          style={{ minWidth: '320px', height: 'auto', minHeight: '700px', width: '100%', overflow: 'visible' }}
         />
       </div>
 
