@@ -1,6 +1,10 @@
 {
   "rewrites": [
     {
+      "source": "/street-team-marketing-las-vegas",
+      "destination": "/street-team-marketing-las-vegas.html"
+    },
+    {
       "source": "/book-call",
       "destination": "/index.html"
     },
