@@ -285,6 +285,27 @@ body {
 .ds-mline .ds-minner { display: inline-block; transform: translateY(115%); transition: transform .85s var(--ds-ease); }
 .ds-h2.in .ds-mline .ds-minner, .in > .ds-mline .ds-minner { transform: translateY(0); }
 
+/* ===================== CLIENT LOGO WALL ===================== */
+/* Full brand color, one uniform height, no width-cap squish (.app prefix
+   out-specifies the old grayscale/cap rules in App.css). */
+.app .client-logos { border-bottom: 2.5px solid var(--ink); }
+.app .client-logos-label {
+  font-family: var(--mono); font-weight: 700; letter-spacing: .16em; color: #555;
+  text-transform: uppercase;
+}
+.app .client-logos-grid { gap: 2rem 3.4rem; align-items: center; justify-content: center; }
+.app .client-logo,
+.app .client-logo.client-logo-wide {
+  height: 34px; width: auto; max-width: none;
+  filter: none; opacity: 1; object-fit: contain;
+  transition: transform .2s ease;
+}
+.app .client-logo:hover { transform: translateY(-3px); opacity: 1; filter: none; }
+@media (max-width: 600px) {
+  .app .client-logo, .app .client-logo.client-logo-wide { height: 24px; }
+  .app .client-logos-grid { gap: 1.4rem 2.2rem; }
+}
+
 /* ===================== REDUCED MOTION ===================== */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
