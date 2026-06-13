@@ -1,0 +1,321 @@
+/* =========================================================================
+   STREET TEAMS CO — v5 DESIGN SYSTEM
+   Ported from streetteamshomepagev5.html into the React app.
+   Namespaced with `ds-` for new components; a small set of existing global
+   chrome classes (.nav/.footer/.sticky-cta-bar) are intentionally overridden
+   so every page shares the new look without rewriting App.tsx logic.
+   All animation respects prefers-reduced-motion (see bottom of file).
+   ========================================================================= */
+
+:root {
+  --ink: #121110;
+  --orange: #FF4D00;
+  --orange-deep: #E04300;
+  --concrete: #E6E3DB;
+  --paper: #F7F5EF;
+  --curb: #FFD23F;
+  --mono: 'Space Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  --body: 'Archivo', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  --display: 'Anton', 'Arial Narrow', Impact, sans-serif;
+  --ds-ease: cubic-bezier(.2, .8, .2, 1);
+}
+
+/* ---------- base resets (override Vite default index.css) ---------- */
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  display: block;          /* override index.css flex centering */
+  place-items: initial;
+  min-width: 320px;
+  font-family: var(--body);
+  background: var(--paper);
+  color: var(--ink);
+  overflow-x: clip;   /* guard against accidental horizontal scroll; preserves sticky nav */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+::selection { background: var(--ink); color: var(--orange); }
+
+/* ===================== SHARED CHROME OVERRIDES ===================== */
+/* Solid paper nav — readable on every page (orange hero + paper inner),
+   no scroll-state JS required. */
+.app .nav {
+  position: sticky; top: 0; left: 0; right: 0; z-index: 100;
+  background: var(--paper);
+  box-shadow: 0 1px 0 var(--ink);
+  padding: 0;
+}
+.app .nav .nav-container {
+  display: flex; align-items: center; justify-content: space-between;
+  max-width: 1280px; margin: 0 auto; padding: 16px 32px; width: 100%;
+}
+.app .nav .logo {
+  font-family: var(--display); font-size: 1.35rem; letter-spacing: .02em;
+  color: var(--ink); text-decoration: none; text-transform: uppercase;
+}
+/* Style appearance only — leave App.css to own the desktop-flex / mobile-dropdown
+   display behavior so the hamburger menu keeps working. */
+.app .nav .nav-links { gap: 26px; }
+.app .nav .nav-links a {
+  font-family: var(--mono); font-size: .78rem; text-transform: uppercase;
+  letter-spacing: .08em; color: var(--ink); text-decoration: none;
+  position: relative; background: none;
+}
+.app .nav .nav-links a:not(.nav-cta)::after {
+  content: ''; position: absolute; left: 0; bottom: -4px; width: 0; height: 2px;
+  background: var(--orange); transition: width .25s var(--ds-ease);
+}
+.app .nav .nav-links a:not(.nav-cta):hover::after { width: 100%; }
+.app .nav .nav-links .nav-cta {
+  background: var(--ink); color: var(--paper) !important; padding: 11px 20px;
+  font-weight: 700; box-shadow: 4px 4px 0 rgba(18,17,16,.25);
+  transition: transform .15s, box-shadow .15s; border-radius: 0;
+}
+.app .nav .nav-links .nav-cta:hover {
+  transform: translate(-2px,-2px); box-shadow: 6px 6px 0 rgba(18,17,16,.35);
+}
+
+/* Footer → ink with orange accents */
+.app .footer {
+  background: var(--ink); color: #b9b5ae; padding: 64px 0 28px;
+}
+.app .footer .container { max-width: 1280px; margin: 0 auto; padding: 0 32px; }
+.app .footer .logo, .app .footer .foot-logo { color: var(--paper); font-family: var(--display); text-transform: uppercase; }
+.app .footer .footer-section h3 {
+  font-family: var(--mono); font-size: .72rem; text-transform: uppercase;
+  letter-spacing: .14em; color: var(--orange); margin-bottom: 16px;
+}
+.app .footer .footer-section a, .app .footer .footer-brand p {
+  color: #b9b5ae; text-decoration: none;
+}
+.app .footer .footer-section a:hover { color: var(--paper); }
+.app .footer .footer-bottom { border-top: 1px solid #3a3835; margin-top: 40px; padding-top: 22px; }
+.app .footer .footer-bottom a { color: #b9b5ae; }
+
+/* Sticky CTA bar → ink/orange */
+.app .sticky-cta-bar {
+  background: var(--ink); color: var(--paper);
+  border-top: 3px solid var(--orange);
+}
+.app .sticky-cta-bar .sticky-cta-btn {
+  background: var(--orange); color: var(--ink); font-family: var(--mono);
+  font-weight: 700; text-transform: uppercase; letter-spacing: .06em;
+  border-radius: 0;
+}
+.app .sticky-cta-bar .sticky-cta-email { color: var(--curb); }
+
+/* ===================== DS BUTTONS ===================== */
+.ds-btn {
+  font-family: var(--mono); font-size: .85rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: .07em; text-decoration: none;
+  padding: 17px 28px; display: inline-flex; align-items: center; gap: 10px;
+  transition: box-shadow .15s, transform .15s; cursor: pointer; border: none;
+  border-radius: 0;
+}
+.ds-btn-ink { background: var(--ink); color: var(--orange); box-shadow: 5px 5px 0 rgba(18,17,16,.3); }
+.ds-btn-ink:hover { box-shadow: 8px 8px 0 rgba(18,17,16,.4); transform: translate(-2px,-2px); }
+.ds-btn-orange { background: var(--orange); color: var(--ink); box-shadow: 5px 5px 0 rgba(18,17,16,.3); }
+.ds-btn-orange:hover { box-shadow: 8px 8px 0 rgba(18,17,16,.4); transform: translate(-2px,-2px); }
+.ds-btn-ghost { background: transparent; color: var(--ink); border: 2.5px solid var(--ink); }
+.ds-btn-ghost:hover { background: var(--ink); color: var(--orange); }
+.ds-btn .arrow { transition: transform .2s; }
+.ds-btn:hover .arrow { transform: translateX(4px); }
+
+/* ===================== HAZARD DIVIDER ===================== */
+.ds-hazard {
+  height: 22px;
+  background: repeating-linear-gradient(-45deg, var(--ink) 0 18px, var(--curb) 18px 36px);
+}
+
+/* ===================== HERO ===================== */
+.ds-hero {
+  background: var(--orange); position: relative; overflow: hidden;
+  padding: 72px 32px 0; display: flex; flex-direction: column; justify-content: flex-end;
+}
+.ds-hero-grid {
+  position: absolute; inset: 0; pointer-events: none;
+  background-image:
+    linear-gradient(rgba(18,17,16,.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(18,17,16,.06) 1px, transparent 1px);
+  background-size: 64px 64px;
+}
+.ds-hero-inner { position: relative; max-width: 1280px; margin: 0 auto; width: 100%; padding-bottom: 48px; }
+.ds-hero-eyebrow {
+  font-family: var(--mono); font-size: .8rem; text-transform: uppercase;
+  letter-spacing: .14em; margin-bottom: 22px; display: flex; align-items: center;
+  gap: 12px; flex-wrap: wrap;
+}
+.ds-live-pill {
+  display: inline-flex; align-items: center; gap: 7px; background: var(--ink);
+  color: var(--paper); padding: 5px 12px; font-size: .7rem;
+}
+.ds-live-pill .ds-pulse {
+  width: 7px; height: 7px; border-radius: 50%; background: var(--orange);
+  animation: ds-pulse 1.6s ease-in-out infinite;
+}
+@keyframes ds-pulse { 0%,100% { opacity: 1; transform: scale(1); } 50% { opacity: .35; transform: scale(.7); } }
+.ds-hero h1, .ds-hero-h1 {
+  font-family: var(--display); text-transform: uppercase; line-height: .9;
+  letter-spacing: .005em; font-size: clamp(2.8rem, 9vw, 8.5rem); color: var(--ink);
+  margin: 0;
+}
+.ds-hero-h1 .outline { color: transparent; -webkit-text-stroke: 3px var(--ink); }
+.ds-hero-sub-row {
+  display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between;
+  gap: 28px; margin: 34px 0 48px;
+}
+.ds-hero-sub { max-width: 560px; font-size: 1.08rem; line-height: 1.55; font-weight: 500; color: var(--ink); }
+.ds-hero-sub strong { font-weight: 700; }
+.ds-hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; }
+
+/* ===================== TICKER ===================== */
+.ds-ticker-band {
+  background: var(--ink); color: var(--paper); overflow: hidden; white-space: nowrap;
+  position: relative; margin: 0 -32px;
+}
+.ds-ticker-track { display: inline-flex; padding: 14px 0; will-change: transform; }
+.ds-ticker-track span {
+  font-family: var(--mono); font-size: .85rem; text-transform: uppercase;
+  letter-spacing: .1em; padding: 0 26px; display: inline-flex; align-items: center; gap: 26px;
+}
+.ds-ticker-track span::after { content: '\25CF'; color: var(--orange); font-size: .6rem; }
+@keyframes ds-marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+.ds-ticker-anim { animation: ds-marquee 32s linear infinite; }
+
+/* ===================== SECTION SHELL + LABELS ===================== */
+.ds-section { padding: 96px 32px; }
+.ds-section--paper { background: var(--paper); }
+.ds-section--concrete { background: var(--concrete); }
+.ds-section--ink { background: var(--ink); color: var(--paper); }
+.ds-wrap { max-width: 1280px; margin: 0 auto; }
+.ds-label {
+  font-family: var(--mono); font-size: .75rem; text-transform: uppercase;
+  letter-spacing: .16em; color: var(--orange-deep); display: flex; align-items: center;
+  gap: 12px; margin-bottom: 18px;
+}
+.ds-label::before { content: ''; width: 10px; height: 10px; background: var(--orange); }
+.ds-section--ink .ds-label { color: var(--orange); }
+.ds-h2 {
+  font-family: var(--display); text-transform: uppercase;
+  font-size: clamp(2.2rem, 5.2vw, 4.8rem); line-height: 1.02; margin: 0 0 18px;
+}
+.ds-h2 .hl { background: var(--orange); padding: 0 .12em; }
+.ds-lede { max-width: 640px; font-size: 1.12rem; line-height: 1.65; color: #333; }
+.ds-section--ink .ds-lede { color: #cfccc4; }
+
+/* ===================== PROOF GRID ===================== */
+.ds-proof-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px;
+  background: var(--ink); border: 2.5px solid var(--ink);
+}
+.ds-proof-cell { background: var(--paper); padding: 38px 30px; transition: background .2s; }
+.ds-proof-cell:hover { background: var(--concrete); }
+.ds-proof-num { font-family: var(--display); font-size: clamp(2.4rem, 4.2vw, 4rem); line-height: 1; }
+.ds-proof-num .suffix { color: var(--orange); }
+.ds-proof-cap { font-family: var(--mono); font-size: .75rem; text-transform: uppercase; letter-spacing: .1em; margin-top: 12px; color: #555; }
+@media (max-width: 900px) { .ds-proof-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 480px) { .ds-proof-grid { grid-template-columns: 1fr; } }
+
+/* ===================== SERVICE / LINK ROWS ===================== */
+.ds-rows { border-top: 1px solid #3a3835; }
+.ds-row {
+  display: grid; grid-template-columns: minmax(180px, 340px) 1fr auto; gap: 24px;
+  align-items: center; padding: 32px 8px; border-bottom: 1px solid #3a3835;
+  text-decoration: none; color: var(--paper); position: relative; transition: padding .25s;
+}
+.ds-row:hover { padding-left: 24px; }
+.ds-row::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 0; background: var(--orange); transition: width .25s; }
+.ds-row:hover::before { width: 8px; }
+.ds-row-name { font-family: var(--display); text-transform: uppercase; font-size: clamp(1.3rem, 2.4vw, 2rem); line-height: 1.05; }
+.ds-row-desc { font-size: .98rem; line-height: 1.55; color: #b9b5ae; max-width: 560px; }
+.ds-row-tag { font-family: var(--mono); font-size: .7rem; text-transform: uppercase; letter-spacing: .1em; border: 1.5px solid var(--orange); color: var(--orange); padding: 7px 12px; white-space: nowrap; }
+@media (max-width: 760px) { .ds-row { grid-template-columns: 1fr; gap: 10px; } .ds-row-tag { justify-self: start; } }
+
+/* ===================== CARDS (work / process / generic) ===================== */
+.ds-cards { display: grid; gap: 22px; }
+.ds-cards-3 { grid-template-columns: repeat(3, 1fr); }
+.ds-cards-4 { grid-template-columns: repeat(4, 1fr); }
+.ds-card {
+  background: var(--paper); border: 2.5px solid var(--ink); padding: 30px 26px 34px;
+  box-shadow: 6px 6px 0 var(--ink); transition: transform .18s, box-shadow .18s;
+}
+.ds-card:hover { transform: translate(-3px,-3px); box-shadow: 10px 10px 0 var(--ink); }
+.ds-card h3 { font-family: var(--display); text-transform: uppercase; font-size: 1.5rem; margin: 0 0 12px; }
+.ds-card p { font-size: .94rem; line-height: 1.6; color: #3a3835; margin: 0; }
+.ds-step {
+  font-family: var(--mono); font-size: .72rem; font-weight: 700; text-transform: uppercase;
+  letter-spacing: .12em; background: var(--ink); color: var(--orange); display: inline-block;
+  padding: 6px 10px; margin-bottom: 18px;
+}
+@media (max-width: 980px) { .ds-cards-4 { grid-template-columns: repeat(2, 1fr); } .ds-cards-3 { grid-template-columns: 1fr; } }
+@media (max-width: 560px) { .ds-cards-4 { grid-template-columns: 1fr; } }
+
+/* ===================== COVERAGE CITY BAND ===================== */
+.ds-city-band { overflow: hidden; white-space: nowrap; border-top: 2.5px solid var(--ink); border-bottom: 2.5px solid var(--ink); }
+.ds-city-band + .ds-city-band { border-top: none; }
+.ds-city-track { display: inline-flex; padding: 16px 0; will-change: transform; }
+.ds-city-track span {
+  font-family: var(--display); text-transform: uppercase; font-size: clamp(1.5rem, 3vw, 2.4rem);
+  padding: 0 28px; color: var(--ink); display: inline-flex; align-items: center; gap: 28px;
+}
+.ds-city-track span::after { content: '\2192'; color: var(--orange); font-family: var(--body); font-weight: 700; }
+.ds-city-band--outline .ds-city-track span { color: transparent; -webkit-text-stroke: 1.5px var(--ink); }
+
+/* ===================== CTA ===================== */
+.ds-cta { background: var(--orange); padding: 110px 32px; position: relative; overflow: hidden; }
+.ds-cta-inner { max-width: 1280px; margin: 0 auto; }
+.ds-cta h2 { font-family: var(--display); text-transform: uppercase; font-size: clamp(2.6rem, 8vw, 7rem); line-height: .92; margin: 0; }
+.ds-cta h2 .outline { color: transparent; -webkit-text-stroke: 3px var(--ink); }
+.ds-cta-row { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 30px; margin-top: 40px; }
+.ds-cta-note { font-family: var(--mono); font-size: .85rem; text-transform: uppercase; letter-spacing: .08em; max-width: 420px; line-height: 1.7; }
+
+/* ===================== FAQ ===================== */
+.ds-faq { max-width: 900px; margin: 0 auto; }
+.ds-faq-item { border-bottom: 1px solid var(--ink); padding: 24px 0; }
+.ds-faq-q { font-family: var(--display); text-transform: uppercase; font-size: 1.25rem; line-height: 1.15; margin: 0 0 10px; }
+.ds-faq-a { font-size: 1rem; line-height: 1.65; color: #333; margin: 0; }
+
+/* ===================== REVEAL ===================== */
+.ds-reveal { opacity: 0; transform: translateY(28px); transition: opacity .65s var(--ds-ease), transform .65s var(--ds-ease); }
+.ds-reveal.in { opacity: 1; transform: none; }
+
+/* masked heading line reveal */
+.ds-mline { display: block; overflow: hidden; }
+.ds-mline .ds-minner { display: inline-block; transform: translateY(115%); transition: transform .85s var(--ds-ease); }
+.ds-h2.in .ds-mline .ds-minner, .in > .ds-mline .ds-minner { transform: translateY(0); }
+
+/* ===================== REDUCED MOTION ===================== */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+  .ds-reveal { opacity: 1; transform: none; }
+  .ds-mline .ds-minner { transform: none; }
+  .ds-ticker-anim { animation: none; }
+}
+
+/* ===================== RESPONSIVE ===================== */
+@media (max-width: 860px) {
+  .ds-section { padding: 64px 24px; }
+  .ds-hero { padding: 48px 24px 0; }
+  .ds-cta { padding: 72px 24px; }
+  .ds-ticker-band { margin: 0 -24px; }  /* match mobile hero padding for clean full-bleed */
+}
+@media (max-width: 600px) {
+  .ds-hero-sub-row { flex-direction: column; align-items: stretch; }
+  .ds-hero-ctas { flex-direction: column; }
+  .ds-hero-ctas .ds-btn { justify-content: center; }
+  .ds-hero-eyebrow { font-size: .72rem; }
+  /* keep the display H1 from setting a min-content width wider than the screen
+     (selector must out-specify the base `.ds-hero h1` rule) */
+  .ds-hero .ds-hero-h1 { font-size: clamp(2rem, 10vw, 3.2rem); overflow-wrap: break-word; }
+  .ds-hero-sub { max-width: 100%; }
+  .ds-hero-inner { max-width: 100%; }
+  .ds-hero-ctas .ds-btn { width: 100%; box-sizing: border-box; }
+}
+/* Mobile nav: hamburger bars visible on the paper nav; dropdown in v5 ink. */
+@media (max-width: 768px) {
+  .app .nav .nav-hamburger span { background: var(--ink); }
+  .app .nav .nav-links { background: var(--ink); top: 57px; }
+  .app .nav .nav-links a { color: var(--paper); }
+  .app .nav .nav-links .nav-cta { background: var(--orange); color: var(--ink) !important; box-shadow: none; }
+}

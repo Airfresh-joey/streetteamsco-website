@@ -1,5 +1,7 @@
 import { Link, useNavigate } from 'react-router-dom';
 import { useMetaTags } from '../hooks/useMetaTags';
+import { useReveal } from '../hooks/useReveal';
+import Ticker from '../components/ds/Ticker';
 import ContactForm from '../components/ContactForm';
 import { trackCTAClick, trackEmailClick } from '../analytics';
 
@@ -46,6 +48,7 @@ export default function HomePage() {
     ],
   });
 
+  useReveal();
   const navigate = useNavigate();
 
   const scrollToContact = () => {
@@ -53,142 +56,83 @@ export default function HomePage() {
     if (el) window.scrollTo({ top: el.offsetTop - 80, behavior: 'smooth' });
   };
 
+  const tickerCities = [
+    'NYC', 'Los Angeles', 'Chicago', 'Dallas', 'Houston', 'Miami', 'Atlanta',
+    'Denver', 'Boston', 'San Francisco', 'Las Vegas', 'Washington DC', 'Seattle',
+    'Austin', 'Philadelphia', 'Phoenix', 'Nashville', 'Now booking nationwide',
+  ];
+
   return (
     <>
-      <section className="hero">
-        {/* Blue gradient overlay */}
-        <div className="hero-overlay"></div>
-
-        {/* Animated particles */}
-        <div className="hero-particles">
-          {[...Array(6)].map((_, i) => (
-            <div
-              key={i}
-              className="hero-particle"
-              style={{
-                width: `${(i * 2.3 + 2)}rem`,
-                height: `${(i * 2.3 + 2)}rem`,
-                top: `${(i * 17) % 100}%`,
-                left: `${(i * 23 + 5) % 100}%`,
-                animationDuration: `${i * 1.5 + 4}s`,
-                opacity: 0.15 + (i * 0.05),
-              }}
-            ></div>
-          ))}
-        </div>
-
-        <div className="hero-inner">
-          <div className="hero-grid">
-            {/* Left column */}
-            <div className="hero-left">
-              <div className="hero-badge">
-                <span className="hero-badge-pill">&#127942; #1 STREET TEAM MARKETING AGENCY</span>
-              </div>
-
-              <h1 className="hero-heading">
-                <span className="hero-heading-white">STREET TEAM</span>
-                <span className="hero-heading-gradient">MARKETING AGENCY</span>
-                <span className="hero-heading-blue">1,000+ CITIES NATIONWIDE</span>
-              </h1>
-
-              <p className="hero-subtitle">
-                Professional brand ambassadors and street marketing teams in
-                <span className="text-yellow"> 1,000+ US cities</span>. Event staffing, product sampling, and guerrilla marketing that drives
-                <span className="text-orange"> 40% higher engagement</span>
-              </p>
-
-              <div className="hero-tags">
-                <span className="hero-tag hero-tag-yellow">Brand Ambassadors</span>
-                <span className="hero-tag hero-tag-orange">Event Staffing</span>
-                <span className="hero-tag hero-tag-blue">Product Sampling</span>
-              </div>
-
-              <div className="hero-stats-grid">
-                <div className="hero-stat-box">
-                  <div className="hero-stat-number text-yellow">1,000+</div>
-                  <div className="hero-stat-label">CITIES</div>
-                </div>
-                <div className="hero-stat-box">
-                  <div className="hero-stat-number text-orange">40%</div>
-                  <div className="hero-stat-label">HIGHER ROI</div>
-                </div>
-                <div className="hero-stat-box">
-                  <div className="hero-stat-number text-red">24/7</div>
-                  <div className="hero-stat-label">SUPPORT</div>
-                </div>
-              </div>
-
-              <div className="hero-cta">
-                <a href="#contact" className="btn-hero-primary" onClick={(e) => { e.preventDefault(); trackCTAClick('GET INSTANT QUOTE', 'homepage'); scrollToContact(); }}>
-                  GET INSTANT QUOTE
-                </a>
-                <button className="btn-hero-secondary" onClick={() => { trackCTAClick('VIEW PRICING', 'homepage'); navigate('/pricing'); }}>
-                  VIEW PRICING &rarr;
-                </button>
-              </div>
-
-              <div className="hero-trust-badges">
-                <div className="trust-badge">
-                  <span className="trust-badge-number">87%</span>
-                  <span className="trust-badge-label">Brand Recall Increase</span>
-                </div>
-                <div className="trust-badge">
-                  <span className="trust-badge-number">3.8x</span>
-                  <span className="trust-badge-label">ROI Multiple</span>
-                </div>
-                <div className="trust-badge">
-                  <span className="trust-badge-number">94%</span>
-                  <span className="trust-badge-label">Client Retention</span>
-                </div>
-              </div>
-            </div>
-
-            {/* Right column - hero image */}
-            <div className="hero-right">
-              <div className="hero-image-wrapper">
-                <img
-                  src="/images/hero-image.jpg"
-                  alt="Street team marketing brand ambassador engaging consumers at a product sampling event"
-                  className="hero-image"
-                  width={2000}
-                  height={1333}
-                  fetchPriority="high"
-                />
-                <div className="hero-image-gradient"></div>
-                <div className="hero-image-card">
-                  <div className="hero-image-card-inner">
-                    <div className="hero-image-card-title">NATIONWIDE COVERAGE</div>
-                    <div className="hero-image-card-subtitle">1,000+ Cities &bull; All 50 States</div>
-                    <div className="hero-image-card-avatars">
-                      <div className="avatar-dots">
-                        <div className="avatar-dot avatar-dot-yellow"></div>
-                        <div className="avatar-dot avatar-dot-orange"></div>
-                        <div className="avatar-dot avatar-dot-blue"></div>
-                      </div>
-                      <span className="avatar-text">Real People, Real Results</span>
-                    </div>
-                  </div>
-                </div>
-                <div className="hero-image-floating-badge">500+ CAMPAIGNS</div>
-              </div>
+      {/* ===================== HERO ===================== */}
+      <header className="ds-hero">
+        <div className="ds-hero-grid" aria-hidden="true"></div>
+        <div className="ds-hero-inner">
+          <p className="ds-hero-eyebrow">
+            <span className="ds-live-pill"><span className="ds-pulse"></span>CREWS ON THE STREET NOW</span>
+            <span>Nationwide street team marketing agency</span>
+          </p>
+          <h1 className="ds-hero-h1">
+            Street Team<br />
+            <span className="outline">Marketing</span> Agency
+          </h1>
+          <div className="ds-hero-sub-row">
+            <p className="ds-hero-sub">
+              Professional brand ambassadors and street marketing crews in{' '}
+              <strong>1,000+ US cities</strong>. Real people having real conversations with your
+              customers — backed by GPS check-ins, photo proof, and real-time reporting on every shift.
+            </p>
+            <div className="ds-hero-ctas">
+              <a
+                href="#contact"
+                className="ds-btn ds-btn-ink"
+                onClick={(e) => { e.preventDefault(); trackCTAClick('GET INSTANT QUOTE', 'homepage'); scrollToContact(); }}
+              >
+                Get instant quote <span className="arrow">→</span>
+              </a>
+              <button
+                className="ds-btn ds-btn-ghost"
+                onClick={() => { trackCTAClick('VIEW PRICING', 'homepage'); navigate('/pricing'); }}
+              >
+                View pricing
+              </button>
             </div>
           </div>
         </div>
+        <Ticker items={tickerCities} />
+      </header>
 
-        {/* Scroll indicator */}
-        <div className="hero-scroll-indicator">
-          <a href="#services" onClick={(e) => {
-            e.preventDefault();
-            const el = document.getElementById('services');
-            if (el) window.scrollTo({ top: el.offsetTop - 80, behavior: 'smooth' });
-          }}>&#x25BC;</a>
+      <div className="ds-hazard" aria-hidden="true"></div>
+
+      {/* ===================== PROOF ===================== */}
+      <section className="ds-section ds-section--paper">
+        <div className="ds-wrap">
+          <p className="ds-label ds-reveal">Proof, not promises</p>
+          <div className="ds-proof-grid ds-reveal">
+            <div className="ds-proof-cell"><div className="ds-proof-num">1,000<span className="suffix">+</span></div><p className="ds-proof-cap">US cities covered</p></div>
+            <div className="ds-proof-cell"><div className="ds-proof-num">500<span className="suffix">+</span></div><p className="ds-proof-cap">Campaigns executed</p></div>
+            <div className="ds-proof-cell"><div className="ds-proof-num">94<span className="suffix">%</span></div><p className="ds-proof-cap">Client retention</p></div>
+            <div className="ds-proof-cell"><div className="ds-proof-num">4.9<span className="suffix">/5</span></div><p className="ds-proof-cap">Average client rating</p></div>
+          </div>
         </div>
       </section>
 
-      {/* Client Logos */}
-      <section className="client-logos">
+      {/* ===================== MANIFESTO ===================== */}
+      <section className="ds-section ds-section--paper" style={{ paddingTop: 0 }}>
+        <div className="ds-wrap ds-reveal">
+          <h2 className="ds-h2">Digital ads get skipped. <span className="hl">A handshake doesn't.</span></h2>
+          <p className="ds-lede" style={{ marginTop: 24 }}>
+            People remember the person who handed them a sample, made them laugh, and told them where
+            to buy it. We turn sidewalks, campuses, transit hubs, and festivals into your
+            highest-converting channel — and we bring back the data to prove it.
+          </p>
+        </div>
+      </section>
+
+      {/* ===================== CLIENT LOGOS ===================== */}
+      <section className="client-logos ds-section--concrete" style={{ padding: '48px 32px' }}>
         <div className="container">
-          <p className="client-logos-label">Trusted by Leading Brands</p>
+          <p className="client-logos-label">Trusted by leading brands</p>
           <div className="client-logos-grid">
             <img src="/images/logos/netflix.svg" alt="Netflix" className="client-logo" loading="lazy" width="100" height="40" />
             <img src="/images/logos/microsoft.svg" alt="Microsoft" className="client-logo" loading="lazy" width="120" height="40" />
@@ -204,138 +148,123 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section id="services" className="services">
-        <div className="container">
-          <h2>Street Marketing Services We Offer</h2>
-          <div className="services-grid">
-            <Link to="/services/street-teams" className="service-card">
-              <h3>Street Activations</h3>
-              <p>High-traffic guerrilla marketing campaigns that generate buzz and drive brand awareness</p>
+      {/* ===================== SERVICES ===================== */}
+      <section id="services" className="ds-section ds-section--ink">
+        <div className="ds-wrap">
+          <p className="ds-label ds-reveal">What we deploy</p>
+          <h2 className="ds-h2 ds-reveal">Boots on the ground.<br />Built for your brief.</h2>
+          <div className="ds-rows ds-reveal" style={{ marginTop: 40 }}>
+            <Link className="ds-row" to="/services/street-teams">
+              <span className="ds-row-name">Street Teams</span>
+              <span className="ds-row-desc">High-energy crews in branded gear working sidewalks, transit hubs, and event perimeters — driving foot traffic, sign-ups, and buzz where your audience already is.</span>
+              <span className="ds-row-tag">Most booked</span>
             </Link>
-            <Link to="/services/brand-ambassadors" className="service-card">
-              <h3>Brand Ambassadors</h3>
-              <p>Professional teams trained to represent your brand with enthusiasm and expertise</p>
+            <Link className="ds-row" to="/services/product-sampling">
+              <span className="ds-row-name">Product Sampling</span>
+              <span className="ds-row-desc">Hand-to-hand sampling with permits, logistics, and compliance handled. You ship product; we put it in the right hands and report every interaction.</span>
+              <span className="ds-row-tag">CPG favorite</span>
             </Link>
-            <Link to="/services/event-staffing" className="service-card">
-              <h3>Event Staffing</h3>
-              <p>Experienced staff for trade shows, festivals, conferences, and special events</p>
+            <Link className="ds-row" to="/services/guerrilla-marketing">
+              <span className="ds-row-name">Guerrilla Marketing</span>
+              <span className="ds-row-desc">Sidewalk takeovers, wild posting, costumed characters, and stunts engineered to stop crowds and earn organic social reach.</span>
+              <span className="ds-row-tag">Earned media</span>
             </Link>
-            <Link to="/services/product-sampling" className="service-card">
-              <h3>Product Sampling</h3>
-              <p>Direct-to-consumer product distribution and sampling campaigns</p>
+            <Link className="ds-row" to="/services/brand-ambassadors">
+              <span className="ds-row-name">Brand Ambassadors</span>
+              <span className="ds-row-desc">Vetted, trained, brand-matched ambassadors for retail demos, trade shows, conferences, and long-running field programs.</span>
+              <span className="ds-row-tag">Staffing</span>
             </Link>
-            <Link to="/services/guerrilla-marketing" className="service-card">
-              <h3>Guerrilla Marketing</h3>
-              <p>LED trucks, wild posting, pop-up experiences, and unconventional campaigns</p>
+            <Link className="ds-row" to="/services/event-staffing">
+              <span className="ds-row-name">Event Staffing</span>
+              <span className="ds-row-desc">Experienced staff for trade shows, festivals, conferences, and special events — registration, demos, crowd management, and VIP hospitality.</span>
+              <span className="ds-row-tag">Trade shows</span>
             </Link>
-            <Link to="/pricing" className="service-card">
-              <h3>View Pricing</h3>
-              <p>Transparent pricing for all services. Brand ambassadors from $25/hr.</p>
+            <Link className="ds-row" to="/services/flyer-distribution">
+              <span className="ds-row-name">Flyer Distribution</span>
+              <span className="ds-row-desc">Targeted flyer drops, poster placement, and door-to-door collateral distribution with GPS-verified routes — grassroots reach, fully accountable.</span>
+              <span className="ds-row-tag">Hyperlocal</span>
             </Link>
           </div>
         </div>
       </section>
 
-      <section className="stats">
-        <div className="container">
-          <div className="stats-grid">
-            <div className="stat">
-              <div className="stat-number">10,000+</div>
-              <div className="stat-label">Staff Nationwide</div>
-            </div>
-            <div className="stat">
-              <div className="stat-number">1,000+</div>
-              <div className="stat-label">Cities</div>
-            </div>
-            <div className="stat">
-              <div className="stat-number">500+</div>
-              <div className="stat-label">Campaigns</div>
-            </div>
-            <div className="stat">
-              <div className="stat-number">94%</div>
-              <div className="stat-label">Client Retention</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* The Street Teams Co Promise */}
-      <section className="promise">
-        <div className="container">
-          <h2>The Street Teams Co Promise</h2>
-          <div className="promise-grid">
-            <div className="promise-card">
-              <div className="promise-icon">&#9989;</div>
-              <h3>Show-Up Guarantee</h3>
+      {/* ===================== PROMISE / PROCESS ===================== */}
+      <section className="ds-section ds-section--concrete">
+        <div className="ds-wrap">
+          <p className="ds-label ds-reveal">The Street Teams Co promise</p>
+          <h2 className="ds-h2 ds-reveal">Brief us Monday.<br />Own the block by Friday.</h2>
+          <div className="ds-cards ds-cards-3" style={{ marginTop: 40 }}>
+            <div className="ds-card ds-reveal">
+              <span className="ds-step">Show-up guarantee</span>
+              <h3>Crews that show</h3>
               <p>If any team member doesn't show, we replace them immediately or credit your account. No excuses, no exceptions.</p>
             </div>
-            <div className="promise-card">
-              <div className="promise-icon">&#127891;</div>
-              <h3>Trained &amp; Briefed</h3>
-              <p>Every street team member completes your brand training before deployment. They represent your brand like it's their own.</p>
+            <div className="ds-card ds-reveal">
+              <span className="ds-step">Trained &amp; briefed</span>
+              <h3>On-brand, every shift</h3>
+              <p>Every team member completes your brand training before deployment. They represent your brand like it's their own.</p>
             </div>
-            <div className="promise-card">
-              <div className="promise-icon">&#128205;</div>
-              <h3>Real-Time Reporting</h3>
-              <p>Live GPS tracking, photo uploads, and engagement metrics on every campaign. Full visibility from start to finish.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonials with Results */}
-      <section className="home-testimonials">
-        <div className="container">
-          <h2>What Our Clients Say</h2>
-          <div className="home-testimonials-grid">
-            <div className="home-testimonial-card">
-              <div className="home-testimonial-quote">
-                <span className="quote-mark">&ldquo;</span>
-                Street Teams Co deployed 40 brand ambassadors across 6 cities in one week. Our client's product sampling campaign generated a 28% trial-to-purchase rate.
-              </div>
-              <div className="home-testimonial-author">
-                <div className="home-testimonial-name">Amanda R.</div>
-                <div className="home-testimonial-title">Agency Director</div>
-              </div>
-            </div>
-            <div className="home-testimonial-card">
-              <div className="home-testimonial-quote">
-                <span className="quote-mark">&ldquo;</span>
-                We switched from ATN to Street Teams Co last year. Better staff quality, faster response times, and 20% lower costs.
-              </div>
-              <div className="home-testimonial-author">
-                <div className="home-testimonial-name">Kevin S.</div>
-                <div className="home-testimonial-title">Marketing VP</div>
-              </div>
-            </div>
-            <div className="home-testimonial-card">
-              <div className="home-testimonial-quote">
-                <span className="quote-mark">&ldquo;</span>
-                Their guerrilla marketing team turned heads in Times Square. We got 50,000+ impressions in a single day and the photos went viral on social.
-              </div>
-              <div className="home-testimonial-author">
-                <div className="home-testimonial-name">Nicole P.</div>
-                <div className="home-testimonial-title">Brand Manager</div>
-              </div>
-            </div>
-            <div className="home-testimonial-card">
-              <div className="home-testimonial-quote">
-                <span className="quote-mark">&ldquo;</span>
-                Used them for 3 trade shows this year. Always professional, always on time. My go-to for event staffing nationwide.
-              </div>
-              <div className="home-testimonial-author">
-                <div className="home-testimonial-name">Jason M.</div>
-                <div className="home-testimonial-title">Event Director</div>
-              </div>
+            <div className="ds-card ds-reveal">
+              <span className="ds-step">Real-time reporting</span>
+              <h3>You get the receipts</h3>
+              <p>Live GPS tracking, photo uploads, and engagement metrics on every campaign. Full visibility from brief to recap.</p>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="home-links">
-        <div className="container">
-          <h2>Street Team Marketing Nationwide</h2>
-          <p>We operate in every major market. Find street teams in your city or explore our industry expertise.</p>
+      {/* ===================== TESTIMONIALS ===================== */}
+      <section className="ds-section ds-section--paper">
+        <div className="ds-wrap">
+          <p className="ds-label ds-reveal">What our clients say</p>
+          <div className="ds-cards ds-cards-3" style={{ marginTop: 32 }}>
+            <div className="ds-card ds-reveal">
+              <p style={{ marginBottom: 16 }}>"Street Teams Co deployed 40 brand ambassadors across 6 cities in one week. Our client's product sampling campaign generated a 28% trial-to-purchase rate."</p>
+              <strong style={{ fontFamily: 'var(--mono)', fontSize: '.8rem', textTransform: 'uppercase', letterSpacing: '.08em' }}>Amanda R. — Agency Director</strong>
+            </div>
+            <div className="ds-card ds-reveal">
+              <p style={{ marginBottom: 16 }}>"We switched from ATN to Street Teams Co last year. Better staff quality, faster response times, and 20% lower costs."</p>
+              <strong style={{ fontFamily: 'var(--mono)', fontSize: '.8rem', textTransform: 'uppercase', letterSpacing: '.08em' }}>Kevin S. — Marketing VP</strong>
+            </div>
+            <div className="ds-card ds-reveal">
+              <p style={{ marginBottom: 16 }}>"Their guerrilla marketing team turned heads in Times Square. 50,000+ impressions in a single day and the photos went viral on social."</p>
+              <strong style={{ fontFamily: 'var(--mono)', fontSize: '.8rem', textTransform: 'uppercase', letterSpacing: '.08em' }}>Nicole P. — Brand Manager</strong>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ===================== COVERAGE ===================== */}
+      <section className="ds-section ds-section--paper" style={{ paddingBottom: 0 }}>
+        <div className="ds-wrap ds-reveal" style={{ marginBottom: 48 }}>
+          <p className="ds-label">Coverage</p>
+          <h2 className="ds-h2">One agency.<br />Every market that matters.</h2>
+          <p className="ds-lede" style={{ marginTop: 20 }}>
+            Single-city blitz or 20-market national tour — one contract, one point of contact, one
+            standard of quality. If your audience is on a street, we can be there too.
+          </p>
+        </div>
+        <div className="ds-city-band">
+          <div className="ds-city-track ds-ticker-anim">
+            {['New York', 'Los Angeles', 'Chicago', 'Dallas', 'Houston', 'Miami', 'Atlanta', 'Denver', 'Boston',
+              'New York', 'Los Angeles', 'Chicago', 'Dallas', 'Houston', 'Miami', 'Atlanta', 'Denver', 'Boston'].map((c, i) => <span key={i}>{c}</span>)}
+          </div>
+        </div>
+        <div className="ds-city-band ds-city-band--outline">
+          <div className="ds-city-track ds-ticker-anim">
+            {['San Francisco', 'Las Vegas', 'Washington DC', 'Seattle', 'Austin', 'Philadelphia', 'Phoenix', 'Nashville',
+              'San Francisco', 'Las Vegas', 'Washington DC', 'Seattle', 'Austin', 'Philadelphia', 'Phoenix', 'Nashville'].map((c, i) => <span key={i}>{c}</span>)}
+          </div>
+        </div>
+      </section>
+
+      {/* ===================== NATIONWIDE LINK HUB ===================== */}
+      <section className="home-links ds-section--ink" style={{ padding: '88px 32px' }}>
+        <div className="ds-wrap">
+          <h2 className="ds-h2" style={{ color: 'var(--paper)' }}>Street team marketing nationwide</h2>
+          <p className="ds-lede" style={{ color: '#cfccc4', marginBottom: 40 }}>
+            We operate in every major market. Find street teams in your city or explore our industry expertise.
+          </p>
           <div className="home-links-grid">
             <div className="home-links-col">
               <h3>Top Markets</h3>
@@ -355,11 +284,11 @@ export default function HomePage() {
               <h3>Industries</h3>
               <ul>
                 <li><Link to="/industries/cannabis">Cannabis Street Marketing</Link></li>
-                <li><Link to="/industries/technology">Tech & SaaS Marketing</Link></li>
-                <li><Link to="/industries/food-beverage">Food & Beverage Sampling</Link></li>
+                <li><Link to="/industries/technology">Tech &amp; SaaS Marketing</Link></li>
+                <li><Link to="/industries/food-beverage">Food &amp; Beverage Sampling</Link></li>
                 <li><Link to="/industries/retail">Retail Activations</Link></li>
                 <li><Link to="/industries/entertainment">Entertainment Campaigns</Link></li>
-                <li><Link to="/industries/fitness-wellness">Fitness & Wellness</Link></li>
+                <li><Link to="/industries/fitness-wellness">Fitness &amp; Wellness</Link></li>
                 <li><Link to="/industries">View All 14 Industries</Link></li>
               </ul>
             </div>
@@ -372,8 +301,8 @@ export default function HomePage() {
                 <li><a href="/experiential-marketing-agency">Experiential Marketing Agency</a></li>
                 <li><a href="/trade-show-staffing-agency">Trade Show Staffing Agency</a></li>
                 <li><a href="/how-it-works">How It Works</a></li>
-                <li><a href="/case-studies/">Case Studies & Results</a></li>
-                <li><Link to="/pricing">Pricing & Rate Cards</Link></li>
+                <li><a href="/case-studies/">Case Studies &amp; Results</a></li>
+                <li><Link to="/pricing">Pricing &amp; Rate Cards</Link></li>
                 <li><a href="/blog/">Street Marketing Blog</a></li>
               </ul>
             </div>
@@ -393,20 +322,27 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section style={{background: 'linear-gradient(135deg, #f59e0b 0%, #d97706 100%)', padding: '3rem 2rem', textAlign: 'center', color: '#1a1a2e'}}>
-        <div className="container" style={{maxWidth: '900px', margin: '0 auto'}}>
-          <p style={{fontSize: '0.85rem', fontWeight: 700, letterSpacing: '2px', textTransform: 'uppercase', opacity: 0.7, marginBottom: '0.75rem'}}>Free Resource · 12 Pages · No Phone Calls</p>
-          <h2 style={{fontSize: '2rem', fontWeight: 800, marginBottom: '0.75rem', lineHeight: 1.2}}>The Street Team Activation Playbook</h2>
-          <p style={{fontSize: '1.1rem', marginBottom: '1.5rem', maxWidth: '650px', margin: '0 auto 1.5rem'}}>The exact framework — brief template, staffing math, vendor scorecard — we built from 500+ campaigns. Built for brand managers planning a measurable street team campaign in 14 days.</p>
-          <a href="/playbook" style={{display: 'inline-block', background: '#1a1a2e', color: '#f59e0b', padding: '1rem 2.5rem', borderRadius: '8px', textDecoration: 'none', fontWeight: 800, fontSize: '1.05rem', letterSpacing: '0.5px'}}>Download the Playbook (Free)</a>
+      {/* ===================== PLAYBOOK CTA ===================== */}
+      <section className="ds-section--concrete" style={{ padding: '64px 32px', textAlign: 'center' }}>
+        <div className="ds-wrap" style={{ maxWidth: 760, marginLeft: 'auto', marginRight: 'auto' }}>
+          <p className="ds-label" style={{ justifyContent: 'center' }}>Free resource · 12 pages · No phone calls</p>
+          <h2 className="ds-h2">The Street Team Activation Playbook</h2>
+          <p className="ds-lede" style={{ margin: '0 auto 28px' }}>
+            The exact framework — brief template, staffing math, vendor scorecard — we built from 500+
+            campaigns. Built for brand managers planning a measurable street team campaign in 14 days.
+          </p>
+          <a href="/playbook" className="ds-btn ds-btn-ink">Download the playbook (free) <span className="arrow">→</span></a>
         </div>
       </section>
 
-      <section id="contact" className="contact">
-        <div className="container">
-          <h2>Ready to Launch Your Campaign?</h2>
-          <p>Let's discuss how Street Teams Co can amplify your brand, or email us at{' '}
-            <a href="mailto:hello@streetteamsco.com" onClick={() => trackEmailClick()}>hello@streetteamsco.com</a>
+      {/* ===================== CONTACT ===================== */}
+      <section id="contact" className="contact ds-section--paper" style={{ padding: '88px 32px' }}>
+        <div className="ds-wrap">
+          <p className="ds-label">Let's take it outside</p>
+          <h2 className="ds-h2">Ready to launch your campaign?</h2>
+          <p className="ds-lede" style={{ marginBottom: 32 }}>
+            Tell us about your campaign and get a detailed quote, or email us at{' '}
+            <a href="mailto:hello@streetteamsco.com" onClick={() => trackEmailClick()} style={{ color: 'var(--orange-deep)', fontWeight: 700 }}>hello@streetteamsco.com</a>.
           </p>
           <ContactForm />
         </div>
