@@ -333,6 +333,19 @@ body {
 .app .breadcrumb a:hover { border-color: var(--ink); }
 .app .breadcrumb-sep { margin: 0 8px; color: rgba(18,17,16,.5); }
 
+/* bespoke heroes (Portfolio, OurTeam) → v5 */
+.app .portfolio-hero, .app .team-hero {
+  background: var(--orange); color: var(--ink); border-bottom: 2.5px solid var(--ink);
+}
+.app .portfolio-hero h1, .app .team-hero h1 {
+  font-family: var(--display); text-transform: uppercase; color: var(--ink);
+}
+.app .portfolio-hero p, .app .team-hero p, .app .team-hero-subtitle { color: var(--ink); opacity: .82; }
+.app .portfolio-hero-badge {
+  background: var(--ink); color: var(--curb); border: none; border-radius: 0;
+  font-family: var(--mono); text-transform: uppercase; letter-spacing: .1em;
+}
+
 /* ---- content sections ---- */
 .app .locations-content, .app .service-content, .app .legal-content, .app .testimonials-content {
   background: var(--paper); padding: 72px 32px;
