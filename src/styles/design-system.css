@@ -396,6 +396,45 @@ body {
 .app .stat-number .suffix { color: var(--orange); }
 .app .stat-label { font-family: var(--mono); text-transform: uppercase; letter-spacing: .08em; color: #555; }
 
+/* ---- contact form on light background (was white-on-dark → invisible after reskin) ---- */
+.app .contact-form label { color: var(--ink); font-family: var(--mono); text-transform: uppercase; letter-spacing: .06em; font-size: .72rem; }
+.app .contact-form input,
+.app .contact-form select,
+.app .contact-form textarea {
+  border: 2px solid var(--ink); border-radius: 0; background: #fff; color: var(--ink);
+}
+.app .contact-form input::placeholder, .app .contact-form textarea::placeholder { color: #8a857c; }
+.app .contact-form input:focus, .app .contact-form select:focus, .app .contact-form textarea:focus {
+  border-color: var(--orange); background: #fff;
+}
+.app .contact-form select option { background: #fff; color: var(--ink); }
+
+/* ---- cost calculator CTA button → v5 ---- */
+.app .calc-cta-btn {
+  background: var(--orange); color: var(--ink); border-radius: 0;
+  font-family: var(--mono); text-transform: uppercase; letter-spacing: .06em;
+  box-shadow: 4px 4px 0 rgba(18,17,16,.35);
+}
+.app .calc-cta-btn:hover { transform: translate(-2px,-2px); box-shadow: 7px 7px 0 rgba(18,17,16,.45); }
+
+/* ---- cost calculator: blue → v5 ink/orange ---- */
+.app .calc-sidebar { background: var(--ink) !important; border-radius: 0; }
+.app .calc-sidebar-accent { background: var(--orange) !important; }
+.app .calc-sidebar-icon { background: rgba(255,77,0,.18); color: var(--orange); border-radius: 0; }
+.app .calc-sidebar-header h3 { font-family: var(--display); text-transform: uppercase; }
+.app .calc-estimate-value { color: var(--orange); font-family: var(--display); font-weight: 400; }
+.app .calc-market-badge { color: var(--orange-deep); background: rgba(255,77,0,.06); border: 1px solid rgba(255,77,0,.25); border-radius: 0; }
+.app .calc-counter-value { color: var(--ink); font-family: var(--display); }
+.app .calc-service-card, .app .calc-progress, .app .calc-guarantee { border-radius: 0; }
+.app .calc-service-card--selected,
+.app .calc-addon-card--selected {
+  border-color: var(--orange) !important; background: rgba(255,77,0,.06) !important;
+  box-shadow: 0 2px 8px rgba(255,77,0,.12) !important;
+}
+.app .calc-popular-badge { background: var(--orange); color: var(--ink); border-radius: 0; }
+.app .calc-guarantee { background: var(--concrete); }
+.app .calc-section-num { background: var(--ink) !important; color: var(--orange) !important; }
+
 /* ===================== REDUCED MOTION ===================== */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
