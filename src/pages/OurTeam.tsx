@@ -1,35 +1,14 @@
 import { Link } from 'react-router-dom';
 import { useMetaTags } from '../hooks/useMetaTags';
 
-const leadership = [
-  {
-    name: 'Alex Rivera',
-    title: 'Founder & CEO',
-    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop',
-    bio: 'Former VP of Field Marketing at a Fortune 500 company. 15+ years building high-performance street teams and experiential campaigns nationwide.',
-    linkedin: '#',
-  },
-  {
-    name: 'Michelle Park',
-    title: 'VP of Operations',
-    image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop',
-    bio: 'Operations expert with a background in logistics and talent management. Ensures flawless execution across all 50+ markets we serve.',
-    linkedin: '#',
-  },
-  {
-    name: 'David Thompson',
-    title: 'Director of Client Success',
-    image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop',
-    bio: 'Dedicated to helping brands achieve their marketing goals. Previously led experiential programs for major beverage and tech brands.',
-    linkedin: '#',
-  },
-  {
-    name: 'Sarah Martinez',
-    title: 'Head of Talent Acquisition',
-    image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=400&fit=crop',
-    bio: 'Recruits and trains our network of 10,000+ brand ambassadors. Expert in building teams that authentically represent brands.',
-    linkedin: '#',
-  },
+// Real crew-in-the-field photos from the case-study depot (no headshots / no fake names)
+const crewPhotos = [
+  { src: '/images/case-studies/cortie-digital-2.jpg', alt: 'Brand ambassadors handing out branded apparel to fans at a stadium activation', tag: 'Event Activation' },
+  { src: '/images/case-studies/qwick-2.jpg', alt: 'Street team ambassador with promo signage in a downtown plaza', tag: 'Street Team' },
+  { src: '/images/case-studies/car-wash-2.jpg', alt: 'Crew distributing promotional materials hand-to-hand outside a venue', tag: 'Flyering' },
+  { src: '/images/case-studies/beer-samplings-2.jpg', alt: 'Sampling team running an in-store beverage activation', tag: 'Sampling' },
+  { src: '/images/case-studies/meijer-2.jpg', alt: 'Crew operating a branded event tent outdoors', tag: 'Brand Activation' },
+  { src: '/images/case-studies/formula-1-2.jpg', alt: 'Experiential crew on site at a motorsport activation', tag: 'Experiential' },
 ];
 
 const values = [
@@ -135,17 +114,15 @@ export default function OurTeam() {
 
       <section className="team-leadership">
         <div className="container">
-          <h2>Leadership Team</h2>
+          <h2>Our Crews in the Field</h2>
           <p className="section-subtitle">
-            Industry veterans with a passion for experiential marketing excellence.
+            Real ambassadors running real activations nationwide — no stock photos, no actors.
           </p>
-          <div className="leadership-grid">
-            {leadership.map((member) => (
-              <div key={member.name} className="team-member">
-                <img src={member.image} alt={member.name} className="member-image" loading="lazy" width={400} height={400} />
-                <h3 className="member-name">{member.name}</h3>
-                <div className="member-title">{member.title}</div>
-                <p className="member-bio">{member.bio}</p>
+          <div className="ds-work-grid">
+            {crewPhotos.map((p) => (
+              <div key={p.src} className="ds-work-card">
+                <img src={p.src} alt={p.alt} loading="lazy" />
+                <div className="ds-work-meta"><span className="ds-work-tag">{p.tag}</span></div>
               </div>
             ))}
           </div>
