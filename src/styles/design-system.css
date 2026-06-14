@@ -306,6 +306,96 @@ body {
   .app .client-logos-grid { gap: 1.4rem 2.2rem; }
 }
 
+/* =========================================================================
+   V5 PAGE RESKIN — retones legacy App.css classes to v5 with NO JSX changes
+   (so page content/titles/meta/schema stay untouched). `.app` prefix wins
+   specificity over App.css. Covers ServicePage, CityPage, index pages,
+   legal, testimonials.
+   ========================================================================= */
+
+/* ---- page heroes ---- */
+.app .locations-hero, .app .service-hero, .app .testimonials-hero, .app .legal-hero, .app .industries-hero {
+  background: var(--orange); color: var(--ink);
+  padding: 60px 32px 48px; text-align: left;
+  border-bottom: 2.5px solid var(--ink);
+}
+.app .locations-hero h1, .app .service-hero h1, .app .testimonials-hero h1,
+.app .legal-hero h1, .app .industries-hero h1 {
+  font-family: var(--display); text-transform: uppercase; line-height: .96;
+  font-size: clamp(2.3rem, 6vw, 5rem); color: var(--ink); letter-spacing: .01em; margin: 0;
+}
+.app .locations-hero-subtitle, .app .service-hero-subtitle, .app .testimonials-hero-subtitle {
+  font-family: var(--body); color: var(--ink); opacity: .82; max-width: 640px;
+  margin: 14px 0 0; font-size: 1.1rem; line-height: 1.5;
+}
+.app .breadcrumb { font-family: var(--mono); font-size: .72rem; text-transform: uppercase; letter-spacing: .12em; opacity: 1; color: var(--ink); }
+.app .breadcrumb a { color: var(--ink); text-decoration: none; border-bottom: 1.5px solid rgba(18,17,16,.35); }
+.app .breadcrumb a:hover { border-color: var(--ink); }
+.app .breadcrumb-sep { margin: 0 8px; color: rgba(18,17,16,.5); }
+
+/* ---- content sections ---- */
+.app .locations-content, .app .service-content, .app .legal-content, .app .testimonials-content {
+  background: var(--paper); padding: 72px 32px;
+}
+.app .locations-content h2, .app .service-detail h2, .app .city-detail h2 {
+  font-family: var(--display); text-transform: uppercase; font-size: clamp(1.8rem, 3.4vw, 2.8rem);
+  line-height: 1.05; margin-bottom: 16px;
+}
+.app .locations-content h3, .app .service-detail-section h3, .app .city-faq h3, .app .services-list h3 {
+  font-family: var(--display); text-transform: uppercase; font-size: 1.5rem; margin: 0 0 16px;
+}
+
+/* ---- trust bar ---- */
+.app .service-trust-bar { background: var(--ink); border-bottom: none; }
+.app .service-trust-num { color: var(--orange); font-family: var(--display); font-weight: 400; }
+.app .service-trust-label { color: #b9b5ae; font-family: var(--mono); text-transform: uppercase; letter-spacing: .08em; font-size: .72rem; }
+.app .service-trust-divider { background: #3a3835 !important; }
+
+/* ---- cards ---- */
+.app .service-card, .app .value-card, .app .testimonial-card {
+  background: var(--paper); border: 2.5px solid var(--ink); border-radius: 0;
+  box-shadow: 5px 5px 0 var(--ink); transition: transform .18s, box-shadow .18s;
+}
+.app .service-card:hover, .app .value-card:hover, .app .testimonial-card:hover {
+  transform: translate(-3px,-3px); box-shadow: 9px 9px 0 var(--ink);
+}
+.app .service-card h3, .app .service-card h4, .app .value-card h3 { font-family: var(--display); text-transform: uppercase; }
+.app .service-card h4 a, .app .service-card h3 a { color: var(--ink); text-decoration: none; }
+.app .service-card h4 a:hover, .app .service-card h3 a:hover { color: var(--orange-deep); }
+.app .benefit-card {
+  background: var(--paper); border-radius: 0; border-left: 4px solid var(--orange);
+  box-shadow: 4px 4px 0 var(--ink); color: #3a3835;
+}
+
+/* ---- FAQ ---- */
+.app .faq-item { background: var(--paper); border: 2.5px solid var(--ink); border-radius: 0; box-shadow: 4px 4px 0 var(--ink); }
+.app .faq-item h4 { font-family: var(--display); text-transform: uppercase; font-size: 1.1rem; }
+.app .faq-list details { background: var(--paper); border: 2.5px solid var(--ink); border-radius: 0; padding: 16px 20px; margin-bottom: 12px; }
+.app .faq-list summary { cursor: pointer; font-family: var(--display); text-transform: uppercase; font-size: 1.05rem; }
+
+/* ---- CTA blocks ---- */
+.app .city-cta, .app .testimonials-cta {
+  background: var(--ink); color: var(--paper); border: 2.5px solid var(--ink); border-radius: 0;
+  box-shadow: 8px 8px 0 var(--curb); text-align: left; padding: 44px;
+}
+.app .city-cta h3, .app .testimonials-cta h3 { font-family: var(--display); text-transform: uppercase; font-size: clamp(1.6rem, 3vw, 2.4rem); color: var(--paper); }
+.app .city-cta p, .app .testimonials-cta p { color: #cfccc4; }
+
+/* ---- buttons ---- */
+.app .btn { font-family: var(--mono); font-weight: 700; text-transform: uppercase; letter-spacing: .06em; border-radius: 0; transition: transform .15s, box-shadow .15s; }
+.app .btn-primary { background: var(--orange); color: var(--ink); box-shadow: 4px 4px 0 rgba(18,17,16,.35); border: none; }
+.app .btn-primary:hover { transform: translate(-2px,-2px); box-shadow: 7px 7px 0 rgba(18,17,16,.45); }
+.app .btn-secondary { background: transparent; color: var(--ink); border: 2.5px solid var(--ink); }
+.app .btn-secondary:hover { background: var(--ink); color: var(--orange); }
+/* secondary button sitting on a dark CTA needs a light outline */
+.app .city-cta .btn-secondary, .app .testimonials-cta .btn-secondary { color: var(--paper); border-color: var(--paper); }
+.app .city-cta .btn-secondary:hover, .app .testimonials-cta .btn-secondary:hover { background: var(--paper); color: var(--ink); }
+
+/* ---- stats ---- */
+.app .stat-number, .app .stat-value { font-family: var(--display); font-weight: 400; color: var(--ink); }
+.app .stat-number .suffix { color: var(--orange); }
+.app .stat-label { font-family: var(--mono); text-transform: uppercase; letter-spacing: .08em; color: #555; }
+
 /* ===================== REDUCED MOTION ===================== */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
