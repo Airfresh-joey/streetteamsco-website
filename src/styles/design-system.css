@@ -41,10 +41,15 @@ body {
 /* Solid paper nav — readable on every page (orange hero + paper inner),
    no scroll-state JS required. */
 .app .nav {
-  position: sticky; top: 0; left: 0; right: 0; z-index: 100;
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  background: transparent;   /* sits ON the hero; gains paper bg on scroll */
+  box-shadow: none;
+  padding: 0;
+  transition: background .3s ease, box-shadow .3s ease;
+}
+.app .nav.scrolled {
   background: var(--paper);
   box-shadow: 0 1px 0 var(--ink);
-  padding: 0;
 }
 .app .nav .nav-container {
   display: flex; align-items: center; justify-content: space-between;
@@ -131,7 +136,7 @@ body {
 /* ===================== HERO ===================== */
 .ds-hero {
   background: var(--orange); position: relative; overflow: hidden;
-  padding: 72px 32px 0; display: flex; flex-direction: column; justify-content: flex-end;
+  padding: 100px 32px 0; display: flex; flex-direction: column; justify-content: flex-end;
 }
 .ds-hero-grid {
   position: absolute; inset: 0; pointer-events: none;
@@ -316,7 +321,7 @@ body {
 /* ---- page heroes ---- */
 .app .locations-hero, .app .service-hero, .app .testimonials-hero, .app .legal-hero, .app .industries-hero {
   background: var(--orange); color: var(--ink);
-  padding: 60px 32px 48px; text-align: left;
+  padding: 92px 32px 48px; text-align: left;
   border-bottom: 2.5px solid var(--ink);
 }
 .app .locations-hero h1, .app .service-hero h1, .app .testimonials-hero h1,
@@ -448,6 +453,95 @@ body {
 .app .calc-guarantee { background: var(--concrete); }
 .app .calc-section-num { background: var(--ink) !important; color: var(--orange) !important; }
 
+/* =========================================================================
+   V5 ANIMATIONS — ported from streetteamshomepagev5.html
+   ========================================================================= */
+
+/* ---- film grain overlay ---- */
+.ds-grain {
+  position: fixed; inset: -50%; width: 200%; height: 200%; pointer-events: none; z-index: 200; opacity: .045;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  animation: ds-grain 7s steps(8) infinite;
+}
+@keyframes ds-grain {
+  0%,100% { transform: translate(0,0); } 12.5% { transform: translate(-3%,2%); } 25% { transform: translate(2%,-3%); }
+  37.5% { transform: translate(-2%,-2%); } 50% { transform: translate(3%,1%); } 62.5% { transform: translate(-1%,3%); }
+  75% { transform: translate(2%,2%); } 87.5% { transform: translate(-3%,-1%); }
+}
+
+/* ---- custom cursor (desktop only) ---- */
+.ds-cursor {
+  position: fixed; top: 0; left: 0; width: 14px; height: 14px; background: var(--orange);
+  border: 2px solid var(--ink); border-radius: 50%; pointer-events: none; z-index: 250;
+  transform: translate(-50%,-50%); transition: width .2s, height .2s, background .2s;
+}
+.ds-cursor.hot { width: 52px; height: 52px; background: transparent; border-color: var(--orange); }
+.ds-cursor span {
+  position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+  font-family: var(--mono); font-size: .55rem; font-weight: 700; letter-spacing: .08em; color: var(--orange);
+  opacity: 0; transition: opacity .15s;
+}
+.ds-cursor.hot span { opacity: 1; }
+@media (hover: none), (pointer: coarse) { .ds-cursor, .ds-grain { display: none; } }
+
+/* ---- hero headline letters (crowd-parting effect) ---- */
+.ds-hero-h1 .ds-ch { display: inline-block; will-change: transform; }
+
+/* ---- hero intro slap-in ---- */
+.ds-hero-h1 .ds-line { display: block; }
+.ds-anim .ds-hero-h1 .ds-line > span {
+  display: inline-block; opacity: 0; transform: translateY(40px) scale(1.06);
+  animation: ds-slap .55s cubic-bezier(.2,1.4,.4,1) forwards;
+  animation-delay: var(--d, 0s);
+}
+@keyframes ds-slap { to { opacity: 1; transform: translateY(0) scale(1); } }
+
+/* ---- velocity tickers skew handled inline by JS; keep base marquee for no-JS ---- */
+
+/* ---- masked heading line reveal ---- */
+.ds-h2 .ds-mline { display: block; overflow: hidden; }
+.ds-h2 .ds-mline .ds-minner { display: inline-block; transform: translateY(115%); transition: transform .8s var(--ds-ease); }
+.ds-h2.in .ds-mline .ds-minner { transform: translateY(0); }
+
+/* ---- manifesto word reveal ---- */
+.ds-words .ds-w { display: inline-block; opacity: 0; transform: translateY(.35em); transition: opacity .45s ease, transform .45s ease; }
+.ds-words.in .ds-w { opacity: 1; transform: none; }
+
+/* ---- CTA sweep ---- */
+.ds-cta .outline { color: transparent; -webkit-text-stroke: 3px var(--ink); }
+.ds-cta.in .outline {
+  background: linear-gradient(100deg, var(--ink) 0%, var(--ink) 49.5%, transparent 50%);
+  background-size: 230% 100%; background-position: 100% 0;
+  -webkit-background-clip: text; background-clip: text;
+  animation: ds-sweep 1.1s .3s cubic-bezier(.7,0,.3,1) forwards;
+}
+@keyframes ds-sweep { to { background-position: 0% 0; } }
+
+/* ---- A DAY ON THE STREET (scroll-scrubbed) ---- */
+.ds-day { height: 420vh; position: relative; background: var(--ink); }
+.ds-day-sticky { position: sticky; top: 0; height: 100vh; overflow: hidden; display: flex; flex-direction: column; justify-content: center; padding: 0 32px; }
+.ds-day-canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
+.ds-day-content { position: relative; z-index: 2; max-width: 1280px; margin: 0 auto; width: 100%; }
+.ds-day .ds-label { color: var(--orange); }
+.ds-day-clock { font-family: var(--display); font-size: clamp(4rem, 14vw, 12rem); line-height: .9; color: var(--paper); font-variant-numeric: tabular-nums; letter-spacing: .01em; }
+.ds-day-scene { font-family: var(--mono); font-size: .85rem; text-transform: uppercase; letter-spacing: .16em; color: var(--curb); margin: 18px 0 10px; min-height: 1.4em; transition: opacity .2s ease, transform .2s ease; }
+.ds-day-copy { font-size: clamp(1rem, 2vw, 1.3rem); line-height: 1.6; color: #cfccc4; max-width: 560px; min-height: 4.8em; transition: opacity .2s ease, transform .2s ease; }
+.ds-day-scene.fading, .ds-day-copy.fading { opacity: 0; transform: translateY(10px); }
+.ds-day-clock.tick { animation: ds-clockTick .45s cubic-bezier(.2,1.5,.4,1); }
+@keyframes ds-clockTick { 30% { transform: scale(1.02); } 100% { transform: scale(1); } }
+.ds-day-progress { position: absolute; right: 32px; top: 50%; transform: translateY(-50%); width: 3px; height: 42vh; background: #3a3835; z-index: 2; }
+.ds-day-progress .ds-fill { width: 100%; height: 0%; background: var(--orange); }
+.ds-day-hint { position: absolute; bottom: 26px; left: 32px; font-family: var(--mono); font-size: .68rem; text-transform: uppercase; letter-spacing: .14em; color: #7a766f; z-index: 2; }
+@media (max-width: 720px) { .ds-day-progress { display: none; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .ds-day { height: auto; }
+  .ds-day-sticky { position: static; height: auto; padding: 90px 32px; }
+  .ds-anim .ds-hero-h1 .ds-line > span { opacity: 1; transform: none; animation: none; }
+  .ds-words .ds-w { opacity: 1; transform: none; }
+  .ds-h2 .ds-mline .ds-minner { transform: none; }
+}
+
 /* ===================== REDUCED MOTION ===================== */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
@@ -459,7 +553,7 @@ body {
 /* ===================== RESPONSIVE ===================== */
 @media (max-width: 860px) {
   .ds-section { padding: 64px 24px; }
-  .ds-hero { padding: 48px 24px 0; }
+  .ds-hero { padding: 84px 24px 0; }
   .ds-cta { padding: 72px 24px; }
   .ds-ticker-band { margin: 0 -24px; }  /* match mobile hero padding for clean full-bleed */
 }

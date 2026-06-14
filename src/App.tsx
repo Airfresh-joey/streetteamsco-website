@@ -25,15 +25,24 @@ function AppLayout() {
   const location = useLocation();
   const isHome = location.pathname === '/';
   const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   // Close menu on route change
   useEffect(() => {
     setMenuOpen(false);
   }, [location.pathname]);
 
+  // Transparent nav over the hero; solid paper background once scrolled (v5 behavior)
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 40);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, [location.pathname]);
+
   return (
     <div className="app">
-      <nav className="nav">
+      <nav className={`nav ${scrolled || menuOpen ? 'scrolled' : ''}`}>
         <div className="nav-container">
           <Link to="/" className="logo">STREET TEAMS CO</Link>
           <button

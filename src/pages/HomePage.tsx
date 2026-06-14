@@ -1,6 +1,7 @@
 import { Link, useNavigate } from 'react-router-dom';
 import { useMetaTags } from '../hooks/useMetaTags';
 import { useReveal } from '../hooks/useReveal';
+import { useHomeEffects } from '../hooks/useHomeEffects';
 import Ticker from '../components/ds/Ticker';
 import ContactForm from '../components/ContactForm';
 import { trackCTAClick, trackEmailClick } from '../analytics';
@@ -49,6 +50,7 @@ export default function HomePage() {
   });
 
   useReveal();
+  useHomeEffects();
   const navigate = useNavigate();
 
   const scrollToContact = () => {
@@ -64,6 +66,7 @@ export default function HomePage() {
 
   return (
     <>
+      <div className="ds-grain" aria-hidden="true"></div>
       {/* ===================== HERO ===================== */}
       <header className="ds-hero">
         <div className="ds-hero-grid" aria-hidden="true"></div>
@@ -73,8 +76,8 @@ export default function HomePage() {
             <span>Nationwide street team marketing agency</span>
           </p>
           <h1 className="ds-hero-h1">
-            Street Team<br />
-            <span className="outline">Marketing</span> Agency
+            <span className="ds-line"><span style={{ '--d': '.05s' } as Record<string, string>}>Street Team</span></span>
+            <span className="ds-line"><span style={{ '--d': '.18s' } as Record<string, string>}><span className="outline">Marketing</span> Agency</span></span>
           </h1>
           <div className="ds-hero-sub-row">
             <p className="ds-hero-sub">
@@ -120,12 +123,27 @@ export default function HomePage() {
       {/* ===================== MANIFESTO ===================== */}
       <section className="ds-section ds-section--paper" style={{ paddingTop: 0 }}>
         <div className="ds-wrap ds-reveal">
-          <h2 className="ds-h2">Digital ads get skipped. <span className="hl">A handshake doesn't.</span></h2>
+          <h2 className="ds-h2" data-words>Digital ads get skipped. <span className="hl">A handshake doesn't.</span></h2>
           <p className="ds-lede" style={{ marginTop: 24 }}>
             People remember the person who handed them a sample, made them laugh, and told them where
             to buy it. We turn sidewalks, campuses, transit hubs, and festivals into your
             highest-converting channel — and we bring back the data to prove it.
           </p>
+        </div>
+      </section>
+
+      {/* ===================== A DAY ON THE STREET (scroll-scrubbed) ===================== */}
+      <section className="ds-day" id="ds-day">
+        <div className="ds-day-sticky">
+          <canvas className="ds-day-canvas" aria-hidden="true"></canvas>
+          <div className="ds-day-content">
+            <p className="ds-label">A day on the street</p>
+            <div className="ds-day-clock">05:00</div>
+            <p className="ds-day-scene">Load-in</p>
+            <p className="ds-day-copy">Vans loaded, routes mapped, crew briefed. We're set up before the city wakes up.</p>
+          </div>
+          <div className="ds-day-progress" aria-hidden="true"><div className="ds-fill"></div></div>
+          <p className="ds-day-hint">Scroll to run the day</p>
         </div>
       </section>
 
