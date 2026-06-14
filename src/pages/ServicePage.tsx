@@ -3,47 +3,47 @@ import { getServiceBySlug } from '../data/services';
 import { useMetaTags } from '../hooks/useMetaTags';
 import NotFound from './NotFound';
 
-// Curated Unsplash photos per service — real campaign/field work vibes
+// Real Air Fresh Marketing campaign photos from the case-study depot (public/images/case-studies)
 const servicePhotos: Record<string, { src: string; alt: string }[]> = {
   'brand-ambassadors': [
-    { src: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=900&auto=format&fit=crop', alt: 'Brand ambassador engaging consumers at a live event' },
-    { src: 'https://images.unsplash.com/photo-1515187029135-18ee286d815b?q=80&w=900&auto=format&fit=crop', alt: 'Brand ambassadors representing a product at a pop-up activation' },
-    { src: 'https://images.unsplash.com/photo-1556761175-b413da4baf72?q=80&w=900&auto=format&fit=crop', alt: 'Professional brand ambassador team briefing before campaign deployment' },
+    { src: '/images/case-studies/cortie-digital-2.jpg', alt: 'Brand ambassadors engaging fans with branded merch at a stadium activation' },
+    { src: '/images/case-studies/qwick-2.jpg', alt: 'Brand ambassador representing a brand with promo signage in a downtown plaza' },
+    { src: '/images/case-studies/mac-cosmetics.jpg', alt: 'Brand ambassador team at a cosmetics retail activation' },
   ],
   'street-teams': [
-    { src: 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=80&w=900&auto=format&fit=crop', alt: 'Street team engaging pedestrians in a high-traffic urban area' },
-    { src: 'https://images.unsplash.com/photo-1461180011046-0d3f86e2892f?q=80&w=900&auto=format&fit=crop', alt: 'Street marketing team distributing branded materials downtown' },
-    { src: 'https://images.unsplash.com/photo-1521737711867-e3b97375f902?q=80&w=900&auto=format&fit=crop', alt: 'Street team coordinator managing campaign logistics in the field' },
+    { src: '/images/case-studies/qwick-2.jpg', alt: 'Street team handing out promo cards in a high-traffic downtown area' },
+    { src: '/images/case-studies/car-wash-2.jpg', alt: 'Street team distributing branded materials hand-to-hand outside a retail location' },
+    { src: '/images/case-studies/qwick-3.jpg', alt: 'Street marketing crew engaging pedestrians on a city sidewalk' },
   ],
   'event-staffing': [
-    { src: 'https://images.unsplash.com/photo-1511578314322-379afb476865?q=80&w=900&auto=format&fit=crop', alt: 'Professional event staff managing registration at a corporate conference' },
-    { src: 'https://images.unsplash.com/photo-1540575861501-7cf05a4b125a?q=80&w=900&auto=format&fit=crop', alt: 'Event staffing team at a large brand activation' },
-    { src: 'https://images.unsplash.com/photo-1560439514-4e9645039924?q=80&w=900&auto=format&fit=crop', alt: 'Experienced event professionals running a seamless product launch' },
+    { src: '/images/case-studies/meijer-2.jpg', alt: 'Event staff running a branded tent activation outdoors' },
+    { src: '/images/case-studies/formula-1-2.jpg', alt: 'Event staffing crew on site at a large motorsport activation' },
+    { src: '/images/case-studies/williams-racing-2.jpg', alt: 'Professional event team at a Williams Racing brand activation' },
   ],
   'product-sampling': [
-    { src: 'https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=900&auto=format&fit=crop', alt: 'Product sampling staff handing out samples at a busy market event' },
-    { src: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=900&auto=format&fit=crop', alt: 'Consumer sampling campaign in action at a high-foot-traffic location' },
-    { src: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=900&auto=format&fit=crop', alt: 'Brand ambassador running a product trial and sampling program' },
+    { src: '/images/case-studies/beer-samplings.jpg', alt: 'In-store beverage product sampling display set up by a street team' },
+    { src: '/images/case-studies/beer-samplings-2.jpg', alt: 'Product sampling activation at a high-traffic retail location' },
+    { src: '/images/case-studies/meijer-3.jpg', alt: 'Sampling team distributing product at an outdoor brand event' },
   ],
   'guerrilla-marketing': [
-    { src: 'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=900&auto=format&fit=crop', alt: 'Guerrilla marketing activation drawing a crowd in an urban setting' },
-    { src: 'https://images.unsplash.com/photo-1527192491265-7e15c55b1ed2?q=80&w=900&auto=format&fit=crop', alt: 'Street-level guerrilla marketing campaign creating brand buzz' },
-    { src: 'https://images.unsplash.com/photo-1475721027785-f74eccf877e2?q=80&w=900&auto=format&fit=crop', alt: 'Brand activation guerrilla event generating consumer engagement' },
+    { src: '/images/case-studies/qwick-2.jpg', alt: 'Guerrilla marketing street activation drawing attention in a downtown plaza' },
+    { src: '/images/case-studies/cortie-digital-2.jpg', alt: 'Crowd activation creating brand buzz outside a stadium' },
+    { src: '/images/case-studies/formula-1-3.jpg', alt: 'High-impact brand activation at a major sporting event' },
   ],
   'flyer-distribution': [
-    { src: 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=80&w=900&auto=format&fit=crop', alt: 'Street team distributing flyers in a high-traffic pedestrian zone' },
-    { src: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=900&auto=format&fit=crop', alt: 'Campaign coordinator tracking flyer distribution routes' },
-    { src: 'https://images.unsplash.com/photo-1461180011046-0d3f86e2892f?q=80&w=900&auto=format&fit=crop', alt: 'Professional flyering team covering city blocks for a brand launch' },
+    { src: '/images/case-studies/car-wash-2.jpg', alt: 'Flyering team distributing promotional cards hand-to-hand outside a venue' },
+    { src: '/images/case-studies/car-wash-3.jpg', alt: 'Brand ambassadors covering a retail area with branded collateral' },
+    { src: '/images/case-studies/qwick-4.jpg', alt: 'Street team distributing flyers in a busy pedestrian zone' },
   ],
   'experiential-marketing': [
-    { src: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=900&auto=format&fit=crop', alt: 'Experiential marketing activation with immersive brand experience' },
-    { src: 'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=900&auto=format&fit=crop', alt: 'Live brand experience drawing crowds and creating social moments' },
-    { src: 'https://images.unsplash.com/photo-1511578314322-379afb476865?q=80&w=900&auto=format&fit=crop', alt: 'Experiential event staff delivering an on-brand consumer activation' },
+    { src: '/images/case-studies/formula-1-2.jpg', alt: 'Immersive experiential brand activation at a motorsport event' },
+    { src: '/images/case-studies/meijer-2.jpg', alt: 'Experiential brand tent creating a live consumer experience' },
+    { src: '/images/case-studies/williams-racing-3.jpg', alt: 'Live brand experience at a Williams Racing activation' },
   ],
   'promotional-staffing': [
-    { src: 'https://images.unsplash.com/photo-1515187029135-18ee286d815b?q=80&w=900&auto=format&fit=crop', alt: 'Promotional staffing team representing a brand at an activation' },
-    { src: 'https://images.unsplash.com/photo-1556761175-b413da4baf72?q=80&w=900&auto=format&fit=crop', alt: 'On-demand promo staff briefed and ready for a brand event' },
-    { src: 'https://images.unsplash.com/photo-1560439514-4e9645039924?q=80&w=900&auto=format&fit=crop', alt: 'Promotional models and brand ambassadors at a trade show booth' },
+    { src: '/images/case-studies/cortie-digital-2.jpg', alt: 'Promotional staff distributing branded apparel at an event' },
+    { src: '/images/case-studies/qwick-2.jpg', alt: 'Promotional team representing a brand at a downtown activation' },
+    { src: '/images/case-studies/mac-cosmetics.jpg', alt: 'Promotional models and brand ambassadors at a retail activation' },
   ],
 };
 

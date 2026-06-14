@@ -206,6 +206,43 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ===================== FROM THE FIELD (real campaign photos) ===================== */}
+      <section className="ds-section ds-section--concrete">
+        <div className="ds-wrap">
+          <p className="ds-label ds-reveal">From the field</p>
+          <h2 className="ds-h2 ds-reveal">Real crews. Real campaigns.</h2>
+          <div className="ds-work-grid">
+            <a className="ds-work-card ds-reveal" href="/portfolio">
+              <img src="/images/case-studies/qwick-2.jpg" alt="Street team brand ambassador handing out free coffee promo cards in a downtown plaza" loading="lazy" />
+              <div className="ds-work-meta"><span className="ds-work-tag">Street Team</span><h3>Downtown coffee activation</h3></div>
+            </a>
+            <a className="ds-work-card ds-reveal" href="/portfolio">
+              <img src="/images/case-studies/car-wash-2.jpg" alt="Brand ambassadors distributing promotional materials hand-to-hand outside a retail location" loading="lazy" />
+              <div className="ds-work-meta"><span className="ds-work-tag">Flyer Distribution</span><h3>Hand-to-hand outreach</h3></div>
+            </a>
+            <a className="ds-work-card ds-reveal" href="/portfolio">
+              <img src="/images/case-studies/cortie-digital-2.jpg" alt="Fans receiving branded t-shirts at a stadium gate activation" loading="lazy" />
+              <div className="ds-work-meta"><span className="ds-work-tag">Event Activation</span><h3>Stadium gate giveaway</h3></div>
+            </a>
+            <a className="ds-work-card ds-reveal" href="/portfolio">
+              <img src="/images/case-studies/beer-samplings.jpg" alt="In-store beverage product sampling display set up by a street team" loading="lazy" />
+              <div className="ds-work-meta"><span className="ds-work-tag">Product Sampling</span><h3>In-store beverage sampling</h3></div>
+            </a>
+            <a className="ds-work-card ds-reveal" href="/portfolio">
+              <img src="/images/case-studies/meijer-2.jpg" alt="Branded event tent activation set up outdoors for a retail campaign" loading="lazy" />
+              <div className="ds-work-meta"><span className="ds-work-tag">Brand Activation</span><h3>Branded event tent</h3></div>
+            </a>
+            <a className="ds-work-card ds-reveal" href="/portfolio">
+              <img src="/images/case-studies/formula-1-2.jpg" alt="Experiential motorsport brand activation crew on site at a racing event" loading="lazy" />
+              <div className="ds-work-meta"><span className="ds-work-tag">Experiential</span><h3>Motorsport activation</h3></div>
+            </a>
+          </div>
+          <p className="ds-reveal" style={{ marginTop: 28 }}>
+            <a href="/portfolio" className="ds-btn ds-btn-ink">See the full portfolio <span className="arrow">→</span></a>
+          </p>
+        </div>
+      </section>
+
       {/* ===================== PROMISE / PROCESS ===================== */}
       <section className="ds-section ds-section--concrete">
         <div className="ds-wrap">
