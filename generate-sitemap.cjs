@@ -181,6 +181,15 @@ if (fs.existsSync(fifaCityDir)) {
   });
 }
 
+// Los Angeles 2028 area sub-pages (static HTML in /public/los-angeles-2028-staffing/)
+const la2028Dir = './public/los-angeles-2028-staffing';
+if (fs.existsSync(la2028Dir)) {
+  fs.readdirSync(la2028Dir)
+    .filter(f => f.endsWith('.html'))
+    .map(f => f.replace('.html', ''))
+    .forEach(slug => addUrl(`/los-angeles-2028-staffing/${slug}`, 0.9, 'weekly'));
+}
+
 // Case studies (static HTML in /public/case-studies/)
 addUrl('/case-studies/', 0.8, 'monthly');
 const caseStudyDir = './public/case-studies';

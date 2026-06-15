@@ -80,6 +80,14 @@
       "destination": "/fifa-world-cup-2026-staffing/:city.html"
     },
     {
+      "source": "/los-angeles-2028-staffing",
+      "destination": "/los-angeles-2028-staffing.html"
+    },
+    {
+      "source": "/los-angeles-2028-staffing/:area",
+      "destination": "/los-angeles-2028-staffing/:area.html"
+    },
+    {
       "source": "/locations/:state/:city/:service",
       "destination": "/locations/:state/:city/:service.html"
     },
