@@ -102,70 +102,75 @@ export function parseIndustries(srcDir) {
 // Inline CSS (extracted from pillar page / city-service page pattern)
 // ---------------------------------------------------------------------------
 
-export const INLINE_CSS = `    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif; line-height: 1.7; color: #1a1a2e; background: #fafafa; }
-    header { background: #1a1a2e; padding: 1rem 0; position: sticky; top: 0; z-index: 100; }
+export const INLINE_CSS = `@import url('https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700;800;900&family=Space+Mono:wght@400;700&display=swap');
+    :root { --ink:#121110; --orange:#FF4D00; --orange-deep:#E04300; --paper:#F7F5EF; --curb:#FFD23F; --display:'Anton','Arial Narrow',Impact,sans-serif; --body:'Archivo',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif; --mono:'Space Mono',ui-monospace,Menlo,monospace; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: var(--body); line-height: 1.65; color: var(--ink); background: var(--paper); }
+    ::selection { background: var(--ink); color: var(--orange); }
+    header { background: var(--paper); padding: 1rem 0; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 0 var(--ink); }
     .header-inner { max-width: 1200px; margin: 0 auto; padding: 0 2rem; display: flex; justify-content: space-between; align-items: center; }
-    .logo { color: #fff; font-weight: 800; font-size: 1.2rem; text-decoration: none; letter-spacing: 1px; }
-    .nav-links a { color: rgba(255,255,255,0.8); text-decoration: none; margin-left: 1.5rem; font-size: 0.9rem; }
-    .nav-links a:hover { color: #fff; }
-    .page-hero { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); padding: 5rem 2rem 4rem; color: #fff; }
-    .page-hero-inner { max-width: 900px; margin: 0 auto; }
-    .breadcrumb { font-size: 0.85rem; margin-bottom: 1.5rem; opacity: 0.7; }
-    .breadcrumb a { color: #fff; text-decoration: none; }
-    .breadcrumb a:hover { text-decoration: underline; }
-    .page-hero h1 { font-size: 2.5rem; line-height: 1.2; margin-bottom: 1rem; font-weight: 800; }
-    .page-hero p { font-size: 1.15rem; opacity: 0.9; max-width: 700px; }
+    .logo { color: var(--ink); font-family: var(--display); font-weight: 400; font-size: 1.4rem; text-decoration: none; letter-spacing: 0.03em; text-transform: uppercase; }
+    .nav-links a { color: var(--ink); text-decoration: none; margin-left: 1.4rem; font-family: var(--mono); font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.06em; }
+    .nav-links a:hover { color: var(--orange); }
+    .page-hero { background: var(--ink); padding: 5rem 2rem 4rem; color: var(--paper); }
+    .page-hero-inner { max-width: 1000px; margin: 0 auto; }
+    .breadcrumb { font-family: var(--mono); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 1.5rem; color: var(--curb); }
+    .breadcrumb a { color: var(--curb); text-decoration: none; }
+    .breadcrumb a:hover { color: var(--orange); text-decoration: underline; }
+    .page-hero h1 { font-family: var(--display); font-weight: 400; text-transform: uppercase; font-size: clamp(2.4rem, 6vw, 4.5rem); line-height: 0.95; margin-bottom: 1rem; letter-spacing: 0.005em; }
+    .page-hero p { font-size: 1.15rem; opacity: 0.92; max-width: 720px; }
     .content { max-width: 900px; margin: 0 auto; padding: 3rem 2rem 4rem; }
-    .content h2 { font-size: 1.75rem; margin: 2.5rem 0 1rem; color: #1a1a2e; font-weight: 700; }
-    .content h3 { font-size: 1.3rem; margin: 2rem 0 0.75rem; color: #16213e; font-weight: 600; }
-    .content p { margin-bottom: 1.25rem; font-size: 1.05rem; color: #333; }
+    .content h2 { font-family: var(--display); font-weight: 400; text-transform: uppercase; font-size: 2rem; line-height: 1; margin: 2.6rem 0 1rem; color: var(--ink); letter-spacing: 0.01em; }
+    .content h3 { font-size: 1.3rem; margin: 2rem 0 0.75rem; color: var(--ink); font-weight: 800; }
+    .content p { margin-bottom: 1.25rem; font-size: 1.05rem; color: #2a2826; }
     .content ul, .content ol { margin: 1rem 0 1.5rem 1.5rem; }
-    .content li { margin-bottom: 0.5rem; font-size: 1.05rem; color: #333; }
-    .content a { color: #2563eb; text-decoration: none; }
+    .content li { margin-bottom: 0.5rem; font-size: 1.05rem; color: #2a2826; }
+    .content a { color: var(--orange-deep); text-decoration: none; font-weight: 600; }
     .content a:hover { text-decoration: underline; }
-    .content strong { color: #1a1a2e; }
-    .stats-bar { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1.5rem; margin: 2rem 0; }
-    .stat-box { background: #1a1a2e; color: #fff; padding: 1.5rem; border-radius: 12px; text-align: center; }
-    .stat-box .number { font-size: 2rem; font-weight: 800; color: #f59e0b; }
-    .stat-box .label { font-size: 0.85rem; opacity: 0.8; margin-top: 0.25rem; }
-    .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin: 1.5rem 0 2rem; }
-    .service-box { background: #fff; border: 1px solid #e5e7eb; border-radius: 12px; padding: 1.5rem; }
-    .service-box h4 { font-size: 1.1rem; margin-bottom: 0.5rem; color: #1a1a2e; }
+    .content strong { color: var(--ink); }
+    .stats-bar { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; margin: 2rem 0; }
+    .stat-box { background: var(--ink); color: var(--paper); padding: 1.5rem; border: 2px solid var(--ink); text-align: center; }
+    .stat-box .number { font-family: var(--display); font-weight: 400; font-size: 2.2rem; color: var(--orange); line-height: 1; }
+    .stat-box .label { font-family: var(--mono); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.06em; opacity: 0.85; margin-top: 0.4rem; }
+    .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem; margin: 1.5rem 0 2rem; }
+    .service-box { background: #fff; border: 2px solid var(--ink); padding: 1.5rem; }
+    .service-box h4 { font-size: 1.1rem; margin-bottom: 0.5rem; color: var(--ink); }
     .service-box p { font-size: 0.95rem; color: #555; margin: 0; }
-    .pricing-table { width: 100%; border-collapse: collapse; margin: 1.5rem 0 2rem; }
-    .pricing-table th, .pricing-table td { padding: 0.75rem 1rem; text-align: left; border-bottom: 1px solid #e5e7eb; }
-    .pricing-table th { background: #1a1a2e; color: #fff; font-weight: 600; }
-    .pricing-table tr:hover { background: #f0f4ff; }
-    .cta-section { background: linear-gradient(135deg, #1a1a2e, #16213e); color: #fff; padding: 3rem; border-radius: 16px; text-align: center; margin: 3rem 0; }
-    .cta-section h2 { color: #fff; margin-bottom: 1rem; }
-    .cta-section p { color: rgba(255,255,255,0.9); margin-bottom: 1.5rem; max-width: 600px; margin-left: auto; margin-right: auto; }
-    .cta-btn { display: inline-block; background: #f59e0b; color: #1a1a2e; padding: 0.85rem 2rem; border-radius: 8px; text-decoration: none; font-weight: 700; }
-    .cta-btn:hover { background: #d97706; text-decoration: none; }
+    .service-box a { color: var(--orange-deep); font-weight: 600; }
+    .pricing-table { width: 100%; border-collapse: collapse; margin: 1.5rem 0 2rem; border: 2px solid var(--ink); }
+    .pricing-table th, .pricing-table td { padding: 0.75rem 1rem; text-align: left; border-bottom: 1px solid #d8d4cc; }
+    .pricing-table th { background: var(--ink); color: var(--paper); font-family: var(--mono); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.04em; }
+    .pricing-table tr:hover { background: #efe9dd; }
+    .cta-section { background: var(--orange); color: var(--ink); padding: 3rem; text-align: center; margin: 3rem 0; border: 2px solid var(--ink); box-shadow: 8px 8px 0 var(--ink); }
+    .cta-section h2 { font-family: var(--display); font-weight: 400; text-transform: uppercase; color: var(--ink); margin-bottom: 1rem; font-size: 2rem; }
+    .cta-section p { color: var(--ink); margin-bottom: 1.5rem; max-width: 600px; margin-left: auto; margin-right: auto; }
+    .cta-btn { display: inline-block; background: var(--ink); color: var(--orange); padding: 0.9rem 2rem; text-decoration: none; font-family: var(--mono); font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; box-shadow: 5px 5px 0 rgba(18,17,16,0.3); }
+    .cta-btn:hover { background: #000; }
     .faq-section { margin: 2.5rem 0; }
-    .faq-item { border-bottom: 1px solid #e5e7eb; padding: 1.25rem 0; }
-    .faq-item h4 { font-size: 1.1rem; color: #1a1a2e; margin-bottom: 0.5rem; }
+    .faq-item { border-bottom: 2px solid var(--ink); padding: 1.25rem 0; }
+    .faq-item h4 { font-size: 1.1rem; color: var(--ink); margin-bottom: 0.5rem; }
     .faq-item p { color: #555; margin: 0; font-size: 1rem; }
-    .internal-links { background: #f0f4ff; border-radius: 12px; padding: 2rem; margin: 2rem 0; }
-    .internal-links h3 { margin-top: 0; }
+    .internal-links { background: #fff; border: 2px solid var(--ink); padding: 2rem; margin: 2rem 0; }
+    .internal-links h3 { margin-top: 0; color: var(--ink); }
     .link-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.5rem; }
-    .link-grid a { display: block; padding: 0.35rem 0; color: #2563eb; font-size: 0.95rem; }
+    .link-grid a { display: block; padding: 0.35rem 0; color: var(--orange-deep); font-size: 0.95rem; font-weight: 600; }
     .included-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; margin: 1.5rem 0 2rem; }
-    .included-item { background: #fff; border: 1px solid #e5e7eb; border-radius: 10px; padding: 1.25rem; display: flex; align-items: flex-start; gap: 0.75rem; }
-    .included-item .check { color: #f59e0b; font-weight: 700; font-size: 1.25rem; flex-shrink: 0; line-height: 1.4; }
+    .included-item { background: #fff; border: 2px solid var(--ink); padding: 1.25rem; display: flex; align-items: flex-start; gap: 0.75rem; }
+    .included-item .check { color: var(--orange); font-weight: 700; font-size: 1.25rem; flex-shrink: 0; line-height: 1.4; }
     .included-item p { margin: 0; font-size: 0.95rem; color: #333; }
     .cities-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem; margin: 1.5rem 0 2rem; }
-    .city-card { background: #fff; border: 1px solid #e5e7eb; border-radius: 10px; padding: 1rem 1.25rem; text-decoration: none; color: #1a1a2e; transition: border-color 0.2s, box-shadow 0.2s; }
-    .city-card:hover { border-color: #2563eb; box-shadow: 0 2px 8px rgba(37,99,235,0.1); text-decoration: none; }
+    .city-card { background: #fff; border: 2px solid var(--ink); padding: 1rem 1.25rem; text-decoration: none; color: var(--ink); transition: transform 0.15s, box-shadow 0.15s; }
+    .city-card:hover { transform: translate(-2px,-2px); box-shadow: 4px 4px 0 var(--ink); text-decoration: none; }
     .city-card h4 { font-size: 1rem; margin-bottom: 0.25rem; }
-    .city-card .pop { font-size: 0.85rem; color: #666; }
-    footer { background: #1a1a2e; color: rgba(255,255,255,0.7); padding: 2rem 2rem 5rem; text-align: center; font-size: 0.85rem; }
-    footer a { color: rgba(255,255,255,0.9); text-decoration: none; }
-    .sticky-cta { position: fixed; bottom: 0; left: 0; right: 0; background: #1a1a2e; border-top: 2px solid #f59e0b; padding: 0.75rem 1rem; display: flex; justify-content: center; align-items: center; gap: 1rem; z-index: 200; }
-    .sticky-cta p { color: #fff; font-size: 0.9rem; margin: 0; }
-    .sticky-cta a { display: inline-block; background: #f59e0b; color: #1a1a2e; padding: 0.6rem 1.5rem; border-radius: 6px; text-decoration: none; font-weight: 700; font-size: 0.9rem; white-space: nowrap; }
-    .sticky-cta a:hover { background: #d97706; }
-    @media (max-width: 768px) { .page-hero h1 { font-size: 1.8rem; } .content { padding: 2rem 1.5rem; } .nav-links { display: none; } .stats-bar { grid-template-columns: repeat(2, 1fr); } .sticky-cta p { display: none; } }`;
+    .city-card .pop { font-size: 0.85rem; color: #666; font-family: var(--mono); }
+    footer { background: var(--ink); color: #b9b5ae; padding: 2.5rem 2rem 5rem; text-align: center; font-size: 0.85rem; }
+    footer a { color: #e8e4dc; text-decoration: none; }
+    footer a:hover { color: var(--orange); }
+    .sticky-cta { position: fixed; bottom: 0; left: 0; right: 0; background: var(--ink); border-top: 3px solid var(--orange); padding: 0.75rem 1rem; display: flex; justify-content: center; align-items: center; gap: 1rem; z-index: 200; }
+    .sticky-cta p { color: var(--paper); font-size: 0.9rem; margin: 0; font-family: var(--mono); text-transform: uppercase; letter-spacing: 0.04em; }
+    .sticky-cta a { display: inline-block; background: var(--orange); color: var(--ink); padding: 0.6rem 1.5rem; text-decoration: none; font-family: var(--mono); font-weight: 700; text-transform: uppercase; font-size: 0.85rem; white-space: nowrap; }
+    .sticky-cta a:hover { background: var(--curb); }
+    @media (max-width: 768px) { .page-hero h1 { font-size: 2rem; } .content { padding: 2rem 1.5rem; } .nav-links { display: none; } .stats-bar { grid-template-columns: repeat(2, 1fr); } .sticky-cta p { display: none; } .cta-section { box-shadow: 5px 5px 0 var(--ink); } }`;
 
 // ---------------------------------------------------------------------------
 // HTML building blocks
@@ -177,8 +182,7 @@ export function header() {
     <a href="/" class="logo">STREET TEAMS CO</a>
     <div class="nav-links">
       <a href="/services">Services</a>
-      <a href="/pricing">Pricing</a>
-      <a href="/playbook" style="color:#f59e0b;font-weight:600;">Free Playbook</a>
+      <a href="/playbook" style="color:#FF4D00;font-weight:600;">Free Playbook</a>
       <a href="/case-studies/">Case Studies</a>
       <a href="/locations">Locations</a>
       <a href="/blog/">Blog</a>
@@ -193,14 +197,14 @@ export function footer() {
   <p>&copy; 2026 <a href="/">Street Teams Co</a>. All rights reserved. | <a href="mailto:hello@streetteamsco.com">hello@streetteamsco.com</a> | <a href="/privacy">Privacy</a> | <a href="/terms">Terms</a></p>
   <p style="margin-top: 0.5rem;"><a href="/services">Services</a> | <a href="/how-it-works">How It Works</a> | <a href="/case-studies/">Case Studies</a> | <a href="/locations">Locations</a> | <a href="/blog/">Blog</a></p>
   <p style="margin-top: 0.5rem;"><a href="/street-team-marketing-agency">Street Team Marketing</a> | <a href="/brand-ambassador-agency">Brand Ambassadors</a> | <a href="/experiential-marketing-agency">Experiential Marketing</a> | <a href="/trade-show-staffing-agency">Trade Show Staffing</a> | <a href="/what-is-street-team-marketing">Guide</a></p>
-  <p style="margin-top: 0.5rem;"><strong style="color:#f59e0b;">Industries:</strong> <a href="/cpg-brand-ambassadors">CPG</a> | <a href="/beauty-brand-sampling">Beauty</a> | <a href="/app-launch-street-teams">App Launches</a> | <a href="/dispensary-marketing-agency">Dispensaries</a> | <a href="/college-nil-marketing">College NIL</a> | <a href="/cannabis-marketing-agency">Cannabis Brands</a> | <a href="/alcohol-brand-promotions">Alcohol</a></p>
-  <p style="margin-top: 0.5rem;"><strong style="color:#f59e0b;">Major Events:</strong> <a href="/fifa-world-cup-2026-staffing">World Cup 2026 Staffing</a> | <a href="/los-angeles-2028-staffing">Los Angeles 2028 Staffing</a></p>
-  <p style="margin-top: 0.5rem;"><strong style="color:#f59e0b;">Free:</strong> <a href="/playbook" style="color:#f59e0b;font-weight:600;">Download the Street Team Activation Playbook (PDF)</a> | <a href="/resources">All Resources</a> | <a href="/faq">FAQ</a></p>
+  <p style="margin-top: 0.5rem;"><strong style="color:#FF4D00;">Industries:</strong> <a href="/cpg-brand-ambassadors">CPG</a> | <a href="/beauty-brand-sampling">Beauty</a> | <a href="/app-launch-street-teams">App Launches</a> | <a href="/dispensary-marketing-agency">Dispensaries</a> | <a href="/college-nil-marketing">College NIL</a> | <a href="/cannabis-marketing-agency">Cannabis Brands</a> | <a href="/alcohol-brand-promotions">Alcohol</a></p>
+  <p style="margin-top: 0.5rem;"><strong style="color:#FF4D00;">Major Events:</strong> <a href="/fifa-world-cup-2026-staffing">World Cup 2026 Staffing</a> | <a href="/los-angeles-2028-staffing">Los Angeles 2028 Staffing</a></p>
+  <p style="margin-top: 0.5rem;"><strong style="color:#FF4D00;">Free:</strong> <a href="/playbook" style="color:#FF4D00;font-weight:600;">Download the Street Team Activation Playbook (PDF)</a> | <a href="/resources">All Resources</a> | <a href="/faq">FAQ</a></p>
 </footer>
 <div class="sticky-cta">
   <p>Ready to launch your campaign? Get a free quote in 24 hours.</p>
   <a href="/contact">Get Free Quote</a>
-  <a href="mailto:hello@streetteamsco.com" style="background:transparent;border:1px solid #f59e0b;color:#f59e0b;">Email Us</a>
+  <a href="mailto:hello@streetteamsco.com" style="background:transparent;border:1px solid #FF4D00;color:#FF4D00;">Email Us</a>
 </div>`;
 }
 
