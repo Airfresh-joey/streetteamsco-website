@@ -191,9 +191,10 @@ export function header() {
 export function footer() {
   return `<footer>
   <p>&copy; 2026 <a href="/">Street Teams Co</a>. All rights reserved. | <a href="mailto:hello@streetteamsco.com">hello@streetteamsco.com</a> | <a href="/privacy">Privacy</a> | <a href="/terms">Terms</a></p>
-  <p style="margin-top: 0.5rem;"><a href="/services">Services</a> | <a href="/pricing">Pricing</a> | <a href="/how-it-works">How It Works</a> | <a href="/case-studies/">Case Studies</a> | <a href="/locations">Locations</a> | <a href="/blog/">Blog</a></p>
+  <p style="margin-top: 0.5rem;"><a href="/services">Services</a> | <a href="/how-it-works">How It Works</a> | <a href="/case-studies/">Case Studies</a> | <a href="/locations">Locations</a> | <a href="/blog/">Blog</a></p>
   <p style="margin-top: 0.5rem;"><a href="/street-team-marketing-agency">Street Team Marketing</a> | <a href="/brand-ambassador-agency">Brand Ambassadors</a> | <a href="/experiential-marketing-agency">Experiential Marketing</a> | <a href="/trade-show-staffing-agency">Trade Show Staffing</a> | <a href="/what-is-street-team-marketing">Guide</a></p>
   <p style="margin-top: 0.5rem;"><strong style="color:#f59e0b;">Industries:</strong> <a href="/cpg-brand-ambassadors">CPG</a> | <a href="/beauty-brand-sampling">Beauty</a> | <a href="/app-launch-street-teams">App Launches</a> | <a href="/dispensary-marketing-agency">Dispensaries</a> | <a href="/college-nil-marketing">College NIL</a> | <a href="/cannabis-marketing-agency">Cannabis Brands</a> | <a href="/alcohol-brand-promotions">Alcohol</a></p>
+  <p style="margin-top: 0.5rem;"><strong style="color:#f59e0b;">Major Events:</strong> <a href="/fifa-world-cup-2026-staffing">World Cup 2026 Staffing</a> | <a href="/los-angeles-2028-staffing">Los Angeles 2028 Staffing</a></p>
   <p style="margin-top: 0.5rem;"><strong style="color:#f59e0b;">Free:</strong> <a href="/playbook" style="color:#f59e0b;font-weight:600;">Download the Street Team Activation Playbook (PDF)</a> | <a href="/resources">All Resources</a> | <a href="/faq">FAQ</a></p>
 </footer>
 <div class="sticky-cta">

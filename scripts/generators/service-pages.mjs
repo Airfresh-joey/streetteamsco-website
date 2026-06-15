@@ -351,6 +351,7 @@ ${internalLinksBlock('Explore More', [
     { label: 'Case Studies', url: '/case-studies/' },
     { label: 'Compare Agencies', url: '/compare/event-staffing-companies' },
     { label: 'World Cup 2026 Staffing', url: '/fifa-world-cup-2026-staffing' },
+    { label: 'Los Angeles 2028 Staffing', url: '/los-angeles-2028-staffing' },
   ])}
 
 </div>`;

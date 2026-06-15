@@ -133,6 +133,7 @@ function AppLayout() {
               <a href="/resources">All Resources</a>
               <a href="/faq">FAQ</a>
               <a href="/fifa-world-cup-2026-staffing" style={{color: '#f59e0b', fontWeight: 600}}>World Cup 2026 Staffing</a>
+              <a href="/los-angeles-2028-staffing" style={{color: '#f59e0b', fontWeight: 600}}>Los Angeles 2028 Staffing</a>
             </div>
             <div className="footer-section">
               <h3>Industries</h3>

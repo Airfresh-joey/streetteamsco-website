@@ -360,15 +360,15 @@ export default function HomePage() {
               </ul>
             </div>
             <div className="home-links-col">
-              <h3>World Cup 2026</h3>
+              <h3>Major Events</h3>
               <ul>
-                <li><a href="/fifa-world-cup-2026-staffing">World Cup Staffing Overview</a></li>
-                <li><a href="/fifa-world-cup-2026-staffing/new-york-new-jersey">NYC/NJ Staffing</a></li>
-                <li><a href="/fifa-world-cup-2026-staffing/los-angeles">LA Staffing</a></li>
-                <li><a href="/fifa-world-cup-2026-staffing/miami">Miami Staffing</a></li>
-                <li><a href="/fifa-world-cup-2026-staffing/dallas">Dallas Staffing</a></li>
-                <li><a href="/fifa-world-cup-2026-staffing/houston">Houston Staffing</a></li>
-                <li><a href="/fifa-world-cup-2026-staffing">View All 11 Host Cities</a></li>
+                <li><a href="/fifa-world-cup-2026-staffing">World Cup 2026 Staffing</a></li>
+                <li><a href="/fifa-world-cup-2026-staffing/los-angeles">World Cup &mdash; LA Staffing</a></li>
+                <li><a href="/fifa-world-cup-2026-staffing/new-york-new-jersey">World Cup &mdash; NYC/NJ Staffing</a></li>
+                <li><a href="/los-angeles-2028-staffing">Los Angeles 2028 Staffing</a></li>
+                <li><a href="/los-angeles-2028-staffing/inglewood">LA 2028 &mdash; Inglewood (SoFi)</a></li>
+                <li><a href="/los-angeles-2028-staffing/downtown-la">LA 2028 &mdash; Downtown LA</a></li>
+                <li><a href="/los-angeles-2028-staffing">View All LA 2028 Areas</a></li>
               </ul>
             </div>
           </div>
