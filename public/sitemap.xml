@@ -145,6 +145,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://streetteamsco.com/services/college-campus</loc>
+    <lastmod>2026-06-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://streetteamsco.com/industries/cannabis</loc>
     <lastmod>2026-06-15</lastmod>
     <changefreq>monthly</changefreq>

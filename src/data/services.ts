@@ -274,6 +274,41 @@ export const services: Service[] = [
       { q: 'How do you vet your promotional staff?', a: 'All staff undergo background checks, reference verification, and a skills assessment. We also maintain performance ratings from previous clients and campaigns.' },
     ],
   },
+  {
+    name: 'College Campus Marketing',
+    slug: 'college-campus',
+    tagline: 'Reach Gen Z where they live, study, and hang out — with student brand ambassadors and on-campus activations',
+    description: 'College campus marketing puts your brand in front of one of the most valuable and hard-to-reach audiences in the country: students. Our campus teams are made up of locally recruited student brand ambassadors and experienced field staff who run sampling, tabling, flyering, and experiential activations at universities nationwide. From move-in week and football tailgates to Greek life events and finals-week sampling, we engage students face-to-face in the moments that drive trial, downloads, and lasting brand loyalty.',
+    features: [
+      'Student brand ambassadors recruited locally at each target campus',
+      'On-campus tabling, sampling, flyering, and pop-up activations',
+      'Activations timed to move-in week, game days, tailgates, and key campus moments',
+      'Greek life, club, and student-organization partnership outreach',
+      'Permitting and coordination with university and student-union policies',
+      'Real-time GPS tracking, photo documentation, and post-campaign reporting',
+    ],
+    benefits: [
+      'Reach Gen Z and college students in a trusted, peer-to-peer way digital ads cannot match',
+      'Drive product trial, app downloads, and sign-ups at scale',
+      'Build authentic word-of-mouth through student ambassadors who already belong on campus',
+      'Scale from a single flagship campus to hundreds of universities nationwide',
+      'Collect on-the-ground consumer insight and content from your exact target demographic',
+    ],
+    useCases: [
+      'App and DTC brand launches targeting students',
+      'Beverage, snack, and CPG sampling at high-traffic campus locations',
+      'Move-in week and welcome-week brand activations',
+      'Football tailgate and game-day experiential marketing',
+      'Financial, telecom, and subscription sign-up drives',
+      'NIL and student-athlete-led campus campaigns',
+    ],
+    faq: [
+      { q: 'Which campuses can you activate on?', a: 'We recruit and deploy student teams at universities nationwide, from large flagship state schools to smaller private colleges. We can run a single-campus pilot or a coordinated multi-campus program across dozens of universities in the same semester.' },
+      { q: 'Are your campus brand ambassadors actual students?', a: 'Yes. We recruit brand ambassadors locally at each target campus so your team already knows the community, the high-traffic spots, and the events that matter. That peer-to-peer credibility is what makes campus marketing convert.' },
+      { q: 'When is the best time to run a college campus campaign?', a: 'The highest-impact windows are welcome and move-in week, home football game days and tailgates, homecoming, and the first few weeks of each semester. We help you time activations around the campus calendar for maximum reach.' },
+      { q: 'Do you handle university permitting and policies?', a: 'Yes. Campus access rules vary by school and student union. Our team coordinates the required approvals, vendor registrations, and tabling permits so your activation runs smoothly and compliantly.' },
+    ],
+  },
 ];
 
 export function getServiceBySlug(slug: string): Service | undefined {

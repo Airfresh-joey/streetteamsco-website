@@ -64,7 +64,7 @@ addUrl('/terms', 0.3, 'yearly');
 const services = [
   'street-teams', 'brand-ambassadors', 'event-staffing',
   'product-sampling', 'flyer-distribution', 'guerrilla-marketing',
-  'experiential-marketing', 'promotional-staffing',
+  'experiential-marketing', 'promotional-staffing', 'college-campus',
 ];
 services.forEach(s => addUrl(`/services/${s}`, 0.8, 'monthly'));
 

@@ -103,6 +103,7 @@ export default function ServicePage() {
     'flyer-distribution': 'Flyer Distribution Services | Professional Flyering Nationwide',
     'experiential-marketing': 'Experiential Marketing Agency | Immersive Brand Experiences',
     'promotional-staffing': 'Promotional Staffing Agency | On-Demand Promo Talent',
+    'college-campus': 'College Campus Marketing Agency | Student Brand Ambassadors Nationwide',
   };
 
   useMetaTags({
