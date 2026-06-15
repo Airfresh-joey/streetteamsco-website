@@ -1411,6 +1411,18 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://streetteamsco.com/locations/district-of-columbia</loc>
+    <lastmod>2026-06-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://streetteamsco.com/locations/district-of-columbia/washington</loc>
+    <lastmod>2026-06-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://streetteamsco.com/locations/florida</loc>
     <lastmod>2026-06-15</lastmod>
     <changefreq>monthly</changefreq>

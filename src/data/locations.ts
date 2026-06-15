@@ -125,6 +125,12 @@ export const locations: StateData[] = [
     ],
   },
   {
+    name: 'District of Columbia', slug: 'district-of-columbia', abbreviation: 'DC',
+    cities: [
+      city('Washington', '671,803'),
+    ],
+  },
+  {
     name: 'Florida', slug: 'florida', abbreviation: 'FL',
     cities: [
       city('Jacksonville', '949,611'), city('Miami', '442,241'), city('Tampa', '384,959'),
