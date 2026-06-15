@@ -45,7 +45,6 @@ function addUrl(loc, priority, changefreq = 'monthly') {
 // Core pages
 addUrl('/', 1.0, 'weekly');
 addUrl('/services', 0.9, 'weekly');
-addUrl('/pricing', 0.9, 'weekly');
 addUrl('/locations', 0.9, 'weekly');
 addUrl('/industries', 0.8, 'weekly');
 addUrl('/testimonials', 0.8, 'monthly');
@@ -169,6 +168,7 @@ addUrl('/about-street-teams-co', 0.8, 'monthly');
 
 // Event / time-sensitive landing pages
 addUrl('/fifa-world-cup-2026-staffing', 0.95, 'weekly');
+addUrl('/los-angeles-2028-staffing', 0.95, 'weekly');
 
 // FIFA World Cup city sub-pages (static HTML in /public/fifa-world-cup-2026-staffing/)
 const fifaCityDir = './public/fifa-world-cup-2026-staffing';
