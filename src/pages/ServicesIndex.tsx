@@ -5,7 +5,7 @@ import { useMetaTags } from '../hooks/useMetaTags';
 export default function ServicesIndex() {
   useMetaTags({
     title: 'Street Team Marketing Services | Brand Ambassadors & Event Staffing | Street Teams Co',
-    description: 'Street team marketing services in 1,000+ cities. Brand ambassadors from $25/hr, event staffing, product sampling, guerrilla marketing. 94% client retention. Get a free quote today.',
+    description: 'Street team marketing services in 1,000+ cities. Brand ambassadors, event staffing, product sampling, guerrilla marketing. 94% client retention. Get a free quote today.',
     canonical: 'https://streetteamsco.com/services',
     schema: {
       '@context': 'https://schema.org',

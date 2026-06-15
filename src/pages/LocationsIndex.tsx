@@ -5,7 +5,7 @@ import { useMetaTags } from '../hooks/useMetaTags';
 export default function LocationsIndex() {
   useMetaTags({
     title: `Street Team Locations | Brand Ambassadors in ${getTotalCityCount()}+ Cities | Street Teams Co`,
-    description: `Street team marketing in all 50 states and ${getTotalCityCount()}+ cities. Hire brand ambassadors from $25/hr with 94% client retention. Find local street teams near you and get a free quote.`,
+    description: `Street team marketing in all 50 states and ${getTotalCityCount()}+ cities. Hire brand ambassadors with 94% client retention. Find local street teams near you and get a free quote.`,
     canonical: 'https://streetteamsco.com/locations',
     schema: {
       '@context': 'https://schema.org',

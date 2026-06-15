@@ -9,7 +9,7 @@ export default function StatePage() {
 
   useMetaTags({
     title: state
-      ? `Street Teams in ${state.name} | ${state.cities.length} Cities | Brand Ambassadors from $25/hr`
+      ? `Street Teams in ${state.name} | ${state.cities.length} Cities | Brand Ambassadors & Event Staff`
       : 'Location Not Found | Street Teams Co',
     description: state
       ? `Street team marketing in ${state.cities.length} ${state.abbreviation} cities including ${state.cities.slice(0, 3).map(c => c.name).join(', ')}. Brand ambassadors, event staffing & product sampling. 94% client retention. Get a free quote.`

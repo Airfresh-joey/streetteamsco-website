@@ -12,7 +12,7 @@ function generateStateFaqs(state) {
   return [
     {
       q: `How much does a street team cost in ${state.name}?`,
-      a: `Street team costs in ${state.name} typically range from $25-$75 per hour per brand ambassador, depending on the city, campaign requirements, and team size. Major markets like ${topCities} may be at the higher end due to demand. Contact us for a free custom quote.`,
+      a: `Street team costs in ${state.name} depend on the city, campaign requirements, team size, and duration. Major markets like ${topCities} may be at the higher end due to demand. Contact us for a free custom quote.`,
     },
     {
       q: `What cities in ${state.name} do you cover?`,
@@ -60,8 +60,8 @@ function generateStatePage(state, allStates) {
   const body = `<section class="page-hero">
   <div class="page-hero-inner">
     <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> / <a href="/locations">Locations</a> / <span>${escHtml(state.name)}</span></nav>
-    <h1>Street Teams in ${escHtml(state.name)} | ${state.cities.length} Cities | Brand Ambassadors from $25/hr</h1>
-    <p>Professional brand ambassadors and street team marketing across ${state.cities.length} cities in ${state.abbreviation}, including ${topCities}. Event staffing, product sampling, and guerrilla marketing from $25/hr.</p>
+    <h1>Street Teams in ${escHtml(state.name)} | ${state.cities.length} Cities | Brand Ambassadors & Event Staff</h1>
+    <p>Professional brand ambassadors and street team marketing across ${state.cities.length} cities in ${state.abbreviation}, including ${topCities}. Event staffing, product sampling, and guerrilla marketing across the state.</p>
   </div>
 </section>
 
@@ -69,7 +69,7 @@ function generateStatePage(state, allStates) {
 
 ${statsBar([
     { number: String(state.cities.length), label: `${state.abbreviation} Cities` },
-    { number: '$25', label: 'Starting Per Hour' },
+    { number: 'Free', label: 'Custom Quotes' },
     { number: '48hr', label: 'Rush Deployment' },
     { number: '94%', label: 'Client Retention' },
   ])}
@@ -116,8 +116,8 @@ ${internalLinksBlock('Helpful Links', [
 </div>`;
 
   return wrapPage({
-    title: `Street Teams in ${state.name} | ${state.cities.length} Cities | Brand Ambassadors from $25/hr | Street Teams Co`,
-    description: `Street team marketing across ${state.cities.length} ${state.abbreviation} cities including ${topCities}. Brand ambassadors, event staffing & product sampling from $25/hr. 94% client retention. Get a free quote.`,
+    title: `Street Teams in ${state.name} | ${state.cities.length} Cities | Brand Ambassadors & Event Staff | Street Teams Co`,
+    description: `Street team marketing across ${state.cities.length} ${state.abbreviation} cities including ${topCities}. Brand ambassadors, event staffing & product sampling with custom pricing. 94% client retention. Get a free quote.`,
     canonical,
     keywords: `street teams ${state.name}, brand ambassadors ${state.name}, event staffing ${state.abbreviation}, street team marketing ${state.abbreviation}`,
     schemas,

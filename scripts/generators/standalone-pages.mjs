@@ -13,10 +13,10 @@ import {
 function generatePricingPage() {
   const canonical = `${BASE_URL}/pricing`;
   const pricingFaqs = [
-    { q: 'How much does street team marketing cost?', a: 'Street team marketing costs typically range from $25-$75 per hour per brand ambassador. A full-day team deployment (6-8 hours, 4-8 team members) averages $3,000-$8,000. Monthly retainer programs start at $10,000.' },
-    { q: 'How much do brand ambassadors cost per hour?', a: 'Brand ambassador rates start at $25/hour for standard promotional staff and range up to $75+/hour for specialized roles like bilingual staff, licensed bartenders, or technical product demonstrators.' },
-    { q: 'How much does event staffing cost?', a: 'Event staffing rates range from $25-$75 per hour per staff member depending on role, location, and event type. Most clients spend $2,000-$15,000 per event.' },
-    { q: 'Do you offer volume discounts for large campaigns?', a: 'Yes. We offer 10% off for 10+ staff bookings, 15% off for 20+ staff, and custom enterprise pricing for 50+ staff deployments or monthly retainer programs.' },
+    { q: 'How much does street team marketing cost?', a: 'Street team marketing costs depend on team size, campaign duration, and market. A typical full-day team deployment runs 6-8 hours with 4-8 team members. Contact us for a custom quote, including monthly retainer options.' },
+    { q: 'How much do brand ambassadors cost per hour?', a: 'Brand ambassador rates vary by role and market. Specialized roles like bilingual staff, licensed bartenders, or technical product demonstrators are priced accordingly. Contact us for a custom quote.' },
+    { q: 'How much does event staffing cost?', a: 'Event staffing rates depend on role, location, and event type. Contact us for a custom quote tailored to your event.' },
+    { q: 'Do you offer volume discounts for large campaigns?', a: 'Yes. We offer volume discounts for larger staff bookings and custom enterprise pricing for large deployments or monthly retainer programs. Contact us for details.' },
     { q: 'Do you require long-term contracts?', a: 'No. We offer single-event booking, weekly campaigns, and monthly retainers. There are no long-term contracts required. Book what you need, when you need it.' },
     { q: 'What is included in campaign pricing?', a: 'All campaigns include campaign strategy, staff recruitment and training, field management, real-time GPS tracking, branded uniforms, daily photo reports, liability insurance, and a comprehensive post-campaign report with ROI analysis.' },
     { q: 'How does pricing compare to hiring in-house?', a: 'Outsourcing to Street Teams Co eliminates recruiting costs, training time, payroll taxes, insurance, and management overhead. Most clients find our all-in cost is 30-50% less than building an equivalent in-house team.' },
@@ -28,13 +28,13 @@ function generatePricingPage() {
       { name: 'Pricing', url: canonical },
     ]),
     faqSchema(pricingFaqs),
-    { '@context': 'https://schema.org', '@type': 'Service', name: 'Street Team Marketing Services', provider: { '@type': 'Organization', name: 'Street Teams Co', url: BASE_URL }, serviceType: 'Street Team Marketing', areaServed: { '@type': 'Country', name: 'United States' }, priceRange: '$25-$75/hr' },
+    { '@context': 'https://schema.org', '@type': 'Service', name: 'Street Team Marketing Services', provider: { '@type': 'Organization', name: 'Street Teams Co', url: BASE_URL }, serviceType: 'Street Team Marketing', areaServed: { '@type': 'Country', name: 'United States' } },
   ];
 
   const body = `<section class="page-hero">
   <div class="page-hero-inner">
     <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> / <span>Pricing</span></nav>
-    <h1>Street Team Marketing Pricing | Brand Ambassadors from $25/hr</h1>
+    <h1>Street Team Marketing Pricing | Custom Quotes for Every Campaign</h1>
     <p>Transparent pricing for brand ambassadors, street teams, event staffing, and guerrilla marketing campaigns. No hidden fees. No long-term contracts.</p>
   </div>
 </section>
@@ -42,47 +42,27 @@ function generatePricingPage() {
 <div class="content">
 
 ${statsBar([
-    { number: '$25', label: 'Starting Per Hour' },
+    { number: 'Free', label: 'Custom Quotes' },
     { number: '500+', label: 'Campaigns' },
     { number: '94%', label: 'Client Retention' },
     { number: '4.9/5', label: 'Client Rating' },
   ])}
 
-  <h2>Staff Rate Cards</h2>
-  <p>Our pricing is transparent and competitive. Rates include staff sourcing, vetting, and basic campaign management.</p>
+  <h2>How Our Pricing Works</h2>
+  <p>Every campaign is scoped and quoted individually. Your rate depends on the roles you need, team size, campaign duration, market, and any specialized skills (bilingual staff, licensed bartenders, technical demonstrators). Quotes include staff sourcing, vetting, and basic campaign management with no hidden fees.</p>
 
-  <table class="pricing-table">
-    <thead><tr><th>Role</th><th>Hourly Rate</th><th>Full Day (8 hrs)</th><th>Best For</th></tr></thead>
-    <tbody>
-      <tr><td>Brand Ambassador</td><td>$25 - $45/hr</td><td>$200 - $360</td><td>Sampling, flyering, demos, events</td></tr>
-      <tr><td>Senior Ambassador</td><td>$35 - $55/hr</td><td>$280 - $440</td><td>Trade shows, lead gen, VIP events</td></tr>
-      <tr><td>Promotional Model</td><td>$35 - $65/hr</td><td>$280 - $520</td><td>Launch events, experiential, nightlife</td></tr>
-      <tr><td>Event Staff</td><td>$25 - $55/hr</td><td>$200 - $440</td><td>Registration, crowd management, setup</td></tr>
-      <tr><td>Team Lead / Manager</td><td>$40 - $75/hr</td><td>$320 - $600</td><td>On-site management for 5+ staff teams</td></tr>
-      <tr><td>Bilingual Staff</td><td>$30 - $55/hr</td><td>$240 - $440</td><td>Multicultural campaigns, diverse markets</td></tr>
-    </tbody>
-  </table>
-
-  <h2>Campaign Packages</h2>
-  <table class="pricing-table">
-    <thead><tr><th>Package</th><th>Typical Investment</th><th>Includes</th></tr></thead>
-    <tbody>
-      <tr><td>Single-Day Activation</td><td>$1,500 - $5,000</td><td>2-4 staff, 6-8 hours, training, reporting</td></tr>
-      <tr><td>Weekend Blitz</td><td>$4,000 - $12,000</td><td>4-8 staff, Fri-Sun, full campaign management</td></tr>
-      <tr><td>Weekly Campaign</td><td>$5,000 - $20,000</td><td>4-10 staff, 5 days, strategy + reporting</td></tr>
-      <tr><td>Monthly Retainer</td><td>$10,000 - $50,000</td><td>Ongoing deployment, account manager, analytics</td></tr>
-      <tr><td>Multi-City Tour</td><td>$25,000 - $100,000+</td><td>5+ cities, travel logistics, custom execution</td></tr>
-      <tr><td>Guerrilla Campaign</td><td>$2,000 - $50,000+</td><td>Creative concept, production, permits, documentation</td></tr>
-    </tbody>
-  </table>
+  <h2>Campaign Types We Quote</h2>
+  <ul>
+    <li><strong>Single-Day Activations</strong> — brand ambassadors and event staff for a focused push</li>
+    <li><strong>Weekend Blitzes</strong> — multi-day teams with full campaign management</li>
+    <li><strong>Weekly Campaigns</strong> — sustained street presence with strategy and reporting</li>
+    <li><strong>Monthly Retainers</strong> — ongoing deployment with a dedicated account manager and analytics</li>
+    <li><strong>Multi-City Tours</strong> — coordinated activations across 5+ markets with travel logistics</li>
+    <li><strong>Guerrilla Campaigns</strong> — custom creative, production, permits, and documentation</li>
+  </ul>
 
   <h2>Volume Discounts</h2>
-  <ul>
-    <li><strong>10+ staff:</strong> 10% off standard rates</li>
-    <li><strong>20+ staff:</strong> 15% off standard rates</li>
-    <li><strong>50+ staff:</strong> Custom enterprise pricing</li>
-    <li><strong>Monthly retainers:</strong> Up to 20% off standard rates</li>
-  </ul>
+  <p>Larger and longer engagements earn better rates. We offer volume discounts for bigger teams, custom enterprise pricing for large deployments, and reduced rates on monthly retainers. Tell us your scope and we will build a quote that fits your budget.</p>
 
   <h2>What's Included in Every Campaign</h2>
   <div class="included-grid">
@@ -110,8 +90,8 @@ ${internalLinksBlock('Explore More', [
 </div>`;
 
   return wrapPage({
-    title: 'Street Team Pricing 2026 | Brand Ambassadors from $25/hr | Street Teams Co',
-    description: 'Street team marketing pricing: brand ambassadors from $25/hr, event staffing from $30/hr. Volume discounts available. No long-term contracts. 500+ campaigns, 94% client retention. Get a free custom quote.',
+    title: 'Street Team Pricing 2026 | Custom Quotes for Every Campaign | Street Teams Co',
+    description: 'Street team marketing pricing explained: custom quotes based on roles, team size, and campaign scope. Volume discounts available. No long-term contracts. 500+ campaigns, 94% client retention. Get a free custom quote.',
     canonical,
     schemas,
     body,
@@ -337,7 +317,7 @@ function generateLocationsIndex(srcDir) {
   <div class="page-hero-inner">
     <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> / <span>Locations</span></nav>
     <h1>Street Team Locations | Brand Ambassadors in ${totalCities.toLocaleString()}+ Cities Nationwide</h1>
-    <p>Street team marketing in all 50 states and ${totalCities.toLocaleString()}+ cities. Professional brand ambassadors from $25/hr. 94% client retention. Find local street teams near you.</p>
+    <p>Street team marketing in all 50 states and ${totalCities.toLocaleString()}+ cities. Professional brand ambassadors with custom pricing. 94% client retention. Find local street teams near you.</p>
   </div>
 </section>
 
@@ -346,7 +326,7 @@ function generateLocationsIndex(srcDir) {
 ${statsBar([
     { number: '50', label: 'States' },
     { number: totalCities.toLocaleString() + '+', label: 'Cities' },
-    { number: '$25', label: 'Starting Per Hour' },
+    { number: 'Free', label: 'Custom Quotes' },
     { number: '94%', label: 'Client Retention' },
   ])}
 
@@ -382,7 +362,7 @@ ${internalLinksBlock('Explore More', [
 
   return wrapPage({
     title: `Street Team Locations | Brand Ambassadors in ${totalCities.toLocaleString()}+ Cities | Street Teams Co`,
-    description: `Street team marketing in all 50 states and ${totalCities.toLocaleString()}+ cities. Brand ambassadors from $25/hr. 94% client retention. Find local street teams near you and get a free quote.`,
+    description: `Street team marketing in all 50 states and ${totalCities.toLocaleString()}+ cities. Brand ambassadors with custom pricing. 94% client retention. Find local street teams near you and get a free quote.`,
     canonical,
     schemas,
     body,

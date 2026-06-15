@@ -31,7 +31,7 @@ function generateIndustryFaqs(industry) {
     },
     {
       q: `How much does ${industry.name.toLowerCase()} street marketing cost?`,
-      a: `Pricing for ${industry.name.toLowerCase()} campaigns starts at $25/hr for brand ambassadors and street teams. Event staffing runs $25-$55/hr, and experiential or guerrilla campaigns are custom-priced based on scope. Contact us for a free quote tailored to your ${industry.name.toLowerCase()} campaign.`,
+      a: `Pricing for ${industry.name.toLowerCase()} campaigns is custom-quoted based on team size, campaign duration, and scope. Contact us for a free quote tailored to your ${industry.name.toLowerCase()} campaign.`,
     },
   ];
 }

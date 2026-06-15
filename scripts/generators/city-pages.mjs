@@ -49,7 +49,7 @@ function generateCityFaqs(city, state) {
   return [
     {
       q: `How much does event staffing cost in ${city.name}?`,
-      a: `Event staffing in ${city.name} ranges from $25-$75 per hour depending on the role. Brand ambassadors start at $25-$45/hr, promotional models at $35-$65/hr, and event coordinators at $45-$75/hr. Contact us for a custom ${city.name} event staffing quote.`,
+      a: `Event staffing rates in ${city.name} depend on the role, experience level, and team size — from brand ambassadors and promotional models to event coordinators. Contact us for a custom ${city.name} event staffing quote.`,
     },
     {
       q: `How quickly can you deploy event staff in ${city.name}?`,
@@ -61,7 +61,7 @@ function generateCityFaqs(city, state) {
     },
     {
       q: `How much does a street team cost in ${city.name}?`,
-      a: `Street team costs in ${city.name} typically range from $25-$75 per hour per brand ambassador, depending on campaign requirements and team size. Contact us for a custom quote for your ${city.name} campaign.`,
+      a: `Street team costs in ${city.name} depend on campaign requirements, team size, and duration. Contact us for a custom quote for your ${city.name} campaign.`,
     },
   ];
 }
@@ -83,11 +83,11 @@ ${neighborhoods.map(n => `    <div class="service-box"><h4>${escHtml(n)}</h4><p>
 
   <h2>Our Services in ${escHtml(city.name)}</h2>
   <div class="service-grid">
-    <div class="service-box"><h4><a href="/services/street-teams">Street Team Marketing</a></h4><p>High-traffic activations in ${city.name}'s busiest areas including ${landmarks[0]} and ${neighborhoods[0]}. From $25/hr.</p></div>
-    <div class="service-box"><h4><a href="/services/brand-ambassadors">Brand Ambassadors</a></h4><p>Professional, trained brand representatives for trade shows, demos, and events in ${city.name}. From $25/hr.</p></div>
-    <div class="service-box"><h4><a href="/services/event-staffing">Event Staffing</a></h4><p>Experienced event staff for conferences, festivals, and corporate events in ${city.name}, ${state.abbreviation}. From $25/hr.</p></div>
+    <div class="service-box"><h4><a href="/services/street-teams">Street Team Marketing</a></h4><p>High-traffic activations in ${city.name}'s busiest areas including ${landmarks[0]} and ${neighborhoods[0]}.</p></div>
+    <div class="service-box"><h4><a href="/services/brand-ambassadors">Brand Ambassadors</a></h4><p>Professional, trained brand representatives for trade shows, demos, and events in ${city.name}.</p></div>
+    <div class="service-box"><h4><a href="/services/event-staffing">Event Staffing</a></h4><p>Experienced event staff for conferences, festivals, and corporate events in ${city.name}, ${state.abbreviation}.</p></div>
     <div class="service-box"><h4><a href="/services/product-sampling">Product Sampling</a></h4><p>Direct-to-consumer product sampling at retail locations, gyms, and events throughout ${city.name}. 35% avg conversion.</p></div>
-    <div class="service-box"><h4><a href="/services/guerrilla-marketing">Guerrilla Marketing</a></h4><p>Unconventional activations at ${landmarks[1]} and other iconic ${city.name} locations. From $2,000/campaign.</p></div>
+    <div class="service-box"><h4><a href="/services/guerrilla-marketing">Guerrilla Marketing</a></h4><p>Unconventional activations at ${landmarks[1]} and other iconic ${city.name} locations. Custom-quoted by scope.</p></div>
     <div class="service-box"><h4><a href="/services/flyer-distribution">Flyer Distribution</a></h4><p>GPS-tracked flyer distribution across ${city.name} neighborhoods. 2,000-5,000 flyers per team per day.</p></div>
   </div>
 
@@ -106,7 +106,7 @@ ${neighborhoods.map(n => `    <div class="service-box"><h4>${escHtml(n)}</h4><p>
   <ul>
     <li><strong>Local expertise</strong> in ${neighborhoodsList}</li>
     <li><strong>Fast deployment</strong> with 48-hour rush availability in ${city.name}</li>
-    <li><strong>Transparent pricing</strong> starting at $25/hr with no hidden fees</li>
+    <li><strong>Transparent, custom pricing</strong> with no hidden fees</li>
     <li><strong>Real-time tracking</strong> via GPS, photos, and live dashboards</li>
     <li><strong>500+ campaigns</strong> executed nationwide with a 4.9/5 client rating</li>
   </ul>`;
@@ -131,7 +131,7 @@ function generateMidCityBody(city, state) {
   <ul>
     <li><strong>Local ${city.name} staff</strong> recruited from the community</li>
     <li><strong>48-hour rush deployment</strong> available for urgent campaigns</li>
-    <li><strong>Transparent pricing</strong> starting at $25/hr</li>
+    <li><strong>Transparent, custom pricing</strong> tailored to your campaign</li>
     <li><strong>Real-time GPS tracking</strong> and photo documentation</li>
     <li><strong>Comprehensive reporting</strong> with engagement metrics and ROI data</li>
   </ul>`;
@@ -145,16 +145,16 @@ function generateSmallCityBody(city, state) {
 
   <h2>Our Services in ${escHtml(city.name)}</h2>
   <div class="service-grid">
-    <div class="service-box"><h4><a href="/services/street-teams">Street Team Marketing</a></h4><p>Grassroots campaigns in ${city.name}'s high-traffic areas. From $25/hr.</p></div>
-    <div class="service-box"><h4><a href="/services/brand-ambassadors">Brand Ambassadors</a></h4><p>Professional brand reps for events and demos in ${city.name}, ${state.abbreviation}. From $25/hr.</p></div>
-    <div class="service-box"><h4><a href="/services/event-staffing">Event Staffing</a></h4><p>Reliable event staff for ${city.name} conferences and events. From $25/hr.</p></div>
+    <div class="service-box"><h4><a href="/services/street-teams">Street Team Marketing</a></h4><p>Grassroots campaigns in ${city.name}'s high-traffic areas.</p></div>
+    <div class="service-box"><h4><a href="/services/brand-ambassadors">Brand Ambassadors</a></h4><p>Professional brand reps for events and demos in ${city.name}, ${state.abbreviation}.</p></div>
+    <div class="service-box"><h4><a href="/services/event-staffing">Event Staffing</a></h4><p>Reliable event staff for ${city.name} conferences and events.</p></div>
     <div class="service-box"><h4><a href="/services/product-sampling">Product Sampling</a></h4><p>Product distribution at retail and events in ${city.name}. 35% avg conversion.</p></div>
   </div>
 
   <ul>
     <li><strong>Local ${city.name} staff</strong> with community knowledge</li>
     <li><strong>Background-checked</strong> and professionally trained</li>
-    <li><strong>Starting at $25/hr</strong> with no hidden fees</li>
+    <li><strong>Custom pricing</strong> with no hidden fees</li>
     <li><strong>GPS tracking</strong> and real-time reporting on every campaign</li>
   </ul>`;
 }
@@ -218,14 +218,14 @@ function generateCityPage(city, state, allStates) {
   <div class="page-hero-inner">
     <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> / <a href="/locations">Locations</a> / <a href="/locations/${state.slug}">${escHtml(state.name)}</a> / <span>${escHtml(city.name)}</span></nav>
     <h1>Event Staffing &amp; Street Teams in ${escHtml(city.name)}, ${state.abbreviation}</h1>
-    <p>Event staffing, street team marketing, and brand ambassador services in ${city.name}, ${state.abbreviation}.${city.population ? ' Population: ' + city.population + '.' : ''} Professional event staff, product sampling, and guerrilla marketing from $25/hr.</p>
+    <p>Event staffing, street team marketing, and brand ambassador services in ${city.name}, ${state.abbreviation}.${city.population ? ' Population: ' + city.population + '.' : ''} Professional event staff, product sampling, and guerrilla marketing with custom pricing.</p>
   </div>
 </section>
 
 <div class="content">
 
 ${statsBar([
-    { number: '$25', label: 'Starting Per Hour' },
+    { number: 'Free', label: 'Custom Quotes' },
     { number: '48hr', label: 'Rush Deployment' },
     { number: '94%', label: 'Client Retention' },
     { number: '4.9/5', label: 'Client Rating' },
@@ -258,8 +258,8 @@ ${internalLinksBlock('Helpful Links', [
 </div>`;
 
   return wrapPage({
-    title: `Street Teams & Event Staffing ${city.name}, ${state.abbreviation} | Brand Ambassadors from $25/hr`,
-    description: `Event staffing & street team marketing in ${city.name}, ${state.abbreviation}. Brand ambassadors, event staff & product sampling from $25/hr. 94% client retention, 500+ campaigns. Free quote.`,
+    title: `Street Teams & Event Staffing ${city.name}, ${state.abbreviation} | Brand Ambassadors & Event Staff`,
+    description: `Event staffing & street team marketing in ${city.name}, ${state.abbreviation}. Brand ambassadors, event staff & product sampling with custom pricing. 94% client retention, 500+ campaigns. Free quote.`,
     canonical,
     keywords: `street teams ${city.name}, brand ambassadors ${city.name}, event staffing ${city.name} ${state.abbreviation}, street team marketing ${city.name}`,
     schemas,

@@ -109,7 +109,7 @@ export default function StreetTeamsService() {
           <div className="faq-list">
             <details>
               <summary>How much does street team marketing cost?</summary>
-              <p>Street team marketing costs vary based on team size, campaign duration, and market. Brand ambassadors typically range from $25-$75/hour. A full-day street team deployment (6-8 hours, 4-8 team members) in a major market averages $3,000-$8,000. <Link to="/pricing">See our full pricing guide</Link>.</p>
+              <p>Street team marketing costs vary based on team size, campaign duration, and market. <Link to="/contact">Request a custom quote</Link> for your campaign.</p>
             </details>
             <details>
               <summary>What cities do you operate in?</summary>

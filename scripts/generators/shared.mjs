@@ -343,7 +343,6 @@ export function localBusinessSchema({ name, description, url, city, stateAbbr })
       addressCountry: 'US',
     },
     areaServed: { '@type': 'City', name: city },
-    priceRange: '$25 - $75',
     parentOrganization: {
       '@type': 'Organization',
       name: 'Street Teams Co',

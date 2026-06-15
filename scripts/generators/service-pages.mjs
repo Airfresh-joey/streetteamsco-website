@@ -108,7 +108,6 @@ ${items}
 function generateServicePage(service, allServices) {
   const canonical = `${BASE_URL}/services/${service.slug}`;
   const isGuerrilla = service.slug === 'guerrilla-marketing';
-  const priceRange = isGuerrilla ? '$2,000-$10,000+/day' : '$25-$75/hr';
   const blogPosts = RELATED_BLOG_POSTS[service.slug] || [];
 
   const otherServices = allServices.filter(s => s.slug !== service.slug);
@@ -148,7 +147,7 @@ function generateServicePage(service, allServices) {
   const body = `<section class="page-hero">
   <div class="page-hero-inner">
     <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> / <a href="/services">Services</a> / <span>${escHtml(service.name)}</span></nav>
-    <h1>${escHtml(service.name)} Services | Nationwide from ${priceRange}</h1>
+    <h1>${escHtml(service.name)} Services | Nationwide Coverage</h1>
     <p>${escHtml(service.tagline)}</p>
   </div>
 </section>
@@ -207,7 +206,7 @@ ${internalLinksBlock('Helpful Links', [
 </div>`;
 
   return wrapPage({
-    title: `${service.name} Services | Nationwide from ${priceRange} | Street Teams Co`,
+    title: `${service.name} Services | Nationwide | Street Teams Co`,
     description: `${service.name} services in 1,000+ US cities. ${truncate(service.description, 120).replace(/\.$/, '')}. 500+ campaigns, 94% client retention. Get a free quote.`,
     canonical,
     keywords: `${service.name.toLowerCase()}, ${service.name.toLowerCase()} services, ${service.name.toLowerCase()} agency, hire ${service.name.toLowerCase()}, ${service.name.toLowerCase()} near me`,
@@ -220,7 +219,7 @@ function generateServicesIndex(services) {
   const canonical = `${BASE_URL}/services`;
 
   const indexFaq = [
-    { q: 'How much does street team marketing cost?', a: 'Street team marketing services start at $25/hr for basic distribution staff and go up to $75/hr for specialized promotional talent. Campaign packages start at $1,500 for a single-day activation. Multi-city tours and experiential campaigns are custom-quoted based on scope.' },
+    { q: 'How much does street team marketing cost?', a: 'Street team marketing services are custom-quoted based on the roles you need, team size, campaign duration, and scope — from basic distribution staff to specialized promotional talent and multi-city tours. Contact us for a free quote.' },
     { q: 'What is the difference between a brand ambassador and a street team member?', a: 'Brand ambassadors undergo extended product training and represent your brand over longer campaigns with deeper consumer engagement. Street team members are deployed for high-volume outreach like flyer distribution, sampling, and event perimeter marketing. Both roles are professional and vetted.' },
     { q: 'How quickly can you staff a campaign?', a: 'We can deploy teams in as few as 48 hours in major metro areas. For multi-city campaigns, we recommend 2-4 weeks lead time to ensure optimal talent matching and custom training. Rush staffing is available at standard rates in most top-20 markets.' },
     { q: 'Do you operate nationwide?', a: 'Yes. Street Teams Co operates in all 50 US states with established teams in over 1,000 cities. Our strongest markets include New York, Los Angeles, Chicago, Miami, Dallas, Atlanta, and Denver, but we staff campaigns in cities of all sizes.' },
@@ -258,7 +257,7 @@ function generateServicesIndex(services) {
   <div class="page-hero-inner">
     <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> / <span>Services</span></nav>
     <h1>Street Team Marketing Services | Brand Ambassadors &amp; Event Staffing</h1>
-    <p>Professional street marketing, brand ambassador, and event staffing services in 1,000+ US cities. 500+ campaigns executed, 94% client retention. From $25/hr.</p>
+    <p>Professional street marketing, brand ambassador, and event staffing services in 1,000+ US cities. 500+ campaigns executed, 94% client retention.</p>
   </div>
 </section>
 
@@ -279,22 +278,22 @@ ${statsBar([
 ${serviceCardsHtml}
   </div>
 
-  <h2>Service Pricing at a Glance</h2>
-  <p>All pricing includes staff management, training, branded uniforms, GPS tracking, photo documentation, and post-campaign reporting. No hidden fees.</p>
+  <h2>Our Services at a Glance</h2>
+  <p>Every engagement includes staff management, training, branded uniforms, GPS tracking, photo documentation, and post-campaign reporting. No hidden fees — pricing is custom-quoted to your campaign.</p>
   <table class="pricing-table">
-    <thead><tr><th>Service</th><th>Starting Rate</th><th>Best For</th></tr></thead>
+    <thead><tr><th>Service</th><th>Best For</th></tr></thead>
     <tbody>
-      <tr><td><a href="/services/street-teams">Street Team Marketing</a></td><td>$25-$50/hr</td><td>Flyer distribution, brand awareness, event perimeters</td></tr>
-      <tr><td><a href="/services/brand-ambassadors">Brand Ambassadors</a></td><td>$25-$45/hr</td><td>Trade shows, retail demos, product launches</td></tr>
-      <tr><td><a href="/services/event-staffing">Event Staffing</a></td><td>$25-$55/hr</td><td>Festivals, conferences, corporate events</td></tr>
-      <tr><td><a href="/services/product-sampling">Product Sampling</a></td><td>$25-$45/hr</td><td>In-store demos, event sampling, direct-to-consumer</td></tr>
-      <tr><td><a href="/services/flyer-distribution">Flyer Distribution</a></td><td>$25-$35/hr</td><td>Local promotion, door-to-door, hand-to-hand</td></tr>
-      <tr><td><a href="/services/guerrilla-marketing">Guerrilla Marketing</a></td><td>$2,000/day</td><td>Viral activations, installations, flash mobs</td></tr>
-      <tr><td><a href="/services/experiential-marketing">Experiential Marketing</a></td><td>$5,000/activation</td><td>Pop-ups, mobile tours, immersive experiences</td></tr>
-      <tr><td><a href="/services/promotional-staffing">Promotional Staffing</a></td><td>$25-$65/hr</td><td>Models, demo specialists, field marketers</td></tr>
+      <tr><td><a href="/services/street-teams">Street Team Marketing</a></td><td>Flyer distribution, brand awareness, event perimeters</td></tr>
+      <tr><td><a href="/services/brand-ambassadors">Brand Ambassadors</a></td><td>Trade shows, retail demos, product launches</td></tr>
+      <tr><td><a href="/services/event-staffing">Event Staffing</a></td><td>Festivals, conferences, corporate events</td></tr>
+      <tr><td><a href="/services/product-sampling">Product Sampling</a></td><td>In-store demos, event sampling, direct-to-consumer</td></tr>
+      <tr><td><a href="/services/flyer-distribution">Flyer Distribution</a></td><td>Local promotion, door-to-door, hand-to-hand</td></tr>
+      <tr><td><a href="/services/guerrilla-marketing">Guerrilla Marketing</a></td><td>Viral activations, installations, flash mobs</td></tr>
+      <tr><td><a href="/services/experiential-marketing">Experiential Marketing</a></td><td>Pop-ups, mobile tours, immersive experiences</td></tr>
+      <tr><td><a href="/services/promotional-staffing">Promotional Staffing</a></td><td>Models, demo specialists, field marketers</td></tr>
     </tbody>
   </table>
-  <p><a href="/pricing">View full pricing details and campaign packages &rarr;</a></p>
+  <p><a href="/contact">Request a custom quote for your campaign &rarr;</a></p>
 
   <h2>Specialized Services</h2>
   <p>Beyond our core services, we offer specialized staffing and marketing solutions for specific industries, events, and campaign types:</p>
@@ -314,7 +313,7 @@ ${serviceCardsHtml}
     <div class="included-item"><span class="check">&#10003;</span><p><strong>Nationwide coverage</strong> in all 50 states and 1,000+ cities</p></div>
     <div class="included-item"><span class="check">&#10003;</span><p><strong>Vetted, trained staff</strong> with background checks and performance ratings</p></div>
     <div class="included-item"><span class="check">&#10003;</span><p><strong>Real-time tracking</strong> with GPS, timestamped photos, and live dashboards</p></div>
-    <div class="included-item"><span class="check">&#10003;</span><p><strong>Transparent pricing</strong> starting at $25/hr with no hidden fees</p></div>
+    <div class="included-item"><span class="check">&#10003;</span><p><strong>Transparent, custom pricing</strong> with no hidden fees</p></div>
     <div class="included-item"><span class="check">&#10003;</span><p><strong>48-hour rush deployment</strong> available in major markets</p></div>
     <div class="included-item"><span class="check">&#10003;</span><p><strong>Dedicated account managers</strong> assigned to every campaign</p></div>
     <div class="included-item"><span class="check">&#10003;</span><p><strong>Post-campaign analytics</strong> with ROI tracking and engagement data</p></div>
@@ -358,7 +357,7 @@ ${internalLinksBlock('Explore More', [
 
   return wrapPage({
     title: 'Street Team Marketing Services | Brand Ambassadors & Event Staffing | Street Teams Co',
-    description: 'Street team marketing services in 1,000+ cities. Brand ambassadors from $25/hr, event staffing, product sampling, guerrilla marketing. 94% client retention. Get a free quote today.',
+    description: 'Street team marketing services in 1,000+ cities. Brand ambassadors, event staffing, product sampling, guerrilla marketing. 94% client retention. Get a free quote today.',
     canonical,
     schemas,
     body,

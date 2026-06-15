@@ -5,7 +5,7 @@ import Layout from '../../components/Layout';
 export default function BrandAmbassadorsService() {
   useMetaTags({
     title: 'Brand Ambassador Services | Professional Event & Promotional Staff | Street Teams Co',
-    description: 'Hire professional brand ambassadors nationwide. Trained promotional staff for events, trade shows, product launches, and in-store demos. From $25/hr in 1,000+ cities.',
+    description: 'Hire professional brand ambassadors nationwide. Trained promotional staff for events, trade shows, product launches, and in-store demos. Available in 1,000+ cities.',
     canonical: 'https://streetteamsco.com/services/brand-ambassadors',
     ogImage: 'https://streetteamsco.com/images/og-image.jpg',
     schema: {
@@ -86,9 +86,9 @@ export default function BrandAmbassadorsService() {
 
           <h3>Brand Ambassador Rates</h3>
           <p>
-            Brand ambassador rates start at $25/hour for standard promotional staff and range up to $75+/hour
-            for specialized roles (bilingual, technical product knowledge, licensed bartenders).
-            <Link to="/pricing"> View our complete pricing guide</Link> for detailed rate cards by campaign type.
+            Brand ambassador rates vary by role, market, and campaign requirements. Specialized
+            roles (bilingual, technical product knowledge, licensed bartenders) are priced accordingly.
+            <Link to="/contact"> Request a custom quote</Link> for detailed rates by campaign type.
           </p>
 
           <h3>Frequently Asked Questions</h3>

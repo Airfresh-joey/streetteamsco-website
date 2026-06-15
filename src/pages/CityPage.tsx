@@ -13,10 +13,10 @@ export default function CityPage() {
 
   useMetaTags({
     title: result
-      ? `Street Teams ${result.city.name}, ${result.state.abbreviation} | Brand Ambassadors from $25/hr | Free Quote`
+      ? `Street Teams ${result.city.name}, ${result.state.abbreviation} | Brand Ambassadors & Event Staffing | Free Quote`
       : 'Location Not Found | Street Teams Co',
     description: result
-      ? `Street team marketing in ${result.city.name}, ${result.state.abbreviation}. Brand ambassadors, event staffing & product sampling from $25/hr. 94% client retention, 500+ campaigns. Get a free quote today.`
+      ? `Street team marketing in ${result.city.name}, ${result.state.abbreviation}. Brand ambassadors, event staffing & product sampling, with custom campaign pricing. 94% client retention, 500+ campaigns. Get a free quote today.`
       : 'Location not found.',
     canonical: canonicalUrl,
     ogImage: 'https://streetteamsco.com/images/og-image.jpg',
@@ -67,7 +67,7 @@ export default function CityPage() {
             'name': `How much does a street team cost in ${result.city.name}?`,
             'acceptedAnswer': {
               '@type': 'Answer',
-              'text': `Street team costs in ${result.city.name} typically range from $25-$75 per hour per brand ambassador, depending on campaign requirements and team size. Contact us for a custom quote for your ${result.city.name} campaign.`,
+              'text': `Street team costs in ${result.city.name} depend on campaign requirements, team size, and duration. Contact us for a custom quote for your ${result.city.name} campaign.`,
             },
           },
           {
@@ -150,7 +150,7 @@ export default function CityPage() {
               <div className="faq-list">
                 <details>
                   <summary>How much does a street team cost in {city.name}?</summary>
-                  <p>Street team costs in {city.name} typically range from $25-$75 per hour per brand ambassador, depending on campaign requirements and team size. Contact us for a custom quote for your {city.name} campaign.</p>
+                  <p>Street team costs in {city.name} depend on campaign requirements, team size, and duration. Contact us for a custom quote for your {city.name} campaign.</p>
                 </details>
                 <details>
                   <summary>How quickly can you deploy a street team in {city.name}?</summary>

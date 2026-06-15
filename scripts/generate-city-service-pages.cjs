@@ -40,9 +40,6 @@ const services = [
     name: 'Brand Ambassadors',
     shortName: 'Brand Ambassador',
     description: 'Professional brand ambassador staffing',
-    priceRange: '$25-$45/hr',
-    priceLow: '25',
-    priceHigh: '45',
     servicePageUrl: '/services/brand-ambassadors',
     included: [
       'Trained, vetted brand ambassadors matched to your brand',
@@ -58,9 +55,6 @@ const services = [
     name: 'Event Staffing',
     shortName: 'Event Staff',
     description: 'Professional event staffing services',
-    priceRange: '$25-$55/hr',
-    priceLow: '25',
-    priceHigh: '55',
     servicePageUrl: '/services/event-staffing',
     included: [
       'Experienced event professionals for any venue type',
@@ -76,9 +70,6 @@ const services = [
     name: 'Street Teams',
     shortName: 'Street Team',
     description: 'High-impact street team activations',
-    priceRange: '$25-$50/hr',
-    priceLow: '25',
-    priceHigh: '50',
     servicePageUrl: '/services/street-teams',
     included: [
       'Trained street team members deployed to high-traffic locations',
@@ -94,9 +85,6 @@ const services = [
     name: 'Product Sampling',
     shortName: 'Product Sampling',
     description: 'Direct-to-consumer product sampling campaigns',
-    priceRange: '$25-$45/hr',
-    priceLow: '25',
-    priceHigh: '45',
     servicePageUrl: '/services/product-sampling',
     included: [
       'Professional sampling staff trained on your product',
@@ -112,9 +100,6 @@ const services = [
     name: 'Guerrilla Marketing',
     shortName: 'Guerrilla Marketing',
     description: 'Unconventional guerrilla marketing campaigns',
-    priceRange: '$2,000-$10,000+/day',
-    priceLow: '2000',
-    priceHigh: '10000',
     servicePageUrl: '/services/guerrilla-marketing',
     included: [
       'Creative concept development tailored to your brand',
@@ -138,27 +123,27 @@ function generateFaqs(city, service) {
 
   const faqSets = {
     'brand-ambassadors': [
-      { q: `How much do brand ambassadors cost in ${c}, ${abbr}?`, a: `Brand ambassador rates in ${c} range from $25-$45 per hour depending on experience level and campaign requirements. Senior brand ambassadors with specialized skills run $35-$55/hr. Most campaigns have a 4-hour minimum per ambassador per shift. Contact us for a custom quote for your ${c} brand ambassador campaign.` },
+      { q: `How much do brand ambassadors cost in ${c}, ${abbr}?`, a: `Brand ambassador rates in ${c} depend on experience level, campaign requirements, and team size. Most campaigns have a 4-hour minimum per ambassador per shift. Contact us for a custom quote for your ${c} brand ambassador campaign.` },
       { q: `How quickly can you deploy brand ambassadors in ${c}?`, a: `We can deploy professional brand ambassadors in ${c} within 5-7 business days for standard campaigns. Rush deployment is available in as little as 48 hours for urgent ${c} activations. For major events and trade shows, we recommend booking 2-4 weeks in advance for optimal ambassador selection.` },
       { q: `What training do your ${c} brand ambassadors receive?`, a: `Every brand ambassador deployed in ${c} completes custom training specific to your brand, including product knowledge, messaging guidelines, target audience profiles, and engagement techniques. Training includes written materials, video content, and knowledge assessments before deployment. On-site team leads provide real-time coaching during campaigns.` },
     ],
     'event-staffing': [
-      { q: `How much does event staffing cost in ${c}, ${abbr}?`, a: `Event staffing rates in ${c} range from $25-$55 per hour depending on the role and experience level. Standard event staff start at $25-$40/hr, senior event coordinators run $40-$55/hr, and team leads command $50-$75/hr. All pricing includes staff sourcing, vetting, and basic campaign management.` },
+      { q: `How much does event staffing cost in ${c}, ${abbr}?`, a: `Event staffing rates in ${c} depend on the role, experience level, and team size — from standard event staff to senior coordinators and team leads. All quotes include staff sourcing, vetting, and basic campaign management. Contact us for custom ${c} pricing.` },
       { q: `What types of events do you staff in ${c}?`, a: `We staff all event types in ${c} including corporate conferences, trade shows, festivals, concerts, sporting events, product launches, grand openings, galas, private parties, and pop-up activations. Our ${c} event staff are experienced in registration management, guest services, crowd control, VIP hosting, and brand activations.` },
       { q: `How far in advance should I book event staff in ${c}?`, a: `For optimal staffing in ${c}, book 2-3 weeks before your event. Rush staffing is available with 48-72 hours notice for most event types. Major ${c} events, holiday seasons, and convention periods should be booked 4-6 weeks in advance due to high demand across the ${c} metro area.` },
     ],
     'street-teams': [
-      { q: `How much does a street team cost in ${c}, ${abbr}?`, a: `Street team costs in ${c} range from $25-$50 per hour per team member depending on campaign requirements and team size. Standard street team members start at $25-$38/hr, and team leads run $50-$70/hr. Most campaigns achieve 500-1,500 face-to-face interactions per team per day in ${c}.` },
+      { q: `How much does a street team cost in ${c}, ${abbr}?`, a: `Street team costs in ${c} depend on campaign requirements, team size, and duration. Most campaigns achieve 500-1,500 face-to-face interactions per team per day in ${c}. Contact us for a custom ${c} quote.` },
       { q: `Where do your street teams deploy in ${c}?`, a: `Our ${c} street teams deploy to high-traffic locations including ${city.neighborhoods[0]}, ${city.neighborhoods[1]}, ${city.neighborhoods[2]}, and areas around ${city.landmarks[0]} and ${city.landmarks[1]}. We scout locations based on your target demographic and campaign objectives to maximize engagement rates.` },
       { q: `Do you handle permits for street team campaigns in ${c}?`, a: `Yes. Our ${c} operations team handles all permitting requirements for street team activations including public space usage permits, distribution permits, and any venue-specific requirements. Permit costs are itemized separately in your campaign quote so there are no surprises.` },
     ],
     'product-sampling': [
-      { q: `How much does product sampling cost in ${c}, ${abbr}?`, a: `Product sampling staff in ${c} cost $25-$45 per hour depending on experience and campaign complexity. This includes trained sampling staff, GPS tracking, and reporting. Additional costs may include cold-chain logistics, permits, and materials management. We achieve a 35% average trial-to-purchase conversion rate in ${c}.` },
+      { q: `How much does product sampling cost in ${c}, ${abbr}?`, a: `Product sampling costs in ${c} depend on team size, experience, and campaign complexity. Quotes include trained sampling staff, GPS tracking, and reporting; additional costs may include cold-chain logistics, permits, and materials management. We achieve a 35% average trial-to-purchase conversion rate in ${c}.` },
       { q: `What types of product sampling do you do in ${c}?`, a: `We run product sampling campaigns in ${c} at grocery stores, big-box retailers, gyms, office buildings, transit hubs, festivals, farmers markets, and outdoor events. Our ${c} sampling teams handle food and beverage sampling, beauty product demos, supplement sampling, and technology product trials.` },
       { q: `Do you handle food safety compliance for sampling in ${c}?`, a: `Yes. Our ${c} sampling teams are trained on food safety protocols, health code compliance, and proper handling procedures. We coordinate with local health departments for required permits, maintain cold-chain logistics for temperature-sensitive products, and ensure all ${c} sampling campaigns meet regulatory requirements.` },
     ],
     'guerrilla-marketing': [
-      { q: `How much does guerrilla marketing cost in ${c}, ${abbr}?`, a: `Guerrilla marketing campaigns in ${c} typically range from $2,000 for a wild posting campaign to $50,000+ for multi-day immersive experiences. Street installations run $3,000-$8,000, flash mobs cost $5,000-$15,000, and projection mapping starts at $5,000. All campaigns include creative development, permitting, and documentation.` },
+      { q: `How much does guerrilla marketing cost in ${c}, ${abbr}?`, a: `Guerrilla marketing campaigns in ${c} are custom-priced based on creative complexity and scale, from wild posting campaigns to multi-day immersive experiences. All campaigns include creative development, permitting, and documentation. Contact us for a custom ${c} quote.` },
       { q: `What guerrilla marketing tactics work best in ${c}?`, a: `The most effective guerrilla marketing tactics in ${c} include street installations near ${city.landmarks[0]}, wild posting in ${city.neighborhoods[0]} and ${city.neighborhoods[1]}, flash mobs in high-traffic pedestrian zones, and pop-up experiences near ${city.landmarks[1]}. Our creative team designs campaigns specifically for the ${c} market.` },
       { q: `Do you handle permits for guerrilla marketing in ${c}?`, a: `Yes. Proper permitting is essential for guerrilla marketing campaigns in ${c}. Our operations team secures all required permits for public space usage, installations, projections, and street activations. We also carry liability insurance and coordinate with local authorities to ensure compliance with ${c} regulations.` },
     ],
@@ -247,32 +232,14 @@ function generatePricingSection(city, service) {
   if (service.slug === 'guerrilla-marketing') {
     return `
   <h2>Guerrilla Marketing Pricing in ${c}</h2>
-  <p>Guerrilla marketing campaigns in ${c} are custom-priced based on creative complexity, production requirements, duration, and permitting needs. Here are typical investment ranges for ${c} guerrilla activations:</p>
-  <table class="pricing-table">
-    <thead><tr><th>Campaign Type</th><th>Typical Investment</th><th>Includes</th></tr></thead>
-    <tbody>
-      <tr><td>Wild Posting Campaign</td><td>$2,000 - $5,000</td><td>Design, printing, posting, location scouting</td></tr>
-      <tr><td>Street Installation (1 day)</td><td>$3,000 - $8,000</td><td>Creative, fabrication, staffing, permits</td></tr>
-      <tr><td>Flash Mob Activation</td><td>$5,000 - $15,000</td><td>Choreography, performers, documentation</td></tr>
-      <tr><td>Projection Mapping (1 night)</td><td>$5,000 - $12,000</td><td>Equipment, content creation, permits</td></tr>
-      <tr><td>Multi-Day Immersive Experience</td><td>$10,000 - $50,000+</td><td>Full production, staffing, marketing</td></tr>
-    </tbody>
-  </table>
-  <p>All guerrilla marketing campaigns include creative concept development, permit coordination, professional documentation, and post-campaign reporting. <a href="/pricing">View our full pricing page</a> or <a href="/contact">request a custom quote</a> for your ${c} campaign.</p>`;
+  <p>Guerrilla marketing campaigns in ${c} are custom-priced based on creative complexity, production requirements, duration, and permitting needs. From wild posting and street installations to flash mobs, projection mapping, and multi-day immersive experiences, every ${c} activation is scoped and quoted individually.</p>
+  <p>All guerrilla marketing campaigns include creative concept development, permit coordination, professional documentation, and post-campaign reporting. <a href="/contact">Request a custom quote</a> for your ${c} campaign.</p>`;
   }
 
   return `
   <h2>${service.name} Pricing in ${c}</h2>
-  <p>${service.name} rates in ${c} start at competitive market pricing. Here is what you can expect to invest for professional ${service.name.toLowerCase()} services in the ${c} market:</p>
-  <table class="pricing-table">
-    <thead><tr><th>Staff Level</th><th>Hourly Rate</th><th>Full Day (8 hrs)</th></tr></thead>
-    <tbody>
-      <tr><td>Standard ${service.shortName}</td><td>$${service.priceLow} - $${Math.round((parseInt(service.priceLow) + parseInt(service.priceHigh)) / 2)}/hr</td><td>$${parseInt(service.priceLow) * 8} - $${Math.round((parseInt(service.priceLow) + parseInt(service.priceHigh)) / 2) * 8}</td></tr>
-      <tr><td>Senior / Specialist</td><td>$${Math.round((parseInt(service.priceLow) + parseInt(service.priceHigh)) / 2)} - $${service.priceHigh}/hr</td><td>$${Math.round((parseInt(service.priceLow) + parseInt(service.priceHigh)) / 2) * 8} - $${parseInt(service.priceHigh) * 8}</td></tr>
-      <tr><td>Team Lead / Manager</td><td>$${parseInt(service.priceHigh)} - $${parseInt(service.priceHigh) + 20}/hr</td><td>$${parseInt(service.priceHigh) * 8} - $${(parseInt(service.priceHigh) + 20) * 8}</td></tr>
-    </tbody>
-  </table>
-  <p>Pricing includes staff sourcing, vetting, training, and basic campaign reporting. Management fees (15-20%) and material costs are quoted separately. <a href="/pricing">View our full pricing page</a> or <a href="/contact">request a custom quote</a> for your ${c} campaign.</p>`;
+  <p>${service.name} rates in ${c} are custom-quoted based on team size, campaign duration, staff experience level, and market. Every ${c} ${service.name.toLowerCase()} campaign is priced to fit its specific scope and goals.</p>
+  <p>Your quote includes staff sourcing, vetting, training, and basic campaign reporting. Management fees and material costs are itemized separately so there are no surprises. <a href="/contact">Request a custom quote</a> for your ${c} campaign.</p>`;
 }
 
 // ---------------------------------------------------------------------------
@@ -289,11 +256,10 @@ function generatePage(city, service) {
   const statePageUrl = `/locations/${city.stateSlug}`;
 
   const isGuerrilla = service.slug === 'guerrilla-marketing';
-  const priceLabel = isGuerrilla ? `$${Number(service.priceLow).toLocaleString()}+/campaign` : `$${service.priceLow}/hr`;
-  const title = `${sn} in ${c}, ${abbr} | From ${priceLabel} | Street Teams Co`;
+  const title = `${sn} in ${c}, ${abbr} | Hire Local Staff | Street Teams Co`;
   const metaDesc = isGuerrilla
-    ? `Hire professional ${sn.toLowerCase()} in ${c}, ${abbr}. Creative activations from $${Number(service.priceLow).toLocaleString()}. GPS tracking, real-time reporting. 500+ campaigns nationwide. Get a free quote.`
-    : `Hire professional ${sn.toLowerCase()} in ${c}, ${abbr}. Vetted local staff from $${service.priceLow}/hr. GPS tracking, real-time reporting, 48-hr deployment. 500+ campaigns nationwide. Get a free quote.`;
+    ? `Hire professional ${sn.toLowerCase()} in ${c}, ${abbr}. Custom-quoted creative activations with GPS tracking and real-time reporting. 500+ campaigns nationwide. Get a free quote.`
+    : `Hire professional ${sn.toLowerCase()} in ${c}, ${abbr}. Vetted local staff with GPS tracking, real-time reporting, and 48-hr deployment. 500+ campaigns nationwide. Get a free quote.`;
 
   const intro = generateIntro(city, service);
   const useCases = generateUseCases(city, service);
@@ -327,7 +293,7 @@ function generatePage(city, service) {
   <link rel="canonical" href="${canonicalUrl}">
 
   <meta property="og:title" content="${sn} in ${c}, ${abbr} | Street Teams Co">
-  <meta property="og:description" content="Hire professional ${sn.toLowerCase()} in ${c}, ${abbr}. ${isGuerrilla ? 'Creative activations from $' + Number(service.priceLow).toLocaleString() : 'Vetted local staff from $' + service.priceLow + '/hr'}. Get a free quote today.">
+  <meta property="og:description" content="Hire professional ${sn.toLowerCase()} in ${c}, ${abbr}. ${isGuerrilla ? 'Custom-quoted creative activations' : 'Vetted local staff with real-time reporting'}. Get a free quote today.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="${canonicalUrl}">
   <meta property="og:site_name" content="Street Teams Co">
@@ -335,7 +301,7 @@ function generatePage(city, service) {
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="${sn} in ${c}, ${abbr} | Street Teams Co">
-  <meta name="twitter:description" content="Hire professional ${sn.toLowerCase()} in ${c}, ${abbr}. ${isGuerrilla ? 'Creative activations from $' + Number(service.priceLow).toLocaleString() : 'Vetted local staff from $' + service.priceLow + '/hr'}.">
+  <meta name="twitter:description" content="Hire professional ${sn.toLowerCase()} in ${c}, ${abbr}. ${isGuerrilla ? 'Custom-quoted creative activations' : 'Vetted local staff with real-time reporting'}.">
 
   <script type="application/ld+json">
   {
@@ -362,13 +328,7 @@ function generatePage(city, service) {
         "name": "${st}"
       }
     },
-    "url": "${canonicalUrl}",
-    "offers": {
-      "@type": "AggregateOffer",
-      "lowPrice": "${service.priceLow}",
-      "highPrice": "${service.priceHigh}",
-      "priceCurrency": "USD"${service.slug !== 'guerrilla-marketing' ? ',\n      "unitText": "per hour"' : ''}
-    }
+    "url": "${canonicalUrl}"
   }
   </script>
 
@@ -377,7 +337,7 @@ function generatePage(city, service) {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "Street Teams Co - ${c}",
-    "description": "${service.description} in ${c}, ${st}. Professional ${sn.toLowerCase()} from ${priceLabel}.",
+    "description": "${service.description} in ${c}, ${st}. Professional ${sn.toLowerCase()} with custom campaign pricing.",
     "url": "${canonicalUrl}",
     "telephone": "+1-800-STREETS",
     "address": {
@@ -389,8 +349,7 @@ function generatePage(city, service) {
     "areaServed": {
       "@type": "City",
       "name": "${c}"
-    },
-    "priceRange": "$${service.priceLow} - $${service.priceHigh}"
+    }
   }
   </script>
 
@@ -505,14 +464,14 @@ ${faqs.map(f => `      {"@type": "Question", "name": "${f.q.replace(/"/g, '\\"')
       <a href="/">Home</a> / <a href="/locations">Locations</a> / <a href="${statePageUrl}">${st}</a> / <a href="${cityPageUrl}">${c}</a> / <span>${sn}</span>
     </nav>
     <h1>${sn} in ${c}, ${abbr}</h1>
-    <p>${service.description} in ${c}, ${st}. Vetted local staff, real-time GPS tracking, and comprehensive reporting. Starting from ${priceLabel}.</p>
+    <p>${service.description} in ${c}, ${st}. Vetted local staff, real-time GPS tracking, and comprehensive reporting. Custom-quoted for your campaign.</p>
   </div>
 </section>
 
 <div class="content">
 
   <div class="stats-bar">
-    <div class="stat-box"><div class="number">${isGuerrilla ? '$' + Number(service.priceLow).toLocaleString() + '+' : '$' + service.priceLow}</div><div class="label">${isGuerrilla ? 'Starting Per Campaign' : 'Starting Per Hour'}</div></div>
+    <div class="stat-box"><div class="number">Free</div><div class="label">Custom Quotes</div></div>
     <div class="stat-box"><div class="number">48hr</div><div class="label">Rush Deployment</div></div>
     <div class="stat-box"><div class="number">94%</div><div class="label">Client Retention</div></div>
     <div class="stat-box"><div class="number">4.9/5</div><div class="label">Client Rating</div></div>
@@ -549,7 +508,7 @@ ${pricingHtml}
   <ul>
     <li><strong>Local expertise</strong> - Our ${c} staff know ${city.neighborhoods[0]}, ${city.neighborhoods[1]}, and ${city.neighborhoods[2]} like the back of their hand</li>
     <li><strong>Fast deployment</strong> - Rush campaigns in ${c} can be live within 48 hours</li>
-    <li><strong>Transparent pricing</strong> - No hidden fees, itemized quotes, starting from ${priceLabel}</li>
+    <li><strong>Transparent pricing</strong> - No hidden fees, custom itemized quotes for your campaign</li>
     <li><strong>Real-time tracking</strong> - GPS tracking, timestamped photos, and live dashboards for every ${c} campaign</li>
     <li><strong>Proven results</strong> - 4.9/5 client rating with 127+ verified reviews</li>
   </ul>

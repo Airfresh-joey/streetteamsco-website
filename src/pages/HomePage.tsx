@@ -9,7 +9,7 @@ import { trackCTAClick, trackEmailClick } from '../analytics';
 export default function HomePage() {
   useMetaTags({
     title: 'Street Team Marketing Agency | 1,000+ Cities Nationwide | Street Teams Co',
-    description: 'Street team marketing agency with professional brand ambassadors in 1,000+ US cities. 500+ campaigns executed, 94% client retention. Event staffing, product sampling & guerrilla marketing from $25/hr.',
+    description: 'Street team marketing agency with professional brand ambassadors in 1,000+ US cities. 500+ campaigns executed, 94% client retention. Event staffing, product sampling & guerrilla marketing nationwide.',
     canonical: 'https://streetteamsco.com',
     ogImage: 'https://streetteamsco.com/images/og-image.jpg',
     schema: [
@@ -22,7 +22,6 @@ export default function HomePage() {
         'description': 'Street Teams Co is a nationwide street team marketing and brand ambassador agency operating in over 1,000 US cities.',
         'foundingDate': '2020',
         'areaServed': 'United States',
-        'priceRange': '$25-$75/hr',
         'contactPoint': {
           '@type': 'ContactPoint',
           'email': 'hello@streetteamsco.com',

@@ -5,7 +5,7 @@ import Layout from '../../components/Layout';
 export default function EventStaffingService() {
   useMetaTags({
     title: 'Event Staffing Services | Trade Shows, Festivals & Conferences | Street Teams Co',
-    description: 'Professional event staffing for trade shows, conferences, festivals, and corporate events. Experienced staff from $25/hr in 1,000+ US cities. Get a free quote.',
+    description: 'Professional event staffing for trade shows, conferences, festivals, and corporate events. Experienced staff in 1,000+ US cities. Get a free quote.',
     canonical: 'https://streetteamsco.com/services/event-staffing',
     ogImage: 'https://streetteamsco.com/images/og-image.jpg',
     schema: {
@@ -72,20 +72,20 @@ export default function EventStaffingService() {
 
           <h3>Staff Roles Available</h3>
           <ul className="service-list">
-            <li><strong>Brand Ambassadors</strong> — Engaging, on-brand promotional staff ($25-$45/hr)</li>
-            <li><strong>Product Demonstrators</strong> — Trained on your product for live demos ($35-$55/hr)</li>
-            <li><strong>Booth Staff</strong> — Trade show professionals who drive traffic and qualify leads ($30-$50/hr)</li>
-            <li><strong>Hosts & Greeters</strong> — Professional first impressions for registration, check-in, VIP areas ($25-$40/hr)</li>
-            <li><strong>Promotional Models</strong> — Photo-ready talent for brand visibility and consumer engagement ($40-$75/hr)</li>
-            <li><strong>Bilingual Staff</strong> — Spanish, Mandarin, and other languages available ($35-$60/hr)</li>
-            <li><strong>Licensed Bartenders</strong> — Certified bartenders for events with alcohol service ($40-$65/hr)</li>
+            <li><strong>Brand Ambassadors</strong> — Engaging, on-brand promotional staff</li>
+            <li><strong>Product Demonstrators</strong> — Trained on your product for live demos</li>
+            <li><strong>Booth Staff</strong> — Trade show professionals who drive traffic and qualify leads</li>
+            <li><strong>Hosts & Greeters</strong> — Professional first impressions for registration, check-in, VIP areas</li>
+            <li><strong>Promotional Models</strong> — Photo-ready talent for brand visibility and consumer engagement</li>
+            <li><strong>Bilingual Staff</strong> — Spanish, Mandarin, and other languages available</li>
+            <li><strong>Licensed Bartenders</strong> — Certified bartenders for events with alcohol service</li>
           </ul>
 
           <h3>Frequently Asked Questions</h3>
           <div className="faq-list">
             <details>
               <summary>How much does event staffing cost?</summary>
-              <p>Event staffing rates range from $25-$75 per hour depending on the role, location, and event requirements. Most clients spend between $2,000-$15,000 per event. <Link to="/pricing">See our complete pricing guide</Link>.</p>
+              <p>Event staffing rates depend on the role, location, and event requirements. <Link to="/contact">Request a custom quote</Link> for your event.</p>
             </details>
             <details>
               <summary>What's the minimum booking?</summary>
