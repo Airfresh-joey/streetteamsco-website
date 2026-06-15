@@ -95,9 +95,9 @@ export default function HomePage() {
               </a>
               <button
                 className="ds-btn ds-btn-ghost"
-                onClick={() => { trackCTAClick('VIEW PRICING', 'homepage'); navigate('/pricing'); }}
+                onClick={() => { trackCTAClick('SEE OUR WORK', 'homepage'); navigate('/portfolio'); }}
               >
-                View pricing
+                See our work
               </button>
             </div>
           </div>
@@ -357,7 +357,6 @@ export default function HomePage() {
                 <li><a href="/trade-show-staffing-agency">Trade Show Staffing Agency</a></li>
                 <li><a href="/how-it-works">How It Works</a></li>
                 <li><a href="/case-studies/">Case Studies &amp; Results</a></li>
-                <li><Link to="/pricing">Pricing &amp; Rate Cards</Link></li>
                 <li><a href="/blog/">Street Marketing Blog</a></li>
               </ul>
             </div>

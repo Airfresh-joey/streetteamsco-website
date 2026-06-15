@@ -1,5 +1,5 @@
 import { useState, useEffect, lazy, Suspense } from 'react';
-import { BrowserRouter, Routes, Route, Link, useLocation } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Link, useLocation, Navigate } from 'react-router-dom';
 import './App.css';
 
 // Lazy-loaded page components for code splitting
@@ -12,7 +12,6 @@ const ServicesIndex = lazy(() => import('./pages/ServicesIndex'));
 const ServicePage = lazy(() => import('./pages/ServicePage'));
 const IndustriesIndex = lazy(() => import('./pages/IndustriesIndex'));
 const IndustryPage = lazy(() => import('./pages/IndustryPage'));
-const Pricing = lazy(() => import('./pages/Pricing'));
 const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy'));
 const TermsOfService = lazy(() => import('./pages/TermsOfService'));
 const OurTeam = lazy(() => import('./pages/OurTeam'));
@@ -57,7 +56,6 @@ function AppLayout() {
           </button>
           <div className={`nav-links ${menuOpen ? 'nav-open' : ''}`}>
             <Link to="/services">Services</Link>
-            <Link to="/pricing">Pricing</Link>
             <a href="/playbook" style={{color: '#f59e0b', fontWeight: 600}}>Free Playbook</a>
             <a href="/portfolio">Portfolio</a>
             <a href="/case-studies/">Case Studies</a>
@@ -79,7 +77,7 @@ function AppLayout() {
           <Route path="/services/:service" element={<ServicePage />} />
           <Route path="/industries" element={<IndustriesIndex />} />
           <Route path="/industries/:industry" element={<IndustryPage />} />
-          <Route path="/pricing" element={<Pricing />} />
+          <Route path="/pricing" element={<Navigate to="/contact" replace />} />
           <Route path="/privacy" element={<PrivacyPolicy />} />
           <Route path="/terms" element={<TermsOfService />} />
           <Route path="/our-team" element={<OurTeam />} />
@@ -112,8 +110,7 @@ function AppLayout() {
             </div>
             <div className="footer-section">
               <h3>Company</h3>
-              <Link to="/pricing">Pricing</Link>
-              <a href="/how-it-works">How It Works</a>
+                <a href="/how-it-works">How It Works</a>
               <a href="/about-street-teams-co">About Us</a>
               <Link to="/testimonials">Testimonials</Link>
               <a href="/case-studies/">Case Studies</a>

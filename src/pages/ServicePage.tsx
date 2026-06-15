@@ -263,7 +263,7 @@ export default function ServicePage() {
                   ))}
                 </ul>
                 <p style={{ marginTop: '1rem' }}>
-                  <Link to="/pricing">View our pricing</Link> | <Link to="/testimonials">See client results</Link>
+                  <Link to="/testimonials">See client results</Link>
                 </p>
               </div>
             )}
@@ -271,9 +271,6 @@ export default function ServicePage() {
             <div className="city-cta">
               <h3>Ready to Get Started with {service.name}?</h3>
               <p>Contact Street Teams Co today for a custom campaign proposal.</p>
-              <Link to="/pricing" className="btn btn-secondary" style={{ marginRight: '1rem' }}>
-                View Pricing
-              </Link>
               <Link to="/contact" className="btn btn-primary btn-lg">
                 Get a Free Quote
               </Link>

@@ -1,4 +1,7 @@
 {
+  "redirects": [
+    { "source": "/pricing", "destination": "/contact", "permanent": true }
+  ],
   "rewrites": [
     {
       "source": "/street-team-marketing-las-vegas",

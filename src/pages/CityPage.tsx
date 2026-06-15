@@ -168,9 +168,6 @@ export default function CityPage() {
               <p>
                 Contact us today to discuss how Street Teams Co can amplify your brand in {city.name}, {state.name}.
               </p>
-              <Link to="/pricing" className="btn btn-secondary" style={{ marginRight: '1rem' }}>
-                View Pricing
-              </Link>
               <Link to="/contact" className="btn btn-primary btn-lg">
                 Get a Quote for {city.name}
               </Link>
