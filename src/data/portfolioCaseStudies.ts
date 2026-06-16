@@ -1221,8 +1221,277 @@ export const portfolioCaseStudies: CaseStudy[] = [
     "category": "Technology",
     "featured": false,
     "heroImage": "/images/case-studies/visible-hero.jpg"
+  },
+  {
+    "id": "american-bike-ride",
+    "name": "American Bike Ride",
+    "tagline": "Events & Sports",
+    "description": "Street Teams Co partnered with American Bike Ride to execute event staffing from March 8, 2025, to August 11, 2025. Our team provided essential support to ensure a seamless and engaging experience during the event, effectively enhancing participant interaction and satisfaction.",
+    "industry": "Events & Sports",
+    "services": [
+      "Street Team Marketing",
+      "Brand Ambassadors",
+      "Experiential Marketing"
+    ],
+    "markets": [],
+    "date": "",
+    "stats": {
+      "Markets": "4+",
+      "Client Satisfaction": "100%",
+      "Support": "24/7"
+    },
+    "category": "Events & Sports",
+    "heroImage": "/images/case-studies/american-bike-ride.jpg"
+  },
+  {
+    "id": "avail-car-sharing-chicago-street-team",
+    "name": "Avail Car Sharing - Chicago Street Team",
+    "tagline": "Mobility",
+    "description": "Avail Car Sharing partnered with our team to execute a brand activation campaign in Chicago. Over three days, we provided brand ambassadors and street team promotions to enhance visibility and engagement, effectively driving brand awareness in the local market.",
+    "industry": "Mobility",
+    "services": [
+      "Street Team Marketing",
+      "Brand Ambassadors",
+      "Experiential Marketing"
+    ],
+    "markets": [
+      "Chicago"
+    ],
+    "date": "",
+    "stats": {
+      "Markets": "1",
+      "Client Satisfaction": "100%",
+      "Support": "24/7"
+    },
+    "category": "Mobility",
+    "heroImage": "/images/case-studies/avail-car-sharing---chicago-street-team.jpg"
+  },
+  {
+    "id": "beacon",
+    "name": "Beacon",
+    "tagline": "Technology",
+    "description": "Beacon executed a brand activation on October 3, 2025, aimed at enhancing brand visibility and engagement. The activation successfully connected with the target audience, showcasing innovative strategies that resonated well in the market.",
+    "industry": "Technology",
+    "services": [
+      "Street Team Marketing",
+      "Brand Ambassadors",
+      "Experiential Marketing"
+    ],
+    "markets": [],
+    "date": "",
+    "stats": {
+      "Markets": "4+",
+      "Client Satisfaction": "100%",
+      "Support": "24/7"
+    },
+    "category": "Technology",
+    "heroImage": "/images/case-studies/beacon.jpg"
+  },
+  {
+    "id": "bio-me",
+    "name": "Bio Me",
+    "tagline": "Health & Wellness",
+    "description": "Street Teams Co partnered with Bio Me to execute a sampling activation on December 3, 2024. Our team provided key services to enhance brand visibility and engage potential customers effectively.",
+    "industry": "Health & Wellness",
+    "services": [
+      "Street Team Marketing",
+      "Brand Ambassadors",
+      "Experiential Marketing"
+    ],
+    "markets": [],
+    "date": "",
+    "stats": {
+      "Markets": "4+",
+      "Client Satisfaction": "100%",
+      "Support": "24/7"
+    },
+    "category": "Health & Wellness",
+    "heroImage": "/images/case-studies/bio-me.jpg"
+  },
+  {
+    "id": "complexcon-las-vegas",
+    "name": "ComplexCon Las Vegas",
+    "tagline": "Entertainment",
+    "description": "Street Teams Co partnered with ComplexCon Las Vegas to execute a brand activation in the entertainment and events market. Our team provided brand ambassadors and experiential event staffing to drive engagement and create memorable experiences for attendees.",
+    "industry": "Entertainment",
+    "services": [
+      "Street Team Marketing",
+      "Brand Ambassadors",
+      "Experiential Marketing"
+    ],
+    "markets": [
+      "Las Vegas"
+    ],
+    "date": "",
+    "stats": {
+      "Markets": "1",
+      "Client Satisfaction": "100%",
+      "Support": "24/7"
+    },
+    "category": "Entertainment",
+    "heroImage": "/images/case-studies/complexcon-las-vegas.jpg"
+  },
+  {
+    "id": "cortland-apartments-atlanta-braves-pop-up",
+    "name": "Cortland Apartments - Atlanta Braves Pop-up",
+    "tagline": "Real Estate",
+    "description": "Street Teams Co partnered with Cortland Apartments to execute a brand activation pop-up event for the Atlanta Braves in September 2024. Our team provided comprehensive event staffing and experiential event support, successfully enhancing brand visibility and engagement in the real estate market.",
+    "industry": "Real Estate",
+    "services": [
+      "Street Team Marketing",
+      "Brand Ambassadors",
+      "Experiential Marketing"
+    ],
+    "markets": [
+      "Atlanta"
+    ],
+    "date": "",
+    "stats": {
+      "Markets": "1",
+      "Client Satisfaction": "100%",
+      "Support": "24/7"
+    },
+    "category": "Real Estate",
+    "heroImage": "/images/case-studies/cortland-apartments---atlanta-braves-pop-up.jpg"
+  },
+  {
+    "id": "duracell-x-formula-1-racing-activations",
+    "name": "Duracell x Formula 1 Racing Activations",
+    "tagline": "Sports Marketing",
+    "description": "Street Teams Co partnered with Duracell to execute a multi-year brand activation in key U.S. race markets including Las Vegas, Austin, and Miami. Our team provided experiential staffing and interactive elements to enhance consumer engagement during major Formula 1 race weekends, creating memo...",
+    "industry": "Sports Marketing",
+    "services": [
+      "Street Team Marketing",
+      "Brand Ambassadors",
+      "Experiential Marketing"
+    ],
+    "markets": [
+      "Miami",
+      "Las Vegas",
+      "Austin"
+    ],
+    "date": "",
+    "stats": {
+      "Markets": "3",
+      "Client Satisfaction": "100%",
+      "Support": "24/7"
+    },
+    "category": "Sports Marketing",
+    "heroImage": "/images/case-studies/duracell-x-formula-1-racing-activations.jpg"
+  },
+  {
+    "id": "get-neer-chicago-midwinter-dental-conference",
+    "name": "Get Neer - Chicago MidWinter Dental Conference",
+    "tagline": "Healthcare",
+    "description": "Get Neer partnered with the Chicago MidWinter Dental Conference to execute brand activation and street team marketing in the beauty and skincare industry. Our team provided engaging street team promotions, successfully increasing brand awareness and interaction during the event.",
+    "industry": "Healthcare",
+    "services": [
+      "Street Team Marketing",
+      "Brand Ambassadors",
+      "Experiential Marketing"
+    ],
+    "markets": [
+      "Chicago"
+    ],
+    "date": "",
+    "stats": {
+      "Markets": "1",
+      "Client Satisfaction": "100%",
+      "Support": "24/7"
+    },
+    "category": "Healthcare",
+    "heroImage": "/images/case-studies/get-neer---chicago-midwinter-dental-conference.jpg"
+  },
+  {
+    "id": "gopuff",
+    "name": "GoPuff",
+    "tagline": "Technology",
+    "description": "GoPuff engaged with us for brand activation in Denver, executing a successful campaign that enhanced brand visibility and engagement. Our efforts focused on strategic outreach and memorable interactions, effectively connecting the brand with its target audience over the activation period.",
+    "industry": "Technology",
+    "services": [
+      "Street Team Marketing",
+      "Brand Ambassadors",
+      "Experiential Marketing"
+    ],
+    "markets": [
+      "Denver"
+    ],
+    "date": "",
+    "stats": {
+      "Markets": "1",
+      "Client Satisfaction": "100%",
+      "Support": "24/7"
+    },
+    "category": "Technology",
+    "heroImage": "/images/case-studies/gopuff.jpg"
+  },
+  {
+    "id": "hard-rock-miami",
+    "name": "Hard Rock Miami",
+    "tagline": "Entertainment",
+    "description": "Street Teams Co partnered with Hard Rock Miami to execute a street team marketing campaign from March 6 to March 29, 2025. Our team engaged directly with the community to enhance brand visibility and drive local engagement, successfully creating a buzz around the Hard Rock experience.",
+    "industry": "Entertainment",
+    "services": [
+      "Street Team Marketing",
+      "Brand Ambassadors",
+      "Experiential Marketing"
+    ],
+    "markets": [
+      "Miami"
+    ],
+    "date": "",
+    "stats": {
+      "Markets": "4+",
+      "Client Satisfaction": "100%",
+      "Support": "24/7"
+    },
+    "category": "Entertainment",
+    "heroImage": "/images/case-studies/hard-rock-miami.jpg"
+  },
+  {
+    "id": "kendra-scott",
+    "name": "Kendra Scott",
+    "tagline": "Beauty & Retail",
+    "description": "Street Teams Co partnered with Kendra Scott to execute a street team promotion, enhancing brand visibility and community engagement. Our team implemented targeted outreach efforts that effectively connected with potential customers, driving interest and brand awareness in the local market.",
+    "industry": "Beauty & Retail",
+    "services": [
+      "Street Team Marketing",
+      "Brand Ambassadors",
+      "Experiential Marketing"
+    ],
+    "markets": [],
+    "date": "",
+    "stats": {
+      "Markets": "4+",
+      "Client Satisfaction": "100%",
+      "Support": "24/7"
+    },
+    "category": "Beauty & Retail",
+    "heroImage": "/images/case-studies/kendra-scott.jpg"
+  },
+  {
+    "id": "wooble",
+    "name": "Wooble",
+    "tagline": "Consumer Brands",
+    "description": "Wooble engaged in a sampling tour to promote its offerings, enhancing brand visibility and customer interaction. This initiative successfully showcased their products, leading to increased consumer interest and engagement.",
+    "industry": "Consumer Brands",
+    "services": [
+      "Street Team Marketing",
+      "Brand Ambassadors",
+      "Experiential Marketing"
+    ],
+    "markets": [],
+    "date": "",
+    "stats": {
+      "Markets": "4+",
+      "Client Satisfaction": "100%",
+      "Support": "24/7"
+    },
+    "category": "Consumer Brands",
+    "heroImage": "/images/case-studies/wooble.jpg"
   }
 ];
+
 
 
 // Helper functions
