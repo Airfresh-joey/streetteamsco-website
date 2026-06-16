@@ -69,6 +69,36 @@
       "source": "/case-studies/trade-show-lead-generation",
       "destination": "/case-studies/",
       "permanent": true
+    },
+    {
+      "source": "/case-studies/guerrilla-nyc-campaign",
+      "destination": "/case-studies/",
+      "permanent": true
+    },
+    {
+      "source": "/case-studies/led-truck-vegas-strip",
+      "destination": "/case-studies/",
+      "permanent": true
+    },
+    {
+      "source": "/case-studies/festival-street-teams",
+      "destination": "/case-studies/",
+      "permanent": true
+    },
+    {
+      "source": "/case-studies/product-launch-street-activation",
+      "destination": "/case-studies/",
+      "permanent": true
+    },
+    {
+      "source": "/case-studies/urban-ambassador-program",
+      "destination": "/case-studies/",
+      "permanent": true
+    },
+    {
+      "source": "/case-studies/street-sampling-health-wellness",
+      "destination": "/case-studies/",
+      "permanent": true
     }
   ],
   "rewrites": [
