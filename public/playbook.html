@@ -63,62 +63,62 @@
 
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #1a1a2e; background: #fafafa; }
-    header { background: #1a1a2e; padding: 1rem 0; position: sticky; top: 0; z-index: 100; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #121110; background: #F7F5EF; }
+    header { background: #121110; padding: 1rem 0; position: sticky; top: 0; z-index: 100; }
     .header-inner { max-width: 1200px; margin: 0 auto; padding: 0 2rem; display: flex; justify-content: space-between; align-items: center; }
     .logo { color: #fff; font-weight: 800; font-size: 1.2rem; text-decoration: none; letter-spacing: 1px; }
     .nav-links a { color: rgba(255,255,255,0.8); text-decoration: none; margin-left: 1.5rem; font-size: 0.9rem; }
     .nav-links a:hover { color: #fff; }
-    .hero { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); color: #fff; padding: 4rem 2rem 5rem; }
+    .hero { background: linear-gradient(135deg, #121110 0%, #1c1a18 100%); color: #fff; padding: 4rem 2rem 5rem; }
     .hero-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
-    .hero-left .pill { display: inline-block; background: rgba(245,158,11,0.15); color: #f59e0b; padding: 0.35rem 0.85rem; border-radius: 100px; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 1rem; text-transform: uppercase; }
+    .hero-left .pill { display: inline-block; background: rgba(255,77,0,0.15); color: #FF4D00; padding: 0.35rem 0.85rem; border-radius: 100px; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 1rem; text-transform: uppercase; }
     .hero-left h1 { font-size: 2.6rem; line-height: 1.15; margin-bottom: 1rem; font-weight: 800; }
-    .hero-left h1 span { color: #f59e0b; }
+    .hero-left h1 span { color: #FF4D00; }
     .hero-left .subhead { font-size: 1.15rem; opacity: 0.9; margin-bottom: 1.75rem; }
     .hero-left .benefits { list-style: none; padding: 0; margin: 1.5rem 0 0; }
     .hero-left .benefits li { padding: 0.5rem 0 0.5rem 1.75rem; position: relative; font-size: 1rem; }
-    .hero-left .benefits li::before { content: "✓"; position: absolute; left: 0; color: #f59e0b; font-weight: 800; }
-    .form-card { background: #fff; color: #1a1a2e; border-radius: 16px; padding: 2.5rem; box-shadow: 0 30px 60px rgba(0,0,0,0.25); }
+    .hero-left .benefits li::before { content: "✓"; position: absolute; left: 0; color: #FF4D00; font-weight: 800; }
+    .form-card { background: #fff; color: #121110; border-radius: 16px; padding: 2.5rem; box-shadow: 0 30px 60px rgba(0,0,0,0.25); }
     .form-card h2 { font-size: 1.4rem; margin-bottom: 0.5rem; }
     .form-card .form-subhead { font-size: 0.95rem; color: #6b7280; margin-bottom: 1.5rem; }
     .form-group { margin-bottom: 1rem; }
     .form-group label { display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.35rem; color: #374151; }
     .form-group input, .form-group select { width: 100%; padding: 0.75rem 0.9rem; border: 1.5px solid #d1d5db; border-radius: 8px; font-size: 1rem; font-family: inherit; }
-    .form-group input:focus, .form-group select:focus { outline: none; border-color: #f59e0b; box-shadow: 0 0 0 3px rgba(245,158,11,0.15); }
-    .submit-btn { width: 100%; background: #f59e0b; color: #1a1a2e; padding: 0.95rem; border: none; border-radius: 8px; font-size: 1.05rem; font-weight: 800; cursor: pointer; transition: background 0.2s; letter-spacing: 0.3px; text-transform: uppercase; }
-    .submit-btn:hover { background: #d97706; }
+    .form-group input:focus, .form-group select:focus { outline: none; border-color: #FF4D00; box-shadow: 0 0 0 3px rgba(255,77,0,0.15); }
+    .submit-btn { width: 100%; background: #FF4D00; color: #121110; padding: 0.95rem; border: none; border-radius: 8px; font-size: 1.05rem; font-weight: 800; cursor: pointer; transition: background 0.2s; letter-spacing: 0.3px; text-transform: uppercase; }
+    .submit-btn:hover { background: #E04300; }
     .submit-btn:disabled { opacity: 0.6; cursor: wait; }
     .form-disclaimer { font-size: 0.8rem; color: #6b7280; text-align: center; margin-top: 0.85rem; }
     .form-success { text-align: center; padding: 2rem 0; }
     .form-success .check { font-size: 3.5rem; color: #10b981; margin-bottom: 0.5rem; }
     .form-success h3 { font-size: 1.4rem; margin-bottom: 0.5rem; }
     .form-success p { color: #6b7280; margin-bottom: 1rem; }
-    .form-success a { display: inline-block; background: #1a1a2e; color: #fff; padding: 0.85rem 1.75rem; border-radius: 8px; text-decoration: none; font-weight: 700; }
+    .form-success a { display: inline-block; background: #121110; color: #fff; padding: 0.85rem 1.75rem; border-radius: 8px; text-decoration: none; font-weight: 700; }
     .content { max-width: 1100px; margin: 0 auto; padding: 5rem 2rem; }
     .content h2 { font-size: 2rem; margin-bottom: 2rem; font-weight: 800; text-align: center; }
     .content h2 small { display: block; font-size: 0.95rem; color: #6b7280; font-weight: 500; margin-top: 0.5rem; }
     .chapter-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-bottom: 4rem; }
     .chapter-card { background: #fff; border: 1px solid #e5e7eb; border-radius: 12px; padding: 1.5rem; }
-    .chapter-card .num { display: inline-block; background: #f59e0b; color: #1a1a2e; padding: 0.25rem 0.65rem; border-radius: 100px; font-size: 0.75rem; font-weight: 800; margin-bottom: 0.75rem; }
-    .chapter-card h3 { font-size: 1.1rem; margin-bottom: 0.5rem; color: #1a1a2e; }
+    .chapter-card .num { display: inline-block; background: #FF4D00; color: #121110; padding: 0.25rem 0.65rem; border-radius: 100px; font-size: 0.75rem; font-weight: 800; margin-bottom: 0.75rem; }
+    .chapter-card h3 { font-size: 1.1rem; margin-bottom: 0.5rem; color: #121110; }
     .chapter-card p { font-size: 0.95rem; color: #555; }
-    .stats-strip { background: #1a1a2e; color: #fff; padding: 3rem 2rem; }
+    .stats-strip { background: #121110; color: #fff; padding: 3rem 2rem; }
     .stats-strip-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; text-align: center; }
-    .stats-strip .num { font-size: 2.5rem; font-weight: 800; color: #f59e0b; line-height: 1; }
+    .stats-strip .num { font-size: 2.5rem; font-weight: 800; color: #FF4D00; line-height: 1; }
     .stats-strip .label { font-size: 0.85rem; opacity: 0.8; margin-top: 0.5rem; text-transform: uppercase; letter-spacing: 0.5px; }
-    .testimonial-strip { background: #fafafa; padding: 4rem 2rem; }
+    .testimonial-strip { background: #F7F5EF; padding: 4rem 2rem; }
     .testimonial-inner { max-width: 850px; margin: 0 auto; text-align: center; }
-    .testimonial-inner .quote { font-size: 1.4rem; line-height: 1.4; color: #1a1a2e; font-weight: 500; font-style: italic; margin-bottom: 1rem; }
+    .testimonial-inner .quote { font-size: 1.4rem; line-height: 1.4; color: #121110; font-weight: 500; font-style: italic; margin-bottom: 1rem; }
     .testimonial-inner .attrib { font-size: 0.95rem; color: #6b7280; }
     .faq-section { max-width: 850px; margin: 0 auto; padding: 4rem 2rem 5rem; }
     .faq-section h2 { font-size: 1.8rem; margin-bottom: 2rem; text-align: center; }
     .faq-item { border-bottom: 1px solid #e5e7eb; padding: 1.25rem 0; }
-    .faq-item h4 { font-size: 1.05rem; margin-bottom: 0.5rem; color: #1a1a2e; }
+    .faq-item h4 { font-size: 1.05rem; margin-bottom: 0.5rem; color: #121110; }
     .faq-item p { color: #555; font-size: 0.98rem; }
-    footer { background: #1a1a2e; color: #fff; padding: 2.5rem 2rem 1.5rem; font-size: 0.85rem; }
+    footer { background: #121110; color: #fff; padding: 2.5rem 2rem 1.5rem; font-size: 0.85rem; }
     footer .footer-inner { max-width: 1100px; margin: 0 auto; }
     footer .footer-cta { text-align: center; margin-bottom: 2rem; padding-bottom: 2rem; border-bottom: 1px solid rgba(255,255,255,0.1); }
-    footer .footer-cta a { color: #f59e0b; text-decoration: none; font-weight: 700; }
+    footer .footer-cta a { color: #FF4D00; text-decoration: none; font-weight: 700; }
     footer p { text-align: center; opacity: 0.7; }
     footer a { color: rgba(255,255,255,0.9); text-decoration: none; }
     @media (max-width: 900px) {
@@ -259,8 +259,8 @@
         <h3>Vendor Selection — Picking the Right Agency</h3>
         <p>The 8 questions to ask every street team agency. Red flags and green flags. Pricing transparency benchmarks ($25-75/hr is honest market rate).</p>
       </div>
-      <div class="chapter-card" style="background:#fef3c7; border-color:#f59e0b;">
-        <span class="num" style="background:#1a1a2e; color:#f59e0b;">BONUS</span>
+      <div class="chapter-card" style="background:#fef3c7; border-color:#FF4D00;">
+        <span class="num" style="background:#121110; color:#FF4D00;">BONUS</span>
         <h3>3 Worksheets You Can Print and Use</h3>
         <p>1-page Brief Template · 1-page Staffing Math Worksheet · 1-page Vendor Evaluation Scorecard. Built to be re-used campaign after campaign.</p>
       </div>

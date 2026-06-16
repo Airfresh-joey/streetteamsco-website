@@ -379,7 +379,7 @@ ${faqs.map(f => `      {"@type": "Question", "name": "${f.q.replace(/"/g, '\\"')
 
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif; line-height: 1.7; color: #1a1a2e; background: #fafafa; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif; line-height: 1.7; color: #121110; background: #F7F5EF; }
     header { background: #0f172a; padding: 1rem 0; position: sticky; top: 0; z-index: 100; }
     .header-inner { max-width: 1200px; margin: 0 auto; padding: 0 2rem; display: flex; justify-content: space-between; align-items: center; }
     .logo { color: #fff; font-weight: 800; font-size: 1.2rem; text-decoration: none; letter-spacing: 1px; }
@@ -398,29 +398,29 @@ ${faqs.map(f => `      {"@type": "Question", "name": "${f.q.replace(/"/g, '\\"')
     .content p { margin-bottom: 1.25rem; font-size: 1.05rem; color: #333; }
     .content ul, .content ol { margin: 1rem 0 1.5rem 1.5rem; }
     .content li { margin-bottom: 0.5rem; font-size: 1.05rem; color: #333; }
-    .content a { color: #2563eb; text-decoration: none; }
+    .content a { color: #E04300; text-decoration: none; }
     .content a:hover { text-decoration: underline; }
     .content strong { color: #0f172a; }
     .pricing-table { width: 100%; border-collapse: collapse; margin: 1.5rem 0 2rem; }
     .pricing-table th, .pricing-table td { padding: 0.75rem 1rem; text-align: left; border-bottom: 1px solid #e5e7eb; font-size: 1rem; }
     .pricing-table th { background: #0f172a; color: #fff; font-weight: 600; }
-    .pricing-table tr:hover { background: #f0f4ff; }
+    .pricing-table tr:hover { background: #FFF3EE; }
     .stats-bar { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1.5rem; margin: 2rem 0; }
     .stat-box { background: #0f172a; color: #fff; padding: 1.5rem; border-radius: 12px; text-align: center; }
-    .stat-box .number { font-size: 2rem; font-weight: 800; color: #f59e0b; }
+    .stat-box .number { font-size: 2rem; font-weight: 800; color: #FF4D00; }
     .stat-box .label { font-size: 0.85rem; opacity: 0.8; margin-top: 0.25rem; }
     .cta-section { background: linear-gradient(135deg, #0f172a, #1e293b); color: #fff; padding: 3rem; border-radius: 16px; text-align: center; margin: 3rem 0; }
     .cta-section h2 { color: #fff; margin-bottom: 1rem; }
     .cta-section p { color: rgba(255,255,255,0.9); margin-bottom: 1.5rem; max-width: 600px; margin-left: auto; margin-right: auto; }
-    .cta-btn { display: inline-block; background: #f59e0b; color: #0f172a; padding: 0.85rem 2rem; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 1rem; transition: background 0.2s; }
-    .cta-btn:hover { background: #d97706; text-decoration: none; }
-    .internal-links { background: #f0f4ff; border-radius: 12px; padding: 2rem; margin: 2rem 0; }
+    .cta-btn { display: inline-block; background: #FF4D00; color: #0f172a; padding: 0.85rem 2rem; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 1rem; transition: background 0.2s; }
+    .cta-btn:hover { background: #E04300; text-decoration: none; }
+    .internal-links { background: #FFF3EE; border-radius: 12px; padding: 2rem; margin: 2rem 0; }
     .internal-links h3 { margin-top: 0; }
     .link-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.5rem; }
-    .link-grid a { display: block; padding: 0.35rem 0; color: #2563eb; font-size: 0.95rem; }
+    .link-grid a { display: block; padding: 0.35rem 0; color: #E04300; font-size: 0.95rem; }
     .included-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; margin: 1.5rem 0 2rem; }
     .included-item { background: #fff; border: 1px solid #e5e7eb; border-radius: 10px; padding: 1.25rem; display: flex; align-items: flex-start; gap: 0.75rem; }
-    .included-item .check { color: #f59e0b; font-weight: 700; font-size: 1.25rem; flex-shrink: 0; line-height: 1.4; }
+    .included-item .check { color: #FF4D00; font-weight: 700; font-size: 1.25rem; flex-shrink: 0; line-height: 1.4; }
     .included-item p { margin: 0; font-size: 0.95rem; color: #333; }
     .faq-section { margin: 2.5rem 0; }
     .faq-item { border-bottom: 1px solid #e5e7eb; padding: 1.25rem 0; }
@@ -428,10 +428,10 @@ ${faqs.map(f => `      {"@type": "Question", "name": "${f.q.replace(/"/g, '\\"')
     .faq-item p { color: #555; margin: 0; font-size: 1rem; }
     footer { background: #0f172a; color: rgba(255,255,255,0.7); padding: 2rem 2rem 5rem; text-align: center; font-size: 0.85rem; }
     footer a { color: rgba(255,255,255,0.9); text-decoration: none; }
-    .sticky-cta { position: fixed; bottom: 0; left: 0; right: 0; background: #0f172a; border-top: 2px solid #f59e0b; padding: 0.75rem 1rem; display: flex; justify-content: center; align-items: center; gap: 1rem; z-index: 200; }
+    .sticky-cta { position: fixed; bottom: 0; left: 0; right: 0; background: #0f172a; border-top: 2px solid #FF4D00; padding: 0.75rem 1rem; display: flex; justify-content: center; align-items: center; gap: 1rem; z-index: 200; }
     .sticky-cta p { color: #fff; font-size: 0.9rem; margin: 0; }
-    .sticky-cta a { display: inline-block; background: #f59e0b; color: #0f172a; padding: 0.6rem 1.5rem; border-radius: 6px; text-decoration: none; font-weight: 700; font-size: 0.9rem; white-space: nowrap; }
-    .sticky-cta a:hover { background: #d97706; }
+    .sticky-cta a { display: inline-block; background: #FF4D00; color: #0f172a; padding: 0.6rem 1.5rem; border-radius: 6px; text-decoration: none; font-weight: 700; font-size: 0.9rem; white-space: nowrap; }
+    .sticky-cta a:hover { background: #E04300; }
     @media (max-width: 768px) {
       .page-hero h1 { font-size: 1.8rem; }
       .page-hero { padding: 3rem 1.5rem 2.5rem; }
@@ -562,7 +562,7 @@ ${otherCityLinks}
 <div class="sticky-cta">
   <p>Ready to launch your campaign? Get a free quote in 24 hours.</p>
   <a href="/contact">Get Free Quote</a>
-  <a href="mailto:hello@streetteamsco.com" style="background:transparent;border:1px solid #f59e0b;color:#f59e0b;">Email Us</a>
+  <a href="mailto:hello@streetteamsco.com" style="background:transparent;border:1px solid #FF4D00;color:#FF4D00;">Email Us</a>
 </div>
 
 </body>

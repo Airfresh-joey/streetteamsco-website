@@ -52,51 +52,51 @@
 
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #1a1a2e; background: #fafafa; }
-    header { background: #1a1a2e; padding: 1rem 0; position: sticky; top: 0; z-index: 100; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #121110; background: #F7F5EF; }
+    header { background: #121110; padding: 1rem 0; position: sticky; top: 0; z-index: 100; }
     .header-inner { max-width: 1200px; margin: 0 auto; padding: 0 2rem; display: flex; justify-content: space-between; align-items: center; }
     .logo { color: #fff; font-weight: 800; font-size: 1.2rem; text-decoration: none; letter-spacing: 1px; }
     .nav-links a { color: rgba(255,255,255,0.8); text-decoration: none; margin-left: 1.5rem; font-size: 0.9rem; }
     .nav-links a:hover { color: #fff; }
-    .hero { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); color: #fff; padding: 3.5rem 2rem 2.5rem; }
+    .hero { background: linear-gradient(135deg, #121110 0%, #1c1a18 100%); color: #fff; padding: 3.5rem 2rem 2.5rem; }
     .hero-inner { max-width: 1100px; margin: 0 auto; text-align: center; }
     .breadcrumb { font-size: 0.85rem; opacity: 0.7; margin-bottom: 1rem; }
     .breadcrumb a { color: #fff; text-decoration: none; }
     .hero h1 { font-size: 2.3rem; font-weight: 800; line-height: 1.2; margin-bottom: 0.75rem; }
-    .hero h1 span { color: #f59e0b; }
+    .hero h1 span { color: #FF4D00; }
     .hero p { font-size: 1.05rem; opacity: 0.9; max-width: 600px; margin: 0 auto; }
     .calculator-section { max-width: 1100px; margin: -1rem auto 0; padding: 0 2rem; position: relative; }
     .calculator-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 2rem; }
     .calc-form, .calc-result { background: #fff; border-radius: 16px; padding: 2rem; box-shadow: 0 10px 40px rgba(0,0,0,0.08); }
-    .calc-form h2 { font-size: 1.3rem; margin-bottom: 1.5rem; color: #1a1a2e; }
+    .calc-form h2 { font-size: 1.3rem; margin-bottom: 1.5rem; color: #121110; }
     .form-group { margin-bottom: 1.25rem; }
     .form-group label { display: block; font-size: 0.9rem; font-weight: 600; margin-bottom: 0.4rem; color: #374151; }
     .form-group .hint { font-size: 0.78rem; color: #6b7280; margin-bottom: 0.4rem; font-weight: normal; }
     .form-group select, .form-group input { width: 100%; padding: 0.75rem 0.9rem; border: 1.5px solid #d1d5db; border-radius: 8px; font-size: 1rem; font-family: inherit; }
-    .form-group select:focus, .form-group input:focus { outline: none; border-color: #f59e0b; box-shadow: 0 0 0 3px rgba(245,158,11,0.15); }
-    .calc-result { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); color: #fff; position: sticky; top: 6rem; }
-    .calc-result h2 { color: #f59e0b; font-size: 1.2rem; margin-bottom: 0.5rem; }
+    .form-group select:focus, .form-group input:focus { outline: none; border-color: #FF4D00; box-shadow: 0 0 0 3px rgba(255,77,0,0.15); }
+    .calc-result { background: linear-gradient(135deg, #121110 0%, #1c1a18 100%); color: #fff; position: sticky; top: 6rem; }
+    .calc-result h2 { color: #FF4D00; font-size: 1.2rem; margin-bottom: 0.5rem; }
     .calc-result .sub { font-size: 0.85rem; opacity: 0.7; margin-bottom: 1.5rem; }
     .result-line { display: flex; justify-content: space-between; padding: 0.85rem 0; border-bottom: 1px solid rgba(255,255,255,0.1); font-size: 0.95rem; }
     .result-line:last-child { border-bottom: none; }
     .result-line .label { opacity: 0.85; }
-    .result-line .value { font-weight: 800; color: #f59e0b; font-size: 1.05rem; }
-    .result-total { background: rgba(245,158,11,0.1); border: 1.5px solid rgba(245,158,11,0.4); border-radius: 10px; padding: 1.25rem; margin-top: 1.5rem; text-align: center; }
+    .result-line .value { font-weight: 800; color: #FF4D00; font-size: 1.05rem; }
+    .result-total { background: rgba(255,77,0,0.1); border: 1.5px solid rgba(255,77,0,0.4); border-radius: 10px; padding: 1.25rem; margin-top: 1.5rem; text-align: center; }
     .result-total .total-label { font-size: 0.85rem; opacity: 0.85; margin-bottom: 0.35rem; text-transform: uppercase; letter-spacing: 0.5px; }
-    .result-total .total-range { font-size: 2rem; font-weight: 800; color: #f59e0b; line-height: 1.1; }
+    .result-total .total-range { font-size: 2rem; font-weight: 800; color: #FF4D00; line-height: 1.1; }
     .result-total .total-note { font-size: 0.78rem; opacity: 0.7; margin-top: 0.4rem; }
-    .result-cta { margin-top: 1.5rem; display: block; background: #f59e0b; color: #1a1a2e; padding: 0.95rem; border-radius: 10px; text-decoration: none; font-weight: 800; text-align: center; font-size: 0.95rem; }
-    .result-cta:hover { background: #d97706; }
+    .result-cta { margin-top: 1.5rem; display: block; background: #FF4D00; color: #121110; padding: 0.95rem; border-radius: 10px; text-decoration: none; font-weight: 800; text-align: center; font-size: 0.95rem; }
+    .result-cta:hover { background: #E04300; }
     .disclaimer { font-size: 0.78rem; color: #6b7280; margin-top: 2rem; padding: 1rem; background: #fffbeb; border-radius: 8px; border: 1px solid #fde68a; }
     .info-section { max-width: 1100px; margin: 4rem auto; padding: 0 2rem; }
     .info-section h2 { font-size: 1.6rem; margin-bottom: 1rem; font-weight: 800; }
     .info-section p { margin-bottom: 1rem; color: #555; font-size: 1rem; }
     .benchmark-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; margin: 1.5rem 0; }
     .benchmark-card { background: #fff; padding: 1.25rem; border-radius: 10px; border: 1px solid #e5e7eb; }
-    .benchmark-card h4 { font-size: 0.95rem; margin-bottom: 0.4rem; color: #1a1a2e; }
-    .benchmark-card .range { font-size: 1.2rem; font-weight: 800; color: #f59e0b; margin-bottom: 0.2rem; }
+    .benchmark-card h4 { font-size: 0.95rem; margin-bottom: 0.4rem; color: #121110; }
+    .benchmark-card .range { font-size: 1.2rem; font-weight: 800; color: #FF4D00; margin-bottom: 0.2rem; }
     .benchmark-card .note { font-size: 0.82rem; color: #6b7280; }
-    footer { background: #1a1a2e; color: #fff; padding: 2.5rem 2rem 1.5rem; font-size: 0.85rem; text-align: center; margin-top: 4rem; }
+    footer { background: #121110; color: #fff; padding: 2.5rem 2rem 1.5rem; font-size: 0.85rem; text-align: center; margin-top: 4rem; }
     footer a { color: rgba(255,255,255,0.9); text-decoration: none; }
     footer p { opacity: 0.7; margin-bottom: 0.5rem; }
     @media (max-width: 900px) {
@@ -226,7 +226,7 @@
     </div>
 
     <div class="disclaimer">
-      <strong>How to use this:</strong> The calculator gives you a defensible ballpark range to bring to internal budget conversations. It assumes industry-standard benchmarks built from Street Teams Co's 500+ campaigns. Real quotes will vary based on your specific brief, brand training requirements, kit/material costs, permits, venue fees, and management overhead. We typically add 15-25% on top of staff costs to cover those line items. <a href="/contact" style="color:#1a1a2e;font-weight:700;">Send us your brief for a precise quote within 24 hours.</a>
+      <strong>How to use this:</strong> The calculator gives you a defensible ballpark range to bring to internal budget conversations. It assumes industry-standard benchmarks built from Street Teams Co's 500+ campaigns. Real quotes will vary based on your specific brief, brand training requirements, kit/material costs, permits, venue fees, and management overhead. We typically add 15-25% on top of staff costs to cover those line items. <a href="/contact" style="color:#121110;font-weight:700;">Send us your brief for a precise quote within 24 hours.</a>
     </div>
   </section>
 
@@ -283,10 +283,10 @@
       <li><strong>Brand training time</strong> — 1-2 hours per BA at half rate for product-heavy launches</li>
     </ul>
 
-    <p>Send us your brief and we'll come back with a full proposal that breaks every line item out transparently. <a href="/contact" style="color: #2563eb; font-weight: 600;">Get a precise quote →</a></p>
+    <p>Send us your brief and we'll come back with a full proposal that breaks every line item out transparently. <a href="/contact" style="color: #E04300; font-weight: 600;">Get a precise quote →</a></p>
 
     <h2>Want the Full Methodology?</h2>
-    <p>Download <a href="/playbook" style="color: #2563eb; font-weight: 600;">The Street Team Activation Playbook</a> for the complete framework: brief template, market planning, 14-day deployment timeline, ROI measurement framework, and vendor evaluation scorecard. Free, 12 pages.</p>
+    <p>Download <a href="/playbook" style="color: #E04300; font-weight: 600;">The Street Team Activation Playbook</a> for the complete framework: brief template, market planning, 14-day deployment timeline, ROI measurement framework, and vendor evaluation scorecard. Free, 12 pages.</p>
   </section>
 
   <footer>

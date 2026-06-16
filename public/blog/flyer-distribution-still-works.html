@@ -98,13 +98,13 @@
 
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif; line-height: 1.7; color: #1a1a2e; background: #fafafa; }
-    header { background: #1a1a2e; padding: 1rem 0; position: sticky; top: 0; z-index: 100; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif; line-height: 1.7; color: #121110; background: #F7F5EF; }
+    header { background: #121110; padding: 1rem 0; position: sticky; top: 0; z-index: 100; }
     .header-inner { max-width: 1200px; margin: 0 auto; padding: 0 2rem; display: flex; justify-content: space-between; align-items: center; }
     .logo { color: #fff; font-weight: 800; font-size: 1.2rem; text-decoration: none; letter-spacing: 1px; }
     .nav-links a { color: rgba(255,255,255,0.8); text-decoration: none; margin-left: 1.5rem; font-size: 0.9rem; transition: color 0.2s; }
     .nav-links a:hover { color: #fff; }
-    .article-hero { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); padding: 5rem 2rem 4rem; color: #fff; }
+    .article-hero { background: linear-gradient(135deg, #121110 0%, #1c1a18 100%); padding: 5rem 2rem 4rem; color: #fff; }
     .article-hero-inner { max-width: 800px; margin: 0 auto; }
     .breadcrumb { font-size: 0.85rem; margin-bottom: 1.5rem; opacity: 0.7; }
     .breadcrumb a { color: #fff; text-decoration: none; }
@@ -112,34 +112,34 @@
     .article-hero h1 { font-size: 2.5rem; line-height: 1.2; margin-bottom: 1rem; font-weight: 800; }
     .article-meta { font-size: 0.9rem; opacity: 0.8; }
     .article-body { max-width: 800px; margin: 0 auto; padding: 3rem 2rem 4rem; }
-    .article-body h2 { font-size: 1.75rem; margin: 2.5rem 0 1rem; color: #1a1a2e; font-weight: 700; }
-    .article-body h3 { font-size: 1.3rem; margin: 2rem 0 0.75rem; color: #16213e; font-weight: 600; }
+    .article-body h2 { font-size: 1.75rem; margin: 2.5rem 0 1rem; color: #121110; font-weight: 700; }
+    .article-body h3 { font-size: 1.3rem; margin: 2rem 0 0.75rem; color: #1c1a18; font-weight: 600; }
     .article-body p { margin-bottom: 1.25rem; font-size: 1.05rem; color: #333; }
     .article-body ul, .article-body ol { margin: 1rem 0 1.5rem 1.5rem; font-size: 1.05rem; color: #333; }
     .article-body li { margin-bottom: 0.5rem; }
-    .article-body strong { color: #1a1a2e; }
+    .article-body strong { color: #121110; }
     .article-body a { color: #1a73e8; text-decoration: none; }
     .article-body a:hover { text-decoration: underline; }
     .highlight-box { background: #e8f4fd; border-left: 4px solid #1a73e8; padding: 1.25rem 1.5rem; margin: 2rem 0; border-radius: 0 8px 8px 0; font-size: 1rem; }
-    .stat-callout { background: #1a1a2e; color: #fff; padding: 2rem; border-radius: 12px; text-align: center; margin: 2rem 0; }
+    .stat-callout { background: #121110; color: #fff; padding: 2rem; border-radius: 12px; text-align: center; margin: 2rem 0; }
     .stat-callout .big-num { font-size: 3rem; font-weight: 800; display: block; }
     table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 0.95rem; }
     th, td { padding: 0.75rem 1rem; text-align: left; border-bottom: 1px solid #e0e0e0; }
-    th { background: #1a1a2e; color: #fff; font-weight: 600; }
+    th { background: #121110; color: #fff; font-weight: 600; }
     tr:nth-child(even) { background: #f5f5f5; }
-    .cta-section { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); color: #fff; padding: 3rem 2rem; border-radius: 12px; text-align: center; margin: 3rem 0 1rem; }
+    .cta-section { background: linear-gradient(135deg, #121110 0%, #1c1a18 100%); color: #fff; padding: 3rem 2rem; border-radius: 12px; text-align: center; margin: 3rem 0 1rem; }
     .cta-section h2 { color: #fff; margin-bottom: 1rem; }
     .cta-section p { color: rgba(255,255,255,0.85); margin-bottom: 1.5rem; }
-    .cta-btn { display: inline-block; background: #fff; color: #1a1a2e; padding: 0.85rem 2rem; border-radius: 8px; text-decoration: none; font-weight: 700; transition: transform 0.2s; }
+    .cta-btn { display: inline-block; background: #fff; color: #121110; padding: 0.85rem 2rem; border-radius: 8px; text-decoration: none; font-weight: 700; transition: transform 0.2s; }
     .cta-btn:hover { transform: translateY(-2px); }
-    .internal-link-box { background: #f0f4ff; border: 1px solid #d0d8f0; padding: 1.25rem 1.5rem; border-radius: 8px; margin: 2rem 0; font-size: 1rem; }
+    .internal-link-box { background: #FFF3EE; border: 1px solid #d0d8f0; padding: 1.25rem 1.5rem; border-radius: 8px; margin: 2rem 0; font-size: 1rem; }
     .internal-link-box a { color: #1a73e8; font-weight: 600; }
     .key-resources { background: #f9f9f9; border: 1px solid #e0e0e0; border-radius: 12px; padding: 2rem; margin: 2.5rem 0; }
-    .key-resources h3 { color: #1a1a2e; margin-bottom: 1rem; font-size: 1.2rem; }
+    .key-resources h3 { color: #121110; margin-bottom: 1rem; font-size: 1.2rem; }
     .key-resources ul { list-style: none; margin: 0; padding: 0; }
     .key-resources li { margin-bottom: 0.6rem; padding-left: 1.25rem; position: relative; }
     .key-resources li::before { content: "\2192"; position: absolute; left: 0; color: #1a73e8; }
-    .toc { background: #f0f4ff; border: 1px solid #d0d8f0; border-radius: 12px; padding: 1.5rem 2rem; margin: 0 0 2.5rem; }
+    .toc { background: #FFF3EE; border: 1px solid #d0d8f0; border-radius: 12px; padding: 1.5rem 2rem; margin: 0 0 2.5rem; }
     .toc h3 { margin-bottom: 0.75rem; font-size: 1.1rem; }
     .toc ul { list-style: none; margin: 0; padding: 0; }
     .toc li { margin-bottom: 0.4rem; }
@@ -400,10 +400,10 @@
 </footer>
 
 
-<div style="position:fixed;bottom:0;left:0;right:0;background:#1a1a2e;border-top:2px solid #f59e0b;padding:.75rem 1rem;display:flex;justify-content:center;align-items:center;gap:1rem;z-index:200">
+<div style="position:fixed;bottom:0;left:0;right:0;background:#121110;border-top:2px solid #FF4D00;padding:.75rem 1rem;display:flex;justify-content:center;align-items:center;gap:1rem;z-index:200">
   <p style="color:#fff;font-size:.9rem;margin:0" class="sticky-msg">Ready to launch your campaign? Get a free quote in 24 hours.</p>
-  <a href="/contact" style="display:inline-block;background:#f59e0b;color:#1a1a2e;padding:.6rem 1.5rem;border-radius:6px;text-decoration:none;font-weight:700;font-size:.9rem;white-space:nowrap">Get Free Quote</a>
-  <a href="mailto:hello@streetteamsco.com" style="display:inline-block;background:transparent;border:1px solid #f59e0b;color:#f59e0b;padding:.6rem 1.5rem;border-radius:6px;text-decoration:none;font-weight:700;font-size:.9rem;white-space:nowrap">Email Us</a>
+  <a href="/contact" style="display:inline-block;background:#FF4D00;color:#121110;padding:.6rem 1.5rem;border-radius:6px;text-decoration:none;font-weight:700;font-size:.9rem;white-space:nowrap">Get Free Quote</a>
+  <a href="mailto:hello@streetteamsco.com" style="display:inline-block;background:transparent;border:1px solid #FF4D00;color:#FF4D00;padding:.6rem 1.5rem;border-radius:6px;text-decoration:none;font-weight:700;font-size:.9rem;white-space:nowrap">Email Us</a>
 </div>
 <style>.sticky-msg{display:block}@media(max-width:768px){.sticky-msg{display:none!important}}</style></body>
 </html>
