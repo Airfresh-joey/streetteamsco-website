@@ -24,7 +24,7 @@ const KEY_RESOURCES_HTML = `
     <a href="/guerrilla-marketing-agency" style="color:#2563eb;">Guerrilla Marketing Agency</a>
     <a href="/product-sampling-agency" style="color:#2563eb;">Product Sampling Agency</a>
     <a href="/services" style="color:#2563eb;">All Services</a>
-    <a href="/pricing" style="color:#2563eb;">Pricing & Rate Cards</a>
+    <a href="/contact" style="color:#E04300;">Get a Free Quote</a>
     <a href="/locations" style="color:#2563eb;">1,000+ City Locations</a>
     <a href="/testimonials" style="color:#2563eb;">Client Testimonials</a>
   </div>

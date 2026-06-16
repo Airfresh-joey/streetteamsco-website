@@ -1061,7 +1061,6 @@ ${cities.map(ct => `      <a href="/fifa-world-cup-2026-staffing/${ct.citySlug}"
   <p>&copy; 2026 <a href="/">Street Teams Co</a>. All rights reserved. | <a href="mailto:hello@streetteamsco.com">hello@streetteamsco.com</a></p>
   <div class="footer-links">
     <a href="/services">Services</a>
-    <a href="/pricing">Pricing</a>
     <a href="/industries">Industries</a>
     <a href="/locations">Locations</a>
     <a href="/blog/">Blog</a>

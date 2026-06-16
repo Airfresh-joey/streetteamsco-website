@@ -118,7 +118,6 @@ ${internalLinksBlock('Other Industries', otherIndustryLinks)}
 
 ${internalLinksBlock('Helpful Links', [
     { label: 'All Services', url: '/services' },
-    { label: 'Pricing & Rate Cards', url: '/pricing' },
     { label: 'Client Testimonials', url: '/testimonials' },
     { label: 'All Locations', url: '/locations' },
     { label: 'Brand Ambassador Agency', url: '/brand-ambassador-agency' },
@@ -194,7 +193,6 @@ ${ctaSection(
 
 ${internalLinksBlock('Explore More', [
     { label: 'All Services', url: '/services' },
-    { label: 'Pricing & Rate Cards', url: '/pricing' },
     { label: 'Client Testimonials', url: '/testimonials' },
     { label: 'All Locations', url: '/locations' },
   ])}

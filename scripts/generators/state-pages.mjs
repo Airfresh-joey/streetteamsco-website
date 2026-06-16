@@ -107,7 +107,6 @@ ${internalLinksBlock('Other States', nearbyStates.map(s => ({ label: s.name, url
 ${internalLinksBlock('Helpful Links', [
     { label: 'All Locations', url: '/locations' },
     { label: 'All Services', url: '/services' },
-    { label: 'Pricing & Rate Cards', url: '/pricing' },
     { label: 'Client Testimonials', url: '/testimonials' },
     { label: 'Brand Ambassador Agency', url: '/brand-ambassador-agency' },
     { label: 'Street Team Marketing Agency', url: '/street-team-marketing-agency' },

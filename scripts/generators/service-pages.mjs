@@ -141,7 +141,7 @@ function generateServicePage(service, allServices) {
   const useCasesHtml = service.useCases.map(u => `      <li>${escHtml(u)}</li>`).join('\n');
 
   const blogLinksHtml = blogPosts.length > 0
-    ? `\n  <h2>Related Resources</h2>\n  <ul>\n${blogPosts.map(p => `    <li><a href="${p.url}">${escHtml(p.title)}</a></li>`).join('\n')}\n  </ul>\n  <p><a href="/pricing">View our pricing</a> | <a href="/testimonials">See client results</a></p>`
+    ? `\n  <h2>Related Resources</h2>\n  <ul>\n${blogPosts.map(p => `    <li><a href="${p.url}">${escHtml(p.title)}</a></li>`).join('\n')}\n  </ul>\n  <p><a href="/testimonials">See client results</a> | <a href="/contact">Get a free quote</a></p>`
     : '';
 
   const body = `<section class="page-hero">
@@ -195,7 +195,6 @@ ${ctaSection(
 ${internalLinksBlock('Other Services', otherServiceLinks)}
 
 ${internalLinksBlock('Helpful Links', [
-    { label: 'Pricing & Rate Cards', url: '/pricing' },
     { label: 'Client Testimonials', url: '/testimonials' },
     { label: 'All Locations', url: '/locations' },
     { label: 'All Industries', url: '/industries' },
@@ -341,7 +340,6 @@ ${ctaSection(
   )}
 
 ${internalLinksBlock('Explore More', [
-    { label: 'Pricing & Rate Cards', url: '/pricing' },
     { label: 'Client Testimonials', url: '/testimonials' },
     { label: 'All Locations', url: '/locations' },
     { label: 'All Industries', url: '/industries' },

@@ -251,7 +251,6 @@ ${internalLinksBlock('Helpful Links', [
     { label: 'Nationwide Event Staffing', url: '/nationwide-event-staffing' },
     { label: 'Hire Event Staff', url: '/hire-event-staff' },
     { label: 'Brand Ambassador Agency', url: '/brand-ambassador-agency' },
-    { label: 'Pricing & Rate Cards', url: '/pricing' },
     { label: 'Convention Staffing', url: '/convention-staffing-agency' },
   ])}
 

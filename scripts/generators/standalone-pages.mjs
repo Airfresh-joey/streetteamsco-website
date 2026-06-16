@@ -171,7 +171,6 @@ ${ctaSection('Ready to Create Your Success Story?', 'Join the brands that trust 
 
 ${internalLinksBlock('Explore More', [
     { label: 'All Services', url: '/services' },
-    { label: 'Pricing & Rate Cards', url: '/pricing' },
     { label: 'All Locations', url: '/locations' },
     { label: 'Our Team', url: '/our-team' },
   ])}
@@ -277,7 +276,6 @@ ${ctaSection('Work With Us', 'Ready to launch your next campaign with a team tha
 
 ${internalLinksBlock('Explore More', [
     { label: 'All Services', url: '/services' },
-    { label: 'Pricing & Rate Cards', url: '/pricing' },
     { label: 'Client Testimonials', url: '/testimonials' },
     { label: 'All Locations', url: '/locations' },
   ])}
@@ -351,7 +349,6 @@ ${ctaSection('Find Your Market', 'Tell us where you want to activate and we will
 
 ${internalLinksBlock('Explore More', [
     { label: 'All Services', url: '/services' },
-    { label: 'Pricing & Rate Cards', url: '/pricing' },
     { label: 'Client Testimonials', url: '/testimonials' },
     { label: 'All Industries', url: '/industries' },
     { label: 'Brand Ambassador Agency', url: '/brand-ambassador-agency' },
