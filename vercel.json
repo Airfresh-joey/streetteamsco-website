@@ -1,6 +1,75 @@
 {
   "redirects": [
-    { "source": "/pricing", "destination": "/contact", "permanent": true }
+    {
+      "source": "/pricing",
+      "destination": "/contact",
+      "permanent": true
+    },
+    {
+      "source": "/case-studies/app-launch-multi-city-tour",
+      "destination": "/case-studies/",
+      "permanent": true
+    },
+    {
+      "source": "/case-studies/beauty-sephora-launch",
+      "destination": "/case-studies/",
+      "permanent": true
+    },
+    {
+      "source": "/case-studies/beverage-brand-sampling",
+      "destination": "/case-studies/",
+      "permanent": true
+    },
+    {
+      "source": "/case-studies/cannabis-product-sampling",
+      "destination": "/case-studies/",
+      "permanent": true
+    },
+    {
+      "source": "/case-studies/cpg-distribution-gain",
+      "destination": "/case-studies/",
+      "permanent": true
+    },
+    {
+      "source": "/case-studies/dispensary-grand-opening",
+      "destination": "/case-studies/",
+      "permanent": true
+    },
+    {
+      "source": "/case-studies/guerrilla-marketing-nyc",
+      "destination": "/case-studies/",
+      "permanent": true
+    },
+    {
+      "source": "/case-studies/multi-city-product-launch",
+      "destination": "/case-studies/",
+      "permanent": true
+    },
+    {
+      "source": "/case-studies/music-festival-activation",
+      "destination": "/case-studies/",
+      "permanent": true
+    },
+    {
+      "source": "/case-studies/nil-game-day-activation",
+      "destination": "/case-studies/",
+      "permanent": true
+    },
+    {
+      "source": "/case-studies/retail-grand-opening",
+      "destination": "/case-studies/",
+      "permanent": true
+    },
+    {
+      "source": "/case-studies/tech-company-trade-show",
+      "destination": "/case-studies/",
+      "permanent": true
+    },
+    {
+      "source": "/case-studies/trade-show-lead-generation",
+      "destination": "/case-studies/",
+      "permanent": true
+    }
   ],
   "rewrites": [
     {
