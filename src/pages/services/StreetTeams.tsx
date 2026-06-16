@@ -35,7 +35,7 @@ export default function StreetTeamsService() {
             Deploy professional street teams in 1,000+ cities nationwide for high-impact, boots-on-the-ground marketing campaigns.
           </p>
           <div className="hero-cta">
-            <Link to="/pricing" className="btn btn-secondary">View Pricing</Link>
+            <a href="/case-studies/" className="btn btn-secondary">Browse Case Studies</a>
             <Link to="/contact" className="btn btn-primary">Get Free Quote</Link>
           </div>
         </div>
@@ -128,7 +128,7 @@ export default function StreetTeamsService() {
           <div className="city-cta">
             <h3>Ready to Launch a Street Team Campaign?</h3>
             <p>Get a free campaign strategy session with our team. We'll recommend the right approach for your brand, market, and budget.</p>
-            <Link to="/pricing" className="btn btn-secondary" style={{ marginRight: '1rem' }}>View Pricing</Link>
+            <a href="/case-studies/" className="btn btn-secondary" style={{ marginRight: '1rem' }}>Browse Case Studies</a>
             <Link to="/contact" className="btn btn-primary btn-lg">Get Free Quote</Link>
           </div>
         </div>

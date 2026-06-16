@@ -35,7 +35,7 @@ export default function GuerrillaMarketingService() {
             Unconventional, creative marketing campaigns that capture attention and generate massive brand awareness without massive budgets.
           </p>
           <div className="hero-cta">
-            <Link to="/pricing" className="btn btn-secondary">View Pricing</Link>
+            <a href="/case-studies/" className="btn btn-secondary">Browse Case Studies</a>
             <Link to="/contact" className="btn btn-primary">Get Free Quote</Link>
           </div>
         </div>
@@ -94,8 +94,8 @@ export default function GuerrillaMarketingService() {
             advertising with the flexibility to target specific neighborhoods, events, and time windows.
           </p>
           <p>
-            LED truck advertising rates start at $1,500 per day in most markets.
-            <Link to="/pricing"> View our complete pricing guide</Link>.
+            LED truck advertising is custom-quoted by market, route, and campaign length.
+            <Link to="/contact"> Request a custom quote</Link>.
           </p>
 
           <h3>Frequently Asked Questions</h3>
@@ -121,7 +121,7 @@ export default function GuerrillaMarketingService() {
           <div className="city-cta">
             <h3>Plan a Guerrilla Marketing Campaign</h3>
             <p>Tell us your goals and we'll design a guerrilla strategy that fits your brand, market, and budget.</p>
-            <Link to="/pricing" className="btn btn-secondary" style={{ marginRight: '1rem' }}>View Pricing</Link>
+            <a href="/case-studies/" className="btn btn-secondary" style={{ marginRight: '1rem' }}>Browse Case Studies</a>
             <Link to="/contact" className="btn btn-primary btn-lg">Get Free Quote</Link>
           </div>
         </div>

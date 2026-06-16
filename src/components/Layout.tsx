@@ -12,7 +12,6 @@ export default function Layout({ children }: LayoutProps) {
           <Link to="/" className="logo">STREET TEAMS CO</Link>
           <div className="nav-links">
             <Link to="/services/street-teams">Services</Link>
-            <Link to="/pricing">Pricing</Link>
             <Link to="/testimonials">Testimonials</Link>
             <Link to="/locations">Locations</Link>
             <Link to="/contact" className="nav-cta">Get Quote</Link>
@@ -39,8 +38,7 @@ export default function Layout({ children }: LayoutProps) {
             </div>
             <div className="footer-section">
               <h3>Company</h3>
-              <Link to="/pricing">Pricing</Link>
-              <Link to="/testimonials">Testimonials</Link>
+                <Link to="/testimonials">Testimonials</Link>
               <Link to="/our-team">Our Team</Link>
               <Link to="/locations">Locations</Link>
             </div>

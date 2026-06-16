@@ -35,7 +35,7 @@ export default function ProductSamplingService() {
             Put your product directly into consumers' hands with professional sampling campaigns in 1,000+ cities.
           </p>
           <div className="hero-cta">
-            <Link to="/pricing" className="btn btn-secondary">View Pricing</Link>
+            <a href="/case-studies/" className="btn btn-secondary">Browse Case Studies</a>
             <Link to="/contact" className="btn btn-primary">Get Free Quote</Link>
           </div>
         </div>
@@ -99,7 +99,7 @@ export default function ProductSamplingService() {
           <div className="city-cta">
             <h3>Plan a Sampling Campaign</h3>
             <p>Get a custom sampling strategy for your product, market, and budget.</p>
-            <Link to="/pricing" className="btn btn-secondary" style={{ marginRight: '1rem' }}>View Pricing</Link>
+            <a href="/case-studies/" className="btn btn-secondary" style={{ marginRight: '1rem' }}>Browse Case Studies</a>
             <Link to="/contact" className="btn btn-primary btn-lg">Get Free Quote</Link>
           </div>
         </div>

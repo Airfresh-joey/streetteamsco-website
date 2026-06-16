@@ -86,10 +86,8 @@ export default function Contact() {
 
             <div style={{ textAlign: 'center', marginTop: '1rem' }}>
               <p style={{ color: '#666', fontSize: '0.95rem' }}>
-                Looking for pricing first?{' '}
-                <Link to="/pricing">View our transparent rate card</Link>{' '}
-                or{' '}
-                <a href="/case-studies/">browse case studies</a>.
+                Want to see results first?{' '}
+                <a href="/case-studies/">Browse our case studies</a>.
               </p>
             </div>
           </div>

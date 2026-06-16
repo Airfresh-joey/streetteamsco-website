@@ -449,7 +449,6 @@ ${faqs.map(f => `      {"@type": "Question", "name": "${f.q.replace(/"/g, '\\"')
     <a href="/" class="logo">STREET TEAMS CO</a>
     <div class="nav-links">
       <a href="/services">Services</a>
-      <a href="/pricing">Pricing</a>
       <a href="/case-studies/">Case Studies</a>
       <a href="/locations">Locations</a>
       <a href="/blog/">Blog</a>
@@ -543,7 +542,6 @@ ${otherCityLinks}
   <div class="internal-links">
     <h3>Helpful Links</h3>
     <div class="link-grid">
-      <a href="/pricing">Pricing & Rate Cards</a>
       <a href="/contact">Contact Us</a>
       <a href="/services">All Services</a>
       <a href="/locations">All Locations</a>
@@ -556,7 +554,7 @@ ${otherCityLinks}
 
 <footer>
   <p>&copy; 2026 <a href="/">Street Teams Co</a>. All rights reserved. | <a href="mailto:hello@streetteamsco.com">hello@streetteamsco.com</a> | <a href="/privacy">Privacy</a> | <a href="/terms">Terms</a></p>
-  <p style="margin-top: 0.5rem;"><a href="/services">Services</a> | <a href="/pricing">Pricing</a> | <a href="/how-it-works">How It Works</a> | <a href="/case-studies/">Case Studies</a> | <a href="/locations">Locations</a> | <a href="/blog/">Blog</a></p>
+  <p style="margin-top: 0.5rem;"><a href="/services">Services</a> | <a href="/how-it-works">How It Works</a> | <a href="/case-studies/">Case Studies</a> | <a href="/locations">Locations</a> | <a href="/blog/">Blog</a></p>
   <p style="margin-top: 0.5rem;"><a href="/street-team-marketing-agency">Street Team Marketing</a> | <a href="/brand-ambassador-agency">Brand Ambassadors</a> | <a href="/experiential-marketing-agency">Experiential Marketing</a> | <a href="/trade-show-staffing-agency">Trade Show Staffing</a> | <a href="/what-is-street-team-marketing">Guide</a></p>
 </footer>
 <div class="sticky-cta">

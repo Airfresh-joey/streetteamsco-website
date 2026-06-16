@@ -35,7 +35,7 @@ export default function BrandAmbassadorsService() {
             Hire professional, trained brand ambassadors who represent your brand with energy, expertise, and measurable results.
           </p>
           <div className="hero-cta">
-            <Link to="/pricing" className="btn btn-secondary">View Pricing</Link>
+            <a href="/case-studies/" className="btn btn-secondary">Browse Case Studies</a>
             <Link to="/contact" className="btn btn-primary">Get Free Quote</Link>
           </div>
         </div>
@@ -114,7 +114,7 @@ export default function BrandAmbassadorsService() {
           <div className="city-cta">
             <h3>Hire Brand Ambassadors for Your Next Campaign</h3>
             <p>Tell us about your campaign and we'll build a custom team proposal within 24 hours.</p>
-            <Link to="/pricing" className="btn btn-secondary" style={{ marginRight: '1rem' }}>View Pricing</Link>
+            <a href="/case-studies/" className="btn btn-secondary" style={{ marginRight: '1rem' }}>Browse Case Studies</a>
             <Link to="/contact" className="btn btn-primary btn-lg">Get Free Quote</Link>
           </div>
         </div>

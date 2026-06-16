@@ -35,7 +35,7 @@ export default function EventStaffingService() {
             Experienced, professional event staff for trade shows, conferences, festivals, and corporate events in 1,000+ cities.
           </p>
           <div className="hero-cta">
-            <Link to="/pricing" className="btn btn-secondary">View Pricing</Link>
+            <a href="/case-studies/" className="btn btn-secondary">Browse Case Studies</a>
             <Link to="/contact" className="btn btn-primary">Get Free Quote</Link>
           </div>
         </div>
@@ -104,7 +104,7 @@ export default function EventStaffingService() {
           <div className="city-cta">
             <h3>Staff Your Next Event</h3>
             <p>Tell us about your event and we'll provide a staffing plan and quote within 24 hours.</p>
-            <Link to="/pricing" className="btn btn-secondary" style={{ marginRight: '1rem' }}>View Pricing</Link>
+            <a href="/case-studies/" className="btn btn-secondary" style={{ marginRight: '1rem' }}>Browse Case Studies</a>
             <Link to="/contact" className="btn btn-primary btn-lg">Get Free Quote</Link>
           </div>
         </div>
