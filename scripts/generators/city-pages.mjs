@@ -5,11 +5,37 @@
 // - Small: 500+ words with services and FAQ
 
 import path from 'path';
+import fs from 'fs';
 import {
   parseLocations, wrapPage, writePage, breadcrumbSchema, faqSchema,
   localBusinessSchema, statsBar, faqHtml, ctaSection, internalLinksBlock,
   escHtml, BASE_URL,
 } from './shared.mjs';
+
+function loadCaseStudies(srcDir) {
+  let s = fs.readFileSync(path.join(srcDir, 'data', 'portfolioCaseStudies.ts'), 'utf8');
+  s = s.slice(s.indexOf('export const portfolioCaseStudies')).replace(/export const portfolioCaseStudies[^=]*=/, 'const portfolioCaseStudies =');
+  s = s.slice(0, s.indexOf('\n];') + 3);
+  return new Function(s + '; return portfolioCaseStudies;')();
+}
+
+// Relevant case studies for a city = campaigns whose markets include that city. Returns '' if none.
+function cityCaseStudiesHtml(city, caseStudies) {
+  const cn = city.name.toLowerCase();
+  const matched = caseStudies.filter(c => (c.markets || []).some(m => {
+    const ml = m.toLowerCase();
+    return ml === cn || ml.includes(cn) || cn.includes(ml);
+  })).slice(0, 4);
+  if (matched.length === 0) return '';
+  const cards = matched.map(c =>
+    `    <div class="service-box"><h4><a href="/case-studies/${c.id}">${escHtml(c.name)}</a></h4><p>${escHtml(c.tagline || '')}</p></div>`
+  ).join('\n');
+  return `  <h2>Street Team Campaigns in ${escHtml(city.name)}</h2>
+  <p>Real campaigns we have run in ${escHtml(city.name)} &mdash; <a href="/case-studies/">browse all 50+ case studies</a>.</p>
+  <div class="service-grid">
+${cards}
+  </div>`;
+}
 
 // ---------------------------------------------------------------------------
 // Rich city data for top 20 cities (from generate-city-service-pages.cjs)
@@ -159,7 +185,7 @@ function generateSmallCityBody(city, state) {
   </ul>`;
 }
 
-function generateCityPage(city, state, allStates) {
+function generateCityPage(city, state, allStates, caseStudies) {
   const canonical = `${BASE_URL}/locations/${state.slug}/${city.slug}`;
   const faqs = generateCityFaqs(city, state);
   const tier = getCityTier(city);
@@ -233,6 +259,8 @@ ${statsBar([
 
 ${contentBody}
 
+${cityCaseStudiesHtml(city, caseStudies)}
+
   <h2>Frequently Asked Questions About Event Staffing &amp; Street Teams in ${escHtml(city.name)}</h2>
 ${faqHtml(faqs)}
 
@@ -268,12 +296,13 @@ ${internalLinksBlock('Helpful Links', [
 
 export function generateCityPages(distDir, srcDir) {
   const states = parseLocations(srcDir);
+  const caseStudies = loadCaseStudies(srcDir);
   let count = 0;
 
   for (const state of states) {
     for (const city of state.cities) {
       const filePath = path.join(distDir, 'locations', state.slug, city.slug, 'index.html');
-      writePage(filePath, generateCityPage(city, state, states));
+      writePage(filePath, generateCityPage(city, state, states, caseStudies));
       count++;
     }
   }
