@@ -409,6 +409,10 @@
     {
       "source": "/locations/:state/:city",
       "destination": "/index.html"
+    },
+    {
+      "source": "/street-team-marketing-statistics",
+      "destination": "/street-team-marketing-statistics.html"
     }
   ],
   "headers": [
