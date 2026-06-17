@@ -118,6 +118,17 @@ export default function GuerrillaMarketingService() {
             </details>
           </div>
 
+          <div className="related-campaigns" style={{ marginTop: '2.5rem' }}>
+            <h3>Related Campaigns</h3>
+            <p>Real guerrilla marketing campaigns we have delivered:</p>
+            <ul className="service-list">
+              <li><a href="/case-studies/cirque-du-soleil">Cirque du Soleil — Dallas Takeover</a></li>
+              <li><a href="/case-studies/mrbeast-events">MrBeast Feastables — Sampling Tour</a></li>
+              <li><a href="/case-studies/1800-tequila">1800 Tequila — NBA All-Star</a></li>
+              <li><a href="/case-studies/complexcon-las-vegas">ComplexCon Las Vegas</a></li>
+            </ul>
+          </div>
+
           <div className="city-cta">
             <h3>Plan a Guerrilla Marketing Campaign</h3>
             <p>Tell us your goals and we'll design a guerrilla strategy that fits your brand, market, and budget.</p>

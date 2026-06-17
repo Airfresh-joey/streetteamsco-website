@@ -111,6 +111,17 @@ export default function BrandAmbassadorsService() {
             </details>
           </div>
 
+          <div className="related-campaigns" style={{ marginTop: '2.5rem' }}>
+            <h3>Related Campaigns</h3>
+            <p>Real brand ambassador campaigns we have delivered:</p>
+            <ul className="service-list">
+              <li><a href="/case-studies/mac-cosmetics-campaign">MAC Cosmetics — Powder Kiss Launch</a></li>
+              <li><a href="/case-studies/adidas-staffing">Adidas — Street-Level Sports Marketing</a></li>
+              <li><a href="/case-studies/lyft-national">Lyft — Multi-Market Activations</a></li>
+              <li><a href="/case-studies/kendra-scott">Kendra Scott</a></li>
+            </ul>
+          </div>
+
           <div className="city-cta">
             <h3>Hire Brand Ambassadors for Your Next Campaign</h3>
             <p>Tell us about your campaign and we'll build a custom team proposal within 24 hours.</p>

@@ -125,6 +125,17 @@ export default function StreetTeamsService() {
             </details>
           </div>
 
+          <div className="related-campaigns" style={{ marginTop: '2.5rem' }}>
+            <h3>Related Campaigns</h3>
+            <p>Real street team campaigns we have delivered:</p>
+            <ul className="service-list">
+              <li><a href="/case-studies/wagamama-launch">Wagamama — Multi-City Street Team Blitz</a></li>
+              <li><a href="/case-studies/buffalo-wild-wings">Buffalo Wild Wings — East Village Takeover</a></li>
+              <li><a href="/case-studies/grubhub-campaign">Grubhub — NYC Street Team</a></li>
+              <li><a href="/case-studies/visible-wireless">Visible — 75-City Street Team Blitz</a></li>
+            </ul>
+          </div>
+
           <div className="city-cta">
             <h3>Ready to Launch a Street Team Campaign?</h3>
             <p>Get a free campaign strategy session with our team. We'll recommend the right approach for your brand, market, and budget.</p>

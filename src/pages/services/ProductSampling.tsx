@@ -96,6 +96,17 @@ export default function ProductSamplingService() {
             </details>
           </div>
 
+          <div className="related-campaigns" style={{ marginTop: '2.5rem' }}>
+            <h3>Related Campaigns</h3>
+            <p>Real product sampling campaigns we have delivered:</p>
+            <ul className="service-list">
+              <li><a href="/case-studies/premier-protein-sampling">Premier Protein — National Sampling</a></li>
+              <li><a href="/case-studies/clif-bar-marketing">Clif Bar — National Marketing</a></li>
+              <li><a href="/case-studies/byoma-skincare">BYOMA — Ulta Beauty Tour</a></li>
+              <li><a href="/case-studies/beer-samplings-national">Baja Brewing — Beer Sampling</a></li>
+            </ul>
+          </div>
+
           <div className="city-cta">
             <h3>Plan a Sampling Campaign</h3>
             <p>Get a custom sampling strategy for your product, market, and budget.</p>

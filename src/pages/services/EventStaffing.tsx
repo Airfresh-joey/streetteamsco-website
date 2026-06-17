@@ -101,6 +101,17 @@ export default function EventStaffingService() {
             </details>
           </div>
 
+          <div className="related-campaigns" style={{ marginTop: '2.5rem' }}>
+            <h3>Related Campaigns</h3>
+            <p>Real event staffing campaigns we have delivered:</p>
+            <ul className="service-list">
+              <li><a href="/case-studies/microsoft-events">Microsoft — NRF Conference</a></li>
+              <li><a href="/case-studies/ted-talk-events">TED Conference Staffing</a></li>
+              <li><a href="/case-studies/netflix-activations">Netflix — Premiere Events</a></li>
+              <li><a href="/case-studies/cirque-du-soleil">Cirque du Soleil — Dallas</a></li>
+            </ul>
+          </div>
+
           <div className="city-cta">
             <h3>Staff Your Next Event</h3>
             <p>Tell us about your event and we'll provide a staffing plan and quote within 24 hours.</p>
