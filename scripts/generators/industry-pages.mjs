@@ -2,6 +2,7 @@
 // Generates 15 full HTML pages: 14 individual industry pages + 1 industries index
 
 import path from 'path';
+import fs from 'fs';
 import {
   parseIndustries, wrapPage, writePage, breadcrumbSchema, faqSchema,
   statsBar, faqHtml, ctaSection, internalLinksBlock, escHtml, BASE_URL,
@@ -18,6 +19,42 @@ const SERVICE_SLUG_MAP = {
   'Experiential Marketing': 'experiential-marketing',
   'Promotional Staffing': 'promotional-staffing',
 };
+
+// Map each industry slug to matching real case-study categories
+const CS_CAT_MAP = {
+  cannabis: [], technology: ['Technology', 'Consumer Brands', 'Mobility'], 'food-beverage': ['Food & Beverage'],
+  'fitness-wellness': ['Health & Wellness'], 'real-estate': ['Real Estate'], retail: ['Retail', 'Beauty & Retail'],
+  entertainment: ['Entertainment'], automotive: ['Automotive', 'Mobility'], healthcare: ['Healthcare', 'Health & Wellness'],
+  'financial-services': [], hospitality: ['Food & Beverage'], education: [], sports: ['Sports', 'Sports Marketing', 'Events & Sports'],
+  'beauty-cosmetics': ['Beauty & Fashion', 'Beauty & Retail'],
+};
+
+function loadCaseStudies(srcDir) {
+  let s = fs.readFileSync(path.join(srcDir, 'data', 'portfolioCaseStudies.ts'), 'utf8');
+  s = s.slice(s.indexOf('export const portfolioCaseStudies')).replace(/export const portfolioCaseStudies[^=]*=/, 'const portfolioCaseStudies =');
+  s = s.slice(0, s.indexOf('\n];') + 3);
+  return new Function(s + '; return portfolioCaseStudies;')();
+}
+
+function featuredCaseStudiesHtml(industry, caseStudies) {
+  const cats = CS_CAT_MAP[industry.slug] || [];
+  const matched = caseStudies.filter(c => cats.includes(c.category)).slice(0, 4);
+  if (matched.length < 3) {
+    for (const id of ['wagamama-launch', 'mrbeast-events', 'netflix-activations', 'adidas-staffing', 'microsoft-events']) {
+      if (matched.length >= 4) break;
+      const c = caseStudies.find(x => x.id === id);
+      if (c && !matched.includes(c)) matched.push(c);
+    }
+  }
+  const cards = matched.map(c =>
+    `    <div class="service-box"><h4><a href="/case-studies/${c.id}">${escHtml(c.name)}</a></h4><p>${escHtml(c.tagline || '')}</p></div>`
+  ).join('\n');
+  return `  <h2>Featured ${escHtml(industry.name)} Case Studies</h2>
+  <p>Real campaigns from our portfolio &mdash; <a href="/case-studies/">browse all 50+ case studies</a>.</p>
+  <div class="service-grid">
+${cards}
+  </div>`;
+}
 
 function generateIndustryFaqs(industry) {
   return [
@@ -36,7 +73,7 @@ function generateIndustryFaqs(industry) {
   ];
 }
 
-function generateIndustryPage(industry, allIndustries) {
+function generateIndustryPage(industry, allIndustries, caseStudies) {
   const canonical = `${BASE_URL}/industries/${industry.slug}`;
   const faqs = generateIndustryFaqs(industry);
 
@@ -99,11 +136,7 @@ ${solutionsHtml}
 ${servicesGridHtml}
   </div>
 
-  <h2>Case Study: ${escHtml(industry.caseStudy.title)}</h2>
-  <div class="service-box" style="margin-bottom: 2rem;">
-    <h4>${escHtml(industry.caseStudy.title)}</h4>
-    <p><strong>Result:</strong> ${escHtml(industry.caseStudy.result)}</p>
-  </div>
+${featuredCaseStudiesHtml(industry, caseStudies)}
 
   <h2>Frequently Asked Questions</h2>
 ${faqHtml(faqs)}
@@ -210,6 +243,7 @@ ${internalLinksBlock('Explore More', [
 
 export function generateIndustryPages(distDir, srcDir) {
   const industries = parseIndustries(srcDir);
+  const caseStudies = loadCaseStudies(srcDir);
   let count = 0;
 
   // Industries index
@@ -220,7 +254,7 @@ export function generateIndustryPages(distDir, srcDir) {
   // Individual industry pages
   for (const industry of industries) {
     const filePath = path.join(distDir, 'industries', industry.slug, 'index.html');
-    writePage(filePath, generateIndustryPage(industry, industries));
+    writePage(filePath, generateIndustryPage(industry, industries, caseStudies));
     count++;
   }
 
