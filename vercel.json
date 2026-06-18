@@ -413,6 +413,10 @@
     {
       "source": "/street-team-marketing-statistics",
       "destination": "/street-team-marketing-statistics.html"
+    },
+    {
+      "source": "/product-sampling-statistics",
+      "destination": "/product-sampling-statistics.html"
     }
   ],
   "headers": [
