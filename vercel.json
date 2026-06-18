@@ -417,6 +417,10 @@
     {
       "source": "/product-sampling-statistics",
       "destination": "/product-sampling-statistics.html"
+    },
+    {
+      "source": "/event-staffing-statistics",
+      "destination": "/event-staffing-statistics.html"
     }
   ],
   "headers": [
