@@ -433,6 +433,10 @@
     {
       "source": "/statistics",
       "destination": "/statistics.html"
+    },
+    {
+      "source": "/college-marketing-statistics",
+      "destination": "/college-marketing-statistics.html"
     }
   ],
   "headers": [
