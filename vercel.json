@@ -429,6 +429,10 @@
     {
       "source": "/guerrilla-marketing-statistics",
       "destination": "/guerrilla-marketing-statistics.html"
+    },
+    {
+      "source": "/statistics",
+      "destination": "/statistics.html"
     }
   ],
   "headers": [

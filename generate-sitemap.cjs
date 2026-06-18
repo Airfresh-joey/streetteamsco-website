@@ -167,6 +167,7 @@ addUrl('/how-it-works', 0.8, 'monthly');
 addUrl('/about-street-teams-co', 0.8, 'monthly');
 
 // Event / time-sensitive landing pages
+addUrl('/statistics', 0.85, 'monthly');
 addUrl('/street-team-marketing-statistics', 0.8, 'monthly');
 addUrl('/product-sampling-statistics', 0.8, 'monthly');
 addUrl('/event-staffing-statistics', 0.8, 'monthly');
