@@ -113,6 +113,7 @@ if (fs.existsSync(cityServiceDir)) {
 
 // Pillar pages (static HTML in /public/)
 const pillarPages = [
+  'street-team-marketing-los-angeles',
   'street-team-marketing-agency',
   'brand-ambassador-agency',
   'guerrilla-marketing-agency',

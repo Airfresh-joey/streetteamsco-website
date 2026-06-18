@@ -107,6 +107,10 @@
       "destination": "/street-team-marketing-las-vegas.html"
     },
     {
+      "source": "/street-team-marketing-los-angeles",
+      "destination": "/street-team-marketing-los-angeles.html"
+    },
+    {
       "source": "/book-call",
       "destination": "/index.html"
     },
