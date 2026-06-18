@@ -425,6 +425,10 @@
     {
       "source": "/brand-ambassador-statistics",
       "destination": "/brand-ambassador-statistics.html"
+    },
+    {
+      "source": "/guerrilla-marketing-statistics",
+      "destination": "/guerrilla-marketing-statistics.html"
     }
   ],
   "headers": [
