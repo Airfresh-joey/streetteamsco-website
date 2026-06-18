@@ -421,6 +421,10 @@
     {
       "source": "/event-staffing-statistics",
       "destination": "/event-staffing-statistics.html"
+    },
+    {
+      "source": "/brand-ambassador-statistics",
+      "destination": "/brand-ambassador-statistics.html"
     }
   ],
   "headers": [
