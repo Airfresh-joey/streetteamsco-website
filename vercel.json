@@ -115,6 +115,10 @@
       "destination": "/sofi-stadium-event-staffing.html"
     },
     {
+      "source": "/metlife-stadium-event-staffing",
+      "destination": "/metlife-stadium-event-staffing.html"
+    },
+    {
       "source": "/book-call",
       "destination": "/index.html"
     },
