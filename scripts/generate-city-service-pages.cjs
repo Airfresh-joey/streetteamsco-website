@@ -110,6 +110,21 @@ const services = [
       'Photo and video documentation of the activation',
     ],
   },
+  {
+    slug: 'brand-activation',
+    name: 'Brand Activation',
+    shortName: 'Brand Activation',
+    description: 'Experiential brand activation staffing',
+    servicePageUrl: '/brand-activation-agency',
+    included: [
+      'Experienced brand activation staff and on-site team leads',
+      'Custom training on your brand, products, and experience',
+      'Setup, consumer engagement, and breakdown support',
+      'Real-time GPS tracking and timestamped photo reporting',
+      'Post-activation analytics with engagement and lead metrics',
+      'Dedicated account manager and single point of contact',
+    ],
+  },
 ];
 
 // ---------------------------------------------------------------------------
@@ -147,6 +162,11 @@ function generateFaqs(city, service) {
       { q: `What guerrilla marketing tactics work best in ${c}?`, a: `The most effective guerrilla marketing tactics in ${c} include street installations near ${city.landmarks[0]}, wild posting in ${city.neighborhoods[0]} and ${city.neighborhoods[1]}, flash mobs in high-traffic pedestrian zones, and pop-up experiences near ${city.landmarks[1]}. Our creative team designs campaigns specifically for the ${c} market.` },
       { q: `Do you handle permits for guerrilla marketing in ${c}?`, a: `Yes. Proper permitting is essential for guerrilla marketing campaigns in ${c}. Our operations team secures all required permits for public space usage, installations, projections, and street activations. We also carry liability insurance and coordinate with local authorities to ensure compliance with ${c} regulations.` },
     ],
+    'brand-activation': [
+      { q: `How much does a brand activation cost in ${c}, ${abbr}?`, a: `Brand activation costs in ${c} depend on the experience, footprint, staff size, and duration. Every ${c} activation is custom-quoted to its scope, from a single-day pop-up to a multi-day experiential campaign. Contact us for a custom ${c} quote.` },
+      { q: `What is a brand activation in ${c}?`, a: `A brand activation in ${c} is a live, experiential marketing event that brings your brand to life through direct consumer interaction — pop-ups, sampling, product demos, immersive installations, and experiential events at high-traffic ${c} locations. Street Teams Co staffs and executes brand activations across the ${c} metro, from ${city.neighborhoods[0]} to ${city.neighborhoods[1]}.` },
+      { q: `How quickly can you staff a brand activation in ${c}?`, a: `We can staff a brand activation in ${c} within 5-7 business days for standard programs, with rush deployment available in as little as 48 hours. For major events and peak seasons, we recommend booking 2-4 weeks in advance to secure the best ${c} talent.` },
+    ],
   };
 
   return faqSets[service.slug] || [];
@@ -172,6 +192,7 @@ function generateIntro(city, service) {
     'product-sampling': `Launch a product sampling campaign in ${c}, ${st} with Street Teams Co. Our professional sampling staff distribute your products directly to consumers at high-traffic retail locations, events, gyms, transit hubs, and office buildings across ${c}. Operating in neighborhoods like ${neighborhoods}, our teams achieve an average 35% trial-to-purchase conversion rate. ${c}'s diverse population of ${city.pop} makes it an ideal market for getting your product into the hands of your target demographic. We handle every detail from cold-chain logistics and inventory management to health code compliance and permit coordination, so you can focus on your brand strategy.`,
 
     'guerrilla-marketing': `Create an unforgettable guerrilla marketing campaign in ${c}, ${st} with Street Teams Co. Our creative team designs and executes unconventional activations that capture attention, generate social media buzz, and create lasting brand impressions across the ${c} metro area. From street installations and wild posting in ${neighborhoods} to flash mobs and projection mapping at iconic ${c} locations, we turn public spaces into immersive brand experiences. ${c}'s vibrant street culture and population of ${city.pop} make it one of the most exciting markets in the US for guerrilla marketing. Our ${c} team handles creative concepting, permitting, production, execution, and comprehensive photo and video documentation.`,
+    'brand-activation': `Planning a brand activation in ${c}, ${st}? Street Teams Co designs and staffs experiential brand activations that turn ${c} consumers into customers — pop-ups, product demos, sampling, and immersive installations across ${neighborhoods} and the wider ${c} metro. With ${city.pop} residents and millions of annual visitors, ${c} is one of the most valuable markets in the country for live brand experiences. Our ${c}-based activation teams handle staffing, setup, consumer engagement, and reporting, and know the neighborhoods, venues, and foot-traffic corridors that drive the strongest ROI.`,
   };
 
   return intros[service.slug] || '';
@@ -220,6 +241,13 @@ function generateUseCases(city, service) {
       `Flash mob activations in ${c}'s busiest pedestrian zones and plazas`,
       `Projection mapping on buildings and landmarks during ${c} nightlife hours`,
       `Pop-up experiences and branded installations near ${landmark2}`,
+    ],
+    'brand-activation': [
+      `Experiential pop-up activations in ${neighborhood1} and ${neighborhood2}`,
+      `Product launch experiences at ${landmark3} and premier ${c} venues`,
+      `Sampling and product-demo activations at high-traffic ${c} retail and events`,
+      `Festival and event brand activations near ${landmark1} and ${landmark2}`,
+      `Mobile tour and immersive installation activations across the ${c} metro`,
     ],
   };
 
