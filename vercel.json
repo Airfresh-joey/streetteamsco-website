@@ -175,6 +175,22 @@
       "destination": "/united-center-event-staffing.html"
     },
     {
+      "source": "/caesars-superdome-event-staffing",
+      "destination": "/caesars-superdome-event-staffing.html"
+    },
+    {
+      "source": "/soldier-field-event-staffing",
+      "destination": "/soldier-field-event-staffing.html"
+    },
+    {
+      "source": "/t-mobile-arena-event-staffing",
+      "destination": "/t-mobile-arena-event-staffing.html"
+    },
+    {
+      "source": "/state-farm-stadium-event-staffing",
+      "destination": "/state-farm-stadium-event-staffing.html"
+    },
+    {
       "source": "/book-call",
       "destination": "/index.html"
     },

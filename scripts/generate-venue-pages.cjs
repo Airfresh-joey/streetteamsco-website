@@ -32,6 +32,14 @@ const venues = [
     district: 'just off the Las Vegas Strip near Mandalay Bay and the resort corridor', anchors: 'the Las Vegas Strip and resort corridor', langs: 'Spanish, with other languages available' },
   { slug: 'united-center', venue: 'United Center', city: 'Chicago', metro: 'Chicago', state: 'Illinois', abbr: 'IL', cap: '23,000', wc: false, citySvc: 'illinois/chicago',
     district: "Chicago's Near West Side, minutes from the Loop and West Loop dining district", anchors: 'the Loop and West Loop entertainment districts', langs: 'Spanish and Polish, with other languages available' },
+  { slug: 'caesars-superdome', venue: 'Caesars Superdome', city: 'New Orleans', metro: 'New Orleans', state: 'Louisiana', abbr: 'LA', cap: '73,000', wc: false, citySvc: null,
+    district: 'the Downtown New Orleans sports district near the Smoothie King Center and the French Quarter', anchors: 'the Smoothie King Center and the French Quarter', langs: 'Spanish and French, with other languages available' },
+  { slug: 'soldier-field', venue: 'Soldier Field', city: 'Chicago', metro: 'Chicago', state: 'Illinois', abbr: 'IL', cap: '61,500', wc: false, citySvc: 'illinois/chicago',
+    district: "the Museum Campus on Chicago's lakefront near Downtown and Grant Park", anchors: 'the Museum Campus and Downtown Chicago', langs: 'Spanish and Polish, with other languages available' },
+  { slug: 't-mobile-arena', venue: 'T-Mobile Arena', city: 'Las Vegas', metro: 'Las Vegas', state: 'Nevada', abbr: 'NV', cap: '20,000', wc: false, citySvc: 'nevada/las-vegas',
+    district: 'the heart of the Las Vegas Strip between New York-New York and Park MGM', anchors: 'the Las Vegas Strip and the Park MGM corridor', langs: 'Spanish, with other languages available' },
+  { slug: 'state-farm-stadium', venue: 'State Farm Stadium', city: 'Glendale', metro: 'Phoenix', state: 'Arizona', abbr: 'AZ', cap: '63,400', wc: false, citySvc: 'arizona/phoenix',
+    district: 'the Glendale sports and entertainment district near the Westgate complex and Desert Diamond Arena', anchors: 'the Westgate Entertainment District and Desert Diamond Arena', langs: 'Spanish, with other languages available' },
 ];
 
 function esc(s){return s.replace(/&/g,'&amp;');}
