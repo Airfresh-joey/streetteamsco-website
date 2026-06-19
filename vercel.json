@@ -127,6 +127,38 @@
       "destination": "/mercedes-benz-stadium-event-staffing.html"
     },
     {
+      "source": "/att-stadium-event-staffing",
+      "destination": "/att-stadium-event-staffing.html"
+    },
+    {
+      "source": "/hard-rock-stadium-event-staffing",
+      "destination": "/hard-rock-stadium-event-staffing.html"
+    },
+    {
+      "source": "/nrg-stadium-event-staffing",
+      "destination": "/nrg-stadium-event-staffing.html"
+    },
+    {
+      "source": "/lincoln-financial-field-event-staffing",
+      "destination": "/lincoln-financial-field-event-staffing.html"
+    },
+    {
+      "source": "/levis-stadium-event-staffing",
+      "destination": "/levis-stadium-event-staffing.html"
+    },
+    {
+      "source": "/lumen-field-event-staffing",
+      "destination": "/lumen-field-event-staffing.html"
+    },
+    {
+      "source": "/arrowhead-stadium-event-staffing",
+      "destination": "/arrowhead-stadium-event-staffing.html"
+    },
+    {
+      "source": "/gillette-stadium-event-staffing",
+      "destination": "/gillette-stadium-event-staffing.html"
+    },
+    {
       "source": "/book-call",
       "destination": "/index.html"
     },
