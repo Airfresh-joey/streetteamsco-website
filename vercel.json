@@ -195,6 +195,10 @@
       "destination": "/experiential-marketing-statistics.html"
     },
     {
+      "source": "/major-event-staffing",
+      "destination": "/major-event-staffing.html"
+    },
+    {
       "source": "/book-call",
       "destination": "/index.html"
     },
