@@ -159,6 +159,22 @@
       "destination": "/gillette-stadium-event-staffing.html"
     },
     {
+      "source": "/crypto-com-arena-event-staffing",
+      "destination": "/crypto-com-arena-event-staffing.html"
+    },
+    {
+      "source": "/madison-square-garden-event-staffing",
+      "destination": "/madison-square-garden-event-staffing.html"
+    },
+    {
+      "source": "/allegiant-stadium-event-staffing",
+      "destination": "/allegiant-stadium-event-staffing.html"
+    },
+    {
+      "source": "/united-center-event-staffing",
+      "destination": "/united-center-event-staffing.html"
+    },
+    {
       "source": "/book-call",
       "destination": "/index.html"
     },

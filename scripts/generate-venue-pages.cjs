@@ -22,6 +22,16 @@ const venues = [
     district: 'the Truman Sports Complex alongside Kauffman Stadium', anchors: 'Kauffman Stadium and the Truman Sports Complex', langs: 'Spanish, with other languages available' },
   { slug: 'gillette-stadium', venue: 'Gillette Stadium', city: 'Foxborough', metro: 'Boston', state: 'Massachusetts', abbr: 'MA', cap: '65,000+', wcCity: 'boston', citySvc: 'massachusetts/boston',
     district: 'Patriot Place, a shopping, dining, and entertainment complex around the stadium', anchors: 'the Patriot Place shopping and dining complex', langs: 'Spanish and Portuguese, with other languages available' },
+
+  // Non-World-Cup marquee venues (wc:false → generic event framing, no WC claims)
+  { slug: 'crypto-com-arena', venue: 'Crypto.com Arena', city: 'Los Angeles', metro: 'Los Angeles', state: 'California', abbr: 'CA', cap: '20,000', wc: false, citySvc: 'california/los-angeles',
+    district: 'the L.A. Live entertainment complex in Downtown LA alongside the Convention Center', anchors: 'L.A. Live and the Los Angeles Convention Center', langs: 'Spanish, Korean, and other languages available' },
+  { slug: 'madison-square-garden', venue: 'Madison Square Garden', city: 'New York', metro: 'New York City', state: 'New York', abbr: 'NY', cap: '20,000', wc: false, citySvc: 'new-york/new-york-city',
+    district: 'the heart of Midtown Manhattan above Penn Station', anchors: 'Penn Station and the Midtown Manhattan corridor', langs: 'Spanish, with many other languages available' },
+  { slug: 'allegiant-stadium', venue: 'Allegiant Stadium', city: 'Las Vegas', metro: 'Las Vegas', state: 'Nevada', abbr: 'NV', cap: '65,000', wc: false, citySvc: 'nevada/las-vegas',
+    district: 'just off the Las Vegas Strip near Mandalay Bay and the resort corridor', anchors: 'the Las Vegas Strip and resort corridor', langs: 'Spanish, with other languages available' },
+  { slug: 'united-center', venue: 'United Center', city: 'Chicago', metro: 'Chicago', state: 'Illinois', abbr: 'IL', cap: '23,000', wc: false, citySvc: 'illinois/chicago',
+    district: "Chicago's Near West Side, minutes from the Loop and West Loop dining district", anchors: 'the Loop and West Loop entertainment districts', langs: 'Spanish and Polish, with other languages available' },
 ];
 
 function esc(s){return s.replace(/&/g,'&amp;');}
@@ -30,6 +40,22 @@ function escAttr(s){return s.replace(/&/g,'&amp;').replace(/"/g,'&quot;');}
 function page(v){
   const venueEsc = esc(v.venue);
   const url = `https://streetteamsco.com/${v.slug}-event-staffing`;
+  const isWC = v.wc !== false;
+  const metaWC = isWC ? ', a 2026 World Cup host venue' : '';
+  const banner = isWC
+    ? `${venueEsc} hosts 2026 World Cup matches in ${esc(v.metro)}. Activation staff book early. <a href="/contact">Get a free quote</a>.`
+    : `Planning a brand activation at ${venueEsc} in ${esc(v.metro)}? Street Teams Co staffs the venue district. <a href="/contact">Get a free quote</a>.`;
+  const statNum = isWC ? 'World Cup' : 'Marquee';
+  const statLabel = isWC ? 'Host Venue' : 'Event Venue';
+  const hostLine = isWC
+    ? `a confirmed host site for the <a href="/fifa-world-cup-2026-staffing/${v.wcCity}">2026 World Cup</a>`
+    : `one of the marquee event, sports, and concert venues in ${esc(v.metro)}`;
+  const bigCrowd = isWC ? ' — and the World Cup will bring some of the most international audiences the venue has ever seen' : '';
+  const eventsList = isWC ? 'concerts, games, conventions, and the 2026 World Cup' : 'concerts, games, and major events';
+  const wcCrossLink = isWC ? `\n      <a href="/fifa-world-cup-2026-staffing/${v.wcCity}">${esc(v.metro)} World Cup 2026 Staffing</a>` : '';
+  const fifaDisc = isWC ? ', or FIFA or any official World Cup organizing body' : '';
+  const langTail = isWC ? ' for the international crowds the World Cup draws' : ' for the diverse, international crowds these events draw';
+  const bilingualWC = isWC ? 'the global crowds drawn to the 2026 World Cup make bilingual staffing valuable' : 'the international audiences at major events make bilingual staffing valuable';
   const citySvcLinks = v.citySvc ? `
       <a href="/locations/${v.citySvc}/brand-ambassadors">${esc(v.metro)} Brand Ambassadors</a>
       <a href="/locations/${v.citySvc}/event-staffing">${esc(v.metro)} Event Staffing</a>
@@ -40,11 +66,11 @@ function page(v){
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>${venueEsc} Event Staffing &amp; Brand Ambassadors | ${esc(v.metro)} | Street Teams Co</title>
-  <meta name="description" content="${escAttr(v.venue)} event staffing and brand ambassadors — sampling crews, street teams, and bilingual promotional staff for activations at and around ${escAttr(v.venue)} in ${escAttr(v.metro)}, a 2026 World Cup host venue. Get a free quote.">
+  <meta name="description" content="${escAttr(v.venue)} event staffing and brand ambassadors — sampling crews, street teams, and bilingual promotional staff for activations at and around ${escAttr(v.venue)} in ${escAttr(v.metro)}${metaWC}. Get a free quote.">
   <meta name="author" content="Street Teams Co">
   <link rel="canonical" href="${url}">
   <meta property="og:title" content="${escAttr(v.venue)} Event Staffing &amp; Brand Ambassadors">
-  <meta property="og:description" content="Sampling crews, street teams, and bilingual brand ambassadors for activations at and around ${escAttr(v.venue)} in ${escAttr(v.metro)} — a 2026 World Cup host venue.">
+  <meta property="og:description" content="Sampling crews, street teams, and bilingual brand ambassadors for activations at and around ${escAttr(v.venue)} in ${escAttr(v.metro)}${isWC?' — a 2026 World Cup host venue':''}.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="${url}">
   <meta property="og:site_name" content="Street Teams Co">
@@ -54,15 +80,15 @@ function page(v){
   <meta name="twitter:description" content="Event staffing and brand ambassadors for ${escAttr(v.venue)} activations. Get a free quote.">
 
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"Service","name":${JSON.stringify(v.venue+' Event Staffing & Brand Ambassadors')},"provider":{"@type":"MarketingAgency","name":"Street Teams Co","url":"https://streetteamsco.com","aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"127","bestRating":"5"}},"description":${JSON.stringify('Professional event staffing, brand ambassadors, sampling crews, and street teams for brand activations at and around '+v.venue+' in '+v.metro+', a 2026 World Cup host venue.')},"areaServed":{"@type":"City","name":${JSON.stringify(v.city)},"containedInPlace":{"@type":"State","name":${JSON.stringify(v.state)}}},"serviceType":"Event Staffing","url":"${url}"}
+  {"@context":"https://schema.org","@type":"Service","name":${JSON.stringify(v.venue+' Event Staffing & Brand Ambassadors')},"provider":{"@type":"MarketingAgency","name":"Street Teams Co","url":"https://streetteamsco.com","aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"127","bestRating":"5"}},"description":${JSON.stringify('Professional event staffing, brand ambassadors, sampling crews, and street teams for brand activations at and around '+v.venue+' in '+v.metro+(isWC?', a 2026 World Cup host venue':', a marquee event and sports venue')+'.')},"areaServed":{"@type":"City","name":${JSON.stringify(v.city)},"containedInPlace":{"@type":"State","name":${JSON.stringify(v.state)}}},"serviceType":"Event Staffing","url":"${url}"}
   </script>
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://streetteamsco.com"},{"@type":"ListItem","position":2,"name":${JSON.stringify(v.venue+' Event Staffing')},"item":"${url}"}]}
   </script>
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
-  {"@type":"Question","name":${JSON.stringify('Can you provide brand ambassadors and event staff at '+v.venue+'?')},"acceptedAnswer":{"@type":"Answer","text":${JSON.stringify('Yes. Street Teams Co staffs brand activations, sampling, street teams, and promotional teams at and around '+v.venue+' and '+v.district+' in '+v.metro+'. We deploy on the stadium perimeter, in the parking and transit zones, and across the pedestrian corridors that fill before and after every event — for concerts, games, conventions, and the 2026 World Cup.')}}},
-  {"@type":"Question","name":${JSON.stringify('Do you provide bilingual staff for '+v.metro+' stadium activations?')},"acceptedAnswer":{"@type":"Answer","text":${JSON.stringify('Yes. The '+v.metro+' area is diverse and the global crowds drawn to the 2026 World Cup make bilingual staffing valuable. The majority of our available staff are bilingual in English and '+v.langs+'.')}}},
+  {"@type":"Question","name":${JSON.stringify('Can you provide brand ambassadors and event staff at '+v.venue+'?')},"acceptedAnswer":{"@type":"Answer","text":${JSON.stringify('Yes. Street Teams Co staffs brand activations, sampling, street teams, and promotional teams at and around '+v.venue+' and '+v.district+' in '+v.metro+'. We deploy on the stadium perimeter, in the parking and transit zones, and across the pedestrian corridors that fill before and after every event — for '+eventsList+'.')}}},
+  {"@type":"Question","name":${JSON.stringify('Do you provide bilingual staff for '+v.metro+' stadium activations?')},"acceptedAnswer":{"@type":"Answer","text":${JSON.stringify('Yes. The '+v.metro+' area is diverse and '+bilingualWC+'. The majority of our available staff are bilingual in English and '+v.langs+'.')}}},
   {"@type":"Question","name":${JSON.stringify('How much does '+v.venue+' event staffing cost?')},"acceptedAnswer":{"@type":"Answer","text":${JSON.stringify('Every '+v.venue+' activation is custom-quoted based on your goals, team size, roles, hours, and language needs. There are no published rate cards because no two activations are alike. Tell us your event and goals and we will return a detailed staffing plan and a free quote.')}}},
   {"@type":"Question","name":"Can you staff activations near the stadium without official sponsorship?","acceptedAnswer":{"@type":"Answer","text":${JSON.stringify('Yes. While in-stadium activations require venue or event rights, the public approaches, plazas, parking areas, transit hubs, and the surrounding '+v.metro+' districts offer significant opportunity for street teams, sampling, and brand ambassadors to reach attendees without official sponsorship.')}}}]}
   </script>
@@ -124,7 +150,7 @@ function page(v){
 <body>
 
 <div class="urgency-banner">
-  ${venueEsc} hosts 2026 World Cup matches in ${esc(v.metro)}. Activation staff book early. <a href="/contact">Get a free quote</a>.
+  ${banner}
 </div>
 
 <header>
@@ -145,7 +171,7 @@ function page(v){
     <nav class="breadcrumb"><a href="/">Home</a> / <span>${venueEsc} Event Staffing</span></nav>
     <div class="event-badge">${esc(v.metro)}</div>
     <h1>${venueEsc} Event Staffing &amp; Brand Ambassadors</h1>
-    <p class="hero-sub">Street Teams Co staffs brand activations, sampling crews, street teams, and bilingual brand ambassadors at and around ${venueEsc} in ${esc(v.metro)} — a 2026 World Cup host venue.</p>
+    <p class="hero-sub">Street Teams Co staffs brand activations, sampling crews, street teams, and bilingual brand ambassadors at and around ${venueEsc} in ${esc(v.metro)}${isWC?' — a 2026 World Cup host venue':', a marquee event and concert venue'}.</p>
     <div class="hero-cta-row">
       <a href="/contact" class="cta-btn">Get Your ${esc(v.metro)} Staffing Quote</a>
       <a href="/contact" class="cta-secondary">Get a free quote</a>
@@ -155,7 +181,7 @@ function page(v){
 
 <div class="stats-bar">
   <div class="stat-box"><div class="number">${esc(v.cap)}</div><div class="label">Stadium Capacity</div></div>
-  <div class="stat-box"><div class="number">World Cup</div><div class="label">Host Venue</div></div>
+  <div class="stat-box"><div class="number">${statNum}</div><div class="label">${statLabel}</div></div>
   <div class="stat-box"><div class="number">Bilingual</div><div class="label">Teams Available</div></div>
   <div class="stat-box"><div class="number">Free</div><div class="label">Custom Quotes</div></div>
 </div>
@@ -164,7 +190,7 @@ function page(v){
 
   <h2>Event Staffing at ${venueEsc} &amp; ${esc(v.metro)}</h2>
 
-  <p><strong>${venueEsc}</strong> is one of the marquee event venues in ${esc(v.metro)} and a confirmed host site for the <a href="/fifa-world-cup-2026-staffing/${v.wcCity}">2026 World Cup</a>. Set within ${esc(v.district)}, it draws huge, energetic crowds before, during, and after every event — and the World Cup will bring some of the most international audiences the venue has ever seen.</p>
+  <p><strong>${venueEsc}</strong> is one of the marquee event venues in ${esc(v.metro)} and ${hostLine}. Set within ${esc(v.district)}, it draws huge, energetic crowds before, during, and after every event${bigCrowd}.</p>
 
   <p>That concentration makes the ${venueEsc} district a high-value activation footprint. Crowds funnel through a defined set of plazas, parking areas, transit hubs, and pedestrian corridors — captive audiences moving on predictable paths, ideal for street teams, sampling crews, and high-visibility brand ambassadors. The surrounding area around ${esc(v.anchors)} extends the activation window well beyond the stadium gates.</p>
 
@@ -185,7 +211,7 @@ function page(v){
     <li><strong>Product sampling</strong> — Fan-targeted sampling of beverages, snacks, and promotional items, with cold-chain logistics for summer events.</li>
     <li><strong>Event &amp; hospitality staff</strong> — Registration, hospitality, crowd flow, and sponsor lounge support.</li>
     <li><strong>Guerrilla &amp; experiential</strong> — Attention-grabbing street-level activations and installations around the venue district.</li>
-    <li><strong>Bilingual staff</strong> — English plus ${esc(v.langs)} for the international crowds the World Cup draws.</li>
+    <li><strong>Bilingual staff</strong> — English plus ${esc(v.langs)}${langTail}.</li>
   </ul>
 
   <hr class="section-divider">
@@ -193,11 +219,11 @@ function page(v){
   <h2>Frequently Asked Questions: ${venueEsc} Staffing</h2>
   <div class="faq-item">
     <h4>Can you provide brand ambassadors and event staff at ${venueEsc}?</h4>
-    <p>Yes. Street Teams Co staffs brand activations, sampling, street teams, and promotional teams at and around ${venueEsc} and ${esc(v.district)} in ${esc(v.metro)}. We deploy on the stadium perimeter, in the parking and transit zones, and across the pedestrian corridors that fill before and after every event — for concerts, games, conventions, and the 2026 World Cup.</p>
+    <p>Yes. Street Teams Co staffs brand activations, sampling, street teams, and promotional teams at and around ${venueEsc} and ${esc(v.district)} in ${esc(v.metro)}. We deploy on the stadium perimeter, in the parking and transit zones, and across the pedestrian corridors that fill before and after every event — for ${eventsList}.</p>
   </div>
   <div class="faq-item">
     <h4>Do you provide bilingual staff for ${esc(v.metro)} stadium activations?</h4>
-    <p>Yes. The ${esc(v.metro)} area is diverse and the global crowds drawn to the 2026 World Cup make bilingual staffing valuable. The majority of our available staff are bilingual in English and ${esc(v.langs)}.</p>
+    <p>Yes. The ${esc(v.metro)} area is diverse and ${bilingualWC}. The majority of our available staff are bilingual in English and ${esc(v.langs)}.</p>
   </div>
   <div class="faq-item">
     <h4>How much does ${venueEsc} event staffing cost?</h4>
@@ -210,7 +236,7 @@ function page(v){
 
   <div class="cta-section">
     <h2>Ready to Activate at ${venueEsc}?</h2>
-    <p>The best bilingual brand ambassadors and field staff in ${esc(v.metro)} book early for the World Cup. Start the conversation today.</p>
+    <p>The best bilingual brand ambassadors and field staff in ${esc(v.metro)} book early. Start the conversation today.</p>
     <a href="/contact" class="cta-btn">Get Your ${esc(v.metro)} Staffing Quote</a>
   </div>
 
@@ -219,11 +245,11 @@ function page(v){
   <div class="internal-links">
     <h3>Related ${esc(v.metro)} Resources</h3>
     <div class="link-grid">
-      <a href="/fifa-world-cup-2026-staffing/${v.wcCity}">${esc(v.metro)} World Cup 2026 Staffing</a>${citySvcLinks}
+${wcCrossLink}${citySvcLinks}
       <a href="/services/event-staffing">Event Staffing Services</a>
       <a href="/services/brand-ambassadors">Brand Ambassadors</a>
       <a href="/services/product-sampling">Product Sampling</a>
-      <a href="/fifa-world-cup-2026-staffing">World Cup 2026 Hub</a>
+      ${isWC?'<a href="/fifa-world-cup-2026-staffing">World Cup 2026 Hub</a>':'<a href="/services">All Services</a>'}
       <a href="/contact">Get a free quote</a>
     </div>
   </div>
@@ -231,7 +257,7 @@ function page(v){
 </div>
 
 <div class="disclaimer">
-  Street Teams Co is an independent event staffing agency and is not affiliated with, endorsed by, or sponsored by ${venueEsc}, any team, or FIFA or any official World Cup organizing body. References to the venue and major events are descriptive and used solely to indicate the location and timing of brand activation opportunities.
+  Street Teams Co is an independent event staffing agency and is not affiliated with, endorsed by, or sponsored by ${venueEsc}, any team${fifaDisc}. References to the venue and major events are descriptive and used solely to indicate the location and timing of brand activation opportunities.
 </div>
 
 <footer>
