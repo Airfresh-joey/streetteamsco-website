@@ -116,6 +116,7 @@ const pillarPages = [
   'sofi-stadium-event-staffing',
   'metlife-stadium-event-staffing',
   'super-bowl-event-staffing',
+  'mercedes-benz-stadium-event-staffing',
   'street-team-marketing-los-angeles',
   'street-team-marketing-agency',
   'brand-ambassador-agency',
