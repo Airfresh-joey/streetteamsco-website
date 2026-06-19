@@ -43,10 +43,17 @@ export default function Layout({ children }: LayoutProps) {
               <Link to="/locations">Locations</Link>
             </div>
             <div className="footer-section">
+              <h3>Major Events</h3>
+              <a href="/fifa-world-cup-2026-staffing">World Cup 2026 Staffing</a>
+              <a href="/los-angeles-2028-staffing">LA 2028 Staffing</a>
+              <a href="/major-event-staffing">Major Event &amp; Venue Staffing</a>
+              <a href="/statistics">Marketing Statistics</a>
+            </div>
+            <div className="footer-section">
               <h3>Contact</h3>
               <a href="mailto:hello@streetteamsco.com">hello@streetteamsco.com</a>
               <p>50+ states &middot; 1,000+ cities</p>
-              <p>Response within 24 hours</p>
+              <p>Custom quotes for every campaign</p>
             </div>
           </div>
           <div className="footer-bottom">
