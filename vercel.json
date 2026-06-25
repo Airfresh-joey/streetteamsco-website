@@ -195,6 +195,10 @@
       "destination": "/experiential-marketing-statistics.html"
     },
     {
+      "source": "/field-marketing-statistics",
+      "destination": "/field-marketing-statistics.html"
+    },
+    {
       "source": "/major-event-staffing",
       "destination": "/major-event-staffing.html"
     },
