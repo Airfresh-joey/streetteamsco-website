@@ -199,6 +199,10 @@
       "destination": "/field-marketing-statistics.html"
     },
     {
+      "source": "/sports-stadium-marketing-statistics",
+      "destination": "/sports-stadium-marketing-statistics.html"
+    },
+    {
       "source": "/major-event-staffing",
       "destination": "/major-event-staffing.html"
     },

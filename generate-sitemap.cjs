@@ -197,6 +197,7 @@ addUrl('/guerrilla-marketing-statistics', 0.8, 'monthly');
 addUrl('/college-marketing-statistics', 0.8, 'monthly');
 addUrl('/experiential-marketing-statistics', 0.8, 'monthly');
 addUrl('/field-marketing-statistics', 0.8, 'monthly');
+addUrl('/sports-stadium-marketing-statistics', 0.8, 'monthly');
 addUrl('/major-event-staffing', 0.9, 'weekly');
 addUrl('/fifa-world-cup-2026-staffing', 0.95, 'weekly');
 addUrl('/los-angeles-2028-staffing', 0.95, 'weekly');
