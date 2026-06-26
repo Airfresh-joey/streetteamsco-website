@@ -82,7 +82,7 @@ const venues = [
     district: 'the Victory Park entertainment district just north of Downtown Dallas', anchors: 'Victory Park and the Dallas Arts District', langs: 'Spanish, with Vietnamese and other languages available' },
   { slug: 'kaseya-center', venue: 'Kaseya Center', city: 'Miami', metro: 'Miami', state: 'Florida', abbr: 'FL', cap: '19,600', wc: false, citySvc: 'florida/miami',
     district: 'the Downtown Miami waterfront along Biscayne Bay near Bayside Marketplace', anchors: 'Bayside Marketplace and the Downtown Miami waterfront', langs: 'Spanish and Portuguese, with Haitian Creole and other languages available' },
-  { slug: 'capital-one-arena', venue: 'Capital One Arena', city: 'Washington', metro: 'Washington, D.C.', state: 'District of Columbia', abbr: 'DC', cap: '20,000', wc: false, citySvc: 'district-of-columbia/washington',
+  { slug: 'capital-one-arena', venue: 'Capital One Arena', city: 'Washington', metro: 'Washington, D.C.', state: 'District of Columbia', abbr: 'DC', cap: '20,000', wc: false, citySvc: null,
     district: "the Penn Quarter/Chinatown district in Downtown D.C.", anchors: 'Penn Quarter, Chinatown, and the National Mall corridor', langs: 'Spanish, with Amharic and other languages available' },
   { slug: 'wells-fargo-center', venue: 'Wells Fargo Center', city: 'Philadelphia', metro: 'Philadelphia', state: 'Pennsylvania', abbr: 'PA', cap: '21,000', wc: false, citySvc: 'pennsylvania/philadelphia',
     district: 'the South Philadelphia Sports Complex alongside Citizens Bank Park and Lincoln Financial Field', anchors: 'Citizens Bank Park and Lincoln Financial Field', langs: 'Spanish, with other languages available' },
