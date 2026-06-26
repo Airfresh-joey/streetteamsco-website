@@ -186,6 +186,7 @@ nicheServices.forEach(p => addUrl(`/${p}`, 0.9, 'weekly'));
 // Standalone pages (static HTML in /public/)
 addUrl('/how-it-works', 0.8, 'monthly');
 addUrl('/about-street-teams-co', 0.8, 'monthly');
+addUrl('/how-to-hire-a-street-team-marketing-agency', 0.85, 'monthly');
 
 // Event / time-sensitive landing pages
 addUrl('/statistics', 0.85, 'monthly');
