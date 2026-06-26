@@ -195,6 +195,10 @@ const VENUES_BY_CITY = {
   'colorado/denver': [
     { label: 'Ball Arena', url: '/ball-arena-event-staffing' },
     { label: 'Colorado Convention Center', url: '/colorado-convention-center-event-staffing' },
+    { label: 'Red Rocks Amphitheatre', url: '/red-rocks-amphitheatre-event-staffing' },
+  ],
+  'texas/austin': [
+    { label: 'Circuit of the Americas', url: '/circuit-of-the-americas-event-staffing' },
   ],
   'district-of-columbia/washington': [
     { label: 'Capital One Arena', url: '/capital-one-arena-event-staffing' },
@@ -206,6 +210,7 @@ const VENUES_BY_CITY = {
     { label: 'SoFi Stadium', url: '/sofi-stadium-event-staffing' },
     { label: 'Crypto.com Arena', url: '/crypto-com-arena-event-staffing' },
     { label: 'Dodger Stadium', url: '/dodger-stadium-event-staffing' },
+    { label: 'Hollywood Bowl', url: '/hollywood-bowl-event-staffing' },
   ],
   'california/san-francisco': [
     { label: 'Chase Center', url: '/chase-center-event-staffing' },

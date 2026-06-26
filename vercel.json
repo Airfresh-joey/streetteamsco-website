@@ -275,6 +275,26 @@
       "destination": "/paycom-center-event-staffing.html"
     },
     {
+      "source": "/indianapolis-motor-speedway-event-staffing",
+      "destination": "/indianapolis-motor-speedway-event-staffing.html"
+    },
+    {
+      "source": "/daytona-international-speedway-event-staffing",
+      "destination": "/daytona-international-speedway-event-staffing.html"
+    },
+    {
+      "source": "/circuit-of-the-americas-event-staffing",
+      "destination": "/circuit-of-the-americas-event-staffing.html"
+    },
+    {
+      "source": "/red-rocks-amphitheatre-event-staffing",
+      "destination": "/red-rocks-amphitheatre-event-staffing.html"
+    },
+    {
+      "source": "/hollywood-bowl-event-staffing",
+      "destination": "/hollywood-bowl-event-staffing.html"
+    },
+    {
       "source": "/ball-arena-event-staffing",
       "destination": "/ball-arena-event-staffing.html"
     },

@@ -112,6 +112,18 @@ const venues = [
     district: 'the Deer District entertainment plaza in Downtown Milwaukee', anchors: 'the Deer District plaza and the Wisconsin Center', langs: 'Spanish, with other languages available' },
   { slug: 'paycom-center', venue: 'Paycom Center', city: 'Oklahoma City', metro: 'Oklahoma City', state: 'Oklahoma', abbr: 'OK', cap: '18,000', wc: false, citySvc: null,
     district: 'Downtown Oklahoma City next to the Bricktown entertainment district', anchors: 'Bricktown and the downtown core', langs: 'Spanish, with other languages available' },
+
+  // Racetracks & amphitheaters (wc:false + vtype → race-day / concert framing, no stadium wording)
+  { slug: 'indianapolis-motor-speedway', venue: 'Indianapolis Motor Speedway', city: 'Indianapolis', metro: 'Indianapolis', state: 'Indiana', abbr: 'IN', cap: '250,000+', wc: false, vtype: 'speedway', citySvc: null,
+    district: 'the town of Speedway on the northwest side of Indianapolis, home of the Indy 500 and Brickyard', anchors: 'the Speedway Main Street district and downtown Indianapolis', langs: 'Spanish, with other languages available' },
+  { slug: 'daytona-international-speedway', venue: 'Daytona International Speedway', city: 'Daytona Beach', metro: 'Daytona Beach', state: 'Florida', abbr: 'FL', cap: '101,000', wc: false, vtype: 'speedway', citySvc: null,
+    district: 'the Daytona Beach motorsports corridor near the airport and the One Daytona complex', anchors: 'One Daytona and the Daytona Beach oceanfront', langs: 'Spanish, with other languages available' },
+  { slug: 'circuit-of-the-americas', venue: 'Circuit of the Americas', city: 'Austin', metro: 'Austin', state: 'Texas', abbr: 'TX', cap: '120,000', wc: false, vtype: 'speedway', citySvc: 'texas/austin',
+    district: 'the Circuit of the Americas complex in southeast Austin, host of the F1 US Grand Prix and major music festivals', anchors: 'downtown Austin and the airport corridor', langs: 'Spanish, with other languages available' },
+  { slug: 'red-rocks-amphitheatre', venue: 'Red Rocks Amphitheatre', city: 'Morrison', metro: 'Denver', state: 'Colorado', abbr: 'CO', cap: '9,525', wc: false, vtype: 'amphitheater', citySvc: 'colorado/denver',
+    district: 'Red Rocks Park in Morrison, in the foothills just west of Denver', anchors: 'downtown Denver and the Front Range foothills', langs: 'Spanish, with other languages available' },
+  { slug: 'hollywood-bowl', venue: 'Hollywood Bowl', city: 'Los Angeles', metro: 'Los Angeles', state: 'California', abbr: 'CA', cap: '17,500', wc: false, vtype: 'amphitheater', citySvc: 'california/los-angeles',
+    district: 'the Cahuenga Pass in the Hollywood Hills near Hollywood Boulevard', anchors: 'Hollywood Boulevard and the Hollywood entertainment district', langs: 'Spanish, Korean, and other languages available' },
 ];
 
 function esc(s){return s.replace(/&/g,'&amp;');}
@@ -141,13 +153,15 @@ function page(v){
   const url = `https://streetteamsco.com/${v.slug}-event-staffing`;
   const isWC = v.wc !== false;
   const isConv = v.conv === true;
-  const capLabel = isConv ? 'Exhibit Space' : 'Stadium Capacity';
-  const perimeterWord = isConv ? 'convention center perimeter and surrounding concourses' : 'stadium perimeter';
-  const venueWord = isConv ? 'convention center' : 'stadium';
-  const gatesWord = isConv ? 'exhibit halls' : 'stadium gates';
-  const activationWord = isConv ? 'convention' : 'stadium';
-  const affilWord = isConv ? 'show organizer or venue operator' : 'team';
-  const insideWord = isConv ? 'in-venue' : 'in-stadium';
+  const isSpeedway = v.vtype === 'speedway';
+  const isAmph = v.vtype === 'amphitheater';
+  const capLabel = isConv ? 'Exhibit Space' : isSpeedway ? 'Capacity' : isAmph ? 'Capacity' : 'Stadium Capacity';
+  const perimeterWord = isConv ? 'convention center perimeter and surrounding concourses' : isSpeedway ? 'track perimeter, midway, and surrounding grounds' : isAmph ? 'amphitheater grounds and surrounding plazas' : 'stadium perimeter';
+  const venueWord = isConv ? 'convention center' : isSpeedway ? 'speedway' : isAmph ? 'amphitheater' : 'stadium';
+  const gatesWord = isConv ? 'exhibit halls' : isSpeedway ? 'grandstand gates' : isAmph ? 'venue gates' : 'stadium gates';
+  const activationWord = isConv ? 'convention' : isSpeedway ? 'race-day' : isAmph ? 'concert' : 'stadium';
+  const affilWord = isConv ? 'show organizer or venue operator' : isSpeedway ? 'track or series operator' : isAmph ? 'venue operator or promoter' : 'team';
+  const insideWord = isConv ? 'in-venue' : isSpeedway ? 'inside-the-gates' : isAmph ? 'inside-the-venue' : 'in-stadium';
   const metaWC = isWC ? ', a 2026 World Cup host venue' : '';
   const banner = isWC
     ? `${venueEsc} hosts 2026 World Cup matches in ${esc(v.metro)}. Activation staff book early. <a href="/contact">Get a free quote</a>.`
@@ -160,7 +174,7 @@ function page(v){
     ? `one of the largest convention and trade-show venues in ${esc(v.metro)}`
     : `one of the marquee event, sports, and concert venues in ${esc(v.metro)}`;
   const bigCrowd = isWC ? ' — and the World Cup will bring some of the most international audiences the venue has ever seen' : '';
-  const eventsList = isWC ? 'concerts, games, conventions, and the 2026 World Cup' : isConv ? 'trade shows, conventions, and major expos' : 'concerts, games, and major events';
+  const eventsList = isWC ? 'concerts, games, conventions, and the 2026 World Cup' : isConv ? 'trade shows, conventions, and major expos' : isSpeedway ? 'races, festivals, concerts, and major events' : isAmph ? 'concerts, festivals, and live events' : 'concerts, games, and major events';
   const wcCrossLink = isWC ? `\n      <a href="/fifa-world-cup-2026-staffing/${v.wcCity}">${esc(v.metro)} World Cup 2026 Staffing</a>` : '';
   const fifaDisc = isWC ? ', or FIFA or any official World Cup organizing body' : '';
   const langTail = isWC ? ' for the international crowds the World Cup draws' : ' for the diverse, international crowds these events draw';
