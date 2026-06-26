@@ -295,6 +295,30 @@
       "destination": "/hollywood-bowl-event-staffing.html"
     },
     {
+      "source": "/lambeau-field-event-staffing",
+      "destination": "/lambeau-field-event-staffing.html"
+    },
+    {
+      "source": "/lucas-oil-stadium-event-staffing",
+      "destination": "/lucas-oil-stadium-event-staffing.html"
+    },
+    {
+      "source": "/us-bank-stadium-event-staffing",
+      "destination": "/us-bank-stadium-event-staffing.html"
+    },
+    {
+      "source": "/empower-field-at-mile-high-event-staffing",
+      "destination": "/empower-field-at-mile-high-event-staffing.html"
+    },
+    {
+      "source": "/bank-of-america-stadium-event-staffing",
+      "destination": "/bank-of-america-stadium-event-staffing.html"
+    },
+    {
+      "source": "/san-diego-convention-center-event-staffing",
+      "destination": "/san-diego-convention-center-event-staffing.html"
+    },
+    {
       "source": "/ball-arena-event-staffing",
       "destination": "/ball-arena-event-staffing.html"
     },

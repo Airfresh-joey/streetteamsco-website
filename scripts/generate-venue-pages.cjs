@@ -124,6 +124,20 @@ const venues = [
     district: 'Red Rocks Park in Morrison, in the foothills just west of Denver', anchors: 'downtown Denver and the Front Range foothills', langs: 'Spanish, with other languages available' },
   { slug: 'hollywood-bowl', venue: 'Hollywood Bowl', city: 'Los Angeles', metro: 'Los Angeles', state: 'California', abbr: 'CA', cap: '17,500', wc: false, vtype: 'amphitheater', citySvc: 'california/los-angeles',
     district: 'the Cahuenga Pass in the Hollywood Hills near Hollywood Boulevard', anchors: 'Hollywood Boulevard and the Hollywood entertainment district', langs: 'Spanish, Korean, and other languages available' },
+
+  // Additional marquee NFL stadiums + San Diego Convention Center
+  { slug: 'lambeau-field', venue: 'Lambeau Field', city: 'Green Bay', metro: 'Green Bay', state: 'Wisconsin', abbr: 'WI', cap: '81,000+', wc: false, citySvc: null,
+    district: "the Titletown District on Green Bay's west side around the historic stadium", anchors: 'the Titletown District and the Lambeau Field Atrium', langs: 'Spanish, with Hmong and other languages available' },
+  { slug: 'lucas-oil-stadium', venue: 'Lucas Oil Stadium', city: 'Indianapolis', metro: 'Indianapolis', state: 'Indiana', abbr: 'IN', cap: '67,000', wc: false, citySvc: null,
+    district: 'downtown Indianapolis directly connected to the Indiana Convention Center', anchors: 'the Indiana Convention Center and Georgia Street', langs: 'Spanish, with other languages available' },
+  { slug: 'us-bank-stadium', venue: 'U.S. Bank Stadium', city: 'Minneapolis', metro: 'Minneapolis', state: 'Minnesota', abbr: 'MN', cap: '66,000', wc: false, citySvc: null,
+    district: 'the Downtown East district of Minneapolis near the Mississippi riverfront', anchors: 'Downtown East and the Minneapolis riverfront', langs: 'Spanish, Hmong, and Somali, with other languages available' },
+  { slug: 'empower-field-at-mile-high', venue: 'Empower Field at Mile High', city: 'Denver', metro: 'Denver', state: 'Colorado', abbr: 'CO', cap: '76,000', wc: false, citySvc: 'colorado/denver',
+    district: 'the Sun Valley district along the South Platte River just west of Downtown Denver', anchors: 'Downtown Denver and the South Platte River greenway', langs: 'Spanish, with other languages available' },
+  { slug: 'bank-of-america-stadium', venue: 'Bank of America Stadium', city: 'Charlotte', metro: 'Charlotte', state: 'North Carolina', abbr: 'NC', cap: '74,000', wc: false, citySvc: 'north-carolina/charlotte',
+    district: 'Uptown Charlotte in the city\'s central business district', anchors: 'the Uptown business district and Truist Field', langs: 'Spanish, with other languages available' },
+  { slug: 'san-diego-convention-center', venue: 'San Diego Convention Center', city: 'San Diego', metro: 'San Diego', state: 'California', abbr: 'CA', cap: '2.6M sq ft', wc: false, conv: true, citySvc: 'california/san-diego',
+    district: 'the Marina District on the downtown San Diego waterfront beside the Gaslamp Quarter', anchors: 'the Gaslamp Quarter and the San Diego Embarcadero', langs: 'Spanish, with Tagalog and other languages available' },
 ];
 
 function esc(s){return s.replace(/&/g,'&amp;');}

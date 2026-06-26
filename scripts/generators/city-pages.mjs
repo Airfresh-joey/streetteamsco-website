@@ -196,6 +196,10 @@ const VENUES_BY_CITY = {
     { label: 'Ball Arena', url: '/ball-arena-event-staffing' },
     { label: 'Colorado Convention Center', url: '/colorado-convention-center-event-staffing' },
     { label: 'Red Rocks Amphitheatre', url: '/red-rocks-amphitheatre-event-staffing' },
+    { label: 'Empower Field at Mile High', url: '/empower-field-at-mile-high-event-staffing' },
+  ],
+  'california/san-diego': [
+    { label: 'San Diego Convention Center', url: '/san-diego-convention-center-event-staffing' },
   ],
   'texas/austin': [
     { label: 'Circuit of the Americas', url: '/circuit-of-the-americas-event-staffing' },
@@ -260,7 +264,7 @@ const VENUES_BY_CITY = {
     { label: 'Kay Bailey Hutchison Convention Center', url: '/kay-bailey-hutchison-convention-center-event-staffing' },
   ],
   'texas/houston': [{ label: 'NRG Stadium', url: '/nrg-stadium-event-staffing' }, { label: 'Toyota Center', url: '/toyota-center-event-staffing' }],
-  'north-carolina/charlotte': [{ label: 'Spectrum Center', url: '/spectrum-center-event-staffing' }],
+  'north-carolina/charlotte': [{ label: 'Spectrum Center', url: '/spectrum-center-event-staffing' }, { label: 'Bank of America Stadium', url: '/bank-of-america-stadium-event-staffing' }],
   'washington/seattle': [{ label: 'Lumen Field', url: '/lumen-field-event-staffing' }],
 };
 
