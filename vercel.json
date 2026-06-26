@@ -319,6 +319,30 @@
       "destination": "/san-diego-convention-center-event-staffing.html"
     },
     {
+      "source": "/acrisure-stadium-event-staffing",
+      "destination": "/acrisure-stadium-event-staffing.html"
+    },
+    {
+      "source": "/highmark-stadium-event-staffing",
+      "destination": "/highmark-stadium-event-staffing.html"
+    },
+    {
+      "source": "/raymond-james-stadium-event-staffing",
+      "destination": "/raymond-james-stadium-event-staffing.html"
+    },
+    {
+      "source": "/nissan-stadium-event-staffing",
+      "destination": "/nissan-stadium-event-staffing.html"
+    },
+    {
+      "source": "/ford-field-event-staffing",
+      "destination": "/ford-field-event-staffing.html"
+    },
+    {
+      "source": "/m-t-bank-stadium-event-staffing",
+      "destination": "/m-t-bank-stadium-event-staffing.html"
+    },
+    {
       "source": "/ball-arena-event-staffing",
       "destination": "/ball-arena-event-staffing.html"
     },

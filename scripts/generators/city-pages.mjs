@@ -209,7 +209,7 @@ const VENUES_BY_CITY = {
     { label: 'Walter E. Washington Convention Center', url: '/walter-e-washington-convention-center-event-staffing' },
   ],
   'california/anaheim': [{ label: 'Anaheim Convention Center', url: '/anaheim-convention-center-event-staffing' }],
-  'tennessee/nashville': [{ label: 'Music City Center', url: '/music-city-center-event-staffing' }],
+  'tennessee/nashville': [{ label: 'Music City Center', url: '/music-city-center-event-staffing' }, { label: 'Nissan Stadium', url: '/nissan-stadium-event-staffing' }],
   'california/los-angeles': [
     { label: 'SoFi Stadium', url: '/sofi-stadium-event-staffing' },
     { label: 'Crypto.com Arena', url: '/crypto-com-arena-event-staffing' },

@@ -138,6 +138,19 @@ const venues = [
     district: 'Uptown Charlotte in the city\'s central business district', anchors: 'the Uptown business district and Truist Field', langs: 'Spanish, with other languages available' },
   { slug: 'san-diego-convention-center', venue: 'San Diego Convention Center', city: 'San Diego', metro: 'San Diego', state: 'California', abbr: 'CA', cap: '2.6M sq ft', wc: false, conv: true, citySvc: 'california/san-diego',
     district: 'the Marina District on the downtown San Diego waterfront beside the Gaslamp Quarter', anchors: 'the Gaslamp Quarter and the San Diego Embarcadero', langs: 'Spanish, with Tagalog and other languages available' },
+
+  { slug: 'acrisure-stadium', venue: 'Acrisure Stadium', city: 'Pittsburgh', metro: 'Pittsburgh', state: 'Pennsylvania', abbr: 'PA', cap: '68,400', wc: false, citySvc: null,
+    district: "Pittsburgh's North Shore along the Allegheny River beside PNC Park and the Carnegie Science Center", anchors: 'PNC Park and the North Shore riverfront', langs: 'Spanish, with other languages available' },
+  { slug: 'highmark-stadium', venue: 'Highmark Stadium', city: 'Orchard Park', metro: 'Buffalo', state: 'New York', abbr: 'NY', cap: '71,600', wc: false, citySvc: null,
+    district: 'Orchard Park in suburban Buffalo, the heart of Western New York', anchors: 'the Buffalo-Niagara region', langs: 'Spanish, with other languages available' },
+  { slug: 'raymond-james-stadium', venue: 'Raymond James Stadium', city: 'Tampa', metro: 'Tampa', state: 'Florida', abbr: 'FL', cap: '65,000', wc: false, citySvc: null,
+    district: 'West Tampa near the Westshore business district and Midtown Tampa', anchors: 'the Westshore district and Midtown Tampa', langs: 'Spanish, with other languages available' },
+  { slug: 'nissan-stadium', venue: 'Nissan Stadium', city: 'Nashville', metro: 'Nashville', state: 'Tennessee', abbr: 'TN', cap: '69,000', wc: false, citySvc: 'tennessee/nashville',
+    district: 'the East Bank of the Cumberland River directly across from downtown Nashville and Broadway', anchors: 'downtown Nashville and the Broadway entertainment district', langs: 'Spanish, with other languages available' },
+  { slug: 'ford-field', venue: 'Ford Field', city: 'Detroit', metro: 'Detroit', state: 'Michigan', abbr: 'MI', cap: '65,000', wc: false, citySvc: null,
+    district: "Downtown Detroit's sports and entertainment district beside Comerica Park", anchors: 'Comerica Park and the Detroit theater district', langs: 'Spanish and Arabic, with other languages available' },
+  { slug: 'm-t-bank-stadium', venue: 'M&T Bank Stadium', city: 'Baltimore', metro: 'Baltimore', state: 'Maryland', abbr: 'MD', cap: '71,000', wc: false, citySvc: null,
+    district: 'the Camden Yards Sports Complex beside Oriole Park in downtown Baltimore', anchors: 'Oriole Park at Camden Yards and the Inner Harbor', langs: 'Spanish, with other languages available' },
 ];
 
 function esc(s){return s.replace(/&/g,'&amp;');}
