@@ -171,6 +171,22 @@
       "destination": "/allegiant-stadium-event-staffing.html"
     },
     {
+      "source": "/las-vegas-convention-center-event-staffing",
+      "destination": "/las-vegas-convention-center-event-staffing.html"
+    },
+    {
+      "source": "/mccormick-place-event-staffing",
+      "destination": "/mccormick-place-event-staffing.html"
+    },
+    {
+      "source": "/orange-county-convention-center-event-staffing",
+      "destination": "/orange-county-convention-center-event-staffing.html"
+    },
+    {
+      "source": "/javits-center-event-staffing",
+      "destination": "/javits-center-event-staffing.html"
+    },
+    {
       "source": "/united-center-event-staffing",
       "destination": "/united-center-event-staffing.html"
     },
