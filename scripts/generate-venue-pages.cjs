@@ -62,6 +62,18 @@ const venues = [
     district: 'the Pacific Park district in Downtown Brooklyn atop the Atlantic Terminal transit hub', anchors: 'the Atlantic Terminal transit hub and Downtown Brooklyn', langs: 'Spanish, with many other languages available' },
   { slug: 'td-garden', venue: 'TD Garden', city: 'Boston', metro: 'Boston', state: 'Massachusetts', abbr: 'MA', cap: '19,000', wc: false, citySvc: 'massachusetts/boston',
     district: "Boston's West End above North Station", anchors: 'North Station and the Bulfinch Triangle', langs: 'Spanish and Portuguese, with other languages available' },
+
+  // MLB ballparks (wc:false → concerts, festivals, corporate & brand-activation events, not just games)
+  { slug: 'dodger-stadium', venue: 'Dodger Stadium', city: 'Los Angeles', metro: 'Los Angeles', state: 'California', abbr: 'CA', cap: '56,000', wc: false, citySvc: 'california/los-angeles',
+    district: 'Chavez Ravine in Elysian Park, just north of Downtown LA', anchors: 'Downtown LA and Elysian Park', langs: 'Spanish, Korean, and other languages available' },
+  { slug: 'yankee-stadium', venue: 'Yankee Stadium', city: 'New York', metro: 'New York City', state: 'New York', abbr: 'NY', cap: '47,000', wc: false, citySvc: 'new-york/new-york-city',
+    district: 'the South Bronx near the Grand Concourse and the 161st Street transit hub', anchors: 'the Grand Concourse and the 161st Street transit hub', langs: 'Spanish, with many other languages available' },
+  { slug: 'fenway-park', venue: 'Fenway Park', city: 'Boston', metro: 'Boston', state: 'Massachusetts', abbr: 'MA', cap: '37,700', wc: false, citySvc: 'massachusetts/boston',
+    district: 'the Fenway-Kenmore district near Lansdowne Street and the Back Bay', anchors: 'Kenmore Square and Lansdowne Street', langs: 'Spanish and Portuguese, with other languages available' },
+  { slug: 'wrigley-field', venue: 'Wrigley Field', city: 'Chicago', metro: 'Chicago', state: 'Illinois', abbr: 'IL', cap: '41,600', wc: false, citySvc: 'illinois/chicago',
+    district: 'Wrigleyville in the Lakeview neighborhood around the Gallagher Way plaza', anchors: 'Gallagher Way and the Wrigleyville district', langs: 'Spanish and Polish, with other languages available' },
+  { slug: 'oracle-park', venue: 'Oracle Park', city: 'San Francisco', metro: 'San Francisco', state: 'California', abbr: 'CA', cap: '41,900', wc: false, citySvc: 'california/san-francisco',
+    district: 'the China Basin waterfront in Mission Bay near Chase Center', anchors: 'the Embarcadero waterfront and Chase Center', langs: 'Spanish, Mandarin, and other languages available' },
 ];
 
 function esc(s){return s.replace(/&/g,'&amp;');}

@@ -192,11 +192,13 @@ const VENUES_BY_CITY = {
   'california/los-angeles': [
     { label: 'SoFi Stadium', url: '/sofi-stadium-event-staffing' },
     { label: 'Crypto.com Arena', url: '/crypto-com-arena-event-staffing' },
+    { label: 'Dodger Stadium', url: '/dodger-stadium-event-staffing' },
   ],
   'california/san-francisco': [
     { label: 'Chase Center', url: '/chase-center-event-staffing' },
     { label: "Levi's Stadium", url: '/levis-stadium-event-staffing' },
     { label: 'Moscone Center', url: '/moscone-center-event-staffing' },
+    { label: 'Oracle Park', url: '/oracle-park-event-staffing' },
   ],
   'florida/miami': [{ label: 'Hard Rock Stadium', url: '/hard-rock-stadium-event-staffing' }],
   'florida/orlando': [{ label: 'Orange County Convention Center', url: '/orange-county-convention-center-event-staffing' }],
@@ -208,10 +210,12 @@ const VENUES_BY_CITY = {
     { label: 'United Center', url: '/united-center-event-staffing' },
     { label: 'Soldier Field', url: '/soldier-field-event-staffing' },
     { label: 'McCormick Place', url: '/mccormick-place-event-staffing' },
+    { label: 'Wrigley Field', url: '/wrigley-field-event-staffing' },
   ],
   'massachusetts/boston': [
     { label: 'Gillette Stadium', url: '/gillette-stadium-event-staffing' },
     { label: 'TD Garden', url: '/td-garden-event-staffing' },
+    { label: 'Fenway Park', url: '/fenway-park-event-staffing' },
   ],
   'nevada/las-vegas': [
     { label: 'Allegiant Stadium', url: '/allegiant-stadium-event-staffing' },
@@ -222,6 +226,7 @@ const VENUES_BY_CITY = {
     { label: 'Madison Square Garden', url: '/madison-square-garden-event-staffing' },
     { label: 'Barclays Center', url: '/barclays-center-event-staffing' },
     { label: 'Jacob K. Javits Center', url: '/javits-center-event-staffing' },
+    { label: 'Yankee Stadium', url: '/yankee-stadium-event-staffing' },
   ],
   'pennsylvania/philadelphia': [{ label: 'Lincoln Financial Field', url: '/lincoln-financial-field-event-staffing' }],
   'texas/dallas': [{ label: 'AT&T Stadium', url: '/att-stadium-event-staffing' }],

@@ -207,6 +207,26 @@
       "destination": "/td-garden-event-staffing.html"
     },
     {
+      "source": "/dodger-stadium-event-staffing",
+      "destination": "/dodger-stadium-event-staffing.html"
+    },
+    {
+      "source": "/yankee-stadium-event-staffing",
+      "destination": "/yankee-stadium-event-staffing.html"
+    },
+    {
+      "source": "/fenway-park-event-staffing",
+      "destination": "/fenway-park-event-staffing.html"
+    },
+    {
+      "source": "/wrigley-field-event-staffing",
+      "destination": "/wrigley-field-event-staffing.html"
+    },
+    {
+      "source": "/oracle-park-event-staffing",
+      "destination": "/oracle-park-event-staffing.html"
+    },
+    {
       "source": "/united-center-event-staffing",
       "destination": "/united-center-event-staffing.html"
     },
