@@ -185,6 +185,50 @@ function generateSmallCityBody(city, state) {
   </ul>`;
 }
 
+// Map of city (state.slug/city.slug) -> dedicated venue event-staffing pages we staff there.
+// Source of truth: the citySvc field in scripts/generate-venue-pages.cjs (plus hand-built SoFi/Mercedes-Benz).
+const VENUES_BY_CITY = {
+  'arizona/phoenix': [{ label: 'State Farm Stadium', url: '/state-farm-stadium-event-staffing' }],
+  'california/los-angeles': [
+    { label: 'SoFi Stadium', url: '/sofi-stadium-event-staffing' },
+    { label: 'Crypto.com Arena', url: '/crypto-com-arena-event-staffing' },
+  ],
+  'california/san-francisco': [
+    { label: 'Chase Center', url: '/chase-center-event-staffing' },
+    { label: "Levi's Stadium", url: '/levis-stadium-event-staffing' },
+    { label: 'Moscone Center', url: '/moscone-center-event-staffing' },
+  ],
+  'florida/miami': [{ label: 'Hard Rock Stadium', url: '/hard-rock-stadium-event-staffing' }],
+  'florida/orlando': [{ label: 'Orange County Convention Center', url: '/orange-county-convention-center-event-staffing' }],
+  'georgia/atlanta': [
+    { label: 'Mercedes-Benz Stadium', url: '/mercedes-benz-stadium-event-staffing' },
+    { label: 'Georgia World Congress Center', url: '/georgia-world-congress-center-event-staffing' },
+  ],
+  'illinois/chicago': [
+    { label: 'United Center', url: '/united-center-event-staffing' },
+    { label: 'Soldier Field', url: '/soldier-field-event-staffing' },
+    { label: 'McCormick Place', url: '/mccormick-place-event-staffing' },
+  ],
+  'massachusetts/boston': [
+    { label: 'Gillette Stadium', url: '/gillette-stadium-event-staffing' },
+    { label: 'TD Garden', url: '/td-garden-event-staffing' },
+  ],
+  'nevada/las-vegas': [
+    { label: 'Allegiant Stadium', url: '/allegiant-stadium-event-staffing' },
+    { label: 'T-Mobile Arena', url: '/t-mobile-arena-event-staffing' },
+    { label: 'Las Vegas Convention Center', url: '/las-vegas-convention-center-event-staffing' },
+  ],
+  'new-york/new-york-city': [
+    { label: 'Madison Square Garden', url: '/madison-square-garden-event-staffing' },
+    { label: 'Barclays Center', url: '/barclays-center-event-staffing' },
+    { label: 'Jacob K. Javits Center', url: '/javits-center-event-staffing' },
+  ],
+  'pennsylvania/philadelphia': [{ label: 'Lincoln Financial Field', url: '/lincoln-financial-field-event-staffing' }],
+  'texas/dallas': [{ label: 'AT&T Stadium', url: '/att-stadium-event-staffing' }],
+  'texas/houston': [{ label: 'NRG Stadium', url: '/nrg-stadium-event-staffing' }],
+  'washington/seattle': [{ label: 'Lumen Field', url: '/lumen-field-event-staffing' }],
+};
+
 function generateCityPage(city, state, allStates, caseStudies) {
   const canonical = `${BASE_URL}/locations/${state.slug}/${city.slug}`;
   const faqs = generateCityFaqs(city, state);
@@ -240,6 +284,11 @@ function generateCityPage(city, state, allStates, caseStudies) {
     ? `\n${internalLinksBlock(`${city.name} Service Pages`, cityServiceLinks)}\n`
     : '';
 
+  const cityVenues = VENUES_BY_CITY[`${state.slug}/${city.slug}`];
+  const venuesLinksBlock = cityVenues
+    ? `\n${internalLinksBlock(`Major Venues We Staff in ${city.name}`, cityVenues)}\n`
+    : '';
+
   const body = `<section class="page-hero">
   <div class="page-hero-inner">
     <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> / <a href="/locations">Locations</a> / <a href="/locations/${state.slug}">${escHtml(state.name)}</a> / <span>${escHtml(city.name)}</span></nav>
@@ -270,6 +319,7 @@ ${ctaSection(
     `Get a Quote for ${city.name}`,
   )}
 ${cityServiceLinksBlock}
+${venuesLinksBlock}
 ${internalLinksBlock(`Other Cities in ${state.name}`, otherCityLinks)}
 
 ${internalLinksBlock('Helpful Links', [
