@@ -363,6 +363,30 @@
       "destination": "/coors-field-event-staffing.html"
     },
     {
+      "source": "/globe-life-field-event-staffing",
+      "destination": "/globe-life-field-event-staffing.html"
+    },
+    {
+      "source": "/minute-maid-park-event-staffing",
+      "destination": "/minute-maid-park-event-staffing.html"
+    },
+    {
+      "source": "/target-field-event-staffing",
+      "destination": "/target-field-event-staffing.html"
+    },
+    {
+      "source": "/pnc-park-event-staffing",
+      "destination": "/pnc-park-event-staffing.html"
+    },
+    {
+      "source": "/pennsylvania-convention-center-event-staffing",
+      "destination": "/pennsylvania-convention-center-event-staffing.html"
+    },
+    {
+      "source": "/ernest-morial-convention-center-event-staffing",
+      "destination": "/ernest-morial-convention-center-event-staffing.html"
+    },
+    {
       "source": "/busch-stadium-event-staffing",
       "destination": "/busch-stadium-event-staffing.html"
     },

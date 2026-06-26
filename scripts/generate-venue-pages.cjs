@@ -163,6 +163,18 @@ const venues = [
     district: "Denver's LoDo (Lower Downtown) Ballpark District", anchors: 'the LoDo Ballpark District and Union Station', langs: 'Spanish, with other languages available' },
   { slug: 'busch-stadium', venue: 'Busch Stadium', city: 'St. Louis', metro: 'St. Louis', state: 'Missouri', abbr: 'MO', cap: '44,500', wc: false, citySvc: null,
     district: 'downtown St. Louis beside Ballpark Village near the Gateway Arch', anchors: 'Ballpark Village and the Gateway Arch', langs: 'Spanish, with other languages available' },
+  { slug: 'globe-life-field', venue: 'Globe Life Field', city: 'Arlington', metro: 'Dallas-Fort Worth', state: 'Texas', abbr: 'TX', cap: '40,300', wc: false, citySvc: null,
+    district: 'the Arlington Entertainment District alongside AT&T Stadium, Texas Live!, and Globe Life Park', anchors: 'AT&T Stadium and the Texas Live! entertainment complex', langs: 'Spanish, with Vietnamese and other languages available' },
+  { slug: 'minute-maid-park', venue: 'Minute Maid Park (Daikin Park)', city: 'Houston', metro: 'Houston', state: 'Texas', abbr: 'TX', cap: '41,000', wc: false, citySvc: 'texas/houston',
+    district: 'the East End/Downtown corridor of Houston near Discovery Green and the George R. Brown Convention Center', anchors: 'Discovery Green and the George R. Brown Convention Center', langs: 'Spanish and Vietnamese, with other languages available' },
+  { slug: 'target-field', venue: 'Target Field', city: 'Minneapolis', metro: 'Minneapolis', state: 'Minnesota', abbr: 'MN', cap: '38,500', wc: false, citySvc: null,
+    district: "the North Loop / Warehouse District on the edge of Downtown Minneapolis", anchors: 'the North Loop and Target Center', langs: 'Spanish and Somali, with other languages available' },
+  { slug: 'pnc-park', venue: 'PNC Park', city: 'Pittsburgh', metro: 'Pittsburgh', state: 'Pennsylvania', abbr: 'PA', cap: '38,700', wc: false, citySvc: null,
+    district: "Pittsburgh's North Shore beside Acrisure Stadium along the Allegheny riverfront", anchors: 'the North Shore and Downtown Pittsburgh across the river', langs: 'Spanish, with other languages available' },
+  { slug: 'pennsylvania-convention-center', venue: 'Pennsylvania Convention Center', city: 'Philadelphia', metro: 'Philadelphia', state: 'Pennsylvania', abbr: 'PA', cap: '1M sq ft', wc: false, conv: true, citySvc: 'pennsylvania/philadelphia',
+    district: 'Center City Philadelphia beside Reading Terminal Market', anchors: 'Reading Terminal Market and the Center City hotel corridor', langs: 'Spanish, with other languages available' },
+  { slug: 'ernest-morial-convention-center', venue: 'Ernest N. Morial Convention Center', city: 'New Orleans', metro: 'New Orleans', state: 'Louisiana', abbr: 'LA', cap: '1.1M sq ft', wc: false, conv: true, citySvc: null,
+    district: 'the Warehouse/Arts District along the Mississippi riverfront near the French Quarter', anchors: 'the Warehouse District and the French Quarter', langs: 'Spanish and French, with other languages available' },
 ];
 
 function esc(s){return s.replace(/&/g,'&amp;');}

@@ -262,13 +262,15 @@ const VENUES_BY_CITY = {
     { label: 'Lincoln Financial Field', url: '/lincoln-financial-field-event-staffing' },
     { label: 'Wells Fargo Center', url: '/wells-fargo-center-event-staffing' },
     { label: 'Citizens Bank Park', url: '/citizens-bank-park-event-staffing' },
+    { label: 'Pennsylvania Convention Center', url: '/pennsylvania-convention-center-event-staffing' },
   ],
   'texas/dallas': [
     { label: 'AT&T Stadium', url: '/att-stadium-event-staffing' },
     { label: 'American Airlines Center', url: '/american-airlines-center-event-staffing' },
     { label: 'Kay Bailey Hutchison Convention Center', url: '/kay-bailey-hutchison-convention-center-event-staffing' },
+    { label: 'Globe Life Field', url: '/globe-life-field-event-staffing' },
   ],
-  'texas/houston': [{ label: 'NRG Stadium', url: '/nrg-stadium-event-staffing' }, { label: 'Toyota Center', url: '/toyota-center-event-staffing' }],
+  'texas/houston': [{ label: 'NRG Stadium', url: '/nrg-stadium-event-staffing' }, { label: 'Toyota Center', url: '/toyota-center-event-staffing' }, { label: 'Minute Maid Park (Daikin Park)', url: '/minute-maid-park-event-staffing' }],
   'north-carolina/charlotte': [{ label: 'Spectrum Center', url: '/spectrum-center-event-staffing' }, { label: 'Bank of America Stadium', url: '/bank-of-america-stadium-event-staffing' }],
   'washington/seattle': [{ label: 'Lumen Field', url: '/lumen-field-event-staffing' }],
 };
