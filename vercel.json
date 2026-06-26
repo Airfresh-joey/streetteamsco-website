@@ -187,6 +187,26 @@
       "destination": "/javits-center-event-staffing.html"
     },
     {
+      "source": "/georgia-world-congress-center-event-staffing",
+      "destination": "/georgia-world-congress-center-event-staffing.html"
+    },
+    {
+      "source": "/moscone-center-event-staffing",
+      "destination": "/moscone-center-event-staffing.html"
+    },
+    {
+      "source": "/chase-center-event-staffing",
+      "destination": "/chase-center-event-staffing.html"
+    },
+    {
+      "source": "/barclays-center-event-staffing",
+      "destination": "/barclays-center-event-staffing.html"
+    },
+    {
+      "source": "/td-garden-event-staffing",
+      "destination": "/td-garden-event-staffing.html"
+    },
+    {
       "source": "/united-center-event-staffing",
       "destination": "/united-center-event-staffing.html"
     },

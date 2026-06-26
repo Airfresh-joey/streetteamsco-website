@@ -50,6 +50,18 @@ const venues = [
     district: 'the International Drive tourism corridor in Orlando', anchors: 'International Drive and the Orlando resort district', langs: 'Spanish and Portuguese, with Haitian Creole and other languages available' },
   { slug: 'javits-center', venue: 'Jacob K. Javits Center', city: 'New York', metro: 'New York City', state: 'New York', abbr: 'NY', cap: '840K sq ft', wc: false, conv: true, citySvc: 'new-york/new-york-city',
     district: "Manhattan's Hudson Yards and Hell's Kitchen on the Far West Side", anchors: 'Hudson Yards and the High Line', langs: 'Spanish, with many other languages available' },
+  { slug: 'georgia-world-congress-center', venue: 'Georgia World Congress Center', city: 'Atlanta', metro: 'Atlanta', state: 'Georgia', abbr: 'GA', cap: '1.5M sq ft', wc: false, conv: true, citySvc: 'georgia/atlanta',
+    district: 'downtown Atlanta alongside Mercedes-Benz Stadium and Centennial Olympic Park', anchors: 'Mercedes-Benz Stadium and Centennial Olympic Park', langs: 'Spanish, with other languages available' },
+  { slug: 'moscone-center', venue: 'Moscone Center', city: 'San Francisco', metro: 'San Francisco', state: 'California', abbr: 'CA', cap: '700K sq ft', wc: false, conv: true, citySvc: 'california/san-francisco',
+    district: "the SoMa and Yerba Buena district in downtown San Francisco", anchors: 'Union Square and Yerba Buena Gardens', langs: 'Spanish, Mandarin, and other languages available' },
+
+  // Marquee arenas (wc:false → generic arena/event framing)
+  { slug: 'chase-center', venue: 'Chase Center', city: 'San Francisco', metro: 'San Francisco', state: 'California', abbr: 'CA', cap: '18,000', wc: false, citySvc: 'california/san-francisco',
+    district: "the Mission Bay waterfront neighborhood near Oracle Park", anchors: 'Oracle Park and the Mission Bay waterfront', langs: 'Spanish, Mandarin, and other languages available' },
+  { slug: 'barclays-center', venue: 'Barclays Center', city: 'Brooklyn', metro: 'New York City', state: 'New York', abbr: 'NY', cap: '19,000', wc: false, citySvc: 'new-york/new-york-city',
+    district: 'the Pacific Park district in Downtown Brooklyn atop the Atlantic Terminal transit hub', anchors: 'the Atlantic Terminal transit hub and Downtown Brooklyn', langs: 'Spanish, with many other languages available' },
+  { slug: 'td-garden', venue: 'TD Garden', city: 'Boston', metro: 'Boston', state: 'Massachusetts', abbr: 'MA', cap: '19,000', wc: false, citySvc: 'massachusetts/boston',
+    district: "Boston's West End above North Station", anchors: 'North Station and the Bulfinch Triangle', langs: 'Spanish and Portuguese, with other languages available' },
 ];
 
 function esc(s){return s.replace(/&/g,'&amp;');}
