@@ -192,8 +192,16 @@ const VENUES_BY_CITY = {
     { label: 'State Farm Stadium', url: '/state-farm-stadium-event-staffing' },
     { label: 'Footprint Center', url: '/footprint-center-event-staffing' },
   ],
-  'colorado/denver': [{ label: 'Ball Arena', url: '/ball-arena-event-staffing' }],
-  'district-of-columbia/washington': [{ label: 'Capital One Arena', url: '/capital-one-arena-event-staffing' }],
+  'colorado/denver': [
+    { label: 'Ball Arena', url: '/ball-arena-event-staffing' },
+    { label: 'Colorado Convention Center', url: '/colorado-convention-center-event-staffing' },
+  ],
+  'district-of-columbia/washington': [
+    { label: 'Capital One Arena', url: '/capital-one-arena-event-staffing' },
+    { label: 'Walter E. Washington Convention Center', url: '/walter-e-washington-convention-center-event-staffing' },
+  ],
+  'california/anaheim': [{ label: 'Anaheim Convention Center', url: '/anaheim-convention-center-event-staffing' }],
+  'tennessee/nashville': [{ label: 'Music City Center', url: '/music-city-center-event-staffing' }],
   'california/los-angeles': [
     { label: 'SoFi Stadium', url: '/sofi-stadium-event-staffing' },
     { label: 'Crypto.com Arena', url: '/crypto-com-arena-event-staffing' },
@@ -224,6 +232,7 @@ const VENUES_BY_CITY = {
     { label: 'Gillette Stadium', url: '/gillette-stadium-event-staffing' },
     { label: 'TD Garden', url: '/td-garden-event-staffing' },
     { label: 'Fenway Park', url: '/fenway-park-event-staffing' },
+    { label: 'Boston Convention & Exhibition Center', url: '/boston-convention-exhibition-center-event-staffing' },
   ],
   'nevada/las-vegas': [
     { label: 'Allegiant Stadium', url: '/allegiant-stadium-event-staffing' },
@@ -243,6 +252,7 @@ const VENUES_BY_CITY = {
   'texas/dallas': [
     { label: 'AT&T Stadium', url: '/att-stadium-event-staffing' },
     { label: 'American Airlines Center', url: '/american-airlines-center-event-staffing' },
+    { label: 'Kay Bailey Hutchison Convention Center', url: '/kay-bailey-hutchison-convention-center-event-staffing' },
   ],
   'texas/houston': [{ label: 'NRG Stadium', url: '/nrg-stadium-event-staffing' }],
   'washington/seattle': [{ label: 'Lumen Field', url: '/lumen-field-event-staffing' }],

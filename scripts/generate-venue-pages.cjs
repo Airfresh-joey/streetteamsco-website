@@ -54,6 +54,18 @@ const venues = [
     district: 'downtown Atlanta alongside Mercedes-Benz Stadium and Centennial Olympic Park', anchors: 'Mercedes-Benz Stadium and Centennial Olympic Park', langs: 'Spanish, with other languages available' },
   { slug: 'moscone-center', venue: 'Moscone Center', city: 'San Francisco', metro: 'San Francisco', state: 'California', abbr: 'CA', cap: '700K sq ft', wc: false, conv: true, citySvc: 'california/san-francisco',
     district: "the SoMa and Yerba Buena district in downtown San Francisco", anchors: 'Union Square and Yerba Buena Gardens', langs: 'Spanish, Mandarin, and other languages available' },
+  { slug: 'anaheim-convention-center', venue: 'Anaheim Convention Center', city: 'Anaheim', metro: 'Anaheim', state: 'California', abbr: 'CA', cap: '1.8M sq ft', wc: false, conv: true, citySvc: null,
+    district: 'the Anaheim Resort district directly across from the Disneyland Resort', anchors: 'the Disneyland Resort and Angel Stadium', langs: 'Spanish, Vietnamese, and other languages available' },
+  { slug: 'walter-e-washington-convention-center', venue: 'Walter E. Washington Convention Center', city: 'Washington', metro: 'Washington, D.C.', state: 'District of Columbia', abbr: 'DC', cap: '2.3M sq ft', wc: false, conv: true, citySvc: null,
+    district: 'the Mount Vernon Square district in downtown Washington, D.C.', anchors: 'Mount Vernon Square and the Penn Quarter', langs: 'Spanish, with Amharic and other languages available' },
+  { slug: 'kay-bailey-hutchison-convention-center', venue: 'Kay Bailey Hutchison Convention Center', city: 'Dallas', metro: 'Dallas-Fort Worth', state: 'Texas', abbr: 'TX', cap: '1M sq ft', wc: false, conv: true, citySvc: 'texas/dallas',
+    district: 'downtown Dallas in the Convention Center District near the Cedars', anchors: 'downtown Dallas and the Cedars district', langs: 'Spanish, with Vietnamese and other languages available' },
+  { slug: 'boston-convention-exhibition-center', venue: 'Boston Convention & Exhibition Center', city: 'Boston', metro: 'Boston', state: 'Massachusetts', abbr: 'MA', cap: '516K sq ft', wc: false, conv: true, citySvc: 'massachusetts/boston',
+    district: 'the South Boston Seaport and Innovation District on the waterfront', anchors: 'the Seaport District and the Boston waterfront', langs: 'Spanish and Portuguese, with other languages available' },
+  { slug: 'music-city-center', venue: 'Music City Center', city: 'Nashville', metro: 'Nashville', state: 'Tennessee', abbr: 'TN', cap: '1.2M sq ft', wc: false, conv: true, citySvc: 'tennessee/nashville',
+    district: 'the SoBro district in downtown Nashville near Lower Broadway', anchors: 'Lower Broadway and the SoBro district', langs: 'Spanish, with Kurdish and other languages available' },
+  { slug: 'colorado-convention-center', venue: 'Colorado Convention Center', city: 'Denver', metro: 'Denver', state: 'Colorado', abbr: 'CO', cap: '584K sq ft', wc: false, conv: true, citySvc: 'colorado/denver',
+    district: 'downtown Denver near the 16th Street Mall and the Theatre District', anchors: 'the 16th Street Mall and the Denver Theatre District', langs: 'Spanish, with other languages available' },
 
   // Marquee arenas (wc:false → generic arena/event framing)
   { slug: 'chase-center', venue: 'Chase Center', city: 'San Francisco', metro: 'San Francisco', state: 'California', abbr: 'CA', cap: '18,000', wc: false, citySvc: 'california/san-francisco',

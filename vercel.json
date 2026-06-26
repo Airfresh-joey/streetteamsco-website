@@ -195,6 +195,30 @@
       "destination": "/moscone-center-event-staffing.html"
     },
     {
+      "source": "/anaheim-convention-center-event-staffing",
+      "destination": "/anaheim-convention-center-event-staffing.html"
+    },
+    {
+      "source": "/walter-e-washington-convention-center-event-staffing",
+      "destination": "/walter-e-washington-convention-center-event-staffing.html"
+    },
+    {
+      "source": "/kay-bailey-hutchison-convention-center-event-staffing",
+      "destination": "/kay-bailey-hutchison-convention-center-event-staffing.html"
+    },
+    {
+      "source": "/boston-convention-exhibition-center-event-staffing",
+      "destination": "/boston-convention-exhibition-center-event-staffing.html"
+    },
+    {
+      "source": "/music-city-center-event-staffing",
+      "destination": "/music-city-center-event-staffing.html"
+    },
+    {
+      "source": "/colorado-convention-center-event-staffing",
+      "destination": "/colorado-convention-center-event-staffing.html"
+    },
+    {
       "source": "/chase-center-event-staffing",
       "destination": "/chase-center-event-staffing.html"
     },
