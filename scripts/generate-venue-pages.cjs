@@ -67,6 +67,25 @@ const venues = [
 function esc(s){return s.replace(/&/g,'&amp;');}
 function escAttr(s){return s.replace(/&/g,'&amp;').replace(/"/g,'&quot;');}
 
+// Venues hand-built in separate files (not regenerated here) — used as cross-link targets only.
+const externalVenues = [
+  { slug: 'sofi-stadium', venue: 'SoFi Stadium', metro: 'Los Angeles' },
+  { slug: 'metlife-stadium', venue: 'MetLife Stadium', metro: 'New York City' },
+  { slug: 'mercedes-benz-stadium', venue: 'Mercedes-Benz Stadium', metro: 'Atlanta' },
+];
+// Group venues into metro clusters for sibling cross-linking. Normalizes the two SF
+// metro strings into one cluster WITHOUT altering any venue's displayed metro/title/meta.
+function clusterKey(metro){
+  if (metro === 'San Francisco' || metro === 'San Francisco Bay Area') return 'San Francisco Bay Area';
+  return metro;
+}
+const clusterDisplay = { 'San Francisco Bay Area': 'the San Francisco Bay Area' };
+const venuesByCluster = {};
+for (const v of [...venues, ...externalVenues]) {
+  const k = clusterKey(v.metro);
+  (venuesByCluster[k] = venuesByCluster[k] || []).push({ slug: v.slug, venue: v.venue });
+}
+
 function page(v){
   const venueEsc = esc(v.venue);
   const url = `https://streetteamsco.com/${v.slug}-event-staffing`;
@@ -100,6 +119,18 @@ function page(v){
       <a href="/locations/${v.citySvc}/brand-ambassadors">${esc(v.metro)} Brand Ambassadors</a>
       <a href="/locations/${v.citySvc}/event-staffing">${esc(v.metro)} Event Staffing</a>
       <a href="/locations/${v.citySvc}/brand-activation">${esc(v.metro)} Brand Activation</a>` : '';
+  const ck = clusterKey(v.metro);
+  const siblings = (venuesByCluster[ck] || []).filter(s => s.slug !== v.slug);
+  const regionLabel = clusterDisplay[ck] || esc(v.metro);
+  const siblingBlock = siblings.length ? `
+  <hr class="section-divider">
+
+  <div class="internal-links">
+    <h3>More Venues We Staff in ${regionLabel}</h3>
+    <div class="link-grid">
+${siblings.map(s => `      <a href="/${s.slug}-event-staffing">${esc(s.venue)} Event Staffing</a>`).join('\n')}
+    </div>
+  </div>` : '';
   return `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -292,7 +323,7 @@ ${wcCrossLink}${citySvcLinks}
       ${isWC?'<a href="/fifa-world-cup-2026-staffing">World Cup 2026 Hub</a>':'<a href="/services">All Services</a>'}
       <a href="/contact">Get a free quote</a>
     </div>
-  </div>
+  </div>${siblingBlock}
 
 </div>
 
