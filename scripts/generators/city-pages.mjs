@@ -254,7 +254,8 @@ const VENUES_BY_CITY = {
     { label: 'American Airlines Center', url: '/american-airlines-center-event-staffing' },
     { label: 'Kay Bailey Hutchison Convention Center', url: '/kay-bailey-hutchison-convention-center-event-staffing' },
   ],
-  'texas/houston': [{ label: 'NRG Stadium', url: '/nrg-stadium-event-staffing' }],
+  'texas/houston': [{ label: 'NRG Stadium', url: '/nrg-stadium-event-staffing' }, { label: 'Toyota Center', url: '/toyota-center-event-staffing' }],
+  'north-carolina/charlotte': [{ label: 'Spectrum Center', url: '/spectrum-center-event-staffing' }],
   'washington/seattle': [{ label: 'Lumen Field', url: '/lumen-field-event-staffing' }],
 };
 

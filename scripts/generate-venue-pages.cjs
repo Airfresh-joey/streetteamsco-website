@@ -100,6 +100,18 @@ const venues = [
     district: 'Wrigleyville in the Lakeview neighborhood around the Gallagher Way plaza', anchors: 'Gallagher Way and the Wrigleyville district', langs: 'Spanish and Polish, with other languages available' },
   { slug: 'oracle-park', venue: 'Oracle Park', city: 'San Francisco', metro: 'San Francisco', state: 'California', abbr: 'CA', cap: '41,900', wc: false, citySvc: 'california/san-francisco',
     district: 'the China Basin waterfront in Mission Bay near Chase Center', anchors: 'the Embarcadero waterfront and Chase Center', langs: 'Spanish, Mandarin, and other languages available' },
+  { slug: 'toyota-center', venue: 'Toyota Center', city: 'Houston', metro: 'Houston', state: 'Texas', abbr: 'TX', cap: '18,000', wc: false, citySvc: 'texas/houston',
+    district: 'Downtown Houston near the George R. Brown Convention Center and Discovery Green', anchors: 'the George R. Brown Convention Center and Discovery Green', langs: 'Spanish and Vietnamese, with other languages available' },
+  { slug: 'little-caesars-arena', venue: 'Little Caesars Arena', city: 'Detroit', metro: 'Detroit', state: 'Michigan', abbr: 'MI', cap: '20,000', wc: false, citySvc: null,
+    district: 'The District Detroit entertainment corridor between Downtown and Midtown', anchors: 'Comerica Park, Ford Field, and the Fox Theatre', langs: 'Spanish and Arabic, with other languages available' },
+  { slug: 'golden-1-center', venue: 'Golden 1 Center', city: 'Sacramento', metro: 'Sacramento', state: 'California', abbr: 'CA', cap: '17,600', wc: false, citySvc: null,
+    district: 'the Downtown Commons (DOCO) district in the heart of Sacramento', anchors: 'Downtown Commons and the K Street corridor', langs: 'Spanish, with other languages available' },
+  { slug: 'spectrum-center', venue: 'Spectrum Center', city: 'Charlotte', metro: 'Charlotte', state: 'North Carolina', abbr: 'NC', cap: '19,000', wc: false, citySvc: 'north-carolina/charlotte',
+    district: 'Uptown Charlotte in the city’s central business district', anchors: 'the Uptown business district and Truist Field', langs: 'Spanish, with other languages available' },
+  { slug: 'fiserv-forum', venue: 'Fiserv Forum', city: 'Milwaukee', metro: 'Milwaukee', state: 'Wisconsin', abbr: 'WI', cap: '17,500', wc: false, citySvc: null,
+    district: 'the Deer District entertainment plaza in Downtown Milwaukee', anchors: 'the Deer District plaza and the Wisconsin Center', langs: 'Spanish, with other languages available' },
+  { slug: 'paycom-center', venue: 'Paycom Center', city: 'Oklahoma City', metro: 'Oklahoma City', state: 'Oklahoma', abbr: 'OK', cap: '18,000', wc: false, citySvc: null,
+    district: 'Downtown Oklahoma City next to the Bricktown entertainment district', anchors: 'Bricktown and the downtown core', langs: 'Spanish, with other languages available' },
 ];
 
 function esc(s){return s.replace(/&/g,'&amp;');}

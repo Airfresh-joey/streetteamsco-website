@@ -251,6 +251,30 @@
       "destination": "/oracle-park-event-staffing.html"
     },
     {
+      "source": "/toyota-center-event-staffing",
+      "destination": "/toyota-center-event-staffing.html"
+    },
+    {
+      "source": "/little-caesars-arena-event-staffing",
+      "destination": "/little-caesars-arena-event-staffing.html"
+    },
+    {
+      "source": "/golden-1-center-event-staffing",
+      "destination": "/golden-1-center-event-staffing.html"
+    },
+    {
+      "source": "/spectrum-center-event-staffing",
+      "destination": "/spectrum-center-event-staffing.html"
+    },
+    {
+      "source": "/fiserv-forum-event-staffing",
+      "destination": "/fiserv-forum-event-staffing.html"
+    },
+    {
+      "source": "/paycom-center-event-staffing",
+      "destination": "/paycom-center-event-staffing.html"
+    },
+    {
       "source": "/ball-arena-event-staffing",
       "destination": "/ball-arena-event-staffing.html"
     },
