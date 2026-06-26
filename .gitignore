@@ -27,3 +27,6 @@ dist-ssr
 
 # Claude Code personal settings
 .claude/settings.local.json
+
+# Internal off-site strategy doc — keep local, not in public repo
+COMPETITIVE-OFFSITE-KIT.md
