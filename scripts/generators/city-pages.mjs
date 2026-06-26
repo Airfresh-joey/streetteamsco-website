@@ -188,7 +188,12 @@ function generateSmallCityBody(city, state) {
 // Map of city (state.slug/city.slug) -> dedicated venue event-staffing pages we staff there.
 // Source of truth: the citySvc field in scripts/generate-venue-pages.cjs (plus hand-built SoFi/Mercedes-Benz).
 const VENUES_BY_CITY = {
-  'arizona/phoenix': [{ label: 'State Farm Stadium', url: '/state-farm-stadium-event-staffing' }],
+  'arizona/phoenix': [
+    { label: 'State Farm Stadium', url: '/state-farm-stadium-event-staffing' },
+    { label: 'Footprint Center', url: '/footprint-center-event-staffing' },
+  ],
+  'colorado/denver': [{ label: 'Ball Arena', url: '/ball-arena-event-staffing' }],
+  'district-of-columbia/washington': [{ label: 'Capital One Arena', url: '/capital-one-arena-event-staffing' }],
   'california/los-angeles': [
     { label: 'SoFi Stadium', url: '/sofi-stadium-event-staffing' },
     { label: 'Crypto.com Arena', url: '/crypto-com-arena-event-staffing' },
@@ -200,7 +205,10 @@ const VENUES_BY_CITY = {
     { label: 'Moscone Center', url: '/moscone-center-event-staffing' },
     { label: 'Oracle Park', url: '/oracle-park-event-staffing' },
   ],
-  'florida/miami': [{ label: 'Hard Rock Stadium', url: '/hard-rock-stadium-event-staffing' }],
+  'florida/miami': [
+    { label: 'Hard Rock Stadium', url: '/hard-rock-stadium-event-staffing' },
+    { label: 'Kaseya Center', url: '/kaseya-center-event-staffing' },
+  ],
   'florida/orlando': [{ label: 'Orange County Convention Center', url: '/orange-county-convention-center-event-staffing' }],
   'georgia/atlanta': [
     { label: 'Mercedes-Benz Stadium', url: '/mercedes-benz-stadium-event-staffing' },
@@ -228,8 +236,14 @@ const VENUES_BY_CITY = {
     { label: 'Jacob K. Javits Center', url: '/javits-center-event-staffing' },
     { label: 'Yankee Stadium', url: '/yankee-stadium-event-staffing' },
   ],
-  'pennsylvania/philadelphia': [{ label: 'Lincoln Financial Field', url: '/lincoln-financial-field-event-staffing' }],
-  'texas/dallas': [{ label: 'AT&T Stadium', url: '/att-stadium-event-staffing' }],
+  'pennsylvania/philadelphia': [
+    { label: 'Lincoln Financial Field', url: '/lincoln-financial-field-event-staffing' },
+    { label: 'Wells Fargo Center', url: '/wells-fargo-center-event-staffing' },
+  ],
+  'texas/dallas': [
+    { label: 'AT&T Stadium', url: '/att-stadium-event-staffing' },
+    { label: 'American Airlines Center', url: '/american-airlines-center-event-staffing' },
+  ],
   'texas/houston': [{ label: 'NRG Stadium', url: '/nrg-stadium-event-staffing' }],
   'washington/seattle': [{ label: 'Lumen Field', url: '/lumen-field-event-staffing' }],
 };

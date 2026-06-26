@@ -63,6 +63,20 @@ const venues = [
   { slug: 'td-garden', venue: 'TD Garden', city: 'Boston', metro: 'Boston', state: 'Massachusetts', abbr: 'MA', cap: '19,000', wc: false, citySvc: 'massachusetts/boston',
     district: "Boston's West End above North Station", anchors: 'North Station and the Bulfinch Triangle', langs: 'Spanish and Portuguese, with other languages available' },
 
+  // NBA/NHL arenas (wc:false → concerts, conventions, corporate & brand-activation events)
+  { slug: 'ball-arena', venue: 'Ball Arena', city: 'Denver', metro: 'Denver', state: 'Colorado', abbr: 'CO', cap: '20,000', wc: false, citySvc: 'colorado/denver',
+    district: 'the Auraria/Elitch Gardens district just west of Downtown Denver', anchors: 'Elitch Gardens and the Downtown Denver core', langs: 'Spanish, with other languages available' },
+  { slug: 'american-airlines-center', venue: 'American Airlines Center', city: 'Dallas', metro: 'Dallas-Fort Worth', state: 'Texas', abbr: 'TX', cap: '20,000', wc: false, citySvc: 'texas/dallas',
+    district: 'the Victory Park entertainment district just north of Downtown Dallas', anchors: 'Victory Park and the Dallas Arts District', langs: 'Spanish, with Vietnamese and other languages available' },
+  { slug: 'kaseya-center', venue: 'Kaseya Center', city: 'Miami', metro: 'Miami', state: 'Florida', abbr: 'FL', cap: '19,600', wc: false, citySvc: 'florida/miami',
+    district: 'the Downtown Miami waterfront along Biscayne Bay near Bayside Marketplace', anchors: 'Bayside Marketplace and the Downtown Miami waterfront', langs: 'Spanish and Portuguese, with Haitian Creole and other languages available' },
+  { slug: 'capital-one-arena', venue: 'Capital One Arena', city: 'Washington', metro: 'Washington, D.C.', state: 'District of Columbia', abbr: 'DC', cap: '20,000', wc: false, citySvc: 'district-of-columbia/washington',
+    district: "the Penn Quarter/Chinatown district in Downtown D.C.", anchors: 'Penn Quarter, Chinatown, and the National Mall corridor', langs: 'Spanish, with Amharic and other languages available' },
+  { slug: 'wells-fargo-center', venue: 'Wells Fargo Center', city: 'Philadelphia', metro: 'Philadelphia', state: 'Pennsylvania', abbr: 'PA', cap: '21,000', wc: false, citySvc: 'pennsylvania/philadelphia',
+    district: 'the South Philadelphia Sports Complex alongside Citizens Bank Park and Lincoln Financial Field', anchors: 'Citizens Bank Park and Lincoln Financial Field', langs: 'Spanish, with other languages available' },
+  { slug: 'footprint-center', venue: 'Footprint Center', city: 'Phoenix', metro: 'Phoenix', state: 'Arizona', abbr: 'AZ', cap: '17,000', wc: false, citySvc: 'arizona/phoenix',
+    district: 'the heart of Downtown Phoenix near Chase Field and the Convention Center', anchors: 'Chase Field and the Phoenix Convention Center', langs: 'Spanish, with other languages available' },
+
   // MLB ballparks (wc:false → concerts, festivals, corporate & brand-activation events, not just games)
   { slug: 'dodger-stadium', venue: 'Dodger Stadium', city: 'Los Angeles', metro: 'Los Angeles', state: 'California', abbr: 'CA', cap: '56,000', wc: false, citySvc: 'california/los-angeles',
     district: 'Chavez Ravine in Elysian Park, just north of Downtown LA', anchors: 'Downtown LA and Elysian Park', langs: 'Spanish, Korean, and other languages available' },
