@@ -343,6 +343,30 @@
       "destination": "/m-t-bank-stadium-event-staffing.html"
     },
     {
+      "source": "/citi-field-event-staffing",
+      "destination": "/citi-field-event-staffing.html"
+    },
+    {
+      "source": "/truist-park-event-staffing",
+      "destination": "/truist-park-event-staffing.html"
+    },
+    {
+      "source": "/petco-park-event-staffing",
+      "destination": "/petco-park-event-staffing.html"
+    },
+    {
+      "source": "/citizens-bank-park-event-staffing",
+      "destination": "/citizens-bank-park-event-staffing.html"
+    },
+    {
+      "source": "/coors-field-event-staffing",
+      "destination": "/coors-field-event-staffing.html"
+    },
+    {
+      "source": "/busch-stadium-event-staffing",
+      "destination": "/busch-stadium-event-staffing.html"
+    },
+    {
       "source": "/ball-arena-event-staffing",
       "destination": "/ball-arena-event-staffing.html"
     },

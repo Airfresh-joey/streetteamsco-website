@@ -197,9 +197,11 @@ const VENUES_BY_CITY = {
     { label: 'Colorado Convention Center', url: '/colorado-convention-center-event-staffing' },
     { label: 'Red Rocks Amphitheatre', url: '/red-rocks-amphitheatre-event-staffing' },
     { label: 'Empower Field at Mile High', url: '/empower-field-at-mile-high-event-staffing' },
+    { label: 'Coors Field', url: '/coors-field-event-staffing' },
   ],
   'california/san-diego': [
     { label: 'San Diego Convention Center', url: '/san-diego-convention-center-event-staffing' },
+    { label: 'Petco Park', url: '/petco-park-event-staffing' },
   ],
   'texas/austin': [
     { label: 'Circuit of the Americas', url: '/circuit-of-the-americas-event-staffing' },
@@ -230,6 +232,7 @@ const VENUES_BY_CITY = {
   'georgia/atlanta': [
     { label: 'Mercedes-Benz Stadium', url: '/mercedes-benz-stadium-event-staffing' },
     { label: 'Georgia World Congress Center', url: '/georgia-world-congress-center-event-staffing' },
+    { label: 'Truist Park', url: '/truist-park-event-staffing' },
   ],
   'illinois/chicago': [
     { label: 'United Center', url: '/united-center-event-staffing' },
@@ -253,10 +256,12 @@ const VENUES_BY_CITY = {
     { label: 'Barclays Center', url: '/barclays-center-event-staffing' },
     { label: 'Jacob K. Javits Center', url: '/javits-center-event-staffing' },
     { label: 'Yankee Stadium', url: '/yankee-stadium-event-staffing' },
+    { label: 'Citi Field', url: '/citi-field-event-staffing' },
   ],
   'pennsylvania/philadelphia': [
     { label: 'Lincoln Financial Field', url: '/lincoln-financial-field-event-staffing' },
     { label: 'Wells Fargo Center', url: '/wells-fargo-center-event-staffing' },
+    { label: 'Citizens Bank Park', url: '/citizens-bank-park-event-staffing' },
   ],
   'texas/dallas': [
     { label: 'AT&T Stadium', url: '/att-stadium-event-staffing' },

@@ -151,6 +151,18 @@ const venues = [
     district: "Downtown Detroit's sports and entertainment district beside Comerica Park", anchors: 'Comerica Park and the Detroit theater district', langs: 'Spanish and Arabic, with other languages available' },
   { slug: 'm-t-bank-stadium', venue: 'M&T Bank Stadium', city: 'Baltimore', metro: 'Baltimore', state: 'Maryland', abbr: 'MD', cap: '71,000', wc: false, citySvc: null,
     district: 'the Camden Yards Sports Complex beside Oriole Park in downtown Baltimore', anchors: 'Oriole Park at Camden Yards and the Inner Harbor', langs: 'Spanish, with other languages available' },
+  { slug: 'citi-field', venue: 'Citi Field', city: 'New York', metro: 'New York City', state: 'New York', abbr: 'NY', cap: '41,900', wc: false, citySvc: 'new-york/new-york-city',
+    district: 'Flushing Meadows in Queens, beside the USTA Billie Jean King National Tennis Center', anchors: 'the USTA Billie Jean King National Tennis Center and Flushing Meadows-Corona Park', langs: 'Spanish, Mandarin, Korean, and other languages available' },
+  { slug: 'truist-park', venue: 'Truist Park', city: 'Atlanta', metro: 'Atlanta', state: 'Georgia', abbr: 'GA', cap: '41,000', wc: false, citySvc: 'georgia/atlanta',
+    district: 'The Battery Atlanta, a mixed-use entertainment district in Cumberland/Cobb County northwest of downtown', anchors: 'The Battery Atlanta dining and entertainment district', langs: 'Spanish, with other languages available' },
+  { slug: 'petco-park', venue: 'Petco Park', city: 'San Diego', metro: 'San Diego', state: 'California', abbr: 'CA', cap: '40,000', wc: false, citySvc: 'california/san-diego',
+    district: 'the East Village beside the Gaslamp Quarter in Downtown San Diego, near the San Diego Convention Center', anchors: 'the Gaslamp Quarter and the San Diego Convention Center', langs: 'Spanish, with other languages available' },
+  { slug: 'citizens-bank-park', venue: 'Citizens Bank Park', city: 'Philadelphia', metro: 'Philadelphia', state: 'Pennsylvania', abbr: 'PA', cap: '42,800', wc: false, citySvc: 'pennsylvania/philadelphia',
+    district: 'the South Philadelphia Sports Complex alongside Lincoln Financial Field and the Wells Fargo Center', anchors: 'Lincoln Financial Field and the Wells Fargo Center', langs: 'Spanish, with other languages available' },
+  { slug: 'coors-field', venue: 'Coors Field', city: 'Denver', metro: 'Denver', state: 'Colorado', abbr: 'CO', cap: '50,000', wc: false, citySvc: 'colorado/denver',
+    district: "Denver's LoDo (Lower Downtown) Ballpark District", anchors: 'the LoDo Ballpark District and Union Station', langs: 'Spanish, with other languages available' },
+  { slug: 'busch-stadium', venue: 'Busch Stadium', city: 'St. Louis', metro: 'St. Louis', state: 'Missouri', abbr: 'MO', cap: '44,500', wc: false, citySvc: null,
+    district: 'downtown St. Louis beside Ballpark Village near the Gateway Arch', anchors: 'Ballpark Village and the Gateway Arch', langs: 'Spanish, with other languages available' },
 ];
 
 function esc(s){return s.replace(/&/g,'&amp;');}
