@@ -517,6 +517,7 @@ function generateContactPage() {
           form.reset();
           status.className = 'form-status success';
           status.textContent = 'Thanks! Your request is in — our team will follow up with a custom proposal.';
+          if (window.gtag) gtag('event', 'form_submit', { form_name: 'contact_form_static', page_location: window.location.href });
         } else { throw new Error('bad response'); }
       }).catch(function () {
         status.className = 'form-status error';
@@ -648,6 +649,8 @@ function generateBookPage() {
   <meta name="robots" content="noindex, follow">
   <link rel="canonical" href="${BASE_URL}/book">
   <link rel="icon" href="/images/favicon.svg" type="image/svg+xml">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-WL8QZB3S96"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-WL8QZB3S96');</script>
   <style>
     body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0f172a; color: #fff; }
     .hero { padding: 100px 24px 50px; text-align: center; }

@@ -256,6 +256,14 @@ export function wrapPage({ title, description, canonical, ogImage, keywords, sch
   <link rel="preload" href="${FONTS_URL}" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link href="${FONTS_URL}" rel="stylesheet"></noscript>
 
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-WL8QZB3S96"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-WL8QZB3S96');
+  </script>
+
   <meta property="og:title" content="${escHtml(title)}">
   <meta property="og:description" content="${escHtml(description)}">
   <meta property="og:type" content="website">

@@ -595,6 +595,8 @@ ${faqs.map(f => `      {"@type": "Question", "name": "${f.q.replace(/"/g, '\\"')
       .sticky-cta p { display: none; }
     }
   </style>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-WL8QZB3S96"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-WL8QZB3S96');</script>
 </head>
 <body>
 
