@@ -165,6 +165,51 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ===================== REAL CAMPAIGN PHOTOS ===================== */}
+      <section className="ds-section ds-section--paper" style={{ paddingTop: 48, paddingBottom: 48 }}>
+        <div className="ds-wrap">
+          <p className="ds-label ds-reveal">Proof, not promises</p>
+          <h2 className="ds-h2 ds-reveal">Real teams. Real campaigns.</h2>
+          <div
+            className="ds-reveal"
+            style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+              gap: 12,
+              marginTop: 32,
+            }}
+          >
+            {[
+              { img: '/images/home/mrbeast-campaign.jpg', brand: 'MrBeast', href: '/case-studies/mrbeast-events' },
+              { img: '/images/home/netflix-campaign.jpg', brand: 'Netflix', href: '/case-studies/netflix-activations' },
+              { img: '/images/home/adidas-campaign.jpg', brand: 'Adidas', href: '/case-studies/adidas-staffing' },
+              { img: '/images/home/starbucks-campaign.jpg', brand: 'Starbucks', href: '/case-studies/starbucks-seasonal' },
+              { img: '/images/home/microsoft-campaign.jpg', brand: 'Microsoft', href: '/case-studies/microsoft-events' },
+              { img: '/images/home/lyft-campaign.jpg', brand: 'Lyft', href: '/case-studies/lyft-national' },
+            ].map(c => (
+              <a key={c.brand} href={c.href} style={{ display: 'block', textDecoration: 'none' }}>
+                <figure style={{ margin: 0 }}>
+                  <img
+                    src={c.img}
+                    alt={`${c.brand} street team campaign staffed by Street Teams Co`}
+                    loading="lazy"
+                    width="640"
+                    height="480"
+                    style={{ width: '100%', height: 'auto', display: 'block', border: '3px solid #1a1a1a' }}
+                  />
+                  <figcaption style={{ fontWeight: 800, fontSize: '0.9rem', marginTop: 6, color: '#1a1a1a', textTransform: 'uppercase', letterSpacing: '0.04em' }}>
+                    {c.brand} →
+                  </figcaption>
+                </figure>
+              </a>
+            ))}
+          </div>
+          <p style={{ marginTop: 24 }}>
+            <a href="/case-studies/" style={{ fontWeight: 700 }}>See all 45 case studies with campaign photos →</a>
+          </p>
+        </div>
+      </section>
+
       {/* ===================== SERVICES ===================== */}
       <section id="services" className="ds-section ds-section--ink">
         <div className="ds-wrap">
