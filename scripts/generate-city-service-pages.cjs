@@ -8,6 +8,103 @@ const path = require('path');
 // ---------------------------------------------------------------------------
 // Data: Top 20 cities (highest search volume)
 // ---------------------------------------------------------------------------
+// Marquee venue pages per city (slugs verified against public/*.html — dead
+// links here become 404s, so only add venues whose page exists)
+const VENUES_BY_CITY = {
+  'new-york-city': [
+    ['madison-square-garden', 'Madison Square Garden'],
+    ['javits-center', 'Javits Center'],
+    ['metlife-stadium', 'MetLife Stadium'],
+    ['citi-field', 'Citi Field'],
+    ['barclays-center', 'Barclays Center'],
+  ],
+  'los-angeles': [
+    ['sofi-stadium', 'SoFi Stadium'],
+    ['crypto-com-arena', 'Crypto.com Arena'],
+    ['dodger-stadium', 'Dodger Stadium'],
+    ['hollywood-bowl', 'Hollywood Bowl'],
+  ],
+  'chicago': [
+    ['united-center', 'United Center'],
+    ['soldier-field', 'Soldier Field'],
+    ['mccormick-place', 'McCormick Place'],
+  ],
+  'houston': [
+    ['nrg-stadium', 'NRG Stadium'],
+    ['toyota-center', 'Toyota Center'],
+  ],
+  'phoenix': [
+    ['state-farm-stadium', 'State Farm Stadium'],
+  ],
+  'philadelphia': [
+    ['lincoln-financial-field', 'Lincoln Financial Field'],
+    ['wells-fargo-center', 'Wells Fargo Center'],
+    ['citizens-bank-park', 'Citizens Bank Park'],
+  ],
+  'san-diego': [
+    ['petco-park', 'Petco Park'],
+    ['san-diego-convention-center', 'San Diego Convention Center'],
+  ],
+  'dallas': [
+    ['att-stadium', 'AT&amp;T Stadium'],
+  ],
+  'austin': [
+    ['circuit-of-the-americas', 'Circuit of the Americas'],
+  ],
+  'miami': [
+    ['hard-rock-stadium', 'Hard Rock Stadium'],
+    ['kaseya-center', 'Kaseya Center'],
+  ],
+  'atlanta': [
+    ['mercedes-benz-stadium', 'Mercedes-Benz Stadium'],
+    ['truist-park', 'Truist Park'],
+    ['georgia-world-congress-center', 'Georgia World Congress Center'],
+  ],
+  'denver': [
+    ['empower-field-at-mile-high', 'Empower Field at Mile High'],
+    ['ball-arena', 'Ball Arena'],
+    ['coors-field', 'Coors Field'],
+    ['red-rocks-amphitheatre', 'Red Rocks Amphitheatre'],
+    ['colorado-convention-center', 'Colorado Convention Center'],
+  ],
+  'seattle': [
+    ['lumen-field', 'Lumen Field'],
+  ],
+  'boston': [
+    ['gillette-stadium', 'Gillette Stadium'],
+    ['td-garden', 'TD Garden'],
+  ],
+  'nashville': [
+    ['nissan-stadium', 'Nissan Stadium'],
+    ['music-city-center', 'Music City Center'],
+  ],
+  'las-vegas': [
+    ['allegiant-stadium', 'Allegiant Stadium'],
+    ['t-mobile-arena', 'T-Mobile Arena'],
+    ['las-vegas-convention-center', 'Las Vegas Convention Center'],
+  ],
+  'san-francisco': [
+    ['levis-stadium', "Levi's Stadium"],
+  ],
+};
+
+function venueLinksBlock(city, c) {
+  const venues = VENUES_BY_CITY[city.citySlug];
+  if (!venues || !venues.length) return '';
+  const links = venues
+    .map(([slug, name]) => `      <a href="/${slug}-event-staffing">${name} Event Staffing</a>`)
+    .join('\n');
+  return `
+  <div class="internal-links">
+    <h3>Major Venues We Staff in ${c}</h3>
+    <div class="link-grid">
+${links}
+      <a href="/major-event-staffing">All Major Venues &amp; Events</a>
+    </div>
+  </div>
+`;
+}
+
 const cities = [
   { city: 'New York City', citySlug: 'new-york-city', state: 'New York', stateSlug: 'new-york', abbr: 'NY', pop: '8.3M', landmarks: ['Times Square', 'Central Park', 'Madison Square Garden', 'Grand Central Terminal'], neighborhoods: ['Manhattan', 'Brooklyn', 'SoHo', 'Williamsburg', 'Midtown'] },
   { city: 'Los Angeles', citySlug: 'los-angeles', state: 'California', stateSlug: 'california', abbr: 'CA', pop: '3.9M', landmarks: ['Hollywood Boulevard', 'Santa Monica Pier', 'Staples Center', 'Venice Beach'], neighborhoods: ['Hollywood', 'Downtown LA', 'West Hollywood', 'Silver Lake', 'Santa Monica'] },
@@ -580,6 +677,7 @@ ${faqs.map(f => `    <div class="faq-item">\n      <h4>${f.q}</h4>\n      <p>${f
     <a href="/contact" class="cta-btn">Get a Free ${c} Quote</a>
   </div>
 
+${venueLinksBlock(city, c)}
   <div class="internal-links">
     <h3>Other Services in ${c}</h3>
     <div class="link-grid">
