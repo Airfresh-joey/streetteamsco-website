@@ -152,7 +152,7 @@ function AppLayout() {
               <Link to="/contact">Get a Quote</Link>
               <a href="mailto:hello@streetteamsco.com">hello@streetteamsco.com</a>
               <p>50+ states &middot; 1,000+ cities</p>
-              <p>Response within 24 hours</p>
+              <p>Fast response from a real strategist</p>
             </div>
           </div>
           <div className="footer-bottom">
@@ -186,7 +186,7 @@ function AppLayout() {
 
       {/* Sticky CTA Bar */}
       <div className="sticky-cta-bar">
-        <p>Ready to launch your campaign? Get a free quote in 24 hours.</p>
+        <p>Ready to launch your campaign? Get a free custom quote.</p>
         {isHome ? (
           <a href="#contact" className="sticky-cta-btn" onClick={(e) => {
             e.preventDefault();

@@ -662,7 +662,7 @@ export default function CostCalculator() {
                 <div className="calc-trust-label">Client Rating</div>
               </div>
               <div className="calc-trust-card"><div className="calc-trust-number">50+</div><div className="calc-trust-label">U.S. Markets</div></div>
-              <div className="calc-trust-card"><div className="calc-trust-number">24hr</div><div className="calc-trust-label">Quote Turnaround</div></div>
+              <div className="calc-trust-card"><div className="calc-trust-number">Free</div><div className="calc-trust-label">Custom Quotes</div></div>
             </div>
 
             {/* Guarantee */}
@@ -708,7 +708,7 @@ export default function CostCalculator() {
               <div className="calc-modal-success">
                 <div className="calc-modal-success-icon"><CheckCircle2 size={48} /></div>
                 <h2>Quote Request Sent!</h2>
-                <p>We'll send your custom proposal to <strong>{formData.email}</strong> within 24 hours.</p>
+                <p>We'll send your custom proposal to <strong>{formData.email}</strong> as quickly as possible.</p>
                 <button className="calc-cta-btn" onClick={() => setShowQuoteModal(false)}>Close</button>
               </div>
             ) : (
@@ -720,7 +720,7 @@ export default function CostCalculator() {
                     </div>
                   )}
                   <p className="calc-modal-subtitle">
-                    This is a preliminary estimate. Give us your contact info and as much detail as you can, and we'll have a custom proposal in your inbox within 24 hours.
+                    This is a preliminary estimate. Give us your contact info and as much detail as you can, and we'll have a custom proposal in your inbox as quickly as possible.
                   </p>
                 </div>
 

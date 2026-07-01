@@ -124,7 +124,7 @@ export default function BrandAmbassadorsService() {
 
           <div className="city-cta">
             <h3>Hire Brand Ambassadors for Your Next Campaign</h3>
-            <p>Tell us about your campaign and we'll build a custom team proposal within 24 hours.</p>
+            <p>Tell us about your campaign and we'll build a custom team proposal as quickly as possible.</p>
             <a href="/case-studies/" className="btn btn-secondary" style={{ marginRight: '1rem' }}>Browse Case Studies</a>
             <Link to="/contact" className="btn btn-primary btn-lg">Get Free Quote</Link>
           </div>

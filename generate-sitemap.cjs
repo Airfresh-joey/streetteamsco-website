@@ -48,6 +48,7 @@ addUrl('/services', 0.9, 'weekly');
 addUrl('/locations', 0.9, 'weekly');
 addUrl('/industries', 0.8, 'weekly');
 addUrl('/testimonials', 0.8, 'monthly');
+addUrl('/portfolio', 0.9, 'weekly');
 addUrl('/our-team', 0.7, 'monthly');
 addUrl('/contact', 0.95, 'monthly');
 addUrl('/playbook', 0.9, 'monthly');

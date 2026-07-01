@@ -142,7 +142,7 @@ export default function Pricing() {
 
           <div className="city-cta">
             <h3>Get a Custom Quote</h3>
-            <p>Every campaign is unique. Tell us about your goals and we'll provide a detailed proposal within 24 hours.</p>
+            <p>Every campaign is unique. Tell us about your goals and we'll provide a detailed proposal as quickly as possible.</p>
             <Link to="/contact" className="btn btn-primary btn-lg">Get Free Quote</Link>
           </div>
         </div>

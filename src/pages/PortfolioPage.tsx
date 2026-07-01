@@ -96,7 +96,7 @@ export default function PortfolioPage() {
       <section className="portfolio-cta">
         <div className="container">
           <h2>Ready to be our next case study?</h2>
-          <p>Get a free quote for your campaign in 24 hours.</p>
+          <p>Get a free custom quote for your campaign.</p>
           <a href="/contact" className="btn-primary">Get a Free Quote</a>
         </div>
       </section>

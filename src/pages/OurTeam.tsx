@@ -176,7 +176,7 @@ export default function OurTeam() {
                 <span className="ambassador-stat-label">Client Rating</span>
               </div>
               <div className="ambassador-stat">
-                <span className="ambassador-stat-value">24hr</span>
+                <span className="ambassador-stat-value">Fast</span>
                 <span className="ambassador-stat-label">Avg Response Time</span>
               </div>
             </div>
