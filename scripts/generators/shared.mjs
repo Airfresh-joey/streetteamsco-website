@@ -102,8 +102,9 @@ export function parseIndustries(srcDir) {
 // Inline CSS (extracted from pillar page / city-service page pattern)
 // ---------------------------------------------------------------------------
 
-export const INLINE_CSS = `@import url('https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700;800;900&family=Space+Mono:wght@400;700&display=swap');
-    :root { --ink:#121110; --orange:#FF4D00; --orange-deep:#E04300; --paper:#F7F5EF; --curb:#FFD23F; --display:'Anton','Arial Narrow',Impact,sans-serif; --body:'Archivo',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif; --mono:'Space Mono',ui-monospace,Menlo,monospace; }
+export const FONTS_URL = 'https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700;800;900&family=Space+Mono:wght@400;700&display=swap';
+
+export const INLINE_CSS = `    :root { --ink:#121110; --orange:#FF4D00; --orange-deep:#E04300; --paper:#F7F5EF; --curb:#FFD23F; --display:'Anton','Arial Narrow',Impact,sans-serif; --body:'Archivo',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif; --mono:'Space Mono',ui-monospace,Menlo,monospace; }
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { font-family: var(--body); line-height: 1.65; color: var(--ink); background: var(--paper); }
     ::selection { background: var(--ink); color: var(--orange); }
@@ -250,6 +251,10 @@ export function wrapPage({ title, description, canonical, ogImage, keywords, sch
   <link rel="canonical" href="${canonical}">
   <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
   <link rel="icon" href="/images/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" href="${FONTS_URL}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link href="${FONTS_URL}" rel="stylesheet"></noscript>
 
   <meta property="og:title" content="${escHtml(title)}">
   <meta property="og:description" content="${escHtml(description)}">

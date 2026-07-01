@@ -17,8 +17,9 @@ const studies = new Function(src + '\n; return portfolioCaseStudies;')();
 
 const esc = s => String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 
-const CSS = `@import url('https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700;800;900&family=Space+Mono:wght@400;700&display=swap');
-*{margin:0;padding:0;box-sizing:border-box;}
+const FONTS_URL = 'https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700;800;900&family=Space+Mono:wght@400;700&display=swap';
+
+const CSS = `*{margin:0;padding:0;box-sizing:border-box;}
 :root{--ink:#121110;--orange:#FF4D00;--orange-deep:#E04300;--paper:#F7F5EF;--curb:#FFD23F;--display:'Anton','Arial Narrow',Impact,sans-serif;--body:'Archivo',system-ui,sans-serif;--mono:'Space Mono',monospace;}
 body{font-family:var(--body);color:var(--ink);background:var(--paper);line-height:1.6;}
 a{color:var(--orange-deep);text-decoration:none;}a:hover{text-decoration:underline;}
@@ -72,6 +73,8 @@ function shell({ title, desc, canonical, og, jsonld, body }) {
 <title>${esc(title)}</title><meta name="description" content="${esc(desc)}"><link rel="canonical" href="${canonical}">
 <meta property="og:title" content="${esc(title)}"><meta property="og:description" content="${esc(desc)}"><meta property="og:type" content="article"><meta property="og:url" content="${canonical}">${og ? `<meta property="og:image" content="${og}">` : ''}
 ${jsonld.map(j => `<script type="application/ld+json">${JSON.stringify(j)}</script>`).join('\n')}
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" href="${FONTS_URL}" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link href="${FONTS_URL}" rel="stylesheet"></noscript>
 <style>${CSS}</style></head><body>${HEADER}${body}${FOOTER}</body></html>`;
 }
 
