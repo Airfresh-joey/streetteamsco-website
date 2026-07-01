@@ -1,11 +1,21 @@
 // scripts/generators/standalone-pages.mjs
-// Generates standalone pages: pricing, our-team, testimonials, locations index, privacy, terms
+// Generates standalone pages: pricing, our-team, testimonials, locations index,
+// privacy, terms, contact, portfolio, book
 
 import path from 'path';
+import fs from 'fs';
 import {
   parseLocations, wrapPage, writePage, breadcrumbSchema, faqSchema,
   statsBar, faqHtml, ctaSection, internalLinksBlock, escHtml, BASE_URL,
 } from './shared.mjs';
+
+// Parse src/data/portfolioCaseStudies.ts (machine-generated JSON inside TS)
+function parsePortfolio(srcDir) {
+  const raw = fs.readFileSync(path.join(srcDir, 'data', 'portfolioCaseStudies.ts'), 'utf8');
+  const start = raw.indexOf('= [') + 2;
+  const end = raw.lastIndexOf('];') + 1;
+  return JSON.parse(raw.slice(start, end));
+}
 
 // ---------------------------------------------------------------------------
 // Pricing page
@@ -543,6 +553,137 @@ ${statsBar([
 }
 
 // ---------------------------------------------------------------------------
+// Portfolio page — static gallery so crawlers see the 50 real campaigns
+// (the SPA route previously masqueraded as the homepage in raw HTML)
+// ---------------------------------------------------------------------------
+function generatePortfolioPage(srcDir) {
+  const canonical = `${BASE_URL}/portfolio`;
+  const studies = parsePortfolio(srcDir);
+
+  const schemas = [
+    breadcrumbSchema([
+      { name: 'Home', url: BASE_URL },
+      { name: 'Portfolio', url: canonical },
+    ]),
+    {
+      '@context': 'https://schema.org',
+      '@type': 'CollectionPage',
+      name: 'Street Teams Co Portfolio — Real Campaign Results',
+      url: canonical,
+      description: 'Real street team and event staffing campaigns for brands including Netflix, Microsoft, Adidas, Starbucks, MrBeast, Cirque du Soleil, and more.',
+      hasPart: studies.slice(0, 20).map(s => ({
+        '@type': 'CreativeWork',
+        name: s.name,
+        url: `${BASE_URL}/case-studies/${s.id}`,
+      })),
+    },
+  ];
+
+  const cards = studies.map(s => {
+    const stats = Object.entries(s.stats || {}).slice(0, 2)
+      .map(([k, v]) => `<span class="pf-stat"><strong>${escHtml(String(v))}</strong> ${escHtml(k)}</span>`)
+      .join(' ');
+    return `    <a class="pf-card" href="/case-studies/${s.id}">
+      <img src="${escHtml(s.heroImage)}" alt="${escHtml(s.name)} — campaign staffed by Street Teams Co" loading="lazy" width="640" height="360">
+      <div class="pf-card-body">
+        <span class="pf-cat">${escHtml(s.category || '')}</span>
+        <h3>${escHtml(s.name)}</h3>
+        <p class="pf-stats">${stats}</p>
+      </div>
+    </a>`;
+  }).join('\n');
+
+  const body = `<section class="page-hero">
+  <div class="page-hero-inner">
+    <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> / <span>Portfolio</span></nav>
+    <h1>Street Team Marketing Portfolio — Real Campaign Results</h1>
+    <p>Real campaigns for real brands — Netflix, Microsoft, Adidas, Starbucks, MrBeast, Cirque du Soleil, Williams Racing, and ${studies.length - 7}+ more. Actual photos, actual results.</p>
+  </div>
+</section>
+
+<div class="content">
+
+<style>
+.pf-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; margin: 2rem 0; }
+.pf-card { display: block; border: 3px solid #1a1a1a; border-radius: 6px; overflow: hidden; text-decoration: none; color: #1a1a1a; background: #fff; }
+.pf-card img { width: 100%; height: 180px; object-fit: cover; display: block; }
+.pf-card-body { padding: 12px 14px; }
+.pf-card h3 { margin: 4px 0 8px; font-size: 1rem; line-height: 1.3; }
+.pf-cat { font-size: 0.72rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.06em; color: #E04300; }
+.pf-stats { margin: 0; font-size: 0.85rem; color: #444; }
+.pf-stat { margin-right: 12px; }
+</style>
+
+  <div class="pf-grid">
+${cards}
+  </div>
+
+${ctaSection('Want results like these?', 'Tell us about your campaign and we will build a custom plan with a free quote.', 'Get a Free Quote', '/contact')}
+
+  <p>Prefer the written version? <a href="/case-studies/">Browse all case studies</a> or explore <a href="/services">our services</a>.</p>
+
+</div>`;
+
+  return wrapPage({
+    title: 'Portfolio | Real Campaign Results | Street Teams Co',
+    description: 'Real street team campaigns for real brands. Wagamama, Cirque du Soleil, Williams Racing F1, Netflix, Microsoft, 1800 Tequila and more. See actual photos and results.',
+    canonical,
+    schemas,
+    body,
+  });
+}
+
+// ---------------------------------------------------------------------------
+// Book page — static Calendly embed with real noindex meta (the SPA sets
+// noindex via JS, which crawlers hitting the fallback never saw)
+// ---------------------------------------------------------------------------
+function generateBookPage() {
+  return `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book a Discovery Call | Street Teams Co</title>
+  <meta name="description" content="Schedule a discovery call with Street Teams Co. Tell us about your brand activation goals and we will put together a custom plan.">
+  <meta name="robots" content="noindex, follow">
+  <link rel="canonical" href="${BASE_URL}/book">
+  <link rel="icon" href="/images/favicon.svg" type="image/svg+xml">
+  <style>
+    body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0f172a; color: #fff; }
+    .hero { padding: 100px 24px 50px; text-align: center; }
+    .eyebrow { font-size: 12px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: #ff6b35; margin-bottom: 16px; }
+    h1 { font-size: clamp(2rem, 5vw, 3.25rem); font-weight: 800; margin: 0 0 20px; line-height: 1.2; }
+    .sub { font-size: 1.15rem; color: rgba(255,255,255,0.65); max-width: 560px; margin: 0 auto; }
+    .widget-wrap { max-width: 900px; margin: 0 auto; padding: 0 24px; }
+    .afm { text-align: center; margin: 16px 0 40px; }
+    .afm a { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; }
+    .afm span { font-size: 10px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.35); }
+    .back { text-align: center; padding: 20px 24px 60px; }
+    .back a { color: rgba(255,255,255,0.5); text-decoration: none; font-size: 0.9rem; }
+  </style>
+</head>
+<body>
+  <div class="hero">
+    <p class="eyebrow">Discovery Call</p>
+    <h1>Schedule Your Discovery Call</h1>
+    <p class="sub">Tell us about your brand activation goals and we will put together a custom plan for you.</p>
+  </div>
+  <div class="widget-wrap">
+    <div class="calendly-inline-widget" data-url="https://calendly.com/joeykercher/street-teams-co-discovery-call" style="min-width:320px;height:700px;width:100%"></div>
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+    <div class="afm">
+      <a href="https://airfreshmarketing.com" target="_blank" rel="noopener noreferrer">
+        <span>Powered by</span>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 453.27 124.49" style="height:24px;width:auto" aria-label="Air Fresh Marketing"><path fill="white" d="M170.35,32.1h14L206.74,85H191.13l-3.82-9.38H167.05L163.3,85H148Zm12.76,32.19-5.85-14.93-5.93,14.93Z"/><path fill="white" d="M208.1,30.23H223v10.5H208.1Zm.29,14.18h14.26V85H208.39Z"/><path fill="white" d="M227.75,44.41H242v8.18c2.33-5.55,6.08-9.16,12.83-8.86v15h-1.2C246.2,58.74,242,63,242,72.4V85H227.75Z"/><path fill="white" d="M258.29,32.48h42V45.23H272.84v8.94h24.83V66.25H272.84V85H258.29Z"/><path fill="white" d="M303.83,44.41h14.25v8.18c2.32-5.55,6.07-9.16,12.83-8.86v15h-1.2c-7.43,0-11.63,4.28-11.63,13.66V85H303.83Z"/><path fill="white" d="M332.64,64.89v-.15c0-11.85,8.47-21.23,20.47-21.23,14,0,20.48,10.28,20.48,22.21,0,.9,0,2-.07,2.93H346.36c1.13,4.42,4.35,6.67,8.78,6.67,3.38,0,6.08-1.27,9-4.12L372,77.73c-3.9,5-9.53,8.25-17.63,8.25C341.64,86,332.64,77.5,332.64,64.89Zm27.6-3.52c-.52-4.5-3.15-7.36-7.05-7.36s-6.3,2.93-7.05,7.36Z"/><path fill="white" d="M374.65,79.9,380,71.27a26.34,26.34,0,0,0,13.95,4.66c2.47,0,3.6-.75,3.6-2.18V73.6c0-1.58-2.25-2.25-6.53-3.45-8-2.1-14.4-4.8-14.4-13V57c0-8.63,6.9-13.44,16.28-13.44a31.77,31.77,0,0,1,16.73,4.73l-4.88,9c-4.2-2.33-8.78-3.76-12-3.76-2.18,0-3.3.83-3.3,2v.14c0,1.58,2.32,2.33,6.6,3.61,8,2.25,14.4,5,14.4,12.9v.15c0,8.93-6.67,13.59-16.58,13.59A32.76,32.76,0,0,1,374.65,79.9Z"/><path fill="white" d="M413.06,30.23h14.25V50c2.63-3.37,6.38-6.45,12.16-6.45,8.62,0,13.8,5.7,13.8,14.93V85H439V63c0-4.43-2.33-6.83-5.7-6.83s-6,2.4-6,6.83V85H413.06Z"/><path fill="white" d="M62.25,0a62.25,62.25,0,1,0,62.24,62.25A62.31,62.31,0,0,0,62.25,0Zm0,109.51a47.27,47.27,0,1,1,47.26-47.26A47.32,47.32,0,0,1,62.25,109.51Z"/><polygon fill="white" points="54.36 32.05 75.56 85.08 91.29 85.08 70.09 32.05 54.36 32.05"/><polygon fill="white" points="33.21 85.08 48.94 85.08 58.73 60.59 42.99 60.59 33.21 85.08"/></svg>
+      </a>
+    </div>
+  </div>
+  <div class="back"><a href="/">← Back to streetteamsco.com</a> &nbsp;·&nbsp; <a href="/portfolio">View our portfolio</a></div>
+</body>
+</html>`;
+}
+
+// ---------------------------------------------------------------------------
 // Privacy Policy page
 // ---------------------------------------------------------------------------
 function generatePrivacyPage() {
@@ -652,6 +793,12 @@ export function generateStandalonePages(distDir, srcDir) {
   count++;
 
   writePage(path.join(distDir, 'contact', 'index.html'), generateContactPage());
+  count++;
+
+  writePage(path.join(distDir, 'portfolio', 'index.html'), generatePortfolioPage(srcDir));
+  count++;
+
+  writePage(path.join(distDir, 'book', 'index.html'), generateBookPage());
   count++;
 
   writePage(path.join(distDir, 'privacy', 'index.html'), generatePrivacyPage());

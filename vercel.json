@@ -6,6 +6,11 @@
       "permanent": true
     },
     {
+      "source": "/book-call",
+      "destination": "/book",
+      "permanent": true
+    },
+    {
       "source": "/case-studies/app-launch-multi-city-tour",
       "destination": "/case-studies/",
       "permanent": true
