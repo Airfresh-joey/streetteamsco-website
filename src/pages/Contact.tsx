@@ -5,7 +5,7 @@ import ContactForm from '../components/ContactForm';
 export default function Contact() {
   useMetaTags({
     title: 'Contact Street Teams Co | Get a Free Street Team Marketing Quote',
-    description: 'Contact Street Teams Co for a free street team marketing quote. Brand ambassadors, event staffing, and product sampling in 1,000+ US cities. Response within 24 hours.',
+    description: 'Contact Street Teams Co for a free street team marketing quote. Brand ambassadors, event staffing, and product sampling in 1,000+ US cities.',
     canonical: 'https://streetteamsco.com/contact',
     ogImage: 'https://streetteamsco.com/images/og-image.jpg',
     schema: [
@@ -43,7 +43,7 @@ export default function Contact() {
           </nav>
           <h1>Get a Free Street Team Marketing Quote</h1>
           <p className="service-hero-subtitle">
-            Tell us about your campaign and we'll respond within 24 hours with a custom proposal.
+            Tell us about your campaign and we'll respond with a custom proposal.
             500+ campaigns executed across 1,000+ US cities.
           </p>
         </div>
@@ -58,8 +58,8 @@ export default function Contact() {
 
             <div className="stats-grid" style={{ marginTop: '2rem' }}>
               <div className="stat">
-                <div className="stat-number">24hr</div>
-                <div className="stat-label">Response Time</div>
+                <div className="stat-number">Free</div>
+                <div className="stat-label">Custom Quotes</div>
               </div>
               <div className="stat">
                 <div className="stat-number">500+</div>
@@ -80,7 +80,7 @@ export default function Contact() {
               <p>
                 Reach out directly at{' '}
                 <a href="mailto:hello@streetteamsco.com">hello@streetteamsco.com</a>
-                {' '}— we respond to every inquiry within 24 hours.
+                {' '}— every inquiry gets a response from a real strategist.
               </p>
             </div>
 

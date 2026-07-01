@@ -65,7 +65,7 @@ export default function ContactForm() {
       <div className="contact-form-success">
         <div className="success-icon">✓</div>
         <h3>Message Sent!</h3>
-        <p>Thanks for reaching out! We'll get back to you within 24 hours.</p>
+        <p>Thanks for reaching out! We'll get back to you with a custom proposal.</p>
       </div>
     );
   }

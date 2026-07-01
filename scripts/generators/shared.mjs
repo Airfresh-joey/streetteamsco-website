@@ -202,7 +202,7 @@ export function footer() {
   <p style="margin-top: 0.5rem;"><strong style="color:#FF4D00;">Free:</strong> <a href="/playbook" style="color:#FF4D00;font-weight:600;">Download the Street Team Activation Playbook (PDF)</a> | <a href="/resources">All Resources</a> | <a href="/faq">FAQ</a></p>
 </footer>
 <div class="sticky-cta">
-  <p>Ready to launch your campaign? Get a free quote in 24 hours.</p>
+  <p>Ready to launch your campaign? Get a free custom quote.</p>
   <a href="/contact">Get Free Quote</a>
   <a href="mailto:hello@streetteamsco.com" style="background:transparent;border:1px solid #FF4D00;color:#FF4D00;">Email Us</a>
 </div>`;
