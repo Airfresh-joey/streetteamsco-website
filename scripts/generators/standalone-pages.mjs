@@ -367,6 +367,182 @@ ${internalLinksBlock('Explore More', [
 }
 
 // ---------------------------------------------------------------------------
+// Contact page — static prerender with a working Formspree form (crawlable;
+// the SPA route only exists after JS, which crawlers never see)
+// ---------------------------------------------------------------------------
+function generateContactPage() {
+  const canonical = `${BASE_URL}/contact`;
+
+  const schemas = [
+    breadcrumbSchema([
+      { name: 'Home', url: BASE_URL },
+      { name: 'Contact', url: canonical },
+    ]),
+    {
+      '@context': 'https://schema.org',
+      '@type': 'ContactPage',
+      name: 'Contact Street Teams Co',
+      url: canonical,
+      mainEntity: {
+        '@type': 'Organization',
+        name: 'Street Teams Co',
+        email: 'hello@streetteamsco.com',
+        areaServed: 'United States',
+      },
+    },
+  ];
+
+  const body = `<section class="page-hero">
+  <div class="page-hero-inner">
+    <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> / <span>Contact</span></nav>
+    <h1>Get a Free Street Team Marketing Quote</h1>
+    <p>Tell us about your campaign and we will respond with a custom proposal. 500+ campaigns executed across 1,000+ US cities.</p>
+  </div>
+</section>
+
+<div class="content">
+
+<style>
+.contact-form { max-width: 720px; }
+.contact-form .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+@media (max-width: 640px) { .contact-form .form-row { grid-template-columns: 1fr; } }
+.contact-form label { display: block; font-weight: 700; margin: 1rem 0 0.35rem; }
+.contact-form input, .contact-form select, .contact-form textarea {
+  width: 100%; padding: 0.75rem; border: 2px solid #1a1a1a; border-radius: 4px;
+  font: inherit; background: #fff; box-sizing: border-box;
+}
+.contact-form textarea { min-height: 140px; resize: vertical; }
+.contact-form button {
+  margin-top: 1.5rem; padding: 1rem 2.5rem; background: #ff5a1f; color: #fff;
+  border: none; border-radius: 4px; font-size: 1.05rem; font-weight: 800;
+  cursor: pointer; text-transform: uppercase; letter-spacing: 0.03em;
+}
+.contact-form button:hover { background: #e04d15; }
+.form-status { margin-top: 1rem; padding: 1rem; border-radius: 4px; display: none; font-weight: 700; }
+.form-status.success { display: block; background: #e7f7ec; color: #1b7a3d; }
+.form-status.error { display: block; background: #fdecea; color: #b3261e; }
+</style>
+
+  <h2>Request Your Custom Quote</h2>
+  <p>Every campaign is scoped and quoted individually — team size, market, duration, and specialized roles all shape your quote. Fill out the form and our team will follow up with next steps and a tailored proposal.</p>
+
+  <form class="contact-form" id="contact-form" action="https://formspree.io/f/myznknaa" method="POST">
+    <div class="form-row">
+      <div>
+        <label for="name">Your Name *</label>
+        <input type="text" id="name" name="name" required placeholder="John Smith">
+      </div>
+      <div>
+        <label for="email">Email Address *</label>
+        <input type="email" id="email" name="email" required placeholder="john@company.com">
+      </div>
+    </div>
+    <div class="form-row">
+      <div>
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" name="phone" placeholder="(555) 123-4567">
+      </div>
+      <div>
+        <label for="company">Company Name</label>
+        <input type="text" id="company" name="company" placeholder="Your Company">
+      </div>
+    </div>
+    <label for="campaign_type">Campaign Type</label>
+    <select id="campaign_type" name="campaign_type">
+      <option value="">Select a campaign type...</option>
+      <option value="street_activation">Street Activation</option>
+      <option value="brand_ambassadors">Brand Ambassadors</option>
+      <option value="event_staffing">Event Staffing</option>
+      <option value="product_sampling">Product Sampling</option>
+      <option value="flyering">Flyer Distribution</option>
+      <option value="multi_city">Multi-City Campaign</option>
+      <option value="long_term">Long-Term Program</option>
+      <option value="other">Other</option>
+    </select>
+    <div class="form-row">
+      <div>
+        <label for="budget_range">Budget Range</label>
+        <select id="budget_range" name="budget_range">
+          <option value="">Select budget range...</option>
+          <option value="under_5k">Under $5K</option>
+          <option value="5k_10k">$5K-$10K</option>
+          <option value="10k_25k">$10K-$25K</option>
+          <option value="25k_50k">$25K-$50K</option>
+          <option value="50k_plus">$50K+</option>
+        </select>
+      </div>
+      <div>
+        <label for="timeline">Timeline</label>
+        <select id="timeline" name="timeline">
+          <option value="">Select timeline...</option>
+          <option value="this_week">This week</option>
+          <option value="within_2_weeks">Within 2 weeks</option>
+          <option value="within_a_month">Within a month</option>
+          <option value="1_3_months">1-3 months</option>
+          <option value="flexible">Flexible / just researching</option>
+        </select>
+      </div>
+    </div>
+    <label for="message">Tell Us About Your Campaign *</label>
+    <textarea id="message" name="message" required placeholder="What are you promoting? Which cities? How many staff do you think you need?"></textarea>
+    <button type="submit" id="contact-submit">Get My Free Quote</button>
+    <div class="form-status" id="form-status" role="status"></div>
+  </form>
+
+  <script>
+  (function () {
+    var form = document.getElementById('contact-form');
+    var status = document.getElementById('form-status');
+    var btn = document.getElementById('contact-submit');
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      btn.disabled = true;
+      btn.textContent = 'Sending...';
+      fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { Accept: 'application/json' },
+      }).then(function (res) {
+        if (res.ok) {
+          form.reset();
+          status.className = 'form-status success';
+          status.textContent = 'Thanks! Your request is in — our team will follow up with a custom proposal.';
+        } else { throw new Error('bad response'); }
+      }).catch(function () {
+        status.className = 'form-status error';
+        status.textContent = 'Something went wrong. Please email us directly at hello@streetteamsco.com.';
+      }).finally(function () {
+        btn.disabled = false;
+        btn.textContent = 'Get My Free Quote';
+      });
+    });
+  })();
+  </script>
+
+${statsBar([
+    { number: '500+', label: 'Campaigns Executed' },
+    { number: '1,000+', label: 'Cities Covered' },
+    { number: '94%', label: 'Client Retention' },
+    { number: '50', label: 'States Served' },
+  ])}
+
+  <h2>Prefer Email?</h2>
+  <p>Reach out directly at <a href="mailto:hello@streetteamsco.com">hello@streetteamsco.com</a> — every inquiry gets a response from a real strategist, not an autoresponder.</p>
+
+  <p>Want to see results first? <a href="/case-studies/">Browse our case studies</a> or explore <a href="/services">our services</a>.</p>
+
+</div>`;
+
+  return wrapPage({
+    title: 'Contact Street Teams Co | Get a Free Street Team Marketing Quote',
+    description: 'Contact Street Teams Co for a free street team marketing quote. Brand ambassadors, event staffing, and product sampling in 1,000+ US cities.',
+    canonical,
+    schemas,
+    body,
+  });
+}
+
+// ---------------------------------------------------------------------------
 // Privacy Policy page
 // ---------------------------------------------------------------------------
 function generatePrivacyPage() {
@@ -473,6 +649,9 @@ export function generateStandalonePages(distDir, srcDir) {
   count++;
 
   writePage(path.join(distDir, 'locations', 'index.html'), generateLocationsIndex(srcDir));
+  count++;
+
+  writePage(path.join(distDir, 'contact', 'index.html'), generateContactPage());
   count++;
 
   writePage(path.join(distDir, 'privacy', 'index.html'), generatePrivacyPage());
