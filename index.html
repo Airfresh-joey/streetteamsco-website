@@ -29,7 +29,6 @@
 
     <!-- Preconnect to third-party origins -->
     <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
-    <link rel="preconnect" href="https://assets.calendly.com" crossorigin>
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-WL8QZB3S96"></script>
@@ -415,10 +414,7 @@
       </footer>
     </div>
     <script type="module" src="/src/main.tsx"></script>
-    <!-- Calendly popup widget (CSS preloaded in head, JS async) -->
-    <link rel="preload" href="https://assets.calendly.com/assets/external/widget.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet"></noscript>
-    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+    <!-- Calendly loads on-demand inside /book (BookPage.tsx) — not globally -->
     <!-- HubSpot removed per owner request — all lead capture is via Formspree -->
 
   </body>
