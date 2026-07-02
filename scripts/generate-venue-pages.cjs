@@ -26,6 +26,14 @@ const venues = [
   // Non-World-Cup marquee venues (wc:false → generic event framing, no WC claims)
   { slug: 'crypto-com-arena', venue: 'Crypto.com Arena', city: 'Los Angeles', metro: 'Los Angeles', state: 'California', abbr: 'CA', cap: '20,000', wc: false, citySvc: 'california/los-angeles',
     district: 'the L.A. Live entertainment complex in Downtown LA alongside the Convention Center', anchors: 'L.A. Live and the Los Angeles Convention Center', langs: 'Spanish, Korean, and other languages available' },
+  { slug: 'sphere-las-vegas', venue: 'Sphere Las Vegas', city: 'Las Vegas', metro: 'Las Vegas', state: 'Nevada', abbr: 'NV', cap: '18,600', wc: false, citySvc: 'nevada/las-vegas',
+    district: 'the Venetian district just east of the Las Vegas Strip', anchors: 'the Las Vegas Strip and the Venetian Expo', langs: 'Spanish and other languages available' },
+  { slug: 'intuit-dome', venue: 'Intuit Dome', city: 'Inglewood', metro: 'Los Angeles', state: 'California', abbr: 'CA', cap: '18,000', wc: false, citySvc: 'california/los-angeles',
+    district: 'Inglewood on the Hollywood Park campus corridor alongside SoFi Stadium', anchors: 'SoFi Stadium and Hollywood Park', langs: 'Spanish, Korean, and other languages available' },
+  { slug: 'kia-forum', venue: 'Kia Forum', city: 'Inglewood', metro: 'Los Angeles', state: 'California', abbr: 'CA', cap: '17,500', wc: false, citySvc: 'california/los-angeles',
+    district: 'Inglewood alongside SoFi Stadium and Intuit Dome', anchors: 'SoFi Stadium and Hollywood Park', langs: 'Spanish, Korean, and other languages available' },
+  { slug: 'bmo-stadium', venue: 'BMO Stadium', city: 'Los Angeles', metro: 'Los Angeles', state: 'California', abbr: 'CA', cap: '22,000', wc: false, citySvc: 'california/los-angeles',
+    district: 'Exposition Park next to the LA Memorial Coliseum', anchors: 'Exposition Park and the USC campus corridor', langs: 'Spanish, Korean, and other languages available' },
   { slug: 'madison-square-garden', venue: 'Madison Square Garden', city: 'New York', metro: 'New York City', state: 'New York', abbr: 'NY', cap: '20,000', wc: false, citySvc: 'new-york/new-york-city',
     district: 'the heart of Midtown Manhattan above Penn Station', anchors: 'Penn Station and the Midtown Manhattan corridor', langs: 'Spanish, with many other languages available' },
   { slug: 'allegiant-stadium', venue: 'Allegiant Stadium', city: 'Las Vegas', metro: 'Las Vegas', state: 'Nevada', abbr: 'NV', cap: '65,000', wc: false, citySvc: 'nevada/las-vegas',
@@ -50,7 +58,7 @@ const venues = [
     district: 'the International Drive tourism corridor in Orlando', anchors: 'International Drive and the Orlando resort district', langs: 'Spanish and Portuguese, with Haitian Creole and other languages available' },
   { slug: 'javits-center', venue: 'Jacob K. Javits Center', city: 'New York', metro: 'New York City', state: 'New York', abbr: 'NY', cap: '840K sq ft', wc: false, conv: true, citySvc: 'new-york/new-york-city',
     district: "Manhattan's Hudson Yards and Hell's Kitchen on the Far West Side", anchors: 'Hudson Yards and the High Line', langs: 'Spanish, with many other languages available' },
-  { slug: 'georgia-world-congress-center', venue: 'Georgia World Congress Center', city: 'Atlanta', metro: 'Atlanta', state: 'Georgia', abbr: 'GA', cap: '1.5M sq ft', wc: false, conv: true, citySvc: 'georgia/atlanta',
+  { slug: 'georgia-world-congress-center', venue: 'Georgia World Congress Center', city: 'Atlanta', metro: 'Atlanta', state: 'Georgia', abbr: 'GA', cap: '1.5M sq ft', wc: false, wcCity: 'atlanta', conv: true, citySvc: 'georgia/atlanta',
     district: 'downtown Atlanta alongside Mercedes-Benz Stadium and Centennial Olympic Park', anchors: 'Mercedes-Benz Stadium and Centennial Olympic Park', langs: 'Spanish, with other languages available' },
   { slug: 'moscone-center', venue: 'Moscone Center', city: 'San Francisco', metro: 'San Francisco', state: 'California', abbr: 'CA', cap: '700K sq ft', wc: false, conv: true, citySvc: 'california/san-francisco',
     district: "the SoMa and Yerba Buena district in downtown San Francisco", anchors: 'Union Square and Yerba Buena Gardens', langs: 'Spanish, Mandarin, and other languages available' },
@@ -226,7 +234,7 @@ function page(v){
     : `one of the marquee event, sports, and concert venues in ${esc(v.metro)}`;
   const bigCrowd = isWC ? ' — and the World Cup will bring some of the most international audiences the venue has ever seen' : '';
   const eventsList = isWC ? 'concerts, games, conventions, and the 2026 World Cup' : isConv ? 'trade shows, conventions, and major expos' : isSpeedway ? 'races, festivals, concerts, and major events' : isAmph ? 'concerts, festivals, and live events' : 'concerts, games, and major events';
-  const wcCrossLink = isWC ? `\n      <a href="/fifa-world-cup-2026-staffing/${v.wcCity}">${esc(v.metro)} World Cup 2026 Staffing</a>` : '';
+  const wcCrossLink = (isWC || v.wcCity) ? `\n      <a href="/fifa-world-cup-2026-staffing/${v.wcCity}">${esc(v.metro)} World Cup 2026 Staffing</a>` : '';
   const fifaDisc = isWC ? ', or FIFA or any official World Cup organizing body' : '';
   const langTail = isWC ? ' for the international crowds the World Cup draws' : ' for the diverse, international crowds these events draw';
   const bilingualWC = isWC ? 'the global crowds drawn to the 2026 World Cup make bilingual staffing valuable' : isConv ? 'the international audiences at major trade shows and conventions make bilingual staffing valuable' : 'the international audiences at major events make bilingual staffing valuable';

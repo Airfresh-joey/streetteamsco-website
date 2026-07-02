@@ -191,6 +191,10 @@ Arenas:
 - TD Garden (Boston): https://streetteamsco.com/td-garden-event-staffing
 - United Center (Chicago): https://streetteamsco.com/united-center-event-staffing
 - Crypto.com Arena (Los Angeles): https://streetteamsco.com/crypto-com-arena-event-staffing
+- Sphere Las Vegas: https://streetteamsco.com/sphere-las-vegas-event-staffing
+- Intuit Dome (Inglewood, CA): https://streetteamsco.com/intuit-dome-event-staffing
+- Kia Forum (Inglewood, CA): https://streetteamsco.com/kia-forum-event-staffing
+- BMO Stadium (Los Angeles): https://streetteamsco.com/bmo-stadium-event-staffing
 - T-Mobile Arena (Las Vegas): https://streetteamsco.com/t-mobile-arena-event-staffing
 
 Convention Centers (trade shows & expos):

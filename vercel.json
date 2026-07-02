@@ -184,6 +184,22 @@
       "destination": "/crypto-com-arena-event-staffing.html"
     },
     {
+      "source": "/bmo-stadium-event-staffing",
+      "destination": "/bmo-stadium-event-staffing.html"
+    },
+    {
+      "source": "/kia-forum-event-staffing",
+      "destination": "/kia-forum-event-staffing.html"
+    },
+    {
+      "source": "/intuit-dome-event-staffing",
+      "destination": "/intuit-dome-event-staffing.html"
+    },
+    {
+      "source": "/sphere-las-vegas-event-staffing",
+      "destination": "/sphere-las-vegas-event-staffing.html"
+    },
+    {
       "source": "/madison-square-garden-event-staffing",
       "destination": "/madison-square-garden-event-staffing.html"
     },
