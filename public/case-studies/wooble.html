@@ -40,6 +40,11 @@ header{background:var(--paper);padding:1rem 0;position:sticky;top:0;z-index:100;
 .cta h2{font-family:var(--display);font-weight:400;text-transform:uppercase;color:var(--ink);font-size:1.8rem;margin-bottom:1rem;}
 .cta a{display:inline-block;background:var(--ink);color:var(--orange);font-family:var(--mono);font-weight:700;text-transform:uppercase;padding:.9rem 2rem;box-shadow:5px 5px 0 rgba(18,17,16,.3);}
 .cta a:hover{background:#000;text-decoration:none;}
+.related-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin:1rem 0 2rem;}
+.rel-card{display:block;border:3px solid var(--ink);background:#fff;text-decoration:none;color:var(--ink);}
+.rel-card img{width:100%;height:130px;object-fit:cover;display:block;}
+.rel-card span{display:block;padding:10px 12px;font-family:var(--mono);font-size:.8rem;font-weight:700;text-transform:uppercase;}
+.rel-card:hover{box-shadow:5px 5px 0 var(--ink);text-decoration:none;}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.5rem;}
 .card{border:2px solid var(--ink);background:#fff;display:block;color:var(--ink);transition:transform .15s,box-shadow .15s;}
 .card:hover{transform:translate(-3px,-3px);box-shadow:6px 6px 0 var(--ink);text-decoration:none;}
@@ -55,6 +60,7 @@ footer a{color:#e8e4dc;}footer a:hover{color:var(--orange);}
 <div class="stats"><div class="stat"><div class="n">4+</div><div class="l">Markets</div></div><div class="stat"><div class="n">100%</div><div class="l">Client Satisfaction</div></div><div class="stat"><div class="n">24/7</div><div class="l">Support</div></div></div>
 <div class="wrap"><h2>The Campaign</h2><p>Wooble engaged in a sampling tour to promote its offerings, enhancing brand visibility and customer interaction. This initiative successfully showcased their products, leading to increased consumer interest and engagement.</p>
 <h2>Services Delivered</h2><div class="meta"><span class="chip">Street Team Marketing</span><span class="chip">Brand Ambassadors</span><span class="chip">Experiential Marketing</span></div>
+
 
 
 

@@ -52,6 +52,11 @@ header{background:var(--paper);padding:1rem 0;position:sticky;top:0;z-index:100;
 .cta h2{font-family:var(--display);font-weight:400;text-transform:uppercase;color:var(--ink);font-size:1.8rem;margin-bottom:1rem;}
 .cta a{display:inline-block;background:var(--ink);color:var(--orange);font-family:var(--mono);font-weight:700;text-transform:uppercase;padding:.9rem 2rem;box-shadow:5px 5px 0 rgba(18,17,16,.3);}
 .cta a:hover{background:#000;text-decoration:none;}
+.related-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin:1rem 0 2rem;}
+.rel-card{display:block;border:3px solid var(--ink);background:#fff;text-decoration:none;color:var(--ink);}
+.rel-card img{width:100%;height:130px;object-fit:cover;display:block;}
+.rel-card span{display:block;padding:10px 12px;font-family:var(--mono);font-size:.8rem;font-weight:700;text-transform:uppercase;}
+.rel-card:hover{box-shadow:5px 5px 0 var(--ink);text-decoration:none;}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.5rem;}
 .card{border:2px solid var(--ink);background:#fff;display:block;color:var(--ink);transition:transform .15s,box-shadow .15s;}
 .card:hover{transform:translate(-3px,-3px);box-shadow:6px 6px 0 var(--ink);text-decoration:none;}
@@ -87,6 +92,10 @@ function studyPage(s) {
   const services = (s.services || []).map(x => `<span class="chip">${esc(x)}</span>`).join('');
   const markets = (s.markets || []).map(x => `<span class="chip">${esc(x)}</span>`).join('');
   const gallery = (s.images && s.images.length) ? `<h2>From the Field</h2><div class="gallery">${s.images.map(i => `<img src="${i}" alt="${esc(s.name)} street team activation" loading="lazy">`).join('')}</div>` : '';
+  const siblings = studies.filter(x => x.id !== s.id && x.category === s.category).slice(0, 3);
+  const related = siblings.length ? `<h2>More ${esc(s.category)} Campaigns</h2><div class="related-grid">${siblings.map(x =>
+    `<a class="rel-card" href="/case-studies/${x.id}">${x.heroImage ? `<img src="${x.heroImage}" alt="${esc(x.name)}" loading="lazy" width="640" height="360">` : ''}<span>${esc(x.name)}</span></a>`
+  ).join('')}</div>` : '';
   const heroStyle = s.heroImage ? ` bg" style="background-image:url('${s.heroImage}')"` : '"';
   const jsonld = [
     { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [
@@ -105,6 +114,7 @@ ${services ? `<h2>Services Delivered</h2><div class="meta">${services}</div>` : 
 ${markets ? `<h2>Markets</h2><div class="meta">${markets}</div>` : ''}
 ${s.date ? `<p style="font-family:var(--mono);font-size:.85rem;color:#666;">Campaign date: ${esc(s.date)}</p>` : ''}
 ${gallery}
+${related}
 <div class="cta"><h2>Ready to Run a Campaign Like This?</h2><p style="color:var(--ink);margin-bottom:1.4rem;">Tell us your goals and we will build a custom plan. Every campaign is custom-quoted.</p><a href="/contact">Get a Free Quote</a></div>
 <p style="margin-top:2rem;"><a href="/case-studies/">&larr; Back to all case studies</a></p></div>`;
   return shell({ title: `${s.name} | Street Teams Co Case Study`, desc, canonical: url, og: s.heroImage ? BASE + s.heroImage : '', jsonld, body });
