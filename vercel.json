@@ -124,6 +124,10 @@
       "destination": "/metlife-stadium-event-staffing.html"
     },
     {
+      "source": "/ces-event-staffing",
+      "destination": "/ces-event-staffing.html"
+    },
+    {
       "source": "/super-bowl-event-staffing",
       "destination": "/super-bowl-event-staffing.html"
     },

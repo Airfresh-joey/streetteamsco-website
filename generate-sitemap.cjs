@@ -117,6 +117,7 @@ const pillarPages = [
   'sofi-stadium-event-staffing',
   'metlife-stadium-event-staffing',
   'super-bowl-event-staffing',
+  'ces-event-staffing',
   'mercedes-benz-stadium-event-staffing',
   'att-stadium-event-staffing',
   'hard-rock-stadium-event-staffing',
