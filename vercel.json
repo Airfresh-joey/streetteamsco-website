@@ -128,6 +128,18 @@
       "destination": "/ces-event-staffing.html"
     },
     {
+      "source": "/dreamforce-event-staffing",
+      "destination": "/dreamforce-event-staffing.html"
+    },
+    {
+      "source": "/sxsw-event-staffing",
+      "destination": "/sxsw-event-staffing.html"
+    },
+    {
+      "source": "/sema-event-staffing",
+      "destination": "/sema-event-staffing.html"
+    },
+    {
       "source": "/super-bowl-event-staffing",
       "destination": "/super-bowl-event-staffing.html"
     },
