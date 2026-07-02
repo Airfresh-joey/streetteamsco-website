@@ -508,6 +508,16 @@ function generateContactPage() {
       e.preventDefault();
       btn.disabled = true;
       btn.textContent = 'Sending...';
+      try {
+        var copy = {};
+        new FormData(form).forEach(function (v, k) { copy[k] = v; });
+        copy.source = 'streetteamsco';
+        fetch('https://proposal-dashboard-blond.vercel.app/api/leads/webhook', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(copy),
+        }).catch(function () {});
+      } catch (err) {}
       fetch(form.action, {
         method: 'POST',
         body: new FormData(form),
