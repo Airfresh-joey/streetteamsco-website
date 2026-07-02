@@ -391,6 +391,18 @@ export default function CostCalculator() {
       estimateRange: estimate.low > 0 ? `${formatCurrency(estimate.low)} - ${formatCurrency(estimate.high)}` : 'Not calculated',
     };
 
+    // Fire-and-forget copy to the AFM Proposals Command Center — runs in
+    // parallel and never blocks or affects the Formspree submission below.
+    try {
+      fetch('https://proposal-dashboard-blond.vercel.app/api/leads/webhook', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ...payload, source: 'streetteamsco' }),
+      }).catch(() => {});
+    } catch {
+      // ignore — best-effort only
+    }
+
     try {
       const res = await fetch('https://formspree.io/f/myznknaa', {
         method: 'POST',

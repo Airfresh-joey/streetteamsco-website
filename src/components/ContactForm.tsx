@@ -37,6 +37,18 @@ export default function ContactForm() {
     e.preventDefault();
     setStatus('submitting');
 
+    // Fire-and-forget copy to the AFM Proposals Command Center — runs in
+    // parallel and never blocks or affects the Formspree submission below.
+    try {
+      fetch('https://proposal-dashboard-blond.vercel.app/api/leads/webhook', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ...formData, source: 'streetteamsco' }),
+      }).catch(() => {});
+    } catch {
+      // ignore — best-effort only
+    }
+
     try {
       const response = await fetch('https://formspree.io/f/myznknaa', {
         method: 'POST',
