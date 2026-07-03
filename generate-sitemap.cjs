@@ -78,13 +78,24 @@ const industries = [
 ];
 industries.forEach(i => addUrl(`/industries/${i}`, 0.7, 'monthly'));
 
+// Low-presence states (kept in sync with scripts/generators/shared.mjs
+// LOW_PRESENCE_STATES): city pages stay live and crawlable, just excluded
+// from the sitemap so Google stops treating them as priority-crawl. The
+// state hub page itself stays in the sitemap.
+const LOW_PRESENCE_STATES = new Set([
+  'alaska', 'hawaii', 'new-mexico', 'rhode-island', 'vermont', 'delaware',
+  'wyoming', 'north-dakota', 'idaho', 'kansas', 'montana',
+]);
+
 // State pages
 states.forEach(state => {
   addUrl(`/locations/${state.slug}`, 0.7, 'monthly');
-  // City pages
-  state.cities.forEach(city => {
-    addUrl(`/locations/${state.slug}/${city.slug}`, 0.6, 'monthly');
-  });
+  // City pages (skip for low-presence states — see note above)
+  if (!LOW_PRESENCE_STATES.has(state.slug)) {
+    state.cities.forEach(city => {
+      addUrl(`/locations/${state.slug}/${city.slug}`, 0.6, 'monthly');
+    });
+  }
 });
 
 // City + Service pages (generated static HTML in /public/locations/[state]/[city]/[service].html)

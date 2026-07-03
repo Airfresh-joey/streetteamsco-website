@@ -421,3 +421,13 @@ export function faqHtml(faqs) {
 }
 
 export const BASE_URL = 'https://streetteamsco.com';
+
+// States with ~zero real search presence and no case-study/campaign history
+// (per Joey, Jul 2026: keep DC — real presence there). Pages stay live and
+// fully functional; copy is honest ("deployed nationwide on request" instead
+// of "locally recruited"), and their city pages are excluded from the
+// sitemap so Google stops treating them as priority-crawl. Nothing deleted.
+export const LOW_PRESENCE_STATES = new Set([
+  'alaska', 'hawaii', 'new-mexico', 'rhode-island', 'vermont', 'delaware',
+  'wyoming', 'north-dakota', 'idaho', 'kansas', 'montana',
+]);
