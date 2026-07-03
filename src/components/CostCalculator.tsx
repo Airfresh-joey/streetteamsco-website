@@ -404,7 +404,7 @@ export default function CostCalculator() {
     }
 
     try {
-      const res = await fetch('https://formspree.io/f/myznknaa', {
+      const res = await fetch('https://formspree.io/p/3037394180927126767/f/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
         body: JSON.stringify(payload),

@@ -436,7 +436,7 @@ function generateContactPage() {
   <h2>Request Your Custom Quote</h2>
   <p>Every campaign is scoped and quoted individually — team size, market, duration, and specialized roles all shape your quote. Fill out the form and our team will follow up with next steps and a tailored proposal.</p>
 
-  <form class="contact-form" id="contact-form" action="https://formspree.io/f/myznknaa" method="POST">
+  <form class="contact-form" id="contact-form" action="https://formspree.io/p/3037394180927126767/f/contact" method="POST">
     <div class="form-row">
       <div>
         <label for="name">Your Name *</label>
