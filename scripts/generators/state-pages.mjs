@@ -5,6 +5,7 @@ import path from 'path';
 import {
   parseLocations, wrapPage, writePage, breadcrumbSchema, faqSchema,
   statsBar, faqHtml, ctaSection, internalLinksBlock, escHtml, BASE_URL,
+  LOW_PRESENCE_STATES,
 } from './shared.mjs';
 
 function generateStateFaqs(state) {
@@ -29,6 +30,7 @@ function generateStatePage(state, allStates) {
   const canonical = `${BASE_URL}/locations/${state.slug}`;
   const faqs = generateStateFaqs(state);
   const topCities = state.cities.slice(0, 5).map(c => c.name).join(', ');
+  const lowPresence = LOW_PRESENCE_STATES.has(state.slug);
 
   // Nearby states (simple: same index +-1, wrapping)
   const idx = allStates.findIndex(s => s.slug === state.slug);
@@ -67,7 +69,12 @@ function generateStatePage(state, allStates) {
 
 <div class="content">
 
-${statsBar([
+${statsBar(lowPresence ? [
+    { number: String(state.cities.length), label: `${state.abbreviation} Cities` },
+    { number: 'Free', label: 'Custom Quotes' },
+    { number: 'Nationwide', label: 'Deployment Network' },
+    { number: '94%', label: 'Client Retention' },
+  ] : [
     { number: String(state.cities.length), label: `${state.abbreviation} Cities` },
     { number: 'Free', label: 'Custom Quotes' },
     { number: '48hr', label: 'Rush Deployment' },
@@ -75,8 +82,10 @@ ${statsBar([
   ])}
 
   <h2>Street Team Marketing in ${escHtml(state.name)}</h2>
-  <p>Street Teams Co provides professional brand ambassadors, event staffing, product sampling, and street team marketing services across ${state.cities.length} cities in ${state.name}. Whether you need a 2-person sampling team in ${state.cities[0]?.name || state.name} or a 50-person activation spanning multiple ${state.abbreviation} cities, we have the local talent and logistics expertise to deliver measurable results.</p>
-  <p>Our ${state.name} teams are locally recruited, background-checked, and trained to represent your brand with professionalism. Every campaign includes real-time GPS tracking, timestamped photo documentation, and comprehensive post-campaign reporting.</p>
+  <p>Street Teams Co provides professional brand ambassadors, event staffing, product sampling, and street team marketing services across ${state.cities.length} cities in ${state.name}. Whether you need a 2-person sampling team in ${state.cities[0]?.name || state.name} or a 50-person activation spanning multiple ${state.abbreviation} cities, we have the logistics expertise to deliver measurable results.</p>
+  <p>${lowPresence
+    ? `We deploy background-checked, professionally trained teams to ${state.name} on request, backed by the same nationwide staffing network, standards, and reporting we use in every market. Every campaign includes real-time GPS tracking, timestamped photo documentation, and comprehensive post-campaign reporting.`
+    : `Our ${state.name} teams are locally recruited, background-checked, and trained to represent your brand with professionalism. Every campaign includes real-time GPS tracking, timestamped photo documentation, and comprehensive post-campaign reporting.`}</p>
 
   <h2>Available Cities in ${escHtml(state.name)}</h2>
   <p>Select a city below to learn about our street marketing services and brand ambassador teams available in that market.</p>

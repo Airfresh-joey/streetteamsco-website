@@ -9,7 +9,7 @@ import fs from 'fs';
 import {
   parseLocations, wrapPage, writePage, breadcrumbSchema, faqSchema,
   localBusinessSchema, statsBar, faqHtml, ctaSection, internalLinksBlock,
-  escHtml, BASE_URL,
+  escHtml, BASE_URL, LOW_PRESENCE_STATES,
 } from './shared.mjs';
 
 function loadCaseStudies(srcDir) {
@@ -139,10 +139,13 @@ ${neighborhoods.map(n => `    <div class="service-box"><h4>${escHtml(n)}</h4><p>
 }
 
 function generateMidCityBody(city, state) {
+  const lowPresence = LOW_PRESENCE_STATES.has(state.slug);
   return `
   <h2>Street Marketing Services in ${escHtml(city.name)}, ${state.abbreviation}</h2>
   <p>Street Teams Co provides professional brand ambassadors, event staffing, product sampling, and street team marketing services in ${city.name}, ${state.name}. With a population of ${city.population || 'over 100,000'}, ${city.name} offers strong opportunities for face-to-face consumer engagement campaigns.</p>
-  <p>Our ${city.name} teams are locally recruited, background-checked, and trained to represent your brand with professionalism. Every campaign includes real-time GPS tracking, timestamped photo documentation, and comprehensive post-campaign reporting.</p>
+  <p>${lowPresence
+    ? `We deploy background-checked, professionally trained teams to ${city.name} on request, backed by the same nationwide staffing network, standards, and reporting we use in every market. Every campaign includes real-time GPS tracking, timestamped photo documentation, and comprehensive post-campaign reporting.`
+    : `Our ${city.name} teams are locally recruited, background-checked, and trained to represent your brand with professionalism. Every campaign includes real-time GPS tracking, timestamped photo documentation, and comprehensive post-campaign reporting.`}</p>
 
   <h2>Our Services in ${escHtml(city.name)}</h2>
   <div class="service-grid">
@@ -153,10 +156,10 @@ function generateMidCityBody(city, state) {
   </div>
 
   <h2>Why ${escHtml(city.name)} Is a Strong Market</h2>
-  <p>${city.name} combines a growing population with active consumer culture, making it an effective market for street-level marketing campaigns. Our local ${city.name} staff understand the community, the high-traffic areas, and the venues that drive the best engagement for our clients.</p>
+  <p>${city.name} combines a growing population with active consumer culture, making it an effective market for street-level marketing campaigns.${lowPresence ? ` Our staffing network sources and briefs local talent for every ${city.name} campaign, and we know the high-traffic areas and venues that drive the best engagement for our clients.` : ` Our local ${city.name} staff understand the community, the high-traffic areas, and the venues that drive the best engagement for our clients.`}</p>
   <ul>
-    <li><strong>Local ${city.name} staff</strong> recruited from the community</li>
-    <li><strong>48-hour rush deployment</strong> available for urgent campaigns</li>
+    <li><strong>${lowPresence ? `Nationwide network` : `Local ${city.name} staff`}</strong> ${lowPresence ? `sourcing trained talent for ${city.name} campaigns` : `recruited from the community`}</li>
+    <li><strong>Rush deployment</strong> available for urgent campaigns${lowPresence ? '' : ' within 48 hours'}</li>
     <li><strong>Transparent, custom pricing</strong> tailored to your campaign</li>
     <li><strong>Real-time GPS tracking</strong> and photo documentation</li>
     <li><strong>Comprehensive reporting</strong> with engagement metrics and ROI data</li>
@@ -164,10 +167,13 @@ function generateMidCityBody(city, state) {
 }
 
 function generateSmallCityBody(city, state) {
+  const lowPresence = LOW_PRESENCE_STATES.has(state.slug);
   return `
   <h2>Street Marketing Services in ${escHtml(city.name)}, ${state.abbreviation}</h2>
-  <p>Street Teams Co provides professional brand ambassadors and street team marketing services in ${city.name}, ${state.name}. Our ${city.name} teams are locally recruited and trained to represent your brand with professionalism across the ${city.name} market.</p>
-  <p>Every campaign in ${city.name} includes GPS tracking, photo documentation, and post-campaign reporting. Whether you need a sampling team, event staff, or a full street team activation, we have the local talent to deliver results.</p>
+  <p>Street Teams Co provides professional brand ambassadors and street team marketing services in ${city.name}, ${state.name}. ${lowPresence
+    ? `We deploy trained teams to ${city.name} on request, backed by our nationwide staffing network and the same professional standards used in every market.`
+    : `Our ${city.name} teams are locally recruited and trained to represent your brand with professionalism across the ${city.name} market.`}</p>
+  <p>Every campaign in ${city.name} includes GPS tracking, photo documentation, and post-campaign reporting. Whether you need a sampling team, event staff, or a full street team activation, we have the ${lowPresence ? 'staffing network' : 'local talent'} to deliver results.</p>
 
   <h2>Our Services in ${escHtml(city.name)}</h2>
   <div class="service-grid">
@@ -345,7 +351,12 @@ function generateCityPage(city, state, allStates, caseStudies) {
 
 <div class="content">
 
-${statsBar([
+${statsBar(LOW_PRESENCE_STATES.has(state.slug) ? [
+    { number: 'Free', label: 'Custom Quotes' },
+    { number: 'Nationwide', label: 'Deployment Network' },
+    { number: '94%', label: 'Client Retention' },
+    { number: '4.9/5', label: 'Client Rating' },
+  ] : [
     { number: 'Free', label: 'Custom Quotes' },
     { number: '48hr', label: 'Rush Deployment' },
     { number: '94%', label: 'Client Retention' },
