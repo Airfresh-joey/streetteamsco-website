@@ -85,6 +85,8 @@ industries.forEach(i => addUrl(`/industries/${i}`, 0.7, 'monthly'));
 const LOW_PRESENCE_STATES = new Set([
   'alaska', 'hawaii', 'new-mexico', 'rhode-island', 'vermont', 'delaware',
   'wyoming', 'north-dakota', 'idaho', 'kansas', 'montana',
+  'new-hampshire', 'south-dakota', 'missouri', 'south-carolina',
+  'west-virginia', 'minnesota',
 ]);
 
 // State pages
