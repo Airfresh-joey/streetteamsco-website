@@ -430,4 +430,8 @@ export const BASE_URL = 'https://streetteamsco.com';
 export const LOW_PRESENCE_STATES = new Set([
   'alaska', 'hawaii', 'new-mexico', 'rhode-island', 'vermont', 'delaware',
   'wyoming', 'north-dakota', 'idaho', 'kansas', 'montana',
+  // Second tier, added Jul 4 2026 per Joey's go-ahead — borderline but
+  // still thin (no case-study/campaign history, low June search presence).
+  'new-hampshire', 'south-dakota', 'missouri', 'south-carolina',
+  'west-virginia', 'minnesota',
 ]);
