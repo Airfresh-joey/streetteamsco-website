@@ -25,6 +25,7 @@ export default function Contact() {
         'mainEntity': {
           '@type': 'Organization',
           'name': 'Street Teams Co',
+          'telephone': '+1-303-720-6060',
           'email': 'hello@streetteamsco.com',
           'areaServed': 'United States',
         },
@@ -76,9 +77,11 @@ export default function Contact() {
             </div>
 
             <div className="city-cta" style={{ marginTop: '2rem' }}>
-              <h3>Prefer Email?</h3>
+              <h3>Prefer to Call or Email?</h3>
               <p>
                 Reach out directly at{' '}
+                <a href="tel:3037206060">(303) 720-6060</a>
+                {' '}or{' '}
                 <a href="mailto:hello@streetteamsco.com">hello@streetteamsco.com</a>
                 {' '}— every inquiry gets a response from a real strategist.
               </p>

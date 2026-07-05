@@ -70,8 +70,8 @@ footer{background:var(--ink);color:#b9b5ae;padding:2.5rem 2rem 4rem;text-align:c
 footer a{color:#e8e4dc;}footer a:hover{color:var(--orange);}
 @media(max-width:768px){.nav{display:none;}.wrap{padding:2rem 1.3rem;}.stats{margin-top:1rem;}}`;
 
-const HEADER = `<header><div class="hdr"><a href="/" class="logo">STREET TEAMS CO</a><div class="nav"><a href="/services/street-teams">Services</a><a href="/case-studies/">Case Studies</a><a href="/locations">Locations</a><a href="/contact">Get Quote</a></div></div></header>`;
-const FOOTER = `<footer><p>&copy; 2026 <a href="/">Street Teams Co</a> · <a href="/case-studies/">Case Studies</a> · <a href="/portfolio">Portfolio</a> · <a href="/contact">Get a Free Quote</a> · hello@streetteamsco.com</p></footer>`;
+const HEADER = `<header><div class="hdr"><a href="/" class="logo">STREET TEAMS CO</a><div class="nav"><a href="/services/street-teams">Services</a><a href="/case-studies/">Case Studies</a><a href="/locations">Locations</a><a href="tel:3037206060" style="font-weight:600;">(303) 720-6060</a><a href="/contact">Get Quote</a></div></div></header>`;
+const FOOTER = `<footer><p>&copy; 2026 <a href="/">Street Teams Co</a> · 1580 N Logan St Suite 660, Denver, CO 80203 · <a href="tel:3037206060">(303) 720-6060</a> · <a href="/case-studies/">Case Studies</a> · <a href="/portfolio">Portfolio</a> · <a href="/contact">Get a Free Quote</a> · hello@streetteamsco.com</p></footer>`;
 
 function shell({ title, desc, canonical, og, jsonld, body }) {
   return `<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">

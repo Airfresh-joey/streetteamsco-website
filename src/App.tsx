@@ -61,6 +61,7 @@ function AppLayout() {
             <a href="/case-studies/">Case Studies</a>
             <Link to="/locations">Locations</Link>
             <a href="/blog/">Blog</a>
+            <a href="tel:3037206060" style={{fontWeight: 600}}>(303) 720-6060</a>
             {isHome ? (
               <a href="#contact" className="nav-cta">Get Quote</a>
             ) : (
@@ -99,6 +100,7 @@ function AppLayout() {
             <div className="footer-brand">
               <Link to="/" className="logo">STREET TEAMS CO</Link>
               <p>Professional street marketing and brand ambassador services nationwide. Over 500 campaigns in 1,000+ US cities.</p>
+              <p><a href="tel:3037206060">(303) 720-6060</a> &middot; 1580 N Logan St Suite 660, Denver, CO 80203</p>
             </div>
             <div className="footer-section">
               <h3>Services</h3>
