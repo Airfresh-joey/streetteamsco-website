@@ -24,6 +24,7 @@ export default function HomePage() {
         'areaServed': 'United States',
         'contactPoint': {
           '@type': 'ContactPoint',
+          'telephone': '+1-303-720-6060',
           'email': 'hello@streetteamsco.com',
           'contactType': 'sales',
         },

@@ -547,8 +547,8 @@ ${statsBar([
     { number: '50', label: 'States Served' },
   ])}
 
-  <h2>Prefer Email?</h2>
-  <p>Reach out directly at <a href="mailto:hello@streetteamsco.com">hello@streetteamsco.com</a> — every inquiry gets a response from a real strategist, not an autoresponder.</p>
+  <h2>Prefer to Call or Email?</h2>
+  <p>Reach out directly at <a href="tel:3037206060">(303) 720-6060</a> or <a href="mailto:hello@streetteamsco.com">hello@streetteamsco.com</a> — every inquiry gets a response from a real strategist, not an autoresponder.</p>
 
   <p>Want to see results first? <a href="/case-studies/">Browse our case studies</a> or explore <a href="/services">our services</a>.</p>
 

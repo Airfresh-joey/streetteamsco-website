@@ -822,6 +822,7 @@ ${faqSchemaEntries}
       <a href="/industries">Industries</a>
       <a href="/locations">Locations</a>
       <a href="/blog/">Blog</a>
+      <a href="tel:3037206060" style="font-weight:600;">(303) 720-6060</a>
       <a href="/contact">Get Quote</a>
     </div>
   </div>
@@ -1060,7 +1061,7 @@ ${cities.map(ct => `      <a href="/fifa-world-cup-2026-staffing/${ct.citySlug}"
 </div>
 
 <footer>
-  <p>&copy; 2026 <a href="/">Street Teams Co</a>. All rights reserved. | <a href="mailto:hello@streetteamsco.com">hello@streetteamsco.com</a></p>
+  <p>&copy; 2026 <a href="/">Street Teams Co</a>. All rights reserved. | 1580 N Logan St Suite 660, Denver, CO 80203 | <a href="tel:3037206060">(303) 720-6060</a> | <a href="mailto:hello@streetteamsco.com">hello@streetteamsco.com</a></p>
   <div class="footer-links">
     <a href="/services">Services</a>
     <a href="/industries">Industries</a>
