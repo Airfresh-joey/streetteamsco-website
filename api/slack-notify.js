@@ -39,18 +39,18 @@ export default async function handler(req, res) {
 
   const blocks = [
     { type: 'header', text: { type: 'plain_text', text: '🎯 New Lead — Street Teams Co', emoji: true } },
+    { type: 'section', text: { type: 'mrkdwn', text: `📍 *${source}*` } },
     { type: 'section', fields },
   ];
   if (message) {
     blocks.push({ type: 'section', text: { type: 'mrkdwn', text: `*Message:*\n${message}` } });
   }
-  blocks.push({ type: 'context', elements: [{ type: 'mrkdwn', text: `Source: ${source}` }] });
 
   try {
     const slackRes = await fetch(webhookUrl, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ blocks, text: `New lead: ${name} (${email})` }),
+      body: JSON.stringify({ blocks, text: `🎯 New Street Teams Co lead: ${name} (${email})` }),
     });
     if (!slackRes.ok) {
       const text = await slackRes.text();
