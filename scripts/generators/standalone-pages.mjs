@@ -517,6 +517,14 @@ function generateContactPage() {
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(copy),
         }).catch(function () {});
+        var slackCopy = {};
+        new FormData(form).forEach(function (v, k) { slackCopy[k] = v; });
+        slackCopy.source = 'streetteamsco.com contact form (static)';
+        fetch('/api/slack-notify', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(slackCopy),
+        }).catch(function () {});
       } catch (err) {}
       fetch(form.action, {
         method: 'POST',
