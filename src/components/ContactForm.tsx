@@ -37,13 +37,18 @@ export default function ContactForm() {
     e.preventDefault();
     setStatus('submitting');
 
-    // Fire-and-forget copy to the AFM Proposals Command Center — runs in
-    // parallel and never blocks or affects the Formspree submission below.
+    // Fire-and-forget copies to the AFM Proposals Command Center and Slack —
+    // run in parallel and never block or affect the Formspree submission below.
     try {
       fetch('https://proposal-dashboard-blond.vercel.app/api/leads/webhook', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ ...formData, source: 'streetteamsco' }),
+      }).catch(() => {});
+      fetch('/api/slack-notify', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ...formData, source: 'streetteamsco.com contact form' }),
       }).catch(() => {});
     } catch {
       // ignore — best-effort only
