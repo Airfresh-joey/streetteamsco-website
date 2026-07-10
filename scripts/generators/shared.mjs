@@ -324,7 +324,13 @@ export function faqSchema(faqs) {
   };
 }
 
-export function serviceSchema({ name, description, url, priceLow, priceHigh, isPerHour }) {
+// NOTE: priceLow/priceHigh/isPerHour params are intentionally accepted-but-unused.
+// Street Teams Co policy (Joey, confirmed) is NO published rate cards anywhere —
+// every engagement is custom-quoted. An earlier version of this function baked
+// priceLow/priceHigh into an AggregateOffer, which put live $/hr numbers into
+// JSON-LD on all 8 /services/* pages even though the visible page copy says
+// "custom quote." Fixed Jul 9 2026 — do not reintroduce an `offers` block here.
+export function serviceSchema({ name, description, url }) {
   return {
     '@context': 'https://schema.org',
     '@type': 'Service',
@@ -338,13 +344,6 @@ export function serviceSchema({ name, description, url, priceLow, priceHigh, isP
     description,
     areaServed: 'United States',
     url,
-    offers: {
-      '@type': 'AggregateOffer',
-      lowPrice: priceLow,
-      highPrice: priceHigh,
-      priceCurrency: 'USD',
-      ...(isPerHour ? { unitText: 'per hour' } : {}),
-    },
   };
 }
 
