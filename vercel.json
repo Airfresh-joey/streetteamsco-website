@@ -11,6 +11,11 @@
       "permanent": true
     },
     {
+      "source": "/location/:path*",
+      "destination": "/locations",
+      "permanent": true
+    },
+    {
       "source": "/case-studies/app-launch-multi-city-tour",
       "destination": "/case-studies/",
       "permanent": true
