@@ -107,7 +107,6 @@ ${items}
 
 function generateServicePage(service, allServices) {
   const canonical = `${BASE_URL}/services/${service.slug}`;
-  const isGuerrilla = service.slug === 'guerrilla-marketing';
   const blogPosts = RELATED_BLOG_POSTS[service.slug] || [];
 
   const otherServices = allServices.filter(s => s.slug !== service.slug);
@@ -123,9 +122,6 @@ function generateServicePage(service, allServices) {
       name: service.name,
       description: service.description,
       url: canonical,
-      priceLow: isGuerrilla ? '2000' : '25',
-      priceHigh: isGuerrilla ? '10000' : '75',
-      isPerHour: !isGuerrilla,
     }),
     faqSchema(service.faq),
   ];

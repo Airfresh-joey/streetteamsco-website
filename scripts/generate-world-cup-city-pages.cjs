@@ -534,14 +534,7 @@ function generatePage(city) {
         "name": "${city.state}"
       }
     },
-    "url": "${canonicalUrl}",
-    "offers": {
-      "@type": "AggregateOffer",
-      "lowPrice": "${city.baseRate}",
-      "highPrice": "${city.managerRate + 15}",
-      "priceCurrency": "USD",
-      "unitText": "per hour"
-    }
+    "url": "${canonicalUrl}"
   }
   </script>
 
