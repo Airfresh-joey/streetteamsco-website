@@ -404,6 +404,11 @@ export default function CostCalculator() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ ...payload, source: 'streetteamsco.com cost calculator' }),
       }).catch(() => {});
+      fetch('/api/sheet-log', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ...payload, source: 'streetteamsco.com cost calculator' }),
+      }).catch(() => {});
     } catch {
       // ignore — best-effort only
     }
