@@ -265,6 +265,8 @@ export function wrapPage({ title, description, canonical, ogImage, keywords, sch
     gtag('config', 'G-WL8QZB3S96');
   </script>
 
+  <script src="https://analytics.ahrefs.com/analytics.js" data-key="4JXxP81U1kEA3g1f35kMlg" async></script>
+
   <meta property="og:title" content="${escHtml(title)}">
   <meta property="og:description" content="${escHtml(description)}">
   <meta property="og:type" content="website">
