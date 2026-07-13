@@ -82,6 +82,7 @@ ${jsonld.map(j => `<script type="application/ld+json">${JSON.stringify(j)}</scri
 <link rel="preload" href="${FONTS_URL}" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link href="${FONTS_URL}" rel="stylesheet"></noscript>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-WL8QZB3S96"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-WL8QZB3S96');</script>
+  <script src="https://analytics.ahrefs.com/analytics.js" data-key="4JXxP81U1kEA3g1f35kMlg" async></script>
 <style>${CSS}</style></head><body>${HEADER}${body}${FOOTER}</body></html>`;
 }
 

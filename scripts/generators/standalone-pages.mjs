@@ -669,6 +669,7 @@ function generateBookPage() {
   <link rel="icon" href="/images/favicon.svg" type="image/svg+xml">
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-WL8QZB3S96"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-WL8QZB3S96');</script>
+  <script src="https://analytics.ahrefs.com/analytics.js" data-key="4JXxP81U1kEA3g1f35kMlg" async></script>
   <style>
     body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0f172a; color: #fff; }
     .hero { padding: 100px 24px 50px; text-align: center; }

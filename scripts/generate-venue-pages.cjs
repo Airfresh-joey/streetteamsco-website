@@ -340,6 +340,7 @@ ${siblings.map(s => `      <a href="/${s.slug}-event-staffing">${esc(s.venue)} E
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-WL8QZB3S96"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-WL8QZB3S96');</script>
+  <script src="https://analytics.ahrefs.com/analytics.js" data-key="4JXxP81U1kEA3g1f35kMlg" async></script>
 </head>
 <body>
 
