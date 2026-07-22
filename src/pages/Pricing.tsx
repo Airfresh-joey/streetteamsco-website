@@ -4,8 +4,8 @@ import CostCalculator from '../components/CostCalculator';
 
 export default function Pricing() {
   useMetaTags({
-    title: 'Street Team Pricing 2026 | Brand Ambassadors from $25/hr | Street Teams Co',
-    description: 'Street team marketing pricing: brand ambassadors from $25/hr, event staffing from $30/hr. Volume discounts available. No long-term contracts. 500+ campaigns, 94% client retention. Get a free custom quote.',
+    title: 'Street Team Pricing 2026 | Brand Ambassadors from custom quote | Street Teams Co',
+    description: 'Street team marketing pricing: brand ambassadors from custom quote, event staffing from custom quote. Volume discounts available. No long-term contracts. 500+ campaigns, 94% client retention. Get a free custom quote.',
     canonical: 'https://streetteamsco.com/pricing',
     ogImage: 'https://streetteamsco.com/images/og-image.jpg',
     schema: [
@@ -26,7 +26,7 @@ export default function Pricing() {
             'name': 'How much does street team marketing cost?',
             'acceptedAnswer': {
               '@type': 'Answer',
-              'text': 'Street team marketing costs typically range from $25-$75 per hour per brand ambassador. A full-day team deployment averages $3,000-$8,000 depending on team size and market.',
+              'text': 'Street team marketing is quoted custom based on team size, market, dates, and scope. Request a quote for a tailored proposal.',
             },
           },
           {
@@ -34,7 +34,7 @@ export default function Pricing() {
             'name': 'How much do brand ambassadors cost per hour?',
             'acceptedAnswer': {
               '@type': 'Answer',
-              'text': 'Brand ambassador rates start at $25/hour for standard promotional staff and range up to $75+/hour for specialized roles like bilingual staff, licensed bartenders, or technical product demonstrators.',
+              'text': 'Every program is quoted custom based on market, dates, staffing level, and scope. Request a quote and we respond with a tailored proposal, typically within one business day.',
             },
           },
           {
@@ -42,7 +42,7 @@ export default function Pricing() {
             'name': 'How much does event staffing cost?',
             'acceptedAnswer': {
               '@type': 'Answer',
-              'text': 'Event staffing rates range from $25-$75 per hour per staff member depending on role, location, and event type. Most clients spend $2,000-$15,000 per event.',
+              'text': 'Event staffing is quoted custom based on role, location, and event type. Request a quote for a tailored proposal.',
             },
           },
           {
@@ -74,7 +74,7 @@ export default function Pricing() {
         },
         'serviceType': 'Street Team Marketing',
         'areaServed': { '@type': 'Country', 'name': 'United States' },
-        'priceRange': '$25-$75/hr',
+        
       },
     ],
   });
@@ -112,7 +112,7 @@ export default function Pricing() {
           <div className="faq-list">
             <details>
               <summary>How much does street team marketing cost?</summary>
-              <p>Street team marketing costs typically range from $25-$75 per hour per brand ambassador, depending on the role and market. A full-day street team deployment (6-8 hours, 4-8 team members) averages $3,000-$8,000 in most markets. Monthly retainer programs start at $10,000.</p>
+              <p>Street team marketing is quoted custom for every program based on team size, market, dates, and scope. Tell us about your campaign and we will send a tailored proposal, typically within one business day.</p>
             </details>
             <details>
               <summary>Do you require long-term contracts?</summary>
