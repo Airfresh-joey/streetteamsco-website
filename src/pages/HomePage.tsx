@@ -8,8 +8,8 @@ import { trackCTAClick, trackEmailClick } from '../analytics';
 
 export default function HomePage() {
   useMetaTags({
-    title: 'Street Team Marketing Agency | 1,000+ Cities Nationwide | Street Teams Co',
-    description: 'Street team marketing agency with professional brand ambassadors in 1,000+ US cities. 500+ campaigns executed, 94% client retention. Event staffing, product sampling & guerrilla marketing nationwide.',
+    title: 'Street Team Marketing Agency | 1,000+ Cities | Street Teams Co',
+    description: 'Street team marketing agency with professional brand ambassadors in 1,000+ US cities. 500+ campaigns executed, 94% client retention.',
     canonical: 'https://streetteamsco.com',
     ogImage: 'https://streetteamsco.com/images/og-image.jpg',
     schema: [

@@ -206,7 +206,7 @@ ${internalLinksBlock('Helpful Links', [
 
   return wrapPage({
     title: `${service.name} Services | Nationwide | Street Teams Co`,
-    description: `${service.name} services in 1,000+ US cities. ${truncate(service.description, 120).replace(/\.$/, '')}. 500+ campaigns, 94% client retention. Get a free quote.`,
+    description: `${service.name} services in 1,000+ US cities. ${truncate(service.description, 75).replace(/\.$/, '')}. Get a free quote today.`,
     canonical,
     keywords: `${service.name.toLowerCase()}, ${service.name.toLowerCase()} services, ${service.name.toLowerCase()} agency, hire ${service.name.toLowerCase()}, ${service.name.toLowerCase()} near me`,
     schemas,

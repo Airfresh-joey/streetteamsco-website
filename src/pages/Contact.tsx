@@ -4,8 +4,8 @@ import ContactForm from '../components/ContactForm';
 
 export default function Contact() {
   useMetaTags({
-    title: 'Contact Street Teams Co | Get a Free Street Team Marketing Quote',
-    description: 'Contact Street Teams Co for a free street team marketing quote. Brand ambassadors, event staffing, and product sampling in 1,000+ US cities.',
+    title: 'Get a Free Street Team Marketing Quote | Street Teams Co',
+    description: 'Get a free street team marketing quote from Street Teams Co. Brand ambassadors, event staffing, and product sampling in 1,000+ US cities.',
     canonical: 'https://streetteamsco.com/contact',
     ogImage: 'https://streetteamsco.com/images/og-image.jpg',
     schema: [

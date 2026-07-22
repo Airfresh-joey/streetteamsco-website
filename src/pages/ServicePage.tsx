@@ -90,12 +90,19 @@ const relatedBlogPosts: Record<string, { title: string; url: string }[]> = {
   ],
 };
 
+function truncateAtWord(text: string, maxLength: number): string {
+  if (text.length <= maxLength) return text;
+  const truncated = text.slice(0, maxLength);
+  const lastSpace = truncated.lastIndexOf(' ');
+  return (lastSpace > 0 ? truncated.slice(0, lastSpace) : truncated).replace(/[,.;:]$/, '');
+}
+
 export default function ServicePage() {
   const { service: serviceSlug } = useParams<{ service: string }>();
   const service = serviceSlug ? getServiceBySlug(serviceSlug) : undefined;
 
   const serviceTitles: Record<string, string> = {
-    'street-teams': 'Street Team Marketing Agency | Professional Street Teams Nationwide',
+    'street-teams': 'Street Team Marketing Agency | Street Teams Nationwide',
     'brand-ambassadors': 'Brand Ambassador Agency | Hire Nationwide Brand Ambassadors',
     'event-staffing': 'Event Staffing Agency | Professional Event Staff Nationwide',
     'product-sampling': 'Product Sampling Agency | Consumer Sampling Campaigns',
@@ -103,7 +110,7 @@ export default function ServicePage() {
     'flyer-distribution': 'Flyer Distribution Services | Professional Flyering Nationwide',
     'experiential-marketing': 'Experiential Marketing Agency | Immersive Brand Experiences',
     'promotional-staffing': 'Promotional Staffing Agency | On-Demand Promo Talent',
-    'college-campus': 'College Campus Marketing Agency | Student Brand Ambassadors Nationwide',
+    'college-campus': 'College Campus Marketing Agency | Student Ambassadors',
   };
 
   useMetaTags({
@@ -111,7 +118,7 @@ export default function ServicePage() {
       ? (serviceTitles[service.slug] || `${service.name} Services | Street Teams Co`)
       : 'Service Not Found | Street Teams Co',
     description: service
-      ? `${service.name} services in 1,000+ US cities. ${service.description.slice(0, 120)} Get a free quote today.`
+      ? `${service.name} services in 1,000+ US cities. ${truncateAtWord(service.description, 75)}. Get a free quote today.`
       : 'Service not found.',
     canonical: service
       ? `https://streetteamsco.com/services/${service.slug}`
