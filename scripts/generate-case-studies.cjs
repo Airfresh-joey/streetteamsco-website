@@ -92,7 +92,7 @@ function studyPage(s) {
   const statHtml = Object.entries(s.stats || {}).map(([l, n]) => `<div class="stat"><div class="n">${esc(n)}</div><div class="l">${esc(l)}</div></div>`).join('');
   const services = (s.services || []).map(x => `<span class="chip">${esc(x)}</span>`).join('');
   const markets = (s.markets || []).map(x => `<span class="chip">${esc(x)}</span>`).join('');
-  const gallery = (s.images && s.images.length) ? `<h2>From the Field</h2><div class="gallery">${s.images.map(i => `<img src="${i}" alt="${esc(s.name)} street team activation" loading="lazy">`).join('')}</div>` : '';
+  const gallery = (s.images && s.images.length) ? `<h2>From the Field</h2><div class="gallery">${s.images.map((i, idx) => `<img src="${i}" alt="${esc(s.name)} street team activation, photo ${idx + 1} of ${s.images.length}" loading="lazy">`).join('')}</div>` : '';
   const siblings = studies.filter(x => x.id !== s.id && x.category === s.category).slice(0, 3);
   const related = siblings.length ? `<h2>More ${esc(s.category)} Campaigns</h2><div class="related-grid">${siblings.map(x =>
     `<a class="rel-card" href="/case-studies/${x.id}">${x.heroImage ? `<img src="${x.heroImage}" alt="${esc(x.name)}" loading="lazy" width="640" height="360">` : ''}<span>${esc(x.name)}</span></a>`
